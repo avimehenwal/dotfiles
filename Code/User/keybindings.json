@@ -1,0 +1,15 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "alt+m",
+        "command": "markdown.extension.editing.toggleCodeSpan"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "editor.action.joinLines"
+    },
+    {
+        "key": "ctrl+shift+/",
+        "command": "workbench.action.tasks.test"
+    },
+]

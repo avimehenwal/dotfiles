@@ -1,0 +1,104 @@
+[user]
+	name  = avimehenwal
+	email = avi.mehanwal@gmail.com
+[color]
+    ui = always
+	blame = highlightRecent
+# [color "blame"]
+# 	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
+[core]
+	pager  = diff-so-fancy
+	pager  = less --tabs=4 -RFX
+	editor = vim
+	hooksPath = ~/.config/git
+[help]
+	autocorrect = 1
+[pager]
+	status = true
+	diff   = true
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[difftool]
+	prompt = false
+[log]
+	date = relative
+[commit]
+	template = ~/.gitmessage
+[grep]
+	lineNumber = true
+[blame]
+	date = relative
+	coloring = highlightRecent
+[alias]
+	co 	 = checkout
+	cm 	 = commit --interactive --status --verbose
+	cnv = commit --no-verify
+	cl 	 = config --list
+	clg  = config --list --global
+	cll  = config --list --local
+	c 	 = clone --verbose --progress
+    dt   = difftool --tool=meld --dir-diff master...
+	s 	 = status --show-stash --short --branch --verbose --untracked-files=normal --column
+    st   = status --show-stash
+    rm   = rm --dry-run --cached
+    tag  = tag -n10 --list     # show 10 description along with descriptio
+    tags = ls-remote --tags    # show all remote tags
+	untrack = rm --cache
+	undoo	= reset --hard	# remove all cahnges as well
+	undo 	= reset --soft	# remove commit but keep the changes
+    rebase  = rebase -v -i
+	blame   = blame --show-stats --progress
+
+	d 	 = difftool --dir-diff HEAD 	# show everything staged + unstaged
+	ds 	 = diff --stat
+	dc   = diff --cached
+	dcs  = diff --compact-summary
+	diff = diff --color=always
+	r 	 = remote --verbose
+	ls 	 = ls-tree --full-tree --name-only -r HEAD
+
+	w 	 = whatchanged
+	l    = !git log --oneline --decorate --all | fzf --prompt='git show --format=fuller --stat {+1} --patch: ' --preview 'git show --format=fuller --stat {+1} --patch'
+	lo   = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    logd = log --walk-reflogs
+	los  = log --oneline --decorate --stat
+    cmp  = !git log master... --oneline | fzf --prompt='git show --format=fuller --stat {+1} --patch: ' --preview 'git show --format=fuller --stat {+1} --patch'
+	lol  = !tig
+
+	last = log -1 HEAD --compact-summary
+	first = log --reverse
+	top  = shortlog
+	sl 	 = shortlog --summary --numbered
+	visual = !gitkraken
+    renameTag = "!sh -c 'set -e;git tag $2 $1; git tag -d $1;git push origin :refs/tags/$1;git push --tags' -"
+	plog = log --graph --pretty=format:'%h -%d %s %n' --abbrev-commit --date=relative --branches
+    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
+
+
+	# ADVANCED ALIASES using ! external commands
+	whatadded = log --diff-filter=A -- 		# which commit added the file
+	# log everything what happend to file ASEE: git.whathappened
+	whathapp = !git log --all --oneline --full-history -- $1
+	# !Arguments to fish functions
+	# select and track multiple files
+	trackfile = !fish -c git.trackfile
+	br = !fish -c git.branches.graph
+	sayhello = !(echo "from sayhello git alias")
+	say = "!f() { msg=${1-from say git alias}; echo $msg;  }; f && git sayhello"
+	# Multiple Commands
+	b 	 = !fish -c git.branches && fish -c git.branches.graph && git branch --all --verbose
+
+[color "diff-highlight"]
+	oldNormal 	 = red bold
+	oldHighlight = red bold 52
+	newNormal 	 = green bold
+	newHighlight = green bold 22
+[color "diff"]
+	meta 	   = yellow
+	frag 	   = magenta bold
+	commit 	   = yellow bold
+	old 	   = red bold
+	new 	   = green bold
+	whitespace = red reverse

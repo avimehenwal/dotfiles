@@ -1,0 +1,3 @@
+[submodule "/home/avi/aviscripts"]
+	path = /home/avi/aviscripts
+	url = git@github.com:avimehenwal/aviscripts.git

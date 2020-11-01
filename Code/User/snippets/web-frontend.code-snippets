@@ -1,0 +1,151 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  //
+  // Axios cheatsheet
+  // https://kapeli.com/cheat_sheets/Axios.docset/Contents/Resources/Documents/index
+  "import axios": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "axios-import",
+    "body": [
+      "import axios from 'axios'"
+    ],
+    "description": "import axios"
+  },
+  "axios send async request": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "axios-request",
+    "body": [
+      "axios.${1|get,post,put,delete,patch|}(${2:'https://jsonplaceholder.typicode.com/users'})",
+      "  .then((response) => {",
+      "    console.log(response);",
+      "    $0",
+      "  })",
+      "  .catch((error) => {",
+      "    if (error.response) {",
+      "      /*",
+      "        * The request was made and the server responded with a",
+      "        * status code that falls out of the range of (2xx, 4xx, 5xx)",
+      "        */",
+      "      console.log(error.response.data);",
+      "      console.log(error.response.status);",
+      "      console.log(error.response.headers);",
+      "    } else if (error.request) {",
+      "      /*",
+      "        * The request was made but no response was received, `error.request`",
+      "        * is an instance of XMLHttpRequest in the browser and an instance",
+      "        * of http.ClientRequest in Node.js",
+      "        */",
+      "      console.log(error.request);",
+      "    } else {",
+      "      // Something happened in setting up the request and triggered an Error",
+      "      console.log('Error', error.message);",
+      "    }",
+      "    console.log(error.config);",
+      "  });"
+    ],
+    "description": "axios send async request"
+  },
+  "axios request with headers and data": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "axios-req2",
+    "body": [
+      "axios({",
+      "  method: '${1|get,post,put,delete,patch|}',",
+      "  url: ${2:'https://jsonplaceholder.typicode.com/users'},",
+      "  headers: { 'Content-Type': 'application/json' },",
+      "  data: {",
+      "    'payload': random_string,",
+      "    'username': this_component._username.value",
+      "  }",
+      "}).then((response) => {",
+      "  console.log(response);",
+      "  $0",
+      "})",
+      ".catch((error) => {",
+      "  if (error.response) {",
+      "    /*",
+      "      * The request was made and the server responded with a",
+      "      * status code that falls out of the range of (2xx, 4xx, 5xx)",
+      "      */",
+      "    console.log(error.response.data);",
+      "    console.log(error.response.status);",
+      "    console.log(error.response.headers);",
+      "  } else if (error.request) {",
+      "    /*",
+      "      * The request was made but no response was received, `error.request`",
+      "      * is an instance of XMLHttpRequest in the browser and an instance",
+      "      * of http.ClientRequest in Node.js",
+      "      */",
+      "    console.log(error.request);",
+      "  } else {",
+      "    // Something happened in setting up the request and triggered an Error",
+      "    console.log('Error', error.message);",
+      "  }",
+      "  console.log(error.config);",
+      "});",
+      "",
+      ""
+    ],
+    "description": "axios request with headers and data"
+  },
+  "axios base url instance": {
+    "scope": "javascript,typescript,vue",
+    "prefix": "axios-base",
+    "body": [
+      "const instance = axios.create({",
+      "  baseURL: ${1:'https://some-domain.com/api/'},",
+      "  timeout: ${2:1000},",
+      "  headers: {",
+      "    'Content-Type': 'application/json'",
+      "  }",
+      "});"
+    ],
+    "description": "axios base url instance"
+  },
+  "vuepress badge component": {
+    "scope": "vue-html,markdown",
+		"prefix": "badge",
+		"body": [
+			"<Badge type=\"${1|tip,error,warning|}\" vertical=\"${2|middle,top|}\" text=\"${3:For Example,}\" /> $0"
+		],
+		"description": "vuepress badge component"
+  },
+  "dotenv-require": {
+    "scope": "javascript,typescript",
+    "prefix": "dotenv",
+    "body": [
+      "require('dotenv').config()"
+    ],
+    "description": "dotenv-require"
+  },
+  "data property vuejs": {
+    "scope": "javascript,typescript",
+		"prefix": "data",
+		"body": [
+			"data: () => ({",
+			"  $0 ",
+			"}),"
+		],
+		"description": "data property vuejs"
+  },
+  "props vue-script": {
+    "scope": "javascript,typescript",
+    "prefix": "props",
+    "body": [
+      "props: {",
+      "  ${1:name}: {",
+      "    type: ${2|String,Number,Boolean|},",
+      "    default: '${3}'",
+      "  },",
+      "  $0",
+      "},"
+    ],
+    "description": "props vue-script"
+  }
+}

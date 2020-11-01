@@ -1,0 +1,157 @@
+{
+	// Place your snippets for asciidoc here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"blockquote asciidoc": {
+		"prefix": "quote",
+		"body": [
+			"[quote, ${1:byAnonymous}, ${2}]",
+			"____",
+			"$0",
+			"____",
+			""
+		],
+		"description": "blockquote asciidoc"
+	},
+	"asciidoc source code": {
+		"prefix": "source-code",
+		"body": [
+			".${2}",
+			"[source,${1|bash,python,javascript,json|}]",
+			"----",
+			"$0",
+			"----",
+			""
+		],
+		"description": "asciidoc source code"
+	},
+	"bytefield": {
+		"prefix": "bytefield",
+		"body": [
+			".${1:A byteframe}",
+			"[bytefield]",
+			"----",
+			"(draw-column-headers)",
+			"(doseq [val (range 30)]",
+			"  (draw-box val))",
+			"$0",
+			"----",
+			""
+		],
+		"description": "bytefield"
+	},
+	"c3 chart ": {
+		"prefix": "chart",
+		"body": [
+			"[chart,${1|line,bar,pie|}]",
+			"....",
+			"$0",
+			"....",
+			""
+		],
+		"description": "c3 chart "
+	},
+	"video-youtube": {
+		"prefix": "youtube",
+		"body": [
+			"video::${1}[youtube]",
+			""
+		],
+		"description": "video-youtube"
+	},
+	"emoji": {
+		"prefix": "emoji",
+		"body": [
+			"emoji:${1|white_check_mark,sunglasses,x,beetle|}[] $0"
+		],
+		"description": "emoji"
+	},
+	"bytefield-svg": {
+		"prefix": "bytefield2",
+		"body": [
+			".{1:A byteframe}",
+			"[bytefield]",
+			"----",
+			"(def row-height 80)",
+			"(defattrs :bg-blue  {:fill \"#80a0ff\"})",
+			"(defattrs :bg-green {:fill \"#a0ffa0\"})",
+			"(defattrs :vertical [:plain {:writing-mode \"vertical-rl\"}])",
+			"(defattrs :4 {:span 4})",
+			"(def boxes-per-row 9)",
+			"$0",
+			"(draw-box nil :bg-blue)",
+			"(draw-box \"Docker\" {:span 3 :fill \"orange\"})",
+			"(draw-box \"Docker\" {:span 5 :fill \"pink\"})",
+			"(draw-box \"Docker\" [:bg-green {:span 5}])",
+			"(draw-box \"Docker\" [:bg-blue :4])",
+			"(draw-box (text \"Sync\" :vertical))",
+			"(draw-box \"some text\" [:bg-blue :4])",
+			"(append-svg (svg/circle 300 55 50))",
+			"----",
+			""
+		],
+		"description": "bytefield-svg"
+	},
+	"collapsible": {
+		"prefix": "collapsible",
+		"body": [
+			"${1:.Click to see solution}",
+			"[%collapsible]",
+			"====",
+			"$0",
+			"====",
+			"",
+			""
+		],
+		"description": "collapsible"
+	},
+	"asciidoc table": {
+		"prefix": "table",
+		"body": [
+			".${1}",
+			"|===",
+			"| $0",
+			"|==="
+		],
+		"description": "asciidoc table"
+	},
+	"plantuml-include": {
+		"prefix": "plantuml",
+		"body": [
+			"[plantuml]",
+			"....",
+			"include::example\\$${1:diagram}.puml[]",
+			"....",
+			""
+		],
+		"description": "plantuml-include"
+	},
+	"abbreviation-attribute": {
+		"prefix": "abbr",
+		"body": [
+			":${1:abbr}: pass:[<abbr title=\"${2:expanf the abbr}\">${1:abbr}</abbr>]"
+		],
+		"description": "abbreviation-attribute"
+	},
+	"adoc collapsible": {
+		"prefix": "collapsible",
+		"body": [
+			"[%collapsible]",
+			"====",
+			"$0",
+			"====",
+			""
+		],
+		"description": "adoc collapsible"
+	}
+}

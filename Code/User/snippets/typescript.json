@@ -1,0 +1,84 @@
+{
+	// Place your snippets for typescript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"firebase import typescript": {
+		"prefix": "firebase-import",
+		"body": [
+			"import * as functions from 'firebase-functions';",
+			"import * as admin from 'firebase-admin';",
+			"admin.initializeApp();",
+			"",
+			"$0"
+		],
+		"description": "firebase import typescript"
+	},
+	"firebase function": {
+		"prefix": "firebase-function",
+		"body": [
+			"import * as functions from 'firebase-functions';",
+			"import * as admin from 'firebase-admin';",
+			"",
+			"admin.initializeApp();",
+			"",
+			"export const ${1:helloWorld} = functions.https.onRequest((request, response) => {",
+			"  // request.method request.get request.query.foo request.body.text request.rawBod",
+			" response.send(\"Hello from Firebase!\");",
+			"});",
+			""
+		],
+		"description": "firebase function"
+	},
+	"firebase add to Realtime database": {
+		"prefix": "firebase-realtimedatabase-add",
+		"body": [
+			"const document = await admin.database()",
+			"  .ref('/${1:collection_name}')",
+			"  .push({${2:data}: ${3:value}});",
+			"$0"
+		],
+		"description": "firebase add to Realtime database"
+	},
+	"express RESTful router": {
+		"prefix": "express-rest",
+		"body": [
+			"${1:app}.route('/${2:route}')",
+			"  .get(function (req, res) {",
+			"    res.status(200).json({ result: ${3:req.method} })",
+			"  })",
+			"  .post(function (req, res) {",
+			"    // created",
+			"    res.status(201).json({ result: ${4:req.method} })",
+			"  })",
+			"  .put(function (req, res) {",
+			"    // 202 accepted, 204 No Content",
+			"    res.status(202).json({ result: ${5:req.method} })",
+			"  })",
+			"  .delete(function (req, res) {",
+			"    res.status(200).json({ result: ${6:req.method} })",
+			"  })",
+			""
+		],
+		"description": "express RESTful router"
+	},
+	"express request": {
+		"prefix": "express-request",
+		"body": [
+			"${1:app}.${2:get}('${3:/}', function (req, res) {",
+			"  res.status(${4:200}).send(${5:\"Hello from Express on Firebase with CORS! \" + req.baseUrl})",
+			"})",
+			""
+		],
+		"description": "express request"
+	}
+}

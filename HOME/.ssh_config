@@ -1,0 +1,69 @@
+# ~/.ssh/config
+
+CanonicalizeHostname yes
+
+# GENERIC CONFIGURATION
+Host *
+    ForwardX11 yes
+
+# Personal GitLab.com
+Host gitlab.com
+  Preferredauthentications publickey
+  IdentityFile ~/.ssh/gitlab_personal
+
+# Work GitLab instance
+Host gitlab.company.com
+    Preferredauthentications publickey
+    IdentityFile ~/.ssh/example_com_rsa
+
+# GitLab.com server
+Host gitlab.com
+    IdentityFile ~/.ssh/private-key-filename-01
+
+# Private GitLab server
+Host gitlab.pb.avantys.de
+    IdentityFile ~/.ssh/avi.mehenwal@avantys.de
+
+# skysails raspberry pi gateway
+Host skysails
+    HostName skysails
+    User root
+
+# Personal GitHub account
+Host github.com
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/github_personal
+
+# Work GitHub account
+Host github.com-work
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/work_rsa
+
+# AWS Host
+Host aws
+    User ubuntu
+    HostName ec2-3-86-255-142.compute-1.amazonaws.com
+    IdentityFile ~/.ssh/avi-instapy.pem
+
+Host aws2
+    User ubuntu
+    HostName ec2-3-80-208-61.compute-1.amazonaws.com
+    IdentityFile ~/.ssh/aws-micro.pem
+
+# BACKFLIP-LAB
+Host ?
+    HostName fgcn-backflip%h.cs.uni-paderborn.de
+    User avi
+    IdentityFile ~/.ssh/new_key_1
+Host fgcn-backflip2.cs.uni-paderborn.de
+    HostName fgcn-backflip2.cs.uni-paderborn.de
+    User backflip2
+
+# backflip 2
+Host bf2
+    Hostname fgcn-backflip2.cs.uni-paderborn.de
+    User avi

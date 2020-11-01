@@ -1,0 +1,51 @@
+{
+	// Place your snippets for shellscript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"bash function with 2 arguments": {
+		"prefix": "function",
+		"body": [
+		  "function ${1:name} () {",
+		  "    local ${2:arg1}=\\$1",
+		  "    local ${3:arg2}=\\$2",
+		  "    $0",
+		  "    if [ \"$#\" == \"${4:2}\" ]; then",
+		  "        echo \"Arguments \\$${2:arg1} \\$${3:arg2}\"",
+		  "        return 0",
+		  "    else",
+		  "        echo \"Number of arguments=$# do not match\"",
+		  "        return 1",
+		  "    fi",
+		  "}",
+		  "",
+		  "${1:name} \"${5:argument1}\" \"${6:argument2}\"",
+		  ""
+		],
+		"description": "bash function with 2 arguments"
+	  },
+	  "array for loop": {
+		"prefix": "for-array",
+		"body": [
+		  "for ${1:line} in ${2:$(seq 5 10)}",
+		  "do",
+		  "    echo \"$${1:line}\"",
+		  "    $0",
+		  "done",
+		  ""
+		],
+		"description": "array for loop"
+	  },
+	  "read one line at a time from file": {
+		"prefix": "read-sequential",
+		"body": [
+		  "while IFS= read -r line; do",
+		  "    echo \"Text read from file: \\$line\"",
+		  "    $0",
+		  "done < \\$${1:FILENAME}",
+		  ""
+		],
+		"description": "read one line at a time from file"
+	  }
+}

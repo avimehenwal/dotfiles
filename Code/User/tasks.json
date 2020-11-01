@@ -1,0 +1,91 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "dot -> svg",
+      "type": "shell",
+      "command": "${input:graphvizAlgorithm}",
+      "args": [
+        "-Tsvg",
+        "${file}",
+        ">",
+        "${workspaceFolder}/content/.vuepress/public/diagrams/${fileBasenameNoExtension}.svg",
+        "|", "brave-browser",
+        "${workspaceFolder}/content/.vuepress/public/diagrams/${fileBasenameNoExtension}.svg",
+      ]
+    },
+    {
+      "label": "Number of Lines of code for project",
+      "type": "shell",
+      "command": "cloc (git ls-files)"
+    },
+    {
+      "label": "Spellcheck on File :NLP",
+      "type": "shell",
+      "command": "hunspell",
+      "args": [
+        "${file}"
+      ]
+    },
+    {
+      "label": "svgo: optimize all svgs",
+      "type": "shell",
+      "command": "find . -name '*.svg' -exec svgo --pretty -i {} \;",
+      "args": [
+        "${file}"
+      ]
+    },
+    {
+      "label": "Text Frequency - SEO keyword",
+      "type": "shell",
+      "command": "tr",
+      "args": [
+        "' '", "\\n", "<", "${file}",
+        "|", "tr", "'[:upper:]'", "'[:lower:]'",
+        "|", "sort",
+        "|", "uniq", "--repeated", "--count",
+        "|", "sort", "--reverse", "--numeric-sort",
+        "|", "sed", "'1d'",                         // remove first record with maximum number for spaces
+        "|", "awk", "'{print $2\"\\t\"$1}'",        // format data as per termgraph format
+        "|", "termgraph", "--custom-tick", "▇",     // UnicodeEncodeError: 'latin-1' codec can't encode character '\u2587'
+        "--title",
+        "SEO Text Frequency Report",                // https://www.fileformat.info/info/unicode/char/2587/index.htm
+        "--color", "blue",
+      ]
+    },
+    {
+      "label": "Execute bash script",
+      "type": "shell",
+      "command": "${file}",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel":"dedicated",
+      }
+    },
+  ],
+  "inputs": [
+    {
+      "type": "pickString",
+      "id": "graphvizAlgorithm",
+      "description": "Which algorithm to use to generate graph?",
+      "options": [
+        "dot",
+        "neato",
+        "fdp",
+        "sfdp",
+        "twopi",
+        "circo"
+      ],
+      "default": "dot"
+    },
+    {
+      "type": "promptString",
+      "id": "componentName",
+      "description": "Name your component.",
+      "default": "my-new-component"
+    }
+  ]
+}

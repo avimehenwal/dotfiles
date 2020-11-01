@@ -1,0 +1,59 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+	// Placeholders with the same ids are connected.
+	// Example:
+	"svgcontainer": {
+		"scope": "markdown,svg,html,vue-html",
+		"prefix": "svgcontainer",
+		"body": [
+			"<?xml version=\"1.0\" encoding=\"utf-8\"?>",
+			"<svg height=\"500\" width=\"500\" viewBox=\"0 0 500 500\" xmlns=\"http://www.w3.org/2000/svg\">",
+			"  <title id=\"${1:title}\">${1:title}</title>",
+			"  <desc>${2:description}</desc>",
+			"",
+			"  <polygon class=\"triangle\" style=\"fill:blue\" points=\"250,60 100,400 400,400\">",
+			"    <animate",
+			"        attributeType=\"CSS\"",
+			"        attributeName=\"opacity\"",
+			"        from=\"1\"",
+			"        to=\"0\"",
+			"        dur=\"5s\"",
+			"        repeatCount=\"indefinite\"",
+			"    />",
+			"  </polygon>",
+			"  Sorry, your browser sucks :( Try switching to chrome, its the gold standard bitch!",
+			"</svg>"
+		],
+		"description": "svgcontainer"
+	},
+	"circle": {
+		"scope": "markdown,html,vue-html,svg",
+		"prefix": "circle",
+		"body": [
+			"",
+			"<circle r=\"$1\" cx=\"$2\" cy=\"$3\" fill=\"$4\" stroke=\"$5\" stroke-width=\"$6\"/>",
+			""
+		],
+		"description": "svg circle"
+	},
+	"circledef": {
+		"scope": "markdown,html,vue-html,svg",
+		"prefix": "circledef",
+		"body": [
+			"<defs>",
+				"<circle id=\"$1\" r=\"$2\" cx=\"$3\" cy=\"$4\" fill=\"$5\" stroke=\"$6\" stroke-width=\"$7\"/>",
+			"</defs>",
+			"",
+			"<use xlink:href=\"#$8\"/>",
+			"<use xlink:href=\"#$8\" x=\"$9\" y=\"$10\"/>",
+			""
+		],
+		"description": "svg circle def use"
+	},
+
+
+}

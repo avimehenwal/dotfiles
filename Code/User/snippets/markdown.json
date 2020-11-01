@@ -1,0 +1,388 @@
+{
+	// Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	"signature": {
+		"prefix": "signature",
+		"body": [
+			"",
+			"#### :v: Get in touch with me",
+			"",
+			"> I am looking for Jobs ... :sunglasses:",
+			"",
+			"* [Github](https://github.com/avimehenwal/)",
+			"* [My Website](https://avimehenwal.in)",
+			"* [My Blog v2](https://avimehenwal2.netlify.app/)",
+			"* [Twitter Handle](https://twitter.com/avimehenwal)",
+			"* [LinkedIn](https://in.linkedin.com/in/avimehenwal)",
+			"* [Stackoverflow](https://stackoverflow.com/users/1915935/avi-mehenwal)",
+			"",
+			"<a href=\"https://www.buymeacoffee.com/F1j07cV\" target=\"_blank\"><img src=\"https://cdn.buymeacoffee.com/buttons/default-orange.png\" alt=\"Buy Me A Coffee\" style=\"height: 51px !important;width: 217px !important;\" ></a>",
+			"",
+			" Spread Love :hearts: and not :no_entry_sign: hatred   [![Twitter Follow](https://img.shields.io/twitter/follow/avimehenwal.svg?style=social)](https://twitter.com/avimehenwal)",
+		],
+		"description": "Project Readme signature snippet"
+	},
+	"frontmatter": {
+		"prefix": "frontmatter",
+		"body": [
+			"---",
+			"title: ${1:$TM_FILENAME_BASE}",
+			"tags:",
+			"- $2",
+			"---",
+			"",
+			"# ${1:$TM_FILENAME_BASE}",
+			"",
+			"<TagLinks />",
+			"",
+			"$0",
+			"",
+			"",
+			"<Footer />",
+			"",
+		],
+		"description": "Frontmatter tags to markdown"
+	},
+	"warning": {
+		"prefix": "warning",
+		"body": [
+			"::: warning ${1:text}",
+			"${2:body}",
+			":::",
+			"",
+			"$0"
+		],
+		"description": "vuepress warning"
+	},
+	"danger": {
+		"prefix": "danger",
+		"body": [
+			"::: danger ${1:text}",
+			"${2:body}",
+			":::",
+			"",
+			"$0"
+		],
+		"description": "vuepress danger"
+	},
+	"tip": {
+		"prefix": "tip",
+		"body": [
+			"::: tip ${1:text}",
+			"${2:body}",
+			":::",
+			"",
+			"$0"
+		],
+		"description": "vuepress tip"
+	},
+	"quote": {
+		"prefix": "quote",
+		"body": [
+			"::: quote ${1}",
+			"${2:your quote goes here}",
+			":::"
+		],
+		"description": "vuepress quote"
+	},
+	"theorem markdown-it": {
+		"prefix": "theorem",
+		"body": [
+			"::: theorem ${1}",
+			"$0",
+			"::: right",
+			"[${2:wikipedia}](${3})",
+			":::",
+			""
+		],
+		"description": "theorem markdown-it"
+	},
+	"details": {
+		"prefix": "details ${1:text}",
+		"body": [
+			"::: details",
+			"${2:body}",
+			":::",
+			"",
+			"$0"
+		],
+		"description": "vuepress details"
+	},
+	// https://flowchart.vuepress.ulivz.com/#usage
+	"flowchart": {
+		"prefix": "v-flowchart",
+		"body": [
+			"@flowstart ant",
+			"st=>start: Start",
+			"ip=>inputoutput: Inputoutput",
+			"sub=>subroutine: Subroutine",
+			"cond=>condition: Process?",
+			"process=>operation: Process",
+			"e=>end: End",
+			"",
+			"st->ip",
+			"ip->cond",
+			"cond(yes)->process->e",
+			"cond(no)->sub",
+			"sub->e",
+			"@flowend"
+		],
+		"description": "flowchart"
+	},
+	"Pros and Cons component": {
+		"prefix": "v-proscons",
+		"body": [
+			"",
+			"<Procons>",
+			"  <template v-slot:pro>",
+			"    <h3>Some pros</h3>",
+			"    <ol>",
+			"      <li>${1:pros}</li>",
+			"    </ol>",
+			"  </template>",
+			"",
+			"  <template v-slot:con>",
+			"    <h3>Some cons</h3>",
+			"    <ol>",
+			"      <li>${2:cons}</li>",
+			"    </ol>",
+			"",
+			"  </template>",
+			"</Procons>"
+		],
+		"description": "Pros and Cons component"
+	},
+	// older BLOG v1
+	"s-code": {
+		"prefix": "s-code",
+		"body": [
+			"{{< code numbered=\"true\" >}}",
+			"$1",
+			"{{< /code >}}"
+		],
+		"description": "Code block snippet"
+	},
+	"s-tree": {
+		"prefix": "s-tree",
+		"body": [
+			"{{% fileTree %}}",
+			"$1",
+			"{{% /fileTree %}}"
+		],
+		"description": "Code block snippet - Filetree"
+	},
+	"s-codepen": {
+		"prefix": "s-codepen",
+		"body": [
+			"{{% codePen $1 %}}"
+		],
+		"description": "Code block snippet - CodePen"
+	},
+	"s-note": {
+		"prefix": "s-note",
+		"body": [
+			"{{% note %}}",
+			"$1",
+			"{{% /note %}}"
+		],
+		"description": "Code block snippet - Note"
+	},
+	"s-warning": {
+		"prefix": "s-warning",
+		"body": [
+			"{{% warning %}}",
+			"$1",
+			"{{% /warning %}}"
+		],
+		"description": "Code block snippet - warning"
+	},
+	"s-quote": {
+		"prefix": "s-quote",
+		"body": [
+			"{{<quote>}}",
+			"$1",
+			"{{</quote>}}"
+		],
+		"description": "Code block snippet - quote"
+	},
+	"s-cmd": {
+		"prefix": "s-cmd",
+		"body": [
+			"{{% cmd %}}",
+			"$1",
+			"{{% /cmd %}}"
+		],
+		"description": "Command snippet"
+	},
+	"mermaid three box": {
+		"prefix": "mermaid-flowchart",
+		"body": [
+			"```mermaid",
+			"graph ${1|LR,TD,BT,TB,RL|}",
+			"A(${2:caption}):::green",
+			"B(${3:caption}):::orange",
+			"C(${4:caption}):::purple",
+			"",
+			"A --> B -- ${5:Some text} --> C${0}",
+			"",
+			"classDef green fill:#1f9,stroke-width:0px;",
+			"classDef orange fill:#f96,stroke-width:0px;",
+			"classDef yellow fill:#FFE873,stroke-width:0px;",
+			"classDef blue fill:#b8d4ff,stroke-width:0px;",
+			"classDef purple fill:#f9f,stroke:#333,stroke-width:0px;",
+			"",
+			"click A \"https://www.wikipedia.org/\" \"Click to open wikipedia\"",
+			"```",
+			""
+		],
+		"description": "mermaid three box"
+	},
+	"mermaid state diagram": {
+		"prefix": "mermaid-statediagram",
+		"body": [
+			"```mermaid",
+			"stateDiagram-v2",
+			"A : ${1:node name}",
+			"$0",
+			"state ${4:Tokenization Lexical Analysis} {",
+			"    [*] --> A : ${2:process1}",
+			"    A --> [*] : ${3:process2}",
+			"}",
+			"```"
+		],
+		"description": "mermaid state diagram"
+	},
+	"mermaid class diagram": {
+		"prefix": "mermaid-classdiagram",
+		"body": [
+			"```mermaid",
+			"classDiagram",
+			"  ${1:BaseClassName} <|-- ${2:SuperClass} : ${3:extends}",
+			"  class ${1:BaseClassName}{",
+			"    $0",
+			"    +username: str",
+			"    +password: str",
+			"    +verify_login()",
+			"  }",
+			"  class ${2:SuperClass}{",
+			"      +update_profile()",
+			"  }",
+			"link ${1:BaseClassName} \"http://www.github.com\" \"This is a tooltip for ${1:BaseClassName}\"",
+			"```",
+			""
+		],
+		"description": "mermaid class diagram"
+	},
+	"mermaid journey graphs": {
+		"prefix": "mermaid-journey",
+		"body": [
+			"```mermaid",
+			"journey",
+			"    title ${1:Some title}",
+			"    section Go to work",
+			"      ${0:Make tea}: 5: ${2:Me}",
+			"    section Go home",
+			"      Go downstairs: 5: ${2:Me}",
+			"```"
+		],
+		"description": "mermaid journey graphs"
+	},
+	"mermaid subgraph": {
+		"prefix": "subgraph",
+		"body": [
+			"subgraph ${1:some_id}",
+			"",
+			"end"
+		],
+		"description": "mermaid subgraph"
+	},
+	"quote component": {
+		"prefix": "quote-component",
+		"body": [
+			"<Quote text=\"${1:quote text}\" by=\"${2}\" />",
+			"",
+			"$0"
+		],
+		"description": "quote component"
+	},
+	"link-insert": {
+		"prefix": "link-insert",
+		"key": "Ctrl+k",
+		"body": [
+			"[${1:text}](${2:link})",
+			"$0"
+		],
+		"description": "Insert Hyperlink"
+	},
+	"readme template for github": {
+		"prefix": "readme",
+		"body": [
+			"[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)",
+			"[![badge1][badge1-img]][link1]",
+			"",
+			"[badge1-img]: https://img.shields.io/badge/avi-mehenwal-yellow",
+			"[link1]: https://github.com/avimehenwal",
+			"",
+			"# :open_file_folder: ${1:title}",
+			"",
+			"",
+			"## :tv: Live Link / Demo",
+			"",
+			":link: [Live Link][url]",
+			"",
+			"## :wrench: Installation / How to run?",
+			"",
+			"```",
+			"$0",
+			"```",
+			"",
+			"## :pushpin: ToDos",
+			"",
+			"",
+			"## :sparkles: Whats Inside?",
+			"",
+			"",
+			"### :beetle: [Open Issues][issue]",
+			"",
+			"",
+			"### :date: [Changelog][changelog]",
+			"",
+			"",
+			"## :paperclip: Other Information",
+			"",
+			"",
+			"## :herb: License",
+			"",
+			"MIT",
+			"",
+			"## :cyclone: References / Resources",
+			"",
+			"",
+			"[url]: ${7:liveLink}",
+			"[issue]: ${8:issue}",
+			"[changelog]: ./CHANGELOG.md",
+			"",
+			"---",
+			"",
+			""
+		],
+		"description": "readme template for github"
+	},
+	"bytefield": {
+		"prefix": "bytefield",
+		"body": [
+			".${1:A byteframe}",
+			"[bytefield]",
+			"----",
+			"(draw-column-headers)",
+			"(doseq [val (range 30)]",
+			"  (draw-box val))",
+			"$0",
+			"----",
+			""
+		],
+		"description": "bytefield"
+	}
+}

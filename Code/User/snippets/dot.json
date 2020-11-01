@@ -1,0 +1,80 @@
+{
+	// Place your snippets for dot here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// USE ->  https://snippet-generator.app/
+	"digraph": {
+		"prefix": "g-digraph",
+		"body": [
+			"digraph doesntMatter {",
+			"label = \"${1:grph label}\"",
+			"    layout=dot",
+			"    rankdir=LR",
+			"    bgcolor=\"transparent\"",
+			"    node [fontsize=24, colorscheme=set312, style=filled]",
+			"    edge [fontname=Helvetica]",
+			"",
+			"    a [label = \"${1:LabelText}\", fillcolor=1,]",
+			"    b [label = \"${2:LabelText}\", fillcolor=2,]",
+			"    c [label = \"C\", fillcolor=3,]",
+			"    d [label = \"D\", fillcolor=4,]",
+			"    e [label = \"E\", fillcolor=5,]",
+			"    d [fillcolor=6, style=\"rounded\", shape=diamond]",
+			"",
+			"    a -> b -> c",
+			"    a -> {d e}",
+			"    b -> c [w=10.0]",
+			"    c -> d [w=5.0,len=3]",
+			"    edge [style=\"setlinewidth(3)\", color=red]",
+			"    edge [len=3]",
+			"    a -> { b c d }",
+			"}",
+			""
+		],
+		"description": "dot digraph template"
+	},
+	"mindmap": {
+		"prefix": "g-mindmap",
+		"body": [
+			"digraph mindmap {",
+			"  bgcolor=\"transparent\"",
+			"  label = \"Mindmap\"",
+			"",
+			"  node [fontsize=20 style=filled colorscheme=set312]",
+			"  edge [fontsize=15 style=tapered penwidth=15 arrowhead=none ]",
+			"",
+			"  root [ fontsize=30 fillcolor=\"4:6\" shape=box style=\"rounded,filled\" ]",
+			"  a [fillcolor=1]",
+			"  b [fillcolor=2]",
+			"  c [fillcolor=3]",
+			"  d [fillcolor=5]",
+			"  e [fillcolor=6]",
+			"",
+			"  root -> {a b c d}",
+			"  root -> e [label=\"edge label\"]",
+			"}",
+			""
+		],
+		"description": "mindmap"
+	},
+	"piechart - graphviz": {
+		"prefix": "g-piechart",
+		"body": [
+			"digraph piechart {",
+			"    node [",
+			"      shape=circle",
+			"      style=wedged",
+			"      colorscheme=rdbu11",
+			"      width=1                 // graph size",
+			"      penwidth=0              // remove black border",
+			"      label=\"\"              // remove label",
+			"    ]",
+			"",
+			"    1 [ color=\"1:2:3:4:5:6:7:8:9\" ]",
+			"  }"
+		],
+		"description": "piechart - graphviz"
+	}
+}

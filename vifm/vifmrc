@@ -414,6 +414,9 @@ nnoremap O :!gvim %f<cr>
 " Open file in the background using its default program
 nnoremap gb :file &<cr>l
 
+" touch a new file
+nnoremap t :touch 
+
 " Interaction with system clipboard
 if has('win')
     " Yank current directory path to Windows clipboard with forward slashes
@@ -457,6 +460,11 @@ nnoremap <f5> :copy<cr>
 nnoremap <f6> :move<cr>
 nnoremap <f7> :mkdir<space>
 nnoremap <f8> :delete<cr>
+
+" directory jumps
+nnoremap gw :cd ~/WORK/b2c
+nnoremap gc :cd ~/dotfiles
+
 
 " ------------------------------------------------------------------------------
 

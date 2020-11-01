@@ -1,0 +1,125 @@
+{
+    "git.autofetch": true,
+    "window.zoomLevel": 0,
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "git.enableSmartCommit": true,
+    "python.diagnostics.sourceMapsEnabled": false,
+    "python.testing.pytestEnabled": true,
+    "C_Cpp.updateChannel": "Insiders",
+    "latex-workshop.view.pdf.viewer": "tab",
+    "editor.tabCompletion": "on",
+    "files.trimTrailingWhitespace": true,
+    "[vue]": {
+        "editor.tabSize": 2
+    },
+    "[typescript]": {
+        "editor.tabSize": 2
+    },
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "nativescript.analytics.enabled": false,
+    "emmet.triggerExpansionOnTab": true,
+    "editor.snippetSuggestions": "top",
+    // enable snippet suggestions specifically on markdown files
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    },
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,      // suggestions while typing comments
+        "strings": false        // when typing inside "string"
+    },
+    "emmet.showSuggestionsAsSnippets": true,
+    // Enable emmet in markdown files
+    // https://stackoverflow.com/questions/49956963/markdown-not-using-emmet
+    "emmet.excludeLanguages": [],
+    "emmet.includeLanguages": {
+        "markdown": "html",
+        "vue-html": "html",
+        "vue": "html"
+    },
+    "files.autoSave": "afterDelay",
+    "diffEditor.ignoreTrimWhitespace": true,
+    "graphvizPreview.engine": "dot",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "vim.easymotion": true,
+    "vim.hlsearch": true,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "line",
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.statusBarColorControl": true,
+    "vim.useSystemClipboard": true,
+    "workbench.colorCustomizations": {
+        "statusBar.background": "#005f5f",
+        "statusBar.noFolderBackground": "#005f5f",
+        "statusBar.debuggingBackground": "#005f5f"
+    },
+    "terminal.integrated.rendererType": "dom",
+    "search.showLineNumbers": true,
+    // KeyCode instead of code to respect sytemwide CAPS->ESC binding
+    "keyboard.dispatch": "keyCode",
+    "vim.disableExtension": true,
+    // commented because remove unused imports on save in development process
+    "editor.codeActionsOnSave": {
+        // "source.organizeImports": true
+    },
+    "svg.minify.removeUnusedNS": false,
+    "svg.minify.cleanupIDs": false,
+    // Commit like project is already released!
+    "conventionalCommits.scopes": [
+        "genesis",              // style(genesis): Start some new cool feature
+        "scaffold",             // style(scaffold) file, directory hierarchy structure
+        "core",                 // core of project
+        "cli",                  // command line interface
+        "website",              // if project has a website
+        "api",                  // feat(api), refact(api), fix(api)
+        "parser",               // feat(parser): Add ability to parse arrays
+        "package-manager",      // js/ts/npm/pip/cargo build(package-manager), refactor(package-manager)
+        "changelog",            // docs(changelog): Update changelog for release
+        "readme",               // docs(readme): Add instructions
+        "component",            // style(component), fix(component)
+        "lint",                 // style(lint)
+        "router",               // feat(router) routing CRUD changes
+        "state-management",     // feat(state-management): Add XXX state
+        "localization",         // feat(localization): Add polish language
+        "release",              // chore(release): 1.4.3
+        "vscode",               // chore(vscode): tasks, debugger, setting. No production code change
+    ],
+    "svg.minify.addClassesToSVGElement": true,
+    "svg.minify.addAttributesToSVGElement": true,
+    "gitlens.advanced.messages": {
+        "suppressCommitHasNoPreviousCommitWarning": true
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "task.problemMatchers.neverPrompt": {
+        "shell": true
+    },
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.semanticHighlighting.enabled": true,
+    "python.languageServer": "Microsoft",
+    "editor.wordWrap": "on",
+    "svg.preview.mode": "svg",
+    "search.collapseResults": "auto",
+    "editor.tabSize": 2,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "asciidoc.use_kroki": true,
+    "asciidoc.previewFrontMatter": "show",
+    "files.associations": {
+        "*.adoc": "asciidoc"
+    },
+    "workbench.colorTheme": "Visual Studio Light",
+}

@@ -1,0 +1,69 @@
+#!/bin/bash
+
+#!/usr/bin/fish
+#!/usr/bin/env python
+
+#PRE=[PRE-COMMIT-HOOK]
+#FISH=/usr/bin/fish
+#HOOK=$HOME/.config/git/githook-pre-commit-handler.fish
+
+# $FISH $HOOK
+# Read user input, assign stdin to keyboard
+# exec < /dev/tty
+# $FISH -c 'git difftool --dir-diff HEAD'
+# $FISH -c git.spellcheck
+# Review staged changes for this commit
+# $FISH -c 'git difftool'
+# $FISH -c 'git st'
+# git add --interactive
+# $FISH -c 'git diff --staged --compact-summary'
+# $FISH -c 'git difftool'
+
+# while read -p "$PRE Have you double checked that only relevant files were added? (Y/n) " yn; do
+#     case $yn in
+#         [Yy] ) break;;
+#         [Nn] ) echo -e "$PRE Please ensure the right files were added!"; $FISH $HOOK;;
+#         * ) echo -e "$PRE Please answer y (yes) or n (no):" && continue;
+#     esac
+# done
+# while read -p "$PRE Has the documentation been updated? (Y/n) " yn; do
+#     case $yn in
+#         [Yy] ) break;;
+#         [Nn] ) echo -e "$PRE Please add or update the docs!"; exit 1;;
+#         * ) echo -e "$PRE Please answer y (yes) or n (no):" && continue;
+#     esac
+# done
+# while read -p "$PRE Do you know which issue or PR numbers to reference? (Y/n) " yn; do
+#     case $yn in
+#         [Yy] ) break;;
+#         [Nn] ) echo -e "$PRE Better go check those tracking numbers!"; exit 1;;
+#         * ) echo -e "$PRE Please answer y (yes) or n (no):" && continue;
+#     esac
+# done
+# while read -p "$PRE Would you like to remove .bak files? (Y/n) " yn; do
+#     case $yn in
+#         [Nn] ) break;;
+#         [Yy] ) echo -e "$PRE Now cleaning .bak files created by aspell"; find . -type f -name '*.bak' -delete;;
+#         * ) echo -e "$PRE Please answer y (yes) or n (no):" && continue;
+#     esac
+# done
+
+
+# UNCOMMENT WHEN TESTING
+# exit 1
+
+# STDIN can be closed again with
+# exec <&
+# /home/avi/.config/git/pre-commit: line 40: syntax error near unexpected token `newline'
+
+
+
+# import sys
+# import subprocess
+
+# sys.stdin = open("/dev/tty", "r")
+# user_input = subprocess.check_output("read -p \"Please give your input: \" userinput && echo \"$userinput\"", shell=True, stdin=sys.stdin).rstrip()
+# print(user_input)
+
+# sys.exit(1)
+# dialog --inputbox "Enter input" 10 35

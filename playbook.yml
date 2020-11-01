@@ -1,0 +1,172 @@
+---
+- name: Avi Mehenwal dotfiles provisioning playbook
+  hosts: "{{ variable_host | default('all') }}"
+  # connection: local
+  vars:
+    # Only apt, aptitude packages
+    packages:
+    - tree
+    - fish
+    - xclip
+    - curl
+    - git
+    - unzip   # required by unarchive module {tar and unzip}
+    - vim
+    - neovim
+    - fonts-powerline
+    - copyq
+    - ranger
+    - python-dev
+    - python-pip
+    - python3-dev
+    - python3-pip
+    - virtualbox-ext-pack   # for USB support
+    sys_user: avi
+    download_dir: "/home/{{ sys_user }}/mySoftwares"
+    dotfile: "git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+    dotfile_co: "{{ variable_dotfile | default('false') }}"
+    # dotfile: "git --git-dir=$HOME/mySoftwares/EXP/ansible/.dotfiles/ --work-tree=$HOME"
+    # List all git-repositories to be downloaded here
+    git_repositories:
+    - 
+  tasks:
+  - debug:
+      msg: "{{ sys_user }} {{ download_dir }} {{ variable_host }}" 
+    tags:
+    - test
+    ignore_errors: yes
+  
+  - name: Installing apt packages, some may fail
+    block:
+    - name: Update the cache
+      apt: "update_cache=yes"
+      become: true
+    - name: Install a list of packages
+      become: true
+      tags:
+      - pkm-mgr
+      apt:
+        name: "{{ packages }}"
+        state: present
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+    ignore_errors: yes
+  
+  - name: Remove Python 2 virtualenv
+    become: true
+    tags:
+    - python-dev
+    apt: name=python-virtualenv state=absent
+  - name: Install latest pip
+    become: true
+    tags:
+    - python-dev
+    pip: executable=pip3 name=pip state=latest
+  - name: Install Python 3 virtualenv
+    become: true
+    tags:
+    - python-dev
+    pip: executable=pip3 name=virtualenv state=latest
+
+  - name: Create download_dir directory if it does not exist
+    file:
+      path: "{{ download_dir }}"
+      state: directory
+  - name: Install diff-so-fancy
+    become: true
+    tags:
+    - shell-tools
+    get_url:
+      url: https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy
+      dest: /usr/local/bin
+      mode: u=rwx,g=rx,o=rx
+      owner: root
+      group: root
+  - name: Download fzf fuzzy finder repo
+    tags:
+    - fzf
+    git:
+      repo: https://github.com/junegunn/fzf.git
+      dest: "{{ download_dir }}/fzf"
+  - name: install FZF
+    tags:
+    - fzf
+    shell: "{{ download_dir }}/fzf/install --all"
+  
+  - name: "Download OMF oh-my-fish"
+    become: false
+    tags:
+    - fish
+    get_url:
+      url: "https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install"
+      dest: "{{ download_dir }}/omf.install"
+    when: {{ variable_host }} == "localhost"
+  - name: "Install Oh-my-fish"
+    ignore_errors: yes
+    become: false
+    tags:
+    - fish
+    shell: "fish {{ download_dir }}/omf.install --noninteractive --yes"
+    # shell: "yes | {{ download_dir }}/oh-my-fish-6/bin/install"
+    args:
+      creates: ~/.config/fish/conf.d/omf.fish
+    when: {{ variable_host }} == "localhost"
+  - name: Install FishMarks for bookmarks in shell
+    tags:
+    - fish
+    shell: curl -L https://github.com/techwizrd/fishmarks/raw/master/install.fish | fish
+    when: {{ variable_host }} == "localhost"
+  - name: Make fish shell default shell for sys_user
+    become: true
+    tags:
+    - fish
+    user:
+      name: "{{ sys_user }}"
+      shell: /usr/bin/fish
+
+  - name: dotfiles - Initialize bare repo at $HOME/.dotfiles
+    become: false
+    tags:
+    - dotfile
+    shell: git init --bare $HOME/.dotfiles
+    args:
+      creates: $HOME/.dotfiles
+    when: dotfile_co
+  - name: dotfiles - add and set remote
+    ignore_errors: yes
+    tags:
+    - dotfile
+    shell: "{{dotfile}} remote add origin https://github.com/avimehenwal/dotfiles.git"
+    when: dotfile_co
+  - name: dotfiles - set config not to show untracked files
+    tags:
+    - dotfile
+    shell: "{{dotfile}} config status.showUntrackedFiles no"
+    when: dotfile_co
+  - name: dotfiles - checkout local ubuntu branch
+    ignore_errors: yes
+    tags:
+    - dotfile
+    shell: "{{dotfile}} checkout -b ubuntu"
+    when: dotfile_co
+  - name: Clean conflicting .fish files to enable smooth pull
+    ignore_errors: yes
+    file :
+      path: '{{ item }}'
+      state: absent
+    with_items:
+      - "$HOME/.config/fish/conf.d/omf.fish"
+      - "$HOME/.config/fish/config.fish"
+      - "$HOME/.config/fish/functions/fish_user_key_bindings.fish"
+      - "$HOME/.config/fish/functions/fzf_key_bindings.fish"
+    when: dotfile_co
+  - name: dotfiles - Pull origin ubuntu on local ubuntu branch
+    tags:
+    - dotfile
+    shell: "{{dotfile}} pull origin ubuntu"
+    when: dotfile_co
+  - name: dotfile - set local ubuntu branch to track remote ubuntu branch
+    tags:
+    - dotfile
+    shell: "{{dotfile}} branch --set-upstream-to=origin/ubuntu ubuntu"
+    when: dotfile_co

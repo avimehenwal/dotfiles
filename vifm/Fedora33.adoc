@@ -1,0 +1,39 @@
+= Fedora 33 Migration
+
+== Right off the bat
+
+[source, bash]
+----
+dnf install copyq xclip
+vifm stow
+alacritty vim neovim
+zsh fish
+----
+
+
+* [ ] Map kbd:[F10] to `copyq toggle`
+* [ ] Add copyQ to Startup Application, install `GNOME Tweaks GUI` program to do that
+* [ ] Swam kbd:[caps] and kbd:[esc] key behaviour
+* Checkout your dot files
+* Install `vim-plug` then `./deploy vim`
+* Install docker https://fedoramagazine.org/docker-and-fedora-32/
+* what are powerline symbols?
+* Install programmer font mononoki https://copr.fedorainfracloud.org/coprs/skidnik/mononoki/
+
+
+WARNING: `copyQ` doent work on fedora 33 because it uses Wayland windowing system instead of X11
+
+* http://eradman.com/entrproject/[Run command when file changes]
+
+[source,vimscript]
+----
+:au BufWritePost myfile.py :silent !./myfile.py
+----
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U_MBJcD3SFI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++
+
+++++
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GWQh_DmDLKQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+++++

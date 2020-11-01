@@ -1,0 +1,42 @@
+{
+	// Place your snippets for vue-html here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"data": {
+    "prefix": "data",
+    "body": [
+      "data: () => {",
+      "  return {",
+      "    ${1:key}: ${2:value}",
+      "  }",
+      "}"
+    ],
+    "description": "data"
+	},
+	"vuejs loop rendering": {
+		"prefix": "v-for",
+		"body": [
+			"v-for=\"${2:item} in ${1:items}\" :key=\"${2:item}.${3:title}\""
+		],
+		"description": "vuejs loop rendering"
+	},
+	"vuejs router link": {
+		"prefix": "router-link",
+		"body": [
+			"<router-link :to=\"${1:path}\" tag=\"${2:a}\">",
+			"  {{ ${3:text} }}",
+			"</router-link>"
+		],
+		"description": "vuejs router link"
+	}
+}

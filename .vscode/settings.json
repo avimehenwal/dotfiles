@@ -6,6 +6,7 @@
     "alacritty",
     "shell",
     "neovim",
-    "www"
+    "www",
+    "all"
   ]
 }

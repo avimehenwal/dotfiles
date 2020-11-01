@@ -1,0 +1,234 @@
+= VIM Notes
+Avi Mehenwal <avi.mehenwal@gmai.com> v0.1
+
+The text-editor for a lifetime
+
+== Why VIM in the first place?
+
+. Ubiquitous
+. `operators`, `text objects` and `motions`
+. Programming your edits
+. Generate your own features and hotkeys
+. Work with any file on any format
+. Work on _remote_ files
+. *Undo-trees* unlike lists
+. Lets you think of efficient movements
+. terminal bufferes
+
+tabs => window containers => buffer viewports => File proxies
+buffers are file porxies
+`args` are subset of files you loaded when you opened the vim
+  * stable subset of buffer list
+* do not use tab for each file, they are window containers
+
+### Project management with vim
+
+
+
+> compare vim and vscode resource consumption for your workflow
+
+.Vim Philospohies
+- good integration with other linux tools and piping
+- Do one things nicely
+- text-editor and *not* an IDE
+- Focus on efficiency rather than features
+
+![Terminal Forever <3](https://www.commitstrip.com/wp-content/uploads/2016/12/Strip-Lignes-de-commande-english650-final-2.jpg)
+
+== dotfiles
+https://news.ycombinator.com/item?id=11070797[Managing dotfiles] using `git --bare` repositories.
+
+=== open all dotfiles in vscode
+```
+code (git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME ls-tree -r ubuntu | awk '{print $4}')
+```
+
+=== install and switch to fish shell
+[source,bash]
+----
+sudo apt install fish
+# Make default shell
+chsh -s /usr/bin/fish $USER
+----
+Logout and login again to reflect the cdhanges
+
+=== Install some TUI tools
+[source,bash]
+----
+
+# diff-so-fancy
+wget https://raw.githubusercontent.com/so-fancy/diff-so-fancy/master/third_party/build_fatpack/diff-so-fancy -P $HOME/.local/bin
+
+# fzf fuzzy finder
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf; ~/.fzf/install
+
+# fd command https://github.com/sharkdp/fd/releases
+wget https://github.com/sharkdp/fd/releases/download/v7.3.0/fd-musl_7.3.0_amd64.deb
+sudo dpkg -i fd-musl_7.3.0_amd64.deb
+
+# Base16 shell
+git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+
+# Powerline fonts
+sudo apt-get install fonts-powerline
+
+# Fishmarks
+curl -L https://github.com/techwizrd/fishmarks/raw/master/install.fish | fish
+# OR
+git clone http://github.com/techwizrd/fishmarks.git
+
+omf install bobthefish
+
+# bat https://github.com/sharkdp/bat/releases
+set -x BAT_THEME 'Monokai Extended'
+----
+
+----
+# omf list
+Plugins
+colored-man-pages	fish-spec		fuck			omf
+
+Themes
+batman		bobthefish	default
+----
+
+=== setup bare repository
+[source,bash]
+----
+# Add abbreviation in fish
+abbr -a d 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+git init --bare $HOME/.dotfiles
+d remote add origin https://github.com/avimehenwal/dotfiles.git
+d config status.showUntrackedFiles no
+d checkout -b ubuntu
+d pull origin ubuntu
+d branch --set-upstream-to=origin/ubuntu ubuntu
+d pull
+d status
+
+# Not required
+// cloning dotfiles
+// git clone https://github.com/avimehenwal/dotfiles.git
+// rsync --recursive --verbose --exclude '.git' dotfiles/ $HOME/
+// rm --recursive dotfiles
+
+----
+
+
+=== Replication
+[source,bash]
+
+----
+sudo pacman -Syy
+sudo pacman -S git
+
+Adjust apps on FAV launch menubar
+
+#Make zsh your default shell and install oh-my-zsh framework
+chsh -l
+sudo chsh -s $(which zsh) avi   # username
+vipw    # change shell forcefully directly from file
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+#Terminal Themes (now in zshrc)
+# change gconftool to gconftool-2
+
+#Configure git ssh access, install xclip
+cd ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa
+xclip -sel clip < ~/.ssh/id_rsa.pub
+----
+
+[qanda]
+.git bare repositories
+What are *git bare* repositories?::
+  . they contain no working or checked out copy of your source files.
+  . bare repos store git revision history of your repo in the root folder of your repository instead of in a .git subfolder. Note… bare repositories are customarily given a .git extension.
+
+
+=== Usage
+[source,bash]
+----
+dotfiles status
+dotfiles add .gitconfig
+dotfiles commit -m 'Add gitconfig'
+dotfiles push
+----
+
+github ssh-key setup
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+== Useful installs and Issues
+
+==== docear
+download source from website
+----
+# jdk 8 is required, doesnt do well with 11
+sudo apt install openjdk-8-jre
+
+# incase jave 11 already installed
+sudo update-alternatives --config java
+----
+
+Setting up PDF viewer: Okular
+----
+sudo apt-get install okular
+
+# make it your default PDF viewer
+sudo apt install okular-extra-backends
+
+# personal development vagrant VM for testing with dotfiles
+
+```
+vagrant up
+
+# Install all packages you will or use dotfile.yml ansible provisioner playbook
+vagrant package --output myVagrant.box
+
+# set environment variable MYVAGRANT_BOX
+set -x MYVAGRANT_BOX /home/avi/Excalibur/myVagrant.box
+```
+----
+
+## TUI Apps
+
+- s-tui Resource utilization
+  - pip install s-tui
+  - apt install stress
+- mtr - Traceroute
+- $ sudo apt install pydf - df filesystem disk space usage
+- apt nnn - File Analyser
+- apt sl, cmatrix
+- Text to speech - espeak
+- apt-get install gcalcli
+- sudo apt install npm;
+- pip install speedtest-cli
+- $ sudo apt-get install yank
+- sudo snap install lnav
+- sudo npm i -g git-stats
+-
+
+## Fish shell vs Bash
+```
+# Short circuit:
+foo && bar      # bash
+foo; and bar    # fish
+
+# Redirect stderr:
+./foo 2>outfile # bash
+./foo ^outfile  # fish
+
+# Command substitution:
+file `which ls` # bash
+file (which ls) # fish
+```
+
+## AviScripts
+
+```
+git submodule add git@github.com:avimehenwal/aviscripts.git $HOME/aviscripts
+git submodule update
+```
