@@ -46,7 +46,9 @@ function install_homedir_config {
 }
 
 function install_vim {
-	$BASE_CMD --target=$HOME/.vim/ --stow vim
+	VIM_TARGET=$HOME/.vim/
+	[ ! -d "$VIM_TARGET" ] && mkdir --parents $VIM_TARGET
+	$BASE_CMD --target=$VIM_TARGET --stow vim
 }
 
 function uninstall_vim {

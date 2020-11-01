@@ -495,3 +495,5 @@ source /home/avi/dotfiles/vifm/favicon.vifm
 " use bat instead of cat
 fileviewer Makefile,*.yml,*.json,*.md,*.adoc,*.sh env -uCOLORTERM bat --color always --wrap never --pager never %c -p
 
+fileviewer *.dot xdot
+
