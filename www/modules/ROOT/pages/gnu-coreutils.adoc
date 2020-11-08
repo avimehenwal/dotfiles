@@ -1,0 +1,73 @@
+= GNU Coreutils
+
+Apply **Advanced GNU coreutils patch** to display `cp` and `mv` commands with progress bars. 
+
+How to write and install your own manpages?::
+    `MANPATH` environment variable and tool
+
+    https://www.cyberciti.biz/faq/linux-unix-creating-a-manpage/
+List Recursively?::
+    `ls -R`
+How to exclude a directory with ripgrep?::
+    `rg --pretty --files-with-matches abbr --glob '!docs/'`
+
+.Test hash of downloads?
+[source, bash]
+----
+hash="some hash value from internet"
+[[ $(sha256sum xyz.tar.gzip | awk '{print $1}') == ${hash} ]] \
+    && echo "ok" \
+    || echo "NOT OK"
+----
+
+.extract audio from `mkv` files
+[source, bash]
+----
+find . -type f -name "*.mkv" \
+    -exec bash -c 'FILE="$1"; \
+    ffmpeg -i "${FILE}" -vn -c:a libmp3lame \
+    -y "${FILE%.mkv}.mp3";' _ '{}' \;
+----
+
+.convert whitespaces (tabs, spaces, newlines) to Newline characters
+[source, bash]
+----
+sed -r 's/\s+/\n/g'
+----
+
+.add Album art to music files?
+[source, bash]
+----
+ffmpeg -i input.mp3 -i cover.jpg -map_metadata 0 -map 0 -map 1 output.mp3
+
+ffprobe -show_streams -show_format DV06xx.avi
+ffmpeg -i destination.mp4
+----
+
+.ripgrep
+[source, bash]
+----
+rg 
+    --pretty <1>
+    --files-with-matches <2>
+    abbr
+    --glob <3>
+    '!docs/'
+----
+<1> Use colors with pager `less`
+<2> files-without-matches is also an option
+<3> Do not include these directories in search
+
+== Resources
+
+* https://yum-info.contradodigital.com/view-package/installed/coreutils/[How to use `dnf` commands tp upgrade a package?]
+* https://wiki.debian.org/coreutils[List of coreutils commands]
+** https://en.wikipedia.org/wiki/List_of_GNU_Core_Utilities_commands
+
+https://www.gnu.org/software/coreutils/[GNU coreutils]
+
+
+[graphviz]
+----
+include::example$git-graph.dot[]
+----

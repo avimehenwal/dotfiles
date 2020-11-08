@@ -1,5 +1,6 @@
 * xref:index.adoc[index]
 * xref:vim.adoc[vim]
+* xref:gnu-coreutils.adoc[GNU coreutils]
 
 .Chapters List
 * link:{attachmentsdir}/chart.html[view prebuilt HTML page]

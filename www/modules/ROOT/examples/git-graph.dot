@@ -1,0 +1,16 @@
+digraph G {
+  layout=dot
+  rankdir="LR";
+  bgcolor=transparent
+  node[width=0.15, height=0.15, shape=point, colorscheme=accent8];
+  edge[weight=2, arrowhead=none];
+
+  node[group=master];
+  edge[color=green]
+  1 -> 2 -> 3 -> 4 -> 5;
+
+  node[group=branch];
+  edge[color=red]
+  2 -> 6 -> 7 -> 4;
+}
+

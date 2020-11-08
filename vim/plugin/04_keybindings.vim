@@ -79,7 +79,7 @@ nnoremap <F3> :write<CR>
 inoremap <F3> <ESC>:write<CR>a
 " nnoremap <F4> :Ranger<CR>
 nnoremap <F4> :Vifm<CR>
-nnoremap <S-F4> :NERDTreeToggle<CR>
+" nnoremap <S-F4> :NERDTreeToggle<CR>
 
 nnoremap <F5> :edit<CR>
 " discard local buffer changes and load from disk
@@ -93,11 +93,11 @@ nnoremap <S-F6> :Git
 nnoremap <F8> :Rg 
 nnoremap <S-F8> :grep 
 
-nnoremap <F9> :terminal<CR>             "open terminal half-mode
-nnoremap <S-F9> :shell<CR>              "open terminal full-screen
+nnoremap <F9> :terminal<CR>
+nnoremap <S-F9> :shell<CR>
 " <F10> copyQ
 " <F11> Fullscreen
-nnoremap <F12> :make<CR>                "Build project
+nnoremap <F12> :make<CR>
 nnoremap <S-F12> :make 
 
 function! ToggleHelpF1()

@@ -9,6 +9,9 @@
 # Folders are not created by stow
 #
 # DEPENDENCY: GNU Stow
+#
+# stow -v --dir=$HOME/dotfiles --target=$HOME/.config/git --stow git
+# stow -v --dir=$HOME/dotfiles --target=$HOME/.config/git --delete git
 
 SOURCE=$HOME/dotfiles
 PARTIAL=$HOME/.config
@@ -16,7 +19,7 @@ PARTIAL=$HOME/.config
 BASE_CMD="stow -v --dir=$SOURCE"
 
 # CONFIG_DIRS=(nvim alacritty Code fish ranger vifm)
-CONFIG_DIRS=(nvim alacritty vifm)
+CONFIG_DIRS=(nvim alacritty vifm git)
 
 function create_dir {
 	# CONFLICT when stowing alacritty: existing target is not owned by stow: alacritty.yml
@@ -57,6 +60,8 @@ function uninstall_vim {
 
 
 # MAIN
+# initalize and pull submodules
+# git submodule update --init --recursive
 for PRG in "${CONFIG_DIRS[@]}"; do
 	TARGET=$PARTIAL/$PRG
 	STOW="$BASE_CMD --target=$TARGET"

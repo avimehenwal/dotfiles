@@ -2,6 +2,8 @@ all: clean build
 
 SHELL:=/bin/bash
 DIST:=docs
+ANTORA:=./node_modules/@antora/cli/bin/antora
+HTTP-SERVER:=./node_modules/http-server/bin/http-server
 
 
 clean:
@@ -9,12 +11,12 @@ clean:
 
 build:
 	DOCSEARCH_ENABLED=true DOCSEARCH_ENGINE=lunr NODE_PATH="$(npm -g root)" \
-	antora --to-dir ${DIST} \
+	${ANTORA} --to-dir ${DIST} \
 	--generator=./antora-site-generator-example-html-pages \
 	--generator antora-site-generator-lunr \
 	antora-playbook.yml
 	touch ${DIST}/.nojekyll
 
 web: build
-	http-server ${DIST}
+	${HTTP-SERVER} ${DIST}
 

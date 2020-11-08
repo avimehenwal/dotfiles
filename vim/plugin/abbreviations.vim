@@ -50,9 +50,8 @@ inoreabbrev :hi: 🙋
 " trailing space after abbr is expanded
 " https://stackoverflow.com/questions/11858927/preventing-trailing-whitespace-when-using-vim-abbreviations
 " -------------------------------------------------- 
-inoremap ` ``<left>
-inoremap < <><left>
-inoremap * **<left>
+" inoremap ` ``<left>
 inoremap ** ****<left><left>
+inoremap < <><left>
 inoremap [ []<left>
 inoremap ( ()<left>

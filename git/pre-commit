@@ -1,5 +1,8 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+git d
+
+# can use python or shells as well
 #!/usr/bin/fish
 #!/usr/bin/env python
 
