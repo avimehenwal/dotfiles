@@ -43,7 +43,7 @@ font:
     family: monospace
     style: Bold Italic
 
-  size: 11
+  size: 12
 
 # Shell Configuration
 shell:
@@ -52,7 +52,7 @@ shell:
     - --login
 # Maximum number of lines in the scrollback buffer.
 scrolling:
-  history: 10000
+  history: 100000
 
 # Window dimensions in character columns and lines
 window:
@@ -69,7 +69,7 @@ mouse_bindings:
 # Command instead of Control for MacOS
 key_bindings:
 # - { key: W, mods: Control, action: Quit }
-- { key: N, mods: Control, action: SpawnNewInstance }
+#- { key: N, mods: Control, action: SpawnNewInstance }
 - { key: Return,   mods: Control|Shift, action: SpawnNewInstance }
 
 # https://github.com/fatih/dotfiles/blob/master/alacritty.yml

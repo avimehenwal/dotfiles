@@ -10,6 +10,7 @@ Plug 'SirVer/ultisnips'                                                   "vscod
 Plug 'tpope/vim-sleuth'                                                   "shiftwidth and expandtab manager
 Plug 'tpope/vim-rhubarb'                                                  "fugitive suppliment
 Plug 'mhinz/vim-signify'                                                  "git-gutter alternative, shows +/- gitdiff
+Plug 'mhinz/vim-startify'                                                 "fancy start screen
 Plug 'markonm/traces.vim'                                                 "search and replace preview
 Plug 'dense-analysis/ale'                                                 "asynchronous lint engine
 Plug 'tpope/vim-fugitive'                                                 "version control within vim

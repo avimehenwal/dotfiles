@@ -1,6 +1,34 @@
 = GNU Coreutils
+:stem:
 
 Apply **Advanced GNU coreutils patch** to display `cp` and `mv` commands with progress bars. 
+
+== AWK
+
+* in 1970's
+* Scripting languague to do quick and dirty tasks like counting and reporting from files.
+* `awk` is superset of `grep`
+** shorter and better than writing python script
+
+> "MS-DOS was a pretty pathetic operating system"
+> Microsoft has left the chat
+
+* A lovestory
+
+
+== Do not use cat.
+
+Use `cat <file> | grep -i` is unoptimized. We are calling 2 programs.
+Use `grep <pattern> <file>`
+
+* cat is for `concatination` getting combined output from multiple files
+** Use `<` as `cat` alternative
+
+CAUTION: `>` will clear the contents of a the file. Use `<` with caution. Do not make type
+[stem]
+++++
+cat + grep = crep
+++++
 
 How to write and install your own manpages?::
     `MANPATH` environment variable and tool
