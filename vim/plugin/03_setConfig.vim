@@ -76,6 +76,12 @@ endif
 set display+=lastline  " :help 'display'
 " displaying whitespaces and tabs at the end
 
+" make mouse functions like split resize work with alakritty
+" doesnt work with nvim
+if has('mouse') && !has('nvim')
+  set ttymouse=sgr
+endif
+
 " -------------------------------------------------------------------------------------------
 " Build Tools and compilers for quickfix
 " NOTE: setting it here overrides the makeprg in project specific .vimrc files

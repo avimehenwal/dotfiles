@@ -126,6 +126,8 @@ export ABBR_USER_ABBREVIATIONS_FILE=$HOME/dotfiles/zsh/abbreviations
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.yarn/bin:$HOME/dotfiles/scripts/bin"
+# Add cargo rust to path
+export PATH="$PATH:$HOME/.cargo/bin"
 
 # Use NVM 
 export NVM_DIR="$HOME/.nvm"

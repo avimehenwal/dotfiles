@@ -3,21 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>3 Architecture :: AviMehenwal Dotfiles</title>
-    <link rel="canonical" href="http://127.0.0.1:8080/www/0.01/chapter_3.html">
+    <title>Terminal Emulator :: AviMehenwal Dotfiles</title>
+    <link rel="canonical" href="http://127.0.0.1:8080/www/0.01/terminal-emulator.html">
     <meta name="generator" content="Antora 2.3.4">
 <link rel="stylesheet" href="../../_/css/site.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <link rel="stylesheet" href="../../_/css/search.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXXX"></script>
   <script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', 'GTM-XXXXXXXX')</script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"> </script>
   </head>
   <body class="article">
 <header class="header" role="banner">
@@ -80,7 +74,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="gnu-coreutils.html">GNU coreutils</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="terminal-emulator.html">Terminal Emulators</a>
   </li>
 </ul>
@@ -104,7 +98,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="chapter_2.html">Chapter 2</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="chapter_3.html">Chapter 3</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -144,120 +138,58 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">dotfile documentation</a></li>
-    <li>Chapters List</li>
-    <li><a href="chapter_3.html">Chapter 3</a></li>
+    <li><a href="terminal-emulator.html">Terminal Emulators</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/avi/dotfiles/www/modules/ROOT/pages/chapter_3.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/avi/dotfiles/www/modules/ROOT/pages/terminal-emulator.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">3 Architecture</h1>
+<h1 class="page">Terminal Emulator</h1>
 <div class="sect1">
-<h2 id="_high_level_cambridge_mqtt_description"><a class="anchor" href="#_high_level_cambridge_mqtt_description"></a>High level Cambridge MQTT description</h2>
+<h2 id="_alacritty"><a class="anchor" href="#_alacritty"></a>Alacritty</h2>
 <div class="sectionbody">
-<div id="chartICVNSKTR"></div>
-<script>
-  c3.generate({
-    bindto: '#chartICVNSKTR',
-    size: { height: 400, width: 600 },
-    data: {
-      columns: [["Monday", "10"], ["Tuesday", "10"], ["Wednesday", "50"], ["Thursday", "25"]],
-      type: 'pie'
-    }
-  });
-</script>
-<div class="sect2">
-<h3 id="_3_1_client_scenario"><a class="anchor" href="#_3_1_client_scenario"></a>3.1 Client scenario</h3>
+<div class="quoteblock">
+<blockquote>
 <div class="paragraph">
-<p>Ogólny diagram sekwencji na którym użytkownik:</p>
+<p><a href="https://github.com/alacritty/alacritty" title="A cross-platform, GPU-accelerated terminal emulator">Alacritty</a> Fastest terminal emulator in existence</p>
+</div>
+</blockquote>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Autoryzuje sie I zdobywa token</p>
+<p>Written in rust</p>
 </li>
 <li>
-<p>Subskrybuje sie do kolejki</p>
-</li>
-<li>
-<p>Otrzymuje informacje z danego kanału</p>
-</li>
-<li>
-<p>Odsubskrybowuje sie z kolejki</p>
+<p>Uses GPU via OpenGL library</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_3_1_1_authorization"><a class="anchor" href="#_3_1_1_authorization"></a>3.1.1 Authorization</h3>
-<div class="paragraph">
-<p>Bardziej szczegółowy opis I diagram jak wygląda autoryzacja.</p>
-</div>
-<div class="paragraph">
-<p>Co taki dany oauth token może zawierać?</p>
-</div>
-<div class="imageblock kroki">
+<div class="listingblock">
+<div class="title">testing the speed</div>
 <div class="content">
-<img src="_images/diag-fa76e27cda17b2b5cea96cee61315839d19303c1.svg" alt="331_authorization">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">time tree / <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
 </div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>time the tree command slow output</td>
+</tr>
+</table>
 </div>
-<div class="sect2">
-<h3 id="_3_1_2_subscription"><a class="anchor" href="#_3_1_2_subscription"></a>3.1.2 Subscription</h3>
-<div class="paragraph">
-<p>Użytkownik będąc zautoryzowany może zapisać się do kanału.</p>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="_images/diag-7355dffdebb9f9b21fff58d6463e53832892c6b8.svg" alt="332_subscription">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3_1_3_receiving_data"><a class="anchor" href="#_3_1_3_receiving_data"></a>3.1.3 Receiving data</h3>
-<div class="paragraph">
-<p>Jak wygladać będzie przykładowa wiadomość z topica</p>
-</div>
-<div class="literalblock kroki-error">
-<div class="content">
-<pre>@startuml
-"Mqtt broker " --&gt; "Client ":Sends push messages\n regarding subscribed\ntopic</pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3_1_4_unsubscription"><a class="anchor" href="#_3_1_4_unsubscription"></a>3.1.4 Unsubscription</h3>
-<div class="paragraph">
-<p>Podobne informacje co w przypadku subskrypcji. Tym razem odsubskrybuje sie</p>
-</div>
-<div class="imageblock kroki">
-<div class="content">
-<img src="_images/diag-559ea9c1935a27760533fbbe4c9c3cea004d6f2d.svg" alt="334_unsubscription">
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_3_2_application_scenario"><a class="anchor" href="#_3_2_application_scenario"></a>3.2 Application scenario</h3>
-<div class="paragraph">
-<p>Ogólny diagram sekwencji na którym Aplikacja:</p>
-</div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<div class="title">Features</div>
+<ol class="arabic">
 <li>
-<p>Działa zaschedulowana</p>
+<p>Vi mode</p>
 </li>
 <li>
-<p>Pobiera dane z  gatewaya</p>
+<p>Forward and Backward search</p>
 </li>
-<li>
-<p>Przerabia je na eventy</p>
-</li>
-<li>
-<p>publikuje je dla na brookerze na określonej kolejce</p>
-</li>
-</ul>
-</div>
+</ol>
 </div>
 </div>
 </div>
@@ -269,7 +201,6 @@
 </main>
 </div>
 <footer class="footer">
-    <h1>CHART true</h1>
   www
     0 <br>
     Key: www Values =
@@ -300,30 +231,9 @@
 
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/lunr.js"></script>
-<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/www/0.01/chapter_3.html"></script>
+<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/www/0.01/terminal-emulator.html"></script>
 <script async src="../../_/../search-index.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
 
-  <script>
-    document.body.querySelectorAll('div.ct-chart').forEach((node) => {
-      const options = {
-        height: node.dataset['chartHeight'],
-        width: node.dataset['chartWidth'],
-        colors: node.dataset['chartColors'].split(',')
-      }
-      const dataset = Object.assign({}, node.dataset)
-      const series = Object.values(Object.keys(dataset)
-        .filter(key => key.startsWith('chartSeries-'))
-        .reduce((obj, key) => {
-          obj[key] = dataset[key]
-          return obj
-        }, {})).map(value => value.split(','))
-      const data = {
-        labels: node.dataset['chartLabels'].split(','),
-        series: series
-      }
-      Chartist[node.dataset['chartType']](node, data, options)
-    })
-  </script>
   </body>
 </html>

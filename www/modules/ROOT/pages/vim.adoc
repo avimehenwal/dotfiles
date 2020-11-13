@@ -47,7 +47,11 @@ List all command line mode keybindings?::
     `:help c_CTRL-R` or search inside `:help index`
 List all vimscript files loaded?::
     `:scriptnames`, `:commands`, `:fucntions`
+Search and replace multiple characters?::
+    `:s/[{,}]//g`
                                         
+TIP: When making a change the cursor position is remembered. `:changes`
+
 == Interesting Reads
 
 * https://stackoverflow.com/questions/1430164/differences-between-emacs-and-vim?rq=1

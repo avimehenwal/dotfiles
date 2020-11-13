@@ -1,0 +1,23 @@
+= Terminal Emulator
+:icons: font
+:experimental:
+:alacritty: https://github.com/alacritty/alacritty[Alacritty, title='A cross-platform, GPU-accelerated terminal emulator']
+
+== Alacritty
+
+> {alacritty} Fastest terminal emulator in existence
+
+* Written in rust
+* Uses GPU via OpenGL library
+
+.testing the speed
+[source, bash]
+----
+time tree / <1>
+----
+<1> time the tree command slow output
+
+.Features
+. Vi mode
+. Forward and Backward search
+
