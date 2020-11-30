@@ -128,6 +128,8 @@ export ABBR_USER_ABBREVIATIONS_FILE=$HOME/dotfiles/zsh/abbreviations
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/.yarn/bin:$HOME/dotfiles/scripts/bin"
 # Add cargo rust to path
 export PATH="$PATH:$HOME/.cargo/bin"
+# Add HomeBrew Package manager to path
+export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
 
 # Use NVM 
 export NVM_DIR="$HOME/.nvm"

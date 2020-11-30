@@ -2,6 +2,8 @@
 * xref:vim.adoc[vim]
 * xref:gnu-coreutils.adoc[GNU coreutils]
 * xref:terminal-emulator.adoc[Terminal Emulators]
+* xref:fedora.adoc[Fedora]
+* xref:linux.adoc[Linux]
 
 .Chapters List
 * link:{attachmentsdir}/chart.html[view prebuilt HTML page]

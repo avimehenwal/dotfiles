@@ -1,0 +1,10 @@
+= Linux
+:icons: font
+:experimental:
+
+== OS Features
+
+How to create a desktop menu entry for new appimage?::
+  `/use/share/applications` or `$HOME/.local/share/application` create a `app.desktop` entry.
+  *Eg:* `noSQL Workbench` for DynamoDB
+

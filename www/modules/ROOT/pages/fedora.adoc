@@ -1,0 +1,12 @@
+= Fedora
+:icons: font
+:experimental:
+
+== Fedora Packages
+
+* https://fedoraproject.org/wiki/Using_the_Koji_build_system[How to use `koji` build system?]
+* How to downgrade a package?
+* `koji download-build --arch=x86_64 clang-10.0.0-11.fc33`
+** `dnf install ./*.rpm` works
+
+

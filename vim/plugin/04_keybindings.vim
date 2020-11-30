@@ -74,7 +74,7 @@ nnoremap <Leader>gr <Plug>(coc-references)
 " Function Keys
 " ---------------------------------------------------
 nnoremap <F1> :call ToggleHelpF1()<CR>
-nnoremap <F2> :saveas 
+nnoremap <F2> :saveas
 nnoremap <F3> :write<CR>
 inoremap <F3> <ESC>:write<CR>a
 " nnoremap <F4> :Ranger<CR>
@@ -86,19 +86,23 @@ nnoremap <F5> :edit<CR>
 nnoremap <S-F5> :edit!<CR>
 " open git status in vertical split on left, unlike horizontal on top
 nnoremap <F6> :call ToggleGitStatusF6()<CR>
-nnoremap <S-F6> :Git 
+nnoremap <S-F6> :Git
 " <F7> lint_program equalprg
 " <S-F7> vim formatprg Format program
 " <F8> grepprg
-nnoremap <F8> :Rg 
-nnoremap <S-F8> :grep 
+nnoremap <F8> :Rg
+nnoremap <S-F8> :grep
 
 nnoremap <F9> :terminal<CR>
 nnoremap <S-F9> :shell<CR>
 " <F10> copyQ
+nnoremap <F10> :!clear && %:p<Enter>
 " <F11> Fullscreen
-nnoremap <F12> :make<CR>
-nnoremap <S-F12> :make 
+" <F12> run line under cursor
+nnoremap <F12> :execute "!clear && " . getline('.')<CR>
+" nnoremap <S-F12> :make
+" run previous command
+nnoremap <S-F12> :!!<CR>
 
 function! ToggleHelpF1()
   if &buftype == "help"
