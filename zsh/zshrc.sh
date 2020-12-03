@@ -130,6 +130,13 @@ export PATH="$PATH:$HOME/.rvm/bin:$HOME/.yarn/bin:$HOME/dotfiles/scripts/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 # Add HomeBrew Package manager to path
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+# Homebrew completions
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
 
 # Use NVM 
 export NVM_DIR="$HOME/.nvm"
@@ -137,3 +144,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
+
+# load fish like abbreviations
+abbr && clear

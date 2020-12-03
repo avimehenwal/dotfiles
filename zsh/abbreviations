@@ -98,7 +98,7 @@ abbr d="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 abbr gst="tig status"
 
 # GIT FLOW
-abbr gfi="git flow init; and git push --set-upstream origin develop; and git push"
+abbr gfi="git flow init && git push --set-upstream origin develop && git push"
 abbr gffs="git flow feature start; git flow feature publish"
 abbr gfrs="git flow release start; git flow release publish"
 abbr gffp="git flow feature publish"
