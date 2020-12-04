@@ -17,7 +17,9 @@ Plug 'tpope/vim-fugitive'                                                 "versi
 Plug 'tpope/vim-surround'                                                 "YAGNI - text Objects
 Plug 'honza/vim-snippets'                                                 "ultisnips suppliment
 Plug 'tpope/vim-unimpaired'                                               "sane quickfix,,buffer hotkeys
+Plug 'sheerun/vim-polyglot'                                               "language syntax support
 Plug 'ryanoasis/vim-devicons'                                             "iconify
+Plug 'liuchengxu/vim-which-key'                                           "never forget your keybindings
 Plug 'bronson/vim-visual-star-search'                                     "search url like patterns
 Plug 'vifm/vifm.vim', { 'on':  'Vifm' }                                   "file manager, +ranger killer
 Plug 'jremmen/vim-ripgrep', { 'on':  'Rg' }                               "use rip-grep from within vim

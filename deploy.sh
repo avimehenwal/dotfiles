@@ -54,6 +54,14 @@ function install_vim {
 	$BASE_CMD --target=$VIM_TARGET --stow vim
 }
 
+function install_vscode {
+	stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User User
+}
+
+function uninstall_vscode {
+	stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User --delete User
+}
+
 function uninstall_vim {
 	$BASE_CMD --target=$HOME/.vim/ --delete vim
 }

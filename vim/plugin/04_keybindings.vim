@@ -11,6 +11,10 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+" which-Key
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+set timeoutlen=500
+
 " nnoremap Q :q!<CR>     interferes with existing Q Multiple Ex-mode commands
 " Quick buffer and Tabs navigation
 " gt and gT for :tabNext and :tabPrev correspondingly
