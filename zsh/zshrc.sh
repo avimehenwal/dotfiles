@@ -93,8 +93,8 @@ export LANG=en_US.UTF-8
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] &&
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
+  [ -s "$BASE16_SHELL/profile_helper.sh" ] &&
+  eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 # Use FZF keybindings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -106,6 +106,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # $HOME/REPO/aviscripts/convert_fish_abbr_2_bash_alias.sh
 # source $HOME/.bash_aliases
 source $HOME/dotfiles/zsh/alias.zsh
+source $HOME/dotfiles/zsh/keybindings.sh
 
 # ENVIRONMENT VARIABLES
 
@@ -138,10 +139,10 @@ if type brew &>/dev/null; then
   compinit
 fi
 
-# Use NVM 
+# Use NVM
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
