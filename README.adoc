@@ -1,4 +1,4 @@
-= VIM Notes
+= DotFiles
 Avi Mehenwal <avi.mehenwal@gmai.com> v0.1
 
 The text-editor for a lifetime
@@ -231,4 +231,17 @@ file (which ls) # fish
 ```
 git submodule add git@github.com:avimehenwal/aviscripts.git $HOME/aviscripts
 git submodule update
+```
+
+### Q&A
+
+[AppImage Format](https://docs.appimage.org/introduction/index.html)
+:   Linux apps (binaries) that runs anywhere
+
+## Use Sylbolic Links
+
+```
+ln --symbolic --verbose \
+  $HOME/dotfiles/alacritty/alacritty.yml \
+  $HOME/.config/alacritty/alacritty.yml
 ```
