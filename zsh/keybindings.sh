@@ -1,3 +1,10 @@
+function git_top() {
+	BUFFER="cd $(git rev-parse --show-toplevel || echo ".")"
+	zle accept-line
+}
+zle -N git_top
+bindkey "^t" git_top
+
 # up
 # function up_widget() {
 # 	BUFFER="cd .."
@@ -45,9 +52,3 @@
 # bindkey "^s" add_sudo
 
 # Home - Navigates to the current git root workspace
-function git_top() {
-	BUFFER="cd $(git rev-parse --show-toplevel || echo ".")"
-	zle accept-line
-}
-zle -N git_top
-bindkey "^t" git_top
