@@ -1,17 +1,9 @@
 # avimehenwal @2020
 #
-# A global alias is aggressive. Once registered, it replaces all
-# occurrences of the alias name with the specified command.
-# https://thorsten-hans.com/5-types-of-zsh-aliases
-#
 # oh-my-zsh alias in $ZSH/lib/theme-and-appearance.zsh
 
-abbr -g ...="../.."
-abbr -g ....="../../.."
-abbr -g .....="../../../.."
-abbr -g ......="../../../../.."
 abbr -="cd -"
-abbr _="sudo "
+abbr _="sudo !!"
 abbr 1="cd -"
 abbr 2="cd -2"
 abbr 3="cd -3"
@@ -25,7 +17,6 @@ abbr etc="cd /etc"
 abbr sbin="cd /usr/sbin/"
 
 # Single Character - most often used
-abbr c="xclip -selection clip"
 abbr m="man"
 abbr r="ranger"
 abbr v="vifm"
@@ -38,7 +29,6 @@ abbr logbook="cd $HOME/GIT/logbook; git pull; code -n ."
 
 # Nemonics
 abbr open="xdg-open"
-abbr refresh="source $HOME/.zshrc"
 abbr alert="notify-send --urgency=normal='DONE'"
 abbr logout="gnome-session-quit"
 abbr listhosts="sed -rn="s/^\s*Host\s+(.*)\s*/\1/ip" ~/.ssh/config"

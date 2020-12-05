@@ -1101,5 +1101,4 @@
     }
   ],
   "vscode-neovim.neovimInitVimPaths.linux": "/home/avi/dotfiles/nvim/init.vim",
-  "editor.fontSize": 15,
 }

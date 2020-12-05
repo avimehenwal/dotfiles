@@ -1,43 +1,22 @@
-# brew install zplug
+#  @avimehenwal - updated 2020-Dec
+#
+#  _______| |__  _ __ ___
+# |_  / __| '_ \| '__/ __|
+#  / /\__ \ | | | | | (__
+# /___|___/_| |_|_|  \___|
+
 export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
-source $HOME/dotfiles/zsh/plugins.zsh
 
-plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-abbr)
-
-export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-export LANG=en_US.UTF-8
-
-# Use FZF keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Source all files from submodule
-# source <(cat $HOME/REPO/aviscripts/*)
-
-# generate aliases and source them
-# $HOME/REPO/aviscripts/convert_fish_abbr_2_bash_alias.sh
-# source $HOME/.bash_aliases
-source $HOME/dotfiles/zsh/alias.zsh
+source $HOME/dotfiles/zsh/zplug.zsh
+source $HOME/dotfiles/zsh/alias.sh
 source $HOME/dotfiles/zsh/keybindings.sh
 source $HOME/dotfiles/zsh/path.sh
-
-# ENVIRONMENT VARIABLES
-
-# default programs
-export EDITOR=vim
-export BROWSER=brave-browser
-
-# else vifm coloscheme fails, BUT tmux needs TERM=xterm else wont start
-# debug term colors command
-# echo $TERM
-# tput colors
-# infocmp -x
-# export TERM=xterm
-export TERM=xterm-256color
+source $HOME/dotfiles/zsh/env.sh
+source $HOME/dotfiles/zsh/shared.sh
 
 # Load fish like auto expanding abbreviation
+export ABBR_AUTOLOAD=1
 export ABBR_USER_ABBREVIATIONS_FILE=$HOME/dotfiles/zsh/abbreviations
 
 # Homebrew completions
@@ -63,5 +42,5 @@ promptinit
 prompt spaceship
 
 # load fish like abbreviations
-abbr && clear
-screenfetch
+# abbr && clear
+# screenfetch

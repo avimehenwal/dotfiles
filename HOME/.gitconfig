@@ -7,10 +7,9 @@
 # [color "blame"]
 # 	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
 [core]
-    pager  = diff-so-fancy
-    pager  = less --tabs=4 -RFX
     editor = vim
     hooksPath = ~/.config/git
+    pager = diff-so-fancy | less --tabs=4 -RFX
 [help]
     autocorrect = 1
 [pager]
@@ -53,7 +52,7 @@
     rebase  = rebase -v -i
     blame   = blame --show-stats --progress
 
-    d 	 = difftool --dir-diff HEAD 	# show everything staged + unstaged
+    dt 	 = difftool --dir-diff HEAD 	# show everything staged + unstaged
     ds 	 = diff --stat
     dc   = diff --cached
     dcs  = diff --compact-summary

@@ -1,5 +1,8 @@
 # set PATH environment variable
 
+# Binaries
+LBIN=$HOME/.local/bin
+
 # Homebrew package manager
 BREW=/home/linuxbrew/.linuxbrew/bin
 
@@ -8,4 +11,4 @@ CARGO=$HOME/.cargo/bin
 RVM=$HOME/.rvm/bin
 MY=$HOME/dotfiles/scripts/bin
 
-export PATH="$PATH:${BREW}:${YARN}:${CARGO}:${RVM}:${MY}"
+export PATH="$PATH:${LBIN}:${BREW}:${YARN}:${CARGO}:${RVM}:${MY}"

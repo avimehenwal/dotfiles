@@ -1,36 +1,37 @@
-# zplug plugins
+#  _____ __ | |_   _  __ _
+# |_  / '_ \| | | | |/ _` |
+#  / /| |_) | | |_| | (_| |
+# /___| .__/|_|\__,_|\__, |
+#     |_|            |___/
 
-# Grab binaries from GitHub Releases
-# and rename with the "rename-to:" tag
-zplug "junegunn/fzf", from:gh-r, as:command, rename-to:fzf, use:"*linux*amd64*"
+# FISH like auto-expanding abbreviations, suggestions
+zplug "olets/zsh-abbr", defer:2
+zplug "zsh-users/zsh-autosuggestions", defer:2
+# zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zdharma/fast-syntax-highlighting", defer:2
 
 # Group dependencies
 # Load "emoji-cli" if "jq" is installed in this example
 zplug "stedolan/jq", \
   from:gh-r, \
   as:command, \
-  rename-to:jq
-zplug "b4b4r07/emoji-cli", \
-  on:"stedolan/jq"
+  rename-to:jq \
+  use:"*linux64"
+# zplug "b4b4r07/emoji-cli", \
+#   on:"stedolan/jq"
 
-# Run a command after a plugin is installed/updated
-# Provided, it requires to set the variable like the following:
-# ZPLUG_SUDO_PASSWORD="********"
 zplug "jhawthorn/fzy", \
   as:command, \
   rename-to:fzy, \
   hook-build:"make && sudo make install"
 
 # Set the priority when loading
-# e.g., zsh-syntax-highlighting must be loaded
-# after executing compinit command and sourcing other plugins
-# (If the defer tag is given 2 or above, run after compinit command)
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
-# Can manage local plugins
-zplug "~/.zsh", from:local
+# LOCAL PLUGINS
+# zplug "~/.zsh", from:local
 
-# Load theme file
+# THEME
 # zplug 'dracula/zsh', as:theme
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
@@ -44,4 +45,4 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+zplug load
