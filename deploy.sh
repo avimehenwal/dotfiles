@@ -21,15 +21,15 @@ BASE_CMD="stow -v --dir=$SOURCE"
 # CONFIG_DIRS=(nvim alacritty Code fish ranger vifm)
 CONFIG_DIRS=(nvim alacritty vifm git)
 
-function create_dir {
+function create_dir() {
 	# CONFLICT when stowing alacritty: existing target is not owned by stow: alacritty.yml
 	rm -rv --force $TARGET
 	mkdir --parents --verbose $TARGET
 }
 
-function usage {
+function usage() {
 	toilet -f standard "avi dotfiles"
-	cat << EOF
+	cat <<EOF
 	avimehenwal dotfiles @2020
 
 	USAGE:	deploy.sh <link|unlink>
@@ -41,31 +41,31 @@ function usage {
 EOF
 }
 
-function install_homedir_config {
+function install_homedir_config() {
 	# zsh
 	ZSHRC=$HOME/.zshrc
 	[ -f "$ZSHRC" ] && rm -vf $ZSHRC
-	ln --symbolic --verbose $SOURCE/zsh/zshrc.sh $HOME/.zshrc
+	[ -L "$ZSHRC" ] && rm -vf $ZSHRC
+	ln --symbolic --verbose $SOURCE/zsh/zshrc.zsh $HOME/.zshrc
 }
 
-function install_vim {
+function install_vim() {
 	VIM_TARGET=$HOME/.vim/
 	[ ! -d "$VIM_TARGET" ] && mkdir --parents $VIM_TARGET
 	$BASE_CMD --target=$VIM_TARGET --stow vim
 }
 
-function install_vscode {
+function install_vscode() {
 	stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User User
 }
 
-function uninstall_vscode {
+function uninstall_vscode() {
 	stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User --delete User
 }
 
-function uninstall_vim {
+function uninstall_vim() {
 	$BASE_CMD --target=$HOME/.vim/ --delete vim
 }
-
 
 # MAIN
 # initalize and pull submodules
@@ -75,30 +75,30 @@ for PRG in "${CONFIG_DIRS[@]}"; do
 	STOW="$BASE_CMD --target=$TARGET"
 
 	case "$1" in
-		clean|unlink)
-			$STOW --delete $PRG
-			uninstall_vim
-			;;
-		link)
-			create_dir
-			$STOW --stow $PRG
-			;;
-		zsh)
-			install_homedir_config
-			exit 0
-			;;
-		vim)
-			install_vim
-			exit 0
-			;;
-		vim!)
-			uninstall_vim
-			exit 0
-			;;
-		*)
-			usage
-			exit 0
-			;;
+	clean | unlink)
+		$STOW --delete $PRG
+		uninstall_vim
+		;;
+	link)
+		create_dir
+		$STOW --stow $PRG
+		;;
+	zsh)
+		install_homedir_config
+		exit 0
+		;;
+	vim)
+		install_vim
+		exit 0
+		;;
+	vim!)
+		uninstall_vim
+		exit 0
+		;;
+	*)
+		usage
+		exit 0
+		;;
 	esac
 done
 

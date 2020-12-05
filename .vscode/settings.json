@@ -8,6 +8,7 @@
     "neovim",
     "www",
     "all",
-    "readme"
+    "readme",
+    "vscode"
   ]
 }
