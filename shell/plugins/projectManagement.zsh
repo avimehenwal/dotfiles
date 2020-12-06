@@ -1,5 +1,11 @@
 #!/bin/zsh
-#
+#  ____            _   __  __                 _   
+# |  _ \ _ __ ___ (_) |  \/  | __ _ _ __ ___ | |_ 
+# | |_) | '__/ _ \| | | |\/| |/ _` | '_ ` _ \| __|
+# |  __/| | | (_) | | | |  | | (_| | | | | | | |_ 
+# |_|   |_|  \___// | |_|  |_|\__, |_| |_| |_|\__|
+#               |__/          |___/               
+# 
 # AUTHOR      : avimehenwal
 # DATE        : 06-Dec-2020
 # PURPOSE     : ZSH Plugin
@@ -42,6 +48,44 @@ function lf() {
       --preview-window=right:65% \
       --preview='stat {-1}; bat --color=always {-1}'
   )
+}
+
+# Projects
+treeGraph() {
+  git fetch --all --quiet
+  # tree --du --si --sort=size -C -d -L 1 -i $LOC
+  tree --du --sort=size --noreport -i -d -L 1 |
+    sed 1d |
+    sed s/]// |
+    awk '{print $3"\t"$2}' |
+    termgraph --title "${PWD}" --color red
+}
+
+pp() {
+  # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#index-colors
+  autoload -U colors
+  colors
+  echo $bold_color$bg[red]bold red${reset_color} plain
+  echo $bold_color$fg[white]$bg[black]bold red${reset_color} plain
+  echo $bold_color$fg[black]$bg[green]bold red${reset_color} plain
+  echo $bold_color$fg[black]$bg[blue]bold red${reset_color} plain
+  echo $bold_color$fg[black]$bg[magenta]bold red${reset_color} plain
+  echo $bold_color$fg[black]$bg[cyan]bold red${reset_color} plain
+  echo $bold_color$fg[black]$bg[white]bold red${reset_color} plain
+  
+  local PROJS=(dotfiles b2c plangs)
+  local result=""
+  echo $bold_color$fg[black]$bg[yellow] MyPROJECTS ${reset_color} ${PROJS}
+  for PROJ in ${PROJS[@]}; do 
+    local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
+    result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n" 
+  done
+  selection=$(echo -e ${result} |
+    column --table --table-columns Name,Path |
+    fzf --header-lines=1 \
+    --height=70% \
+    --preview 'tree -C -L 1 {-1} --sort=mtime -r')
+  cd $(echo $selection | awk '{print $2}') && treeGraph
 }
 
 # regex match doesnt work on zsh

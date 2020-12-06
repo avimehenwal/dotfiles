@@ -48,19 +48,6 @@ alias md='mkdir -p'
 alias rd=rmdir
 alias refresh="source $HOME/.zshrc"
 
-# Projects
-treeCmd() {
-  git fetch --all --quiet
-  # tree --du --si --sort=size -C -d -L 1 -i $LOC
-  tree --du --sort=size --noreport -i -d -L 1 |
-    sed 1d |
-    sed s/]// |
-    awk '{print $3"\t"$2}' |
-    termgraph --title "${PWD}" --color red
-}
-alias b2c='cd ~/WORK/b2c && treeCmd'
-alias dotfile='cd ~/dotfiles && treeCmd'
-
 # Suffix aliases
 alias -s md='bat -l md'
 alias -s json='bat -l json'

@@ -18,6 +18,9 @@ source ${BASE}/path.sh
 source ${BASE}/env.sh
 source ${BASE}/shared.sh
 
+# MyPlugins
+source ${BASE}/plugins/projectManagement.zsh
+
 # Plugin Configurations
 export ABBR_AUTOLOAD=1
 export ABBR_USER_ABBREVIATIONS_FILE=${BASE}/abbreviations.sh
