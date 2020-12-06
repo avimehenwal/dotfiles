@@ -4,6 +4,7 @@
 * xref:terminal-emulator.adoc[Terminal Emulators]
 * xref:fedora.adoc[Fedora]
 * xref:linux.adoc[Linux]
+* xref:zsh.adoc[Shell-zsh,bash]
 
 .Chapters List
 * link:{attachmentsdir}/chart.html[view prebuilt HTML page]

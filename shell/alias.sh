@@ -42,8 +42,8 @@ function d() {
 compdef _dirs d
 
 # List directory contents
-alias ll='ls -halt'
-alias la='ls -lAh'
+alias la='ls --color=always -lAh | fzf'
+
 alias md='mkdir -p'
 alias rd=rmdir
 alias refresh="source $HOME/.zshrc"
@@ -73,6 +73,7 @@ alias l='less --RAW-CONTROL-CHARS'
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'
 alias bashrc='$EDITOR $HOME/.bashrc'
+alias sysinfo='clear && screenfetch'
 
 # Conditional alias
 prettyping --help >/dev/null && alias pping='prettyping'
@@ -80,10 +81,16 @@ prettyping --help >/dev/null && alias pping='prettyping'
 # open terminal failed: missing or unsuitable terminal: xterm-256color
 alias tmux='export TERM=xterm && tmux'
 alias vifm='export TERM=xterm-256color && vifm'
+alias bat='bat --color=always'
+alias env='env | bat --language=bash | fzf'
+# todo fzf unset from list of env vars
 alias rsync='rsync --progress --verbose'
 alias tmux='byobu-tmux'
 alias psa='ps aux | fzf'
+alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers'
 
 # FZF inspired
 # Package Manager
 alias brewl='brew list | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always --highlight-line 2 -l gitlog"'
+alias brews='brew install $(brew search | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always
+--highlight-line 2 -l gitlog")'

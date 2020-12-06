@@ -18,7 +18,8 @@ inoreabbrev lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Elig
 cnoreabbrev hc helpclose
 " <F1> with autocommand group vertical_help produces the same result
 cnoreabbrev help vertical help
-
+" delete buffer after quick config update
+cnoreabbrev ww write\|bdelete
 
 " Emoji shortcuts
 " https://www.emojicopy.com/

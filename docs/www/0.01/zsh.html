@@ -3,21 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Antora UI :: AviMehenwal Dotfiles</title>
-    <link rel="canonical" href="http://127.0.0.1:8080/www/0.01/chapter_5.html">
+    <title>Shells :: AviMehenwal Dotfiles</title>
+    <link rel="canonical" href="http://127.0.0.1:8080/www/0.01/zsh.html">
     <meta name="generator" content="Antora 2.3.4">
 <link rel="stylesheet" href="../../_/css/site.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <link rel="stylesheet" href="../../_/css/search.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXXX"></script>
   <script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', 'GTM-XXXXXXXX')</script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"> </script>
   </head>
   <body class="article">
 <header class="header" role="banner">
@@ -89,7 +83,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="linux.html">Linux</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="zsh.html">Shell-zsh,bash</a>
   </li>
 </ul>
@@ -119,7 +113,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="chapter_4.html">Chapter 4</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="chapter_5.html">Chapter 5</a>
   </li>
 </ul>
@@ -153,104 +147,175 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">dotfile documentation</a></li>
-    <li>Chapters List</li>
-    <li><a href="chapter_5.html">Chapter 5</a></li>
+    <li><a href="zsh.html">Shell-zsh,bash</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/avi/dotfiles/www/modules/ROOT/pages/chapter_5.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/avi/dotfiles/www/modules/ROOT/pages/zsh.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Antora UI</h1>
-<div id="preamble">
+<h1 class="page">Shells</h1>
+<div class="sect1">
+<h2 id="_bash_bourn_again_shell"><a class="anchor" href="#_bash_bourn_again_shell"></a>BASH: Bourn Again SHell</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p>Antora uses <a href="https://www.npmjs.com/package/vinyl">vinyl</a> virtual filesystem aka <strong>content catalog</strong></p>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<code>${var::-3}</code> also <span class="red">doesnt</span> work on <span class="blue"><a href="http://zsh.sourceforge.net/Doc/" title="POSIX compliant interactive shell written in C">ZSH</a></span>. Use <code>${var:0:-3}</code> instead
+</td>
+</tr>
+</table>
+</div>
+<div class="listingblock">
+<div class="title">chop on variable</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">echo ${a#gg} <i class="conum" data-value="2"></i><b>(2)</b>
+echo ${a%.*} <i class="conum" data-value="3"></i><b>(3)</b>
+echo ${var:3} <i class="conum" data-value="4"></i><b>(4)</b>
+echo ${var::-2} <i class="conum" data-value="5"></i><b>(5)</b></code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td><code>${&#8230;&#8203;}</code> expand everything inside</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>#</code> chop <code>gg</code> from the <strong>beginning</strong> of variable <code>a</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>%</code> chop <code>gg</code> from the <strong>end</strong> of variable <code>a</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>:</code> chop 3 chars from the <strong>beginning</strong> of variable <code>a</code></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td><code>::</code> chop from the <strong>end</strong>.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Can use <span class="green">regex</span> inside <code>{}</code> like <code>.*</code>, <code>???</code></td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+<code>${var::-2}</code> only works with <code>bash v4+</code>. Use <code>${var::${#var}-2}</code> for older <code>bash</code>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_framework_variable"><a class="anchor" href="#_framework_variable"></a>Framework Variable</h2>
+<h2 id="_zsh"><a class="anchor" href="#_zsh"></a>ZSH</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://docs.antora.org/antora-ui-default/templates/">How to deal with antora handlebar templates?</a></p>
-</div>
-<div class="ulist">
-<div class="title">Template Variables</div>
-<ul>
-<li>
-<p><code>siteRootPath</code></p>
-</li>
-<li>
-<p><code>uiRootPath</code></p>
-</li>
-</ul>
-</div>
-<div class="openblock"><div class="ct-chart" data-chart-height="400" data-chart-width="600" data-chart-type="Line" data-chart-colors="#72B3CC,#8EB33B" data-chart-labels="January,February,March,April,May,June,July" data-chart-series-0="28,48,40,19,86,27,90" data-chart-series-1="65,59,80,81,56,55,40"></div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">How to unset things in zsh?</dt>
+<dd>
+<p>unset
+unhash
+unalias
+unlimit
+unsetopt
+unfunction z
+unset -f z       #bash compliant</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_data_attributes"><a class="anchor" href="#_data_attributes"></a>Data Attributes</h2>
+<h2 id="_shell_scripting"><a class="anchor" href="#_shell_scripting"></a>Shell Scripting</h2>
 <div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">How to use data attributes</a></p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<code>${&#8230;&#8203;}</code> tells the shell to expand whatever is inside it
+</td>
+</tr>
+</table>
 </div>
-<div class="paragraph">
-<p>Store extra information with HTML elements</p>
-</div>
-<div class="listingblock">
-<div class="title">How to data attributes are defined?</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div class="ct-chart"
-  data-chart-height="400"
-  data-chart-width="600"&gt;</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">How to access data-attributes?</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">element.dataset.chartHeight
-element.dataset.chartWidth</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_use_cases"><a class="anchor" href="#_use_cases"></a>Use Cases</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">How to keymap a script to zle?</dt>
+<dd>
+<p><a href="https://unix.stackexchange.com/questions/79897/how-can-i-use-bindkey-to-run-a-script" class="bare">https://unix.stackexchange.com/questions/79897/how-can-i-use-bindkey-to-run-a-script</a></p>
+</dd>
+<dt class="hdlist1">How to make a keybinging with <a href="http://zsh.sourceforge.net/Doc/" title="POSIX compliant interactive shell written in C">ZSH</a>?</dt>
+<dd>
+<p><a href="https://stackoverflow.com/questions/18042685/list-of-zsh-bindkey-commands" class="bare">https://stackoverflow.com/questions/18042685/list-of-zsh-bindkey-commands</a>
+<a href="https://jdhao.github.io/2019/06/13/zsh_bind_keys/" class="bare">https://jdhao.github.io/2019/06/13/zsh_bind_keys/</a></p>
+</dd>
+<dt class="hdlist1">Interactive cli scripts?</dt>
+<dd>
+<p><a href="https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_08.html" class="bare">https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_08.html</a></p>
+</dd>
+<dt class="hdlist1">Bash scripting frameworks?</dt>
+<dd>
+<p><a href="http://www.bashinator.org/" class="bare">http://www.bashinator.org/</a></p>
+</dd>
+<dt class="hdlist1">Awesome shell?</dt>
+<dd>
+<p><a href="https://github.com/alebcay/awesome-shell" class="bare">https://github.com/alebcay/awesome-shell</a></p>
+</dd>
+<dt class="hdlist1">What is the difference between <code>&#8230;&#8203;</code> and <code>$(&#8230;&#8203;)</code>?</dt>
+<dd>
+<p>Command Substitution</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Show captions <code>onHover</code> on certain elements</p>
+<p>older vs newer syntax</p>
 </li>
 <li>
-<p>Hide/Show some list items</p>
+<p><code>man bash</code></p>
 </li>
 <li>
-<p>Pass data to javascript libraries/modules to do something interesting, like generating chart</p>
+<p><a href="http://mywiki.wooledge.org/BashFAQ/082" class="bare">http://mywiki.wooledge.org/BashFAQ/082</a></p>
 </li>
 </ol>
 </div>
-<div class="qlist qanda">
-<ol>
-<li>
-<p><em>How to access keys from <code>antora-playbook.yml</code> in partial templates?</em></p>
-<p><code>{{#with site.keys.googleAnalytics}}</code></p>
-</li>
-<li>
-<p><em>Prebuilt <code>HTML</code> pages?</em></p>
-<p>Put them inside <code>attachments</code> directory then add a link to them in <code>nav</code> file</p>
-</li>
-<li>
-<p><em>What are HTML Data Attributes?</em></p>
-<p>If you want to operate on elements based on data attributes, Eg: drawing charts etc</p>
-</li>
-</ol>
+</dd>
+<dt class="hdlist1">Parameter Expansion</dt>
+<dd>
+<p><code><code>bash
+days=(sun mon tue wed thu fri sat)
+echo ${days[3]}
+echo ${days[-2]}
+echo ${days[+3]}
+echo ${days[@]}
+</code></code></p>
+</dd>
+</dl>
 </div>
-<div class="videoblock">
-<div class="content">
-<iframe src="https://www.youtube.com/embed/TisD-O6esD4?rel=0" frameborder="0" allowfullscreen></iframe>
+<div class="sect2">
+<h3 id="_resources"><a class="anchor" href="#_resources"></a>Resources</h3>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://github.com/k4m4/terminals-are-sexy" class="bare">https://github.com/k4m4/terminals-are-sexy</a></p>
+</li>
+</ul>
 </div>
-</div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TisD-O6esD4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>
@@ -262,7 +327,6 @@ element.dataset.chartWidth</code></pre>
 </main>
 </div>
 <footer class="footer">
-    <h1>CHART true</h1>
   www
     0 <br>
     Key: www Values =
@@ -293,30 +357,9 @@ element.dataset.chartWidth</code></pre>
 
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/lunr.js"></script>
-<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/www/0.01/chapter_5.html"></script>
+<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/www/0.01/zsh.html"></script>
 <script async src="../../_/../search-index.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
 
-  <script>
-    document.body.querySelectorAll('div.ct-chart').forEach((node) => {
-      const options = {
-        height: node.dataset['chartHeight'],
-        width: node.dataset['chartWidth'],
-        colors: node.dataset['chartColors'].split(',')
-      }
-      const dataset = Object.assign({}, node.dataset)
-      const series = Object.values(Object.keys(dataset)
-        .filter(key => key.startsWith('chartSeries-'))
-        .reduce((obj, key) => {
-          obj[key] = dataset[key]
-          return obj
-        }, {})).map(value => value.split(','))
-      const data = {
-        labels: node.dataset['chartLabels'].split(','),
-        series: series
-      }
-      Chartist[node.dataset['chartType']](node, data, options)
-    })
-  </script>
   </body>
 </html>

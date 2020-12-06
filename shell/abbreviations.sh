@@ -103,7 +103,6 @@ abbr gfrf="git flow release finish; git push --all"
 
 
 # Linux/Unix Commands with sensible switches
-abbr ll="ls --color=tty -lah"
 abbr md="mkdir --parents"
 abbr rd="rmdir --verbose"
 abbr rm="rm --verbose"
@@ -123,7 +122,6 @@ abbr tar="tar --verbose --gzip --extract --file"
 abbr ip="ip --color=always"
 abbr ipa="ip --color=always -brief addr show"
 abbr ipls="ip --color=always -details -stats -iec -human link show wlan0"
-abbr ll=" ls --classify --color=always --group-directories-first --block-size=K -halt $argv | less"
 abbr pstree="ps -ejH"
 abbr chmod="chmod --verbose"
 abbr diff="diff --unified=3 --color=always"

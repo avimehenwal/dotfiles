@@ -1,0 +1,70 @@
+= Shells
+:author: avimehenwal
+:zsh: http://zsh.sourceforge.net/Doc/[ZSH, title='POSIX compliant interactive shell written in C']
+
+== BASH: Bourn Again SHell
+
+WARNING: `${var::-3}` also [red]#doesnt# work on [blue]#{zsh}#. Use `${var:0:-3}` instead
+
+.chop on variable
+[source, bash]
+----
+echo ${a#gg} <2>
+echo ${a%.*} <3>
+echo ${var:3} <4>
+echo ${var::-2} <5>
+----
+<1> `${...}` expand everything inside
+<2> `#` chop `gg` from the **beginning** of variable `a`
+<3> `%` chop `gg` from the **end** of variable `a`
+<4> `:` chop 3 chars from the **beginning** of variable `a`
+<5> `::` chop from the **end**.
+<6> Can use [green]#regex# inside `{}` like `.*`, `???`
+
+CAUTION: `${var::-2}` only works with `bash v4+`. Use `${var::${#var}-2}` for older `bash`
+
+
+== ZSH
+
+How to unset things in zsh?::
+  unset
+  unhash
+  unalias
+  unlimit
+  unsetopt
+  unfunction z
+  unset -f z       #bash compliant
+
+
+== Shell Scripting
+
+NOTE: `${...}` tells the shell to expand whatever is inside it
+
+How to keymap a script to zle?::
+  https://unix.stackexchange.com/questions/79897/how-can-i-use-bindkey-to-run-a-script
+How to make a keybinging with {zsh}?::
+  https://stackoverflow.com/questions/18042685/list-of-zsh-bindkey-commands
+  https://jdhao.github.io/2019/06/13/zsh_bind_keys/
+Interactive cli scripts?::
+  https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_08.html
+Bash scripting frameworks?::
+  http://www.bashinator.org/
+Awesome shell?::
+  https://github.com/alebcay/awesome-shell
+What is the difference between ``...`` and `$(...)`?::
+  Command Substitution
+  1. older vs newer syntax
+  2. `man bash`
+  3. http://mywiki.wooledge.org/BashFAQ/082
+Parameter Expansion::
+  ```bash
+  days=(sun mon tue wed thu fri sat)
+  echo ${days[3]}
+  echo ${days[-2]}
+  echo ${days[+3]}
+  echo ${days[@]}
+  ```
+
+=== Resources
+
+* https://github.com/k4m4/terminals-are-sexy

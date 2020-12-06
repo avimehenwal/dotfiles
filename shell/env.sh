@@ -37,8 +37,9 @@ export FZF_DEFAULT_OPTS="
 --cycle
 --border
 --preview-window=right:60%
---preview 'bat --color=always --line-range :300 {}'
 "
+# --preview 'bat --color=always --line-range :300 {}'
+
 # export FORGIT_FZF_DEFAULT_OPTS="
 # --ansi
 # --exact

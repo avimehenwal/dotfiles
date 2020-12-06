@@ -8,7 +8,7 @@
 # Idempotent Behaviour via dnf,Homebrew package managers
 
 PIP=(termgraph)
-BREW=(git-flow-avh zplug diff-so-fancy)
+BREW=(git-flow-avh zplug diff-so-fancy spark)
 DNF=(zsh fish bat cargo starship curl wget fd-find toilet figlet prettyping)
 CARGO=()
 

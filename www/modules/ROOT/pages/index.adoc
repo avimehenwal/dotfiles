@@ -81,3 +81,4 @@ Same Keybindings for both, use autocommands
 ++++
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ICU9OEsNiRA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ++++
+
