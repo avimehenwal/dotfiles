@@ -245,3 +245,7 @@ ln --symbolic --verbose \
   $HOME/dotfiles/alacritty/alacritty.yml \
   $HOME/.config/alacritty/alacritty.yml
 ```
+
+## Inspiration
+
+* https://raw.githubusercontent.com/wfxr/dotfiles-1/master/README.md

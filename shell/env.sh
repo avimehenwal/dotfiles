@@ -32,7 +32,23 @@ export COPY_PRG=wl-copy
 export TERM=xterm-256color
 
 # FZF
-export FZF_DEFAULT_OPTS='--cycle --border'
-# export FZF_DEFAULT_COMMAND
+export FZF_DEFAULT_OPTS="
+--ansi
+--cycle
+--border
+--preview-window=right:60%
+--preview 'bat --color=always --line-range :300 {}'
+"
+# export FORGIT_FZF_DEFAULT_OPTS="
+# --ansi
+# --exact
+# --border
+# --cycle
+# --reverse
+# --height '90%'
+# "
+export FORGIT_LOG_FZF_OPTS="
+--height '100%""'
+"
 
 # END

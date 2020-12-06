@@ -9,7 +9,8 @@
 
 PIP=(termgraph)
 BREW=(git-flow-avh zplug diff-so-fancy)
-DNF=(zsh fish bat fd-find toilet figlet)
+DNF=(zsh fish bat cargo starship curl wget fd-find toilet figlet prettyping)
+CARGO=()
 
 # Todo
 # -> better logs with colors and log level formats
@@ -39,14 +40,23 @@ from_pip() {
   loop_over "${CMD}" "${PIP[@]}"
 }
 
+from_cargo() {
+  local CMD="cargo install"
+  loop_over "${CMD}" "${CARGO[@]}"
+}
+
 from_dnf() {
   sudo dnf install -y ${DNF[@]}
 }
 
 from_git() {
   # with zplug and dnf, keybinding are NOT working
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+  fzf --version || git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
+}
+
+from_curl() {
+  nvm || curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
 }
 
 test() {
@@ -58,5 +68,7 @@ from_dnf
 from_pip
 from_brew
 from_git
+from_curl
+from_cargo
 
 # END

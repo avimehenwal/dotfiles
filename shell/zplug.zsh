@@ -1,14 +1,26 @@
-#  _____ __ | |_   _  __ _
+#  @avimehenwal - updated 2020-Dec
+#
+#_____ __ | |_   _  __ _
 # |_  / '_ \| | | | |/ _` |
 #  / /| |_) | | |_| | (_| |
 # /___| .__/|_|\__,_|\__, |
 #     |_|            |___/
+#
+# concurrent execution
+# self update and manage
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 
 # FISH like auto-expanding abbreviations, suggestions
 zplug "olets/zsh-abbr", defer:2
 zplug "zsh-users/zsh-autosuggestions", defer:2
 # zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zdharma/fast-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-history-substring-search", defer:2
+
+# git + fzf = magic
+zplug "wfxr/forgit"
+zplug "wfxr/emoji-cli"
 
 # Group dependencies
 # Load "emoji-cli" if "jq" is installed in this example

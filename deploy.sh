@@ -36,7 +36,7 @@ function usage() {
 
 	deploy.sh link   - to generate symlinks to config directories
 	deploy.sh unlink - to remove symlinks from system config files
-	deploy.sh zsh 	 - to use zshrc from dotfiles and remove from $HOME
+	deploy.sh shell  - to use zshrc,bashrc from dotfiles and remove from $HOME
 
 EOF
 }
@@ -44,9 +44,13 @@ EOF
 function install_homedir_config() {
 	# zsh
 	ZSHRC=$HOME/.zshrc
+	BASHRC=$HOME/.bashrc
 	[ -f "$ZSHRC" ] && rm -vf $ZSHRC
 	[ -L "$ZSHRC" ] && rm -vf $ZSHRC
-	ln --symbolic --verbose $SOURCE/zsh/zshrc.zsh $HOME/.zshrc
+	[ -f "$BASHRC" ] && rm -vf $BASHRC
+	[ -L "$BASHRC" ] && rm -vf $BASHRC
+	ln --symbolic --verbose $SOURCE/shell/zshrc.zsh $ZSHRC
+	ln --symbolic --verbose $SOURCE/shell/bashrc.bash $BASHRC
 }
 
 function install_vim() {
@@ -83,7 +87,7 @@ for PRG in "${CONFIG_DIRS[@]}"; do
 		create_dir
 		$STOW --stow $PRG
 		;;
-	zsh)
+	shell)
 		install_homedir_config
 		exit 0
 		;;

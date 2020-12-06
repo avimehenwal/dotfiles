@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git d
+git dt
 
 # can use python or shells as well
 #!/usr/bin/fish
@@ -51,15 +51,12 @@ git d
 #     esac
 # done
 
-
 # UNCOMMENT WHEN TESTING
 # exit 1
 
 # STDIN can be closed again with
 # exec <&
 # /home/avi/.config/git/pre-commit: line 40: syntax error near unexpected token `newline'
-
-
 
 # import sys
 # import subprocess
