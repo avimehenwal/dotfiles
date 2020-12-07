@@ -26,7 +26,9 @@ setopt appendhistory
 
 # MyPlugins
 source ${BASE}/plugins/projectManagement.zsh
+generateProjectAlias
 source ${BASE}/plugins/internals.zsh
+source ${BASE}/plugins/myFunctions.zsh
 
 # Plugin Configurations
 export ABBR_AUTOLOAD=1

@@ -35,6 +35,9 @@ How to unset things in zsh?::
   unfunction z
   unset -f z       #bash compliant
 
+How to write Completions?::
+  https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
+
 
 == Shell Scripting
 

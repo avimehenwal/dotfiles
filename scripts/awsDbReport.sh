@@ -26,6 +26,7 @@ aws cognito-idp list-users --user-pool-id eu-central-1_VDcZ2RY3e
 aws dynamodb execute-statement --statement "SELECT * FROM cndx-b2c-x-dev"
 
 # Cognito
+aws cognito-idp list-users --user-pool-id eu-central-1_VDcZ2RY3e | grep -i users
 aws cognito-idp list-users --user-pool-id eu-central-1_VDcZ2RY3e | grep -i users | wc
 aws cognito-idp admin-get-user --user-pool-id eu-central-1_VDcZ2RY3e --username wepitaf572@tdcryo.com
 aws cognito-idp admin-set-user-password --user-pool-id <your user pool id> --username user1 --password password --permanent

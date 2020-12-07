@@ -2,7 +2,8 @@ all: clean build
 
 SHELL:=/bin/bash
 DIST:=docs
-ANTORA:=./node_modules/@antora/cli/bin/antora
+# ANTORA:=./node_modules/@antora/cli/bin/antora
+ANTORA:=antora
 HTTP-SERVER:=./node_modules/http-server/bin/http-server
 
 

@@ -21,7 +21,7 @@
     "http-server": "^0.12.3"
   },
   "dependencies": {
-    "@asciidoctor/core": "^2.2.0",
+    "@asciidoctor/core": "^2.2.1",
     "asciidoctor-color": "^0.2.1",
     "asciidoctor-extension-interactive-runner": "^1.2.3",
     "bytefield-svg": "^1.5.0"

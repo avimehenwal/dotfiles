@@ -19,7 +19,7 @@ PARTIAL=$HOME/.config
 BASE_CMD="stow -v --dir=$SOURCE"
 
 # CONFIG_DIRS=(nvim alacritty Code fish ranger vifm)
-CONFIG_DIRS=(nvim alacritty vifm git)
+CONFIG_DIRS=(nvim alacritty vifm git cheat)
 
 function create_dir() {
 	# CONFLICT when stowing alacritty: existing target is not owned by stow: alacritty.yml

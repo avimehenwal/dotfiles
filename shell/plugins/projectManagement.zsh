@@ -1,11 +1,11 @@
 #!/bin/zsh
-#  ____            _   __  __                 _   
-# |  _ \ _ __ ___ (_) |  \/  | __ _ _ __ ___ | |_ 
+#  ____            _   __  __                 _
+# |  _ \ _ __ ___ (_) |  \/  | __ _ _ __ ___ | |_
 # | |_) | '__/ _ \| | | |\/| |/ _` | '_ ` _ \| __|
-# |  __/| | | (_) | | | |  | | (_| | | | | | | |_ 
+# |  __/| | | (_) | | | |  | | (_| | | | | | | |_
 # |_|   |_|  \___// | |_|  |_|\__, |_| |_| |_|\__|
-#               |__/          |___/               
-# 
+#               |__/          |___/
+#
 # AUTHOR      : avimehenwal
 # DATE        : 06-Dec-2020
 # PURPOSE     : ZSH Plugin
@@ -15,6 +15,8 @@
 # things which you often do
 
 # --preview='echo -e "size={5} number-of-hard-links={2}\nowner={3} group={4}]\n{1} user,group,others Permissions"; bat --color=always {-1}'\
+
+MyProjects=(dotfiles b2c plangs fan-gallery avimehenwal2 avimehenwal.in)
 
 # Todo: display bat->file and tree->dir preview
 function ll() {
@@ -72,13 +74,12 @@ pp() {
   # echo $bold_color$fg[black]$bg[magenta]bold red${reset_color} plain
   # echo $bold_color$fg[black]$bg[cyan]bold red${reset_color} plain
   # echo $bold_color$fg[black]$bg[white]bold red${reset_color} plain
-  
-  local PROJS=(dotfiles b2c plangs)
+
   local result=""
-  echo 📌 $bold_color$fg[black]$bg[yellow] MyPROJECTS ${reset_color} ${PROJS}
-  for PROJ in ${PROJS[@]}; do 
+  echo 📌 $bold_color$fg[black]$bg[yellow] MyProjects ${reset_color} ${MyProjects}
+  for PROJ in ${MyProjects[@]}; do
     local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
-    result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n" 
+    result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n"
   done
   selection=$(echo -e ${result} |
     column --table --table-columns Name,Path |
@@ -86,6 +87,15 @@ pp() {
     --height=70% \
     --preview 'tree -C -L 1 {-1} --sort=mtime -r')
   cd $(echo $selection | awk '{print $2}') && treeGraph
+}
+
+generateProjectAlias() {
+  for PROJ in ${MyProjects[@]}; do
+    local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
+    local value="cd ${loc} && treeGraph"
+    alias $PROJ="${value}"
+    # echo "alias $PROJ='$value'"
+  done
 }
 
 # regex match doesnt work on zsh

@@ -18,6 +18,9 @@ zplug "zsh-users/zsh-autosuggestions", defer:2
 zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
 
+# Completions
+zplug "cheat/cheat", use:"scripts/cheat.zsh"
+
 # git + fzf = magic
 zplug "wfxr/forgit"
 zplug "wfxr/emoji-cli"

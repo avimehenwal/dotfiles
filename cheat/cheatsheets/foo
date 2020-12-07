@@ -1,0 +1,6 @@
+---
+syntax: javascript
+tags: [ array, map ]
+---
+// To map over an array:
+const squares = [1, 2, 3, 4].map(x => x * x);
