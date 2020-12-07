@@ -18,8 +18,15 @@ source ${BASE}/path.sh
 source ${BASE}/env.sh
 source ${BASE}/shared.sh
 
+# History - reverse-search
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
 # MyPlugins
 source ${BASE}/plugins/projectManagement.zsh
+source ${BASE}/plugins/internals.zsh
 
 # Plugin Configurations
 export ABBR_AUTOLOAD=1

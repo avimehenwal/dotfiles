@@ -65,17 +65,17 @@ pp() {
   # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#index-colors
   autoload -U colors
   colors
-  echo $bold_color$bg[red]bold red${reset_color} plain
-  echo $bold_color$fg[white]$bg[black]bold red${reset_color} plain
-  echo $bold_color$fg[black]$bg[green]bold red${reset_color} plain
-  echo $bold_color$fg[black]$bg[blue]bold red${reset_color} plain
-  echo $bold_color$fg[black]$bg[magenta]bold red${reset_color} plain
-  echo $bold_color$fg[black]$bg[cyan]bold red${reset_color} plain
-  echo $bold_color$fg[black]$bg[white]bold red${reset_color} plain
+  # echo $bold_color$bg[red]bold red${reset_color} plain
+  # echo $bold_color$fg[white]$bg[black]bold red${reset_color} plain
+  # echo $bold_color$fg[black]$bg[green]bold red${reset_color} plain
+  # echo $bold_color$fg[black]$bg[blue]bold red${reset_color} plain
+  # echo $bold_color$fg[black]$bg[magenta]bold red${reset_color} plain
+  # echo $bold_color$fg[black]$bg[cyan]bold red${reset_color} plain
+  # echo $bold_color$fg[black]$bg[white]bold red${reset_color} plain
   
   local PROJS=(dotfiles b2c plangs)
   local result=""
-  echo $bold_color$fg[black]$bg[yellow] MyPROJECTS ${reset_color} ${PROJS}
+  echo 📌 $bold_color$fg[black]$bg[yellow] MyPROJECTS ${reset_color} ${PROJS}
   for PROJ in ${PROJS[@]}; do 
     local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
     result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n" 

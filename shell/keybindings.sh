@@ -1,9 +1,11 @@
+#!/bin/zsh
+
 function git_root() {
 	BUFFER="cd $(git rev-parse --show-toplevel || echo ".")"
 	zle accept-line
 }
-zle -N git_root
-bindkey "^g" git_root
+# zle -N git_root
+# bindkey "^g" git_root
 
 # up
 # function up_widget() {
