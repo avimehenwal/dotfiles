@@ -9,7 +9,7 @@
 
 PIP=(termgraph)
 BREW=(git-flow-avh zplug diff-so-fancy spark)
-DNF=(zsh fish bat cargo starship curl wget fd-find toilet figlet prettyping)
+DNF=(zsh fish bat cargo starship curl wget libwebp-tools fd-find toilet figlet prettyping)
 CARGO=()
 
 # Todo

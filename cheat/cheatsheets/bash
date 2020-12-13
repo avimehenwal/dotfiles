@@ -1,0 +1,32 @@
+# To implement a for loop:
+for file in *;
+do 
+    echo $file found;
+done
+
+# To implement a case command:
+case "$1"
+in
+    0) echo "zero found";;
+    1) echo "one found";;
+    2) echo "two found";;
+    3*) echo "something beginning with 3 found";;
+esac
+
+# To turn on debugging:
+set -x
+
+# To turn off debugging:
+set +x
+
+# Retrieve N-th piped command exit status:
+printf 'foo' | fgrep 'foo' | sed 's/foo/bar/'
+echo ${PIPESTATUS[0]}  # replace 0 with N
+
+# To create a lockfile:
+( set -o noclobber; echo > my.lock ) || echo 'Failed to create lock file'
+
+# The IFS variable is used in shells (Bourne, POSIX, ksh, bash) as the input field separator (or internal field separator).
+# Essentially, it is a string of special characters which are to be treated as delimiters between words/fields when splitting a line of input.
+while IFS= read -r line; do printf "%s\n" $line done < ./projectNames.data
+

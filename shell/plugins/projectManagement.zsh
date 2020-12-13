@@ -16,7 +16,8 @@
 
 # --preview='echo -e "size={5} number-of-hard-links={2}\nowner={3} group={4}]\n{1} user,group,others Permissions"; bat --color=always {-1}'\
 
-MyProjects=(dotfiles b2c plangs fan-gallery avimehenwal2 avimehenwal.in)
+PM_DATA_FILE=$HOME/dotfiles/shell/plugins/projectNames.data
+
 
 # Todo: display bat->file and tree->dir preview
 function ll() {
@@ -77,10 +78,10 @@ pp() {
 
   local result=""
   echo 📌 $bold_color$fg[black]$bg[yellow] MyProjects ${reset_color} ${MyProjects}
-  for PROJ in ${MyProjects[@]}; do
+  while IFS= read -r PROJ; do
     local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
     result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n"
-  done
+  done < $PM_DATA_FILE
   selection=$(echo -e ${result} |
     column --table --table-columns Name,Path |
     fzf --header-lines=1 \
@@ -90,12 +91,19 @@ pp() {
 }
 
 generateProjectAlias() {
-  for PROJ in ${MyProjects[@]}; do
+  while IFS= read -r PROJ; do
     local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
     local value="cd ${loc} && treeGraph"
     alias $PROJ="${value}"
     # echo "alias $PROJ='$value'"
-  done
+  done < $PM_DATA_FILE
+}
+
+# Add Project
+ap() {
+  local project=$(basename $PWD)
+  echo $project >> $PM_DATA_FILE
+  echo $bold_color$bg[green]$fg[black] $project ${reset_color} Added to $PM_DATA_FILE
 }
 
 # regex match doesnt work on zsh
