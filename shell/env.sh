@@ -19,7 +19,8 @@ export LANG=en_US.UTF-8
 
 # PROGRAMS
 export EDITOR=vim
-export BROWSER=brave-browser
+# export BROWSER=brave-browser
+export BROWSER=firefox
 # CopyQ only works on X and not on Wayland desktop environment
 export COPY_PRG=wl-copy
 
@@ -53,7 +54,11 @@ export FORGIT_LOG_FZF_OPTS="
 "
 # export CHEAT_CONFIG_PATH="$HOME/dotfiles/cheat/conf.yml"
 export CHEAT_USE_FZF=true
+<<<<<<< Updated upstream
 # starship prompt
+=======
+# zsh prompt
+>>>>>>> Stashed changes
 export STARSHIP_CONFIG=$HOME/dotfiles/starship/starship.toml
 
 

@@ -28,5 +28,6 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 
 # The IFS variable is used in shells (Bourne, POSIX, ksh, bash) as the input field separator (or internal field separator).
 # Essentially, it is a string of special characters which are to be treated as delimiters between words/fields when splitting a line of input.
+# Loops can read from STDIN
 while IFS= read -r line; do printf "%s\n" $line done < ./projectNames.data
 

@@ -8,8 +8,8 @@
 # Idempotent Behaviour via dnf,Homebrew package managers
 
 PIP=(termgraph)
-BREW=(git-flow-avh zplug diff-so-fancy spark)
-DNF=(zsh fish bat cargo starship curl wget libwebp-tools fd-find toilet figlet prettyping)
+BREW=(git-flow-avh zplug diff-so-fancy spark rename)
+DNF=(zsh fish cloc bat cargo cpan starship curl wget parallel libwebp-tools fd-find toilet figlet prettyping)
 CARGO=()
 
 # Todo
