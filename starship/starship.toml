@@ -1,18 +1,38 @@
 # Don't print a new line at the start of the prompt
 # add_newline = false
 
+# [battery]
+# full_symbol = "🔋"
+# charging_symbol = "⚡️"
+# discharging_symbol = "💀"
+
+# [memory_usage]
+# show_percentage = true
+# show_swap = true
+# threshold = 10
+# icon = " M "
+# style = "bold dimmed green"
+# disabled = false
+
+[env_var]
+format = "with [$env_value]($style) "
+style = "white dimmed"
+symbol = "🐚 "
+variable = "SHELL"
+
+
 [git_status]
-conflicted = "🏳"
-ahead = "${count}"
-# ahead = "➡️ ${count}"
+conflicted = "🥷"
+ahead = "🏹${ahead_count}"
+# ahead = "$count"
 diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "$⬅️ ${count}"
-modified = "📝"
-untracked = "🤷"
-stashed = "📦"
-staged = '[++\($count\)](green)'
+behind = "🔙 ${behind_count}"
+modified = "✍️ "
+untracked = "❓"
+stashed = "🗑️ "
+staged = '${count}➕'
 renamed = "👅"
-deleted = "🗑"
+deleted = "⛔"
 
 [git_state]
 format = '[\($state( $progress_current of $progress_total)\)]($style) '
@@ -22,3 +42,6 @@ cherry_pick = "[🍒 PICKING](bold red)"
 symbol = "🌱 "
 # truncation_length = 4
 # truncation_symbol = ""
+
+[jobs]
+symbol = "🔨 "

@@ -53,6 +53,8 @@ export FORGIT_LOG_FZF_OPTS="
 "
 # export CHEAT_CONFIG_PATH="$HOME/dotfiles/cheat/conf.yml"
 export CHEAT_USE_FZF=true
+# starship prompt
+export STARSHIP_CONFIG=$HOME/dotfiles/starship/starship.toml
 
 
 # END
