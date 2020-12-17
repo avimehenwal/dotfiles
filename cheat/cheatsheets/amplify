@@ -1,0 +1,17 @@
+# start new project
+yarn add aws-amplify @aws-amplify/ui-react emotion
+
+# initialize
+amplify init
+
+amplify status
+
+# use cognito authentication
+amplify add auth
+
+# support REST and GraphQL
+amplify add api
+amplify add storage
+amplify hosting add
+
+

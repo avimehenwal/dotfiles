@@ -1,0 +1,5 @@
+# Add to existing project
+npx -p @storybook/cli sb init
+
+# view stories
+yarn storybook

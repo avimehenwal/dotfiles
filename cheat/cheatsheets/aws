@@ -1,0 +1,17 @@
+# new aws cli setup
+aws configure --profile <name>
+
+# list
+aws configure list
+
+# Pricing by region
+| Do not depend on region | s3
+
+# contents of a named bucket
+aws s3 ls s3://amplify-authcra-devo-151545-deployment --recursive --summarize --human-readable
+
+# make-bucket and remove-bucket
+aws s3 mb/rb s3://xyz/
+
+# s3 sync only append file on cloud if not already there. IT DOESnt remove anything from cloud
+aws --profile personal-avi s3api list-objects --bucket avi-anime --query 'Contents[].{Key: Key,Size: Size}'

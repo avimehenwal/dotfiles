@@ -1,0 +1,5 @@
+# Installed via cwebp-tools
+cwebp -q 100 curlImg.png -o curlImg.webp
+
+# lossless version
+cwebp -q 100 -lossless curlImg.png -o curlImg.webp
