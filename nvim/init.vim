@@ -18,5 +18,8 @@ endif
 
 " Use configs as .vimrc
 set runtimepath^=~/.vim runtimepath+=~/.vim/after
+
+" path to look for plugins
 let &packpath = &runtimepath
+
 source ~/.vim/vimrc

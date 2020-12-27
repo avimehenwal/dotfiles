@@ -1,0 +1,25 @@
+# Javascript Interactive Runtime
+Download RunJS appimage https://runjs.dev/
+
+- JS is single threaded programming language
+
+Objects  | Description
+---------|------------
+window   | represents browsers window, all GLOBAL var, functions are added here
+         | one window object for each tab,
+         | size, resize, position
+         | open a url in browser window programatically
+document | represents DOM, is also a part of window object
+
+# window. is implied with dom document object
+document.getElementById('id') = window.document.getElementById('id')
+
+A global variable, window, representing the window in which the script is running, is exposed to JavaScript code.
+
+# DOM - Document Object Model
+The DOM is an API that represents and interacts with any HTML or XML document. The DOM is a document model loaded in the browser and representing the document as a node tree, where each node represents part of the document (e.g. an element, text string, or comment).
+
+The DOM is one of the most-used APIs on the Web because it allows code running in a browser to access and interact with every node in the document. Nodes can be created, moved and changed. Event listeners can be added to nodes and triggered on occurrence of a given event.
+
+DOM was not originally specified—it came about when browsers began implementing JavaScript. This legacy DOM is sometimes called DOM 0. Today, the WHATWG maintains the DOM Living Standard.
+

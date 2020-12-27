@@ -32,3 +32,10 @@ gco() {
   git checkout $(git branch |
     fzf --preview='git diff --stat --patch master...{-1}')
 }
+
+# print ls after each cd 
+# cd:1: maximum nested function level reached; increase FUNCNEST?
+# function cd() {
+#   command cd $1
+#   command ls -l
+# }

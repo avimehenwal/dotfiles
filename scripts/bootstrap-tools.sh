@@ -8,9 +8,11 @@
 # Idempotent Behaviour via dnf,Homebrew package managers
 
 PIP=(termgraph)
-BREW=(git-flow-avh zplug diff-so-fancy spark rename)
-DNF=(zsh fish cloc bat cargo cpan starship curl wget parallel libwebp-tools fd-find toilet figlet prettyping)
+BREW=(git-flow-avh zplug diff-so-fancy spark rename lazygit lazydocker jesseduffield/lazynpm/lazynpm)
+DNF=(zsh fish cloc bat cargo flatpak cpan starship curl httpie exa ncdu wget parallel libwebp-tools fd-find toilet figlet prettyping)
 CARGO=()
+# https://docs.flatpak.org/en/latest/first-build.html
+# flatpak install https://flathub.org/repo/appstream/org.freeplane.App.flatpakref
 
 # Todo
 # -> better logs with colors and log level formats

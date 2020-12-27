@@ -8,3 +8,31 @@ How to create a desktop menu entry for new appimage?::
   `/use/share/applications` or `$HOME/.local/share/application` create a `app.desktop` entry.
   *Eg:* `noSQL Workbench` for DynamoDB
 
+== Basics
+
+.Linux Basics Terminologies
+|===
+| Terminology | Meaning
+| Terminal | usually means terminal emulator program which emulates old styled terminals
+| Shell | Terminal emulator runs another program called shell, which is a programming language
+| Command Line | Line where you enter commands to be executed
+|===
+
+* Asking how to change keybindings (copy/paste) on bash? might be a wrong question
+** Keybindings are managed by Terminal Emulator program
+** Shell program just provides command line > line where you enter commands
+** **PROMPS** are built into shell. like `PS1`, `PS2`, `PS3` etc
+* HOw to change prompt? is related to shell and NOT terminal Emulator.
+
+.change python shell prompt
+[source, bash]
+----
+import sys
+sys.ps1 = "3.9>>> "
+sys.ps2 = "3.9... "
+----
+
+.Shell Programs Examples
+* bash/zsh/sh/fish shell programs
+* python/perl/ruby/javascript shells
+

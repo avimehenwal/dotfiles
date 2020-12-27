@@ -52,6 +52,17 @@ Search and replace multiple characters?::
                                         
 TIP: When making a change the cursor position is remembered. `:changes`
 
+== VIM + tmux + httpie
+
+> Development Environment
+
+* Modal editing jusing keyboards
+* Search through all open Buffers only `//`
+* `?? :Rg!<cr>` Run grep program
+* Abuse `fzf` to get work done correctly
+* Search through components line only for cows `componets:cow`
+
+
 == Interesting Reads
 
 * https://stackoverflow.com/questions/1430164/differences-between-emacs-and-vim?rq=1

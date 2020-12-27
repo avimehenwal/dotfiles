@@ -15,7 +15,8 @@
     "editor.tabSize": 2
   },
   "[typescript]": {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[javascript]": {
     "editor.tabSize": 2,
@@ -125,7 +126,6 @@
   "editor.fontLigatures": true,
   "editor.fontWeight": null,
   "editor.fontFamily": "Fira Code",
-  "workbench.colorTheme": "Visual Studio Light",
   "editor.formatOnSave": true,
   "aws.samcli.location": "",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
@@ -1101,4 +1101,5 @@
     }
   ],
   "vscode-neovim.neovimInitVimPaths.linux": "/home/avi/dotfiles/nvim/init.vim",
+  "workbench.colorTheme": "Default Dark+",
 }

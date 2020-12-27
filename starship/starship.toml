@@ -1,3 +1,12 @@
+#  
+#  ___| |_ __ _ _ __ ___| |__ (_)_ __  
+# / __| __/ _` | '__/ __| '_ \| | '_ \ 
+# \__ \ || (_| | |  \__ \ | | | | |_) |
+# |___/\__\__,_|_|  |___/_| |_|_| .__/ 
+#                               |_|    
+# https://getemoji.com/
+#
+
 # Don't print a new line at the start of the prompt
 # add_newline = false
 
@@ -18,8 +27,7 @@
 format = "with [$env_value]($style) "
 style = "white dimmed"
 symbol = "🐚 "
-variable = "SHELL"
-
+variable = "STARSHIP_SHELL"
 
 [git_status]
 conflicted = "🥷"
@@ -45,3 +53,9 @@ symbol = "🌱 "
 
 [jobs]
 symbol = "🔨 "
+
+[custom.npm]
+command = "npm --version"
+
+[character]
+vicmd_symbol = "✌ "
