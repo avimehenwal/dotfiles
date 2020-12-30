@@ -15,3 +15,8 @@ aws s3 mb/rb s3://xyz/
 
 # s3 sync only append file on cloud if not already there. IT DOESnt remove anything from cloud
 aws --profile personal-avi s3api list-objects --bucket avi-anime --query 'Contents[].{Key: Key,Size: Size}'
+
+# s3 pagination https://stackoverflow.com/questions/30755129/aws-s3-listobjects-with-pagination
+aws --profile personal-avi s3api list-objects --bucket avi-anime --max-items=2 --output json \
+    --starting-token eyJNYXJrZXIiOiBudWxsLCAiYm90b190cnVuY2F0ZV9hbW91bnQiOiA2fQ== | jq
+

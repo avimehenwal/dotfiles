@@ -1,0 +1,2 @@
+# Skip files from searching patterns
+rg multi -g '!*.js' | l

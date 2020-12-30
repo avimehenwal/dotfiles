@@ -9,7 +9,7 @@
 
 PIP=(termgraph)
 BREW=(git-flow-avh zplug diff-so-fancy spark rename lazygit lazydocker jesseduffield/lazynpm/lazynpm)
-DNF=(zsh fish cloc bat cargo flatpak cpan starship curl httpie exa ncdu wget parallel libwebp-tools fd-find toilet figlet prettyping)
+DNF=(zsh fish cloc bat cargo flatpak cpan starship curl httpie exa ncdu wget hunspel parallel libwebp-tools fira-code-fonts fd-find toilet figlet prettyping)
 CARGO=()
 # https://docs.flatpak.org/en/latest/first-build.html
 # flatpak install https://flathub.org/repo/appstream/org.freeplane.App.flatpakref

@@ -47,6 +47,9 @@ fpath=($fpath "/home/avi/.zfunctions")
 # THEME
 eval "$(starship init zsh)"
 
+# Line Editor Mode
+set -o vi
+
 # load fish like abbreviations
 # abbr && clear
 # screenfetch

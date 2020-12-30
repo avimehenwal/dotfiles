@@ -44,6 +44,9 @@ Plug 'AndrewRadev/quickpeek.vim'                                          "expan
 " Polyfills
 if !has('nvim')
   Plug 'rhysd/vim-healthcheck'                                            ":Healthcheck from neovim
+endif
+
+if has('nvim')
   Plug 'glepnir/galaxyline.nvim'                                          "statusline
 endif
 

@@ -18,7 +18,7 @@ export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat --language man -p'"
 export LANG=en_US.UTF-8
 
 # PROGRAMS
-export EDITOR=vim
+export EDITOR=nvim
 # export BROWSER=brave-browser
 export BROWSER=firefox
 # CopyQ only works on X and not on Wayland desktop environment

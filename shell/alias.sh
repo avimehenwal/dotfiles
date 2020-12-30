@@ -59,6 +59,7 @@ alias -s json='bat -l json'
 alias c='${COPY_PRG}'
 alias p='wl-paste'
 alias l='less --RAW-CONTROL-CHARS --quit-if-one-screen --no-init'
+alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'

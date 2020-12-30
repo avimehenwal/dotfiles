@@ -4,7 +4,7 @@
 " 
 " GLOBAL ABBREVIATIONS
 " -----------------------------------------
-inoreabbrev -- ---
+" inoreabbrev -- ---
 inoreabbrev avi Avi Mehenwal
 " inoreabbrev email avi.mehenwal@gmai.com
 inoreabbrev bang #!/usr/bin/env python

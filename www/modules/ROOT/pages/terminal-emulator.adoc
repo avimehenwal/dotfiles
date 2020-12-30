@@ -21,3 +21,9 @@ time tree / <1>
 . Vi mode
 . Forward and Backward search
 
+== Terminal Multiplexer
+
+> Byobu = Decoration in Japanese
+
+- Repository Pattern for either `screen` or `tmux` program with sane functional keybindings
+- https://superuser.com/a/423397/190986

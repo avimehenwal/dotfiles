@@ -49,7 +49,8 @@ function lf() {
       --multi \
       --bind ctrl-a:select-all \
       --preview-window=right:65% \
-      --preview='stat {-1}; bat --color=always {-1}'
+      --preview='stat {-1}; bat --color=always {-1}' \
+      --prompt='list ProjectFiles>>'
   )
 }
 
@@ -93,7 +94,7 @@ pp() {
 generateProjectAlias() {
   while IFS= read -r PROJ; do
     local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
-    local value="cd ${loc} && treeGraph"
+    local value="cd ${loc} && lf"
     alias $PROJ="${value}"
     # echo "alias $PROJ='$value'"
   done < $PM_DATA_FILE
