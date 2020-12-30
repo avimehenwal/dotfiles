@@ -79,3 +79,17 @@ nnoremap <Leader>/ :call Uncomment_line()<CR>
 vnoremap <C-_> :call Comment_block()<CR>
 vnoremap <Leader>/ :call Uncomment_block()<CR>
 
+" Create and clear a quickfix list
+" quickfix list and Location list
+" The location list behaves just like the quickfix list except that it is local
+" to the current window instead of being global to the Vim session.
+" So if you have five open windows, you can have up to five location lists,
+" but only one quickfix list.
+function! s:create_quickfix() abort
+  :cexpr systemlist("tree") | :copen
+endfunction
+
+function! s:clear_quickfix() abort
+  :cexpr []
+endfunction
+

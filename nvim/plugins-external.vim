@@ -1,19 +1,44 @@
 " Specify a directory for plugins
 call plug#begin(stdpath('data') . '/plugged')
 
-" language parsing
-" Issues getting nightly neovim, luagit and tree-sitter packages
-" Plug 'nvim-treesitter/nvim-treesitter'
-" https://github.com/nvim-treesitter/nvim-treesitter/issues/700#issuecomment-736804553
-Plug 'nvim-treesitter/nvim-treesitter', { 'commit': '3c07232'}
-Plug 'nvim-treesitter/playground'
+if has('nvim')
+  " language parsing
+  " Issues getting nightly neovim, luagit and tree-sitter packages
+  " Plug 'nvim-treesitter/nvim-treesitter'
+  " https://github.com/nvim-treesitter/nvim-treesitter/issues/700#issuecomment-736804553
+  Plug 'nvim-treesitter/nvim-treesitter', { 'commit': '3c07232'}
+  Plug 'nvim-treesitter/playground'
 
-" Plug 'ThePrimeagen/vim-be-good'
+  " Intellisense
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+  " finders and previewers
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
+  " statusline, color treat
+  Plug 'glepnir/galaxyline.nvim'                                    "statusline plugin on steroids
+  Plug 'norcalli/nvim-colorizer.lua'                                "Fastest colorizer with no external dependency
+endif
 
 " Developer Tools
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'                                                  "fugitive suppliment
 Plug 'metakirby5/codi.vim'                                        "Interactive REPL
 Plug 'liuchengxu/vim-which-key'
+" https://github.com/junegunn/fzf.vim#commands
+Plug 'junegunn/fzf.vim'
+Plug 'vifm/vifm.vim', { 'on':  'Vifm' }                                   "file manager, +ranger killer
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }                       "fzf cli tool
+Plug 'bronson/vim-visual-star-search'                                     "search url like patterns
+Plug 'markonm/traces.vim'                                                 "search and replace preview
+Plug 'jremmen/vim-ripgrep', { 'on':  'Rg' }                               "use rip-grep from within vim
+Plug 'mhinz/vim-startify'                                                 "fancy start screen
+Plug 'SirVer/ultisnips'                                                   "vscode like snippets
+
+" auto code format on save https://github.com/neoclide
+Plug 'dbeniamine/cheat.sh-vim'                                    "https://github.com/dbeniamine/cheat.sh-vim
 " Plug 'voldikss/vim-floaterm'                                      "Floating window terminal
 if has('nvim') || has('patch-8.0.902')
   Plug 'mhinz/vim-signify'
@@ -21,23 +46,20 @@ else
   Plug 'mhinz/vim-signify', { 'branch': 'legacy' }
 endif
 
-" finders and previewers
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-
-" Intellisense
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" auto code format on save https://github.com/neoclide
-Plug 'dbeniamine/cheat.sh-vim'                                    "https://github.com/dbeniamine/cheat.sh-vim
 
 " One man should not have that much power
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "use neovim and autocompletion in browser
 
 " statusline
-Plug 'glepnir/galaxyline.nvim'                                    "statusline plugin on steroids
 " Plug 'kyazdani42/nvim-web-devicons'
-Plug 'norcalli/nvim-colorizer.lua'                                "Fastest colorizer with no external dependency
+
+" vim Polyfills
+if !has('nvim')
+  Plug 'rhysd/vim-healthcheck'                                            ":Healthcheck from neovim
+Plug 'vim-airline/vim-airline'                                            "statusline
+Plug 'vim-airline/vim-airline-themes'                                     "vim-airline suppliment
+endif
+
 
 " Themes
 Plug 'morhetz/gruvbox'                                            "dark/light mode
@@ -45,9 +67,11 @@ Plug 'morhetz/gruvbox'                                            "dark/light mo
 " Previews
 " https://github.com/iamcco/markdown-preview.nvim
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
-" https://github.com/junegunn/fzf.vim#commands
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+
+" Experimental
+Plug 'vim/killersheep'                                                    "vim popup()
+Plug 'AndrewRadev/quickpeek.vim'                                          "expand items in popup from quickfix window
+" Plug 'ThePrimeagen/vim-be-good'
 
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
@@ -83,9 +107,9 @@ call plug#end()
 
 " automatically install missing plugins on startup
 autocmd VimEnter *
-  \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \|   PlugInstall --sync | q
-  \| endif
+      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+      \|   PlugInstall --sync | q
+      \| endif
 
 " Theme
 " --------------------------------------------------------------------------------------------
@@ -157,18 +181,18 @@ let g:mkdp_browserfunc = ''
 " content_editable: if enable content editable for preview page, default: v:false
 " disable_filename: if disable filename header for preview page, default: 0
 let g:mkdp_preview_options = {
-    \ 'mkit': {},
-    \ 'katex': {},
-    \ 'uml': {},
-    \ 'maid': {},
-    \ 'disable_sync_scroll': 0,
-    \ 'sync_scroll_type': 'middle',
-    \ 'hide_yaml_meta': 1,
-    \ 'sequence_diagrams': {},
-    \ 'flowchart_diagrams': {},
-    \ 'content_editable': v:false,
-    \ 'disable_filename': 0
-    \ }
+      \ 'mkit': {},
+      \ 'katex': {},
+      \ 'uml': {},
+      \ 'maid': {},
+      \ 'disable_sync_scroll': 0,
+      \ 'sync_scroll_type': 'middle',
+      \ 'hide_yaml_meta': 1,
+      \ 'sequence_diagrams': {},
+      \ 'flowchart_diagrams': {},
+      \ 'content_editable': v:false,
+      \ 'disable_filename': 0
+      \ }
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
