@@ -47,11 +47,7 @@ else
 
   if has('nvim')
     " Manually sourced vim files, sometimes order matters
-    source $HOME/dotfiles/nvim/plugins-external.vim
-
-    source $HOME/dotfiles/nvim/settings.vim
-    source $HOME/dotfiles/nvim/key/mappings.vim
-    source $HOME/dotfiles/nvim/key/which-key.vim
+    source $HOME/dotfiles/nvim/external-plugins.vim
 
     " execute lua file
     luafile $HOME/dotfiles/nvim/lua/nvcodeline.lua

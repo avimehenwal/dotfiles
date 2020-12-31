@@ -1,30 +1,11 @@
-" let g:mapleader       = '\'
-" let g:maplocalleader  = '['
-let g:mapleader="\<Space>"
-let maplocalleader="\\"
-
-" Key bindings
-" Do not use comments after the line in keymappings
-" :help recursive-mapping
-nnoremap ; :
-nnoremap : ;
-vnoremap ; :
-vnoremap : ;
-
-" which-Key
-nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
-set timeoutlen=500
-
 " nnoremap Q :q!<CR>     interferes with existing Q Multiple Ex-mode commands
-" Quick buffer and Tabs navigation
-" gt and gT for :tabNext and :tabPrev correspondingly
-" ]b and [b for ;bNext and :bPrev correspondingly
-" nnoremap <Tab> :tabNext<CR>
 
 " Remove annoying highlight left after localsearch
 nnoremap <silent> '/ :nohlsearch<CR>
 
 " Markup blocks
+" Make working with Markdown files easy
+" ---------------------------------------------------------------------
 inoremap <C-d> <ESC>yypA
 " i_<C-m> interferes with Enter
 if !has('nvim')
@@ -76,6 +57,7 @@ nnoremap <Leader>gr <Plug>(coc-references)
 
 
 " Function Keys
+" cant use within byobu tmux interface
 " ---------------------------------------------------
 nnoremap <F1> :call ToggleHelpF1()<CR>
 nnoremap <F2> :saveas

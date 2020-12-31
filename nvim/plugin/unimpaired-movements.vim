@@ -1,6 +1,6 @@
 " easy unimpaired movement
 " https://github.com/tpope/vim-unimpaired/blob/master/plugin/unimpaired.vim
-" 
+"
 " Anchor Keys    Description
 "   q              Quickfix
 "   c              Location List
@@ -8,11 +8,11 @@
 "   t              Tabs
 "   h              Help grep in location/quickfix window
 "   a              Argument List
-" 
-" MOVEMENTS
+"
+" MOVEMENT KEYS
 "   []     previous, next
-"   -=     open, close
 "   p,\    first, last
+"   -=     open, close
 "
 " used by :makeprg, :helpgrep, :vimgrep
 " The ! prevent using user mapping

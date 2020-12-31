@@ -29,7 +29,7 @@ if has("autocmd")
     "     autocmd InsertLeave * :setlocal nocursorline
     " augroup END
     "
-    " set cursor behavious
+    " show cursorline only in Normal Mode, disable in Insert mode
     " --------------------------------------------------
     autocmd InsertEnter * set cursorline!
     autocmd InsertLeave * set cursorline

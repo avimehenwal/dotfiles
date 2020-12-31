@@ -6,6 +6,7 @@
 
 autocmd BufEnter $HOME/GIT/*,$HOME/REPO/* silent! call s:local_workspace()
 
+" automatically set :pwd as GIT-ROOT so that can use ripgrep, file-search features
 function! s:local_workspace() abort
     " FIXME use relative paths for scripts
     let l:git_path = system('$HOME/REPO/aviscripts/cdr.sh')

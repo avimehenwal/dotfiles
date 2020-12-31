@@ -29,3 +29,5 @@ Difference b/w plugin and ftplugin directories?
 What is after directory?
   In after you should put settings that you want to change from the normal plugin loading.
 
+# list all loaded plugins
+:scriptnames, :commands, :functions

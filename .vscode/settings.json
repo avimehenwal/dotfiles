@@ -10,6 +10,7 @@
     "all",
     "readme",
     "vscode",
-    "zsh-plugin"
+    "zsh-plugin",
+    "nvim"
   ]
 }

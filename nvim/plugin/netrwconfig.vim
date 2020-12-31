@@ -1,4 +1,5 @@
-" File Explorer
+" vim inbuilt File Explorer
+"
 " Configure default netrw plugin like nerdtree
 " https://shapeshed.com/vim-netrw/
 "

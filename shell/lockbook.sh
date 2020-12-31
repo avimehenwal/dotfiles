@@ -1,4 +1,4 @@
-export LOCKBOOK_EDITOR="vim"
+export LOCKBOOK_EDITOR="nvim"
 
 alias all="lockbook list-all | fzf --prompt='Select a file: '"
 alias dirs="lockbook list-folders | fzf --prompt='Select a folder: '"
