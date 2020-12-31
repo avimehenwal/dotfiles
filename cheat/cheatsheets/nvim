@@ -1,0 +1,31 @@
+# vim command output in buffer
+:enew|put=execute('scriptnames')
+
+# popullate quickfix list with open buffers
+cexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})
+
+# Directory Structure
+nvim/
+├── after/                      these scripts are executed last
+│   └── ftplugin/               loaded only for specific FileType loaded in buffer
+├── autoload/                   functions are only loaded when called filename#function()
+├── compiler/                   set compiler for current buffer and compiler options
+├── colors/                     colorscheme files
+├── doc/                        vim documentation and helptags
+├── plugin/                     loaded automatically when vim starts, no need to source them explicitly.
+                                  2 Types: global and filetype
+├── keymap/                     keymap files, like for czech, norway keymaps
+                                  https://vim.fandom.com/wiki/How_to_make_a_keymap
+├── reference                  
+├── spell/                      spell checking files
+├── syntax/                     my syntax files
+├── tutor/                      tutorial files
+└── UltiSnips                   vscode like snippet manager
+
+Difference b/w plugin and ftplugin directories?
+  Whatever goes into plugin is loaded whenever vim starts whereas
+  what you put in ftplugin is only loaded for the specific filetype it corresponds to 
+ 
+What is after directory?
+  In after you should put settings that you want to change from the normal plugin loading.
+

@@ -66,3 +66,5 @@ nnoremap a= :args<CR>
 
 " HelpGrep :lhelpgrep, use global quickfix window
 cnoreabbrev h helpgrep
+" https://vi.stackexchange.com/questions/28603/how-to-navigate-vim-buffers-using-quickfix-list
+cnoreabbrev ls cexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>

@@ -1,2 +1,7 @@
 # Skip files from searching patterns
 rg multi -g '!*.js' | l
+
+# search only files with a particular extension. Search only in markdown or js files
+rg --type-list | column --table -s ':'
+# Look for pattern 'font' in all adoc only files under www directory tree
+rg --type asciidoc font www/

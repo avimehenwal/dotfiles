@@ -1,0 +1,5 @@
+# local fonts in ttf format
+/home/avi/.local/share/fonts
+
+# https://docs.fedoraproject.org/de/quick-docs/fonts/
+sudo fc-cache -v

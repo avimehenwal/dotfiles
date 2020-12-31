@@ -1,45 +1,122 @@
-# Neovim
+# vim / neoVim config
 
-* Do not have a [BDFL](https://en.wikipedia.org/wiki/Benevolent_dictator_for_life)
-* Supports LSP Language Server Protocol
-  * No need to use ctags, cscopes etc in that case
-* New VimScript implementation with AST
-* VIM way? This is the way
-* UNIX way - simple, short, clear, modular and extensible code
-
-```
-:help design-improved
-:help design-not
-```
-
-
-## Setup
+- How to use config from `/dotfile` folder?
+- Neovim is heavier than vim
 
 ```bash
-# main neovim config
+apt show  vim neovim | grep -i size
+```
+
+- `after` folder, add these configs to already loaded configs
+- `set path=.,**` to make `:find` work seamlessly within project
+- [x] include search
+- [ ] [GNU stow](https://www.gnu.org/software/stow/) symlinks factory program
+  - Manage dotfiles using symlinking
+
+## Install
+
+```
 ln --symbolic --verbose \
-  $HOME/dotfiles/neovim/init.vim \
-  $HOME/.config/nvim/init.vim
+  $HOME/dotfiles/vim/vimrc.vim \
+  $HOME/.vim/vimrc
 
-# install vim-plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+set TARGET $HOME/.config/
+set SOURCE $HOME/dotfiles/
+stow --verbose=2 --target=$TARGET --dir=$SOURCE --stow nvim
+stow --verbose=2 --target=$TARGET --dir=$SOURCE --delete nvim
+stow -v --target=$HOME/.config/ *
 ```
 
-### Bleeding edge
+## Alacritty
+
+- rust bases
+- [What is terminfo?](https://man7.org/linux/man-pages/man5/terminfo.5.html)
+
+### vimfm
+
+- Killer feature - undo and redo
+- control spilits using CTRL+w s|v
+- Save bookmarks with comma `'u`
+- Browser preview `w` then `Shift+Tab`
+
+#### vifm | Ranger
+
+- [ ] Image previews
+- [ ] Icons
+
+## Q&A
+
+Execute an external command?
+: `:! command`
+
+Execute external command and replace the output of current buffer?
+: `:%! commadn`
+
+Get the output of Ex-mode command in current buffer?
+: kbd:[Shift + Q] to enter Ex mode with multiple commands
+`:redir >> fileName :set rtp? :redir END :visual`
+
+How to reaload the file?
+: `:edit` or `set autoread`
+
+How to configure neovim?
+: `~/.config/nvim/init.vim`
+
+How to configure status line as per your needs?
+: Has its own statusline `:help status-line`
+
+## Checklist
+
+- [x] Dont have to worry about `autoload/plug`, automatically saved there when vim-plug is installed
+- [x] Install Fonts [fantasque-sans](https://github.com/belluzj/fantasque-sans)
+
+```
+sudo apt-get install -y fonts-fantasque-sans
+```
+
+## Use new Plugin system in vim 8+
 
 ```bash
-[ -f $HOME/mySoftwares/nvim.appimage ] && rm -fv $HOME/mySoftwares/nvim.appimage
-wget \
-  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage \
-  --directory-prefix=$HOME/mySoftwares
-chmod --verbose u+x $HOME/mySoftwares/nvim.appimage
-# alias nvim=$HOME/mySoftwares/nvim.appimage
-# nvim --version
+cd ~/dotfiles
+git submodule init
+git submodule add https://github.com/vim-airline/vim-airline.git vim/pack/shapeshed/start/vim-airline
+git add .gitmodules vim/pack/shapeshed/start/vim-airline
+git commit
 
-sudo snap install --edge nvim --classic
+git submodule update --remote --merge
+git commit
 ```
 
-## dotfiles
+Within this folder a further folder start is needed to hold plugins. Vim will pick up any packages added to this folder and automatically load the plugins.
 
-* https://github.com/alfunx/.dotfiles/tree/master/.vim
+Optionally another folder opt may be created to hold packages that are not loaded automatically. Packages added in the opt folder may be loaded using
+
+```dot
+digraph G {
+
+  subgraph cluster_0 {
+    style=filled;
+    color=lightgrey;
+    node [style=filled,color=white];
+    a0 -> a1 -> a2 -> a3;
+    label = "process #1";
+  }
+
+  subgraph cluster_1 {
+    node [style=filled];
+    b0 -> b1 -> b2 -> b3;
+    label = "process #2";
+    color=blue
+  }
+  start -> a0;
+  start -> b0;
+  a1 -> b3;
+  b2 -> a3;
+  a3 -> a0;
+  a3 -> end;
+  b3 -> end;
+
+  start [shape=Mdiamond];
+  end [shape=Msquare];
+}
+```

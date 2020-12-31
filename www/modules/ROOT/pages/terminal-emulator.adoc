@@ -3,6 +3,13 @@
 :experimental:
 :alacritty: https://github.com/alacritty/alacritty[Alacritty, title='A cross-platform, GPU-accelerated terminal emulator']
 
+A program which runs a shell interpreted language program.
+
+== Kitty
+
+* Python based terminal emulator, which uses GPU 
+* `dfn install kitty`
+
 == Alacritty
 
 > {alacritty} Fastest terminal emulator in existence
@@ -27,3 +34,9 @@ time tree / <1>
 
 - Repository Pattern for either `screen` or `tmux` program with sane functional keybindings
 - https://superuser.com/a/423397/190986
+
+== Developer Fonts
+
+.developer fonts
+. https://rubjo.github.io/victor-mono/[Victor mono with ligatures]
+. https://github.com/tonsky/FiraCode[Fira code with ligatures]

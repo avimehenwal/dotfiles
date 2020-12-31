@@ -1,0 +1,39 @@
+*unimpaired-navigation.txt*                            unimpaired-navigation
+
+Author: avimehenwal
+
+==============================================================================
+1. Contents                   *TagHighlight* *TagHighlight-contents*          {{{1
+
+	1.    Contents                           |TagHighlight-contents|
+
+	2.    TagHighlight Manual                |TagHighlight-manual|
+	2.1   Introduction                       |TagHighlight-intro|
+	2.2   Commands                           |TagHighlight-commands|
+	2.3   Colouring                          |TagHighlight-colours|
+	2.4   Configuration                      |TagHighlight-config|
+	2.4.1 How to Set Options                 |TagHighlight-how-options|
+	2.4.2 Example Configurations             |TagHighlight-example-configs||
+	2.4.3 Option Summary                     |TagHighlight-option-list|
+	2.4.4 Option Details                     |TagHighlight-option-details|
+	2.5   Installation                       |TagHighlight-install|
+	2.5.1 Requirements                       |TagHighlight-requirements|
+	2.5.2 Installation Guide                 |TagHighlight-install-guide|
+
+	3.    Standard Libraries                 |TagHighlight-standard-libraries|
+	3.1   Introduction                       |TagHighlight-stdlib-intro|
+	3.2   Adding More Standard Libraries     |TagHighlight-adding-libraries|
+
+	4.    TagHighlight Customisation         |TagHighlight-custom|
+	4.1   Adding More Languages              |TagHighlight-adding|
+	4.1.1 Example                            |TagHighlight-add-example|
+
+	5.    Troubleshooting                    |TagHighlight-troubleshooting|
+
+	6.    TagHighlight History               |TagHighlight-history|
+
+==============================================================================
+2. TagHighlight Manual           *TagHighlight-manual*                      {{{1
+
+2.1 Introduction                         *TagHighlight-intro*               {{{2
+
