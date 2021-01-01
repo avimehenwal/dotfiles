@@ -1,4 +1,8 @@
+-- Galaxyline Plugin Component configuration
+-- https://github.com/glepnir/galaxyline.nvim
 -- require'nvim-web-devicons'.setup()
+--
+-- provider can be string or function or table. When it's string,it will match the default provider
 
 local gl = require('galaxyline')
 local gls = gl.section
@@ -73,7 +77,7 @@ gls.left[2] = {
                           ['!']  = colors.red,
                           t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
-      return '  NVCode '
+      return '  NVIM  '
     end,
     separator = ' ',
     separator_highlight = {colors.yellow,function()
@@ -93,7 +97,7 @@ gls.left[2] = {
 --     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
 --   },
 -- }
--- gls.left[4] = {
+-- gls.left[1] = {
 --   FileName = {
 --     provider = {'FileSize'},
 --     condition = buffer_not_empty,
@@ -113,6 +117,15 @@ gls.left[3] = {
 gls.left[4] = {
   GitBranch = {
     provider = 'GitBranch',
+    separator = ' ',
+    separator_highlight = {colors.purple,colors.bg},
+    condition = buffer_not_empty,
+    highlight = {colors.grey,colors.bg},
+  }
+}
+gls.left[14] = {
+  FileName = {
+    provider = '{FileName}',
     separator = ' ',
     separator_highlight = {colors.purple,colors.bg},
     condition = buffer_not_empty,

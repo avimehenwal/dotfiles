@@ -3,7 +3,8 @@
 "
 " Leader key, like \, <space>, J
 let g:mapleader="\<Space>"
-let maplocalleader="\\"
+" local to buffer <LocalLeader>
+" let maplocalleader="\\"
 
 nnoremap <Space> <Nop>
 " save a LOT of keystrokes
@@ -27,8 +28,9 @@ else
   inoremap <expr> <c-k> ("\<C-p>")
 
   " I hate escape more than anything else
-  inoremap jk <Esc>
-  inoremap kj <Esc>
+  " inoremap jk <Esc>
+  " inoremap kj <Esc>
+  inoremap jj <Esc>
 
   " Easy CAPS
   " inoremap <c-u> <ESC>viwUi
@@ -39,7 +41,6 @@ else
   " SHIFT-TAB will go back
   nnoremap <silent> <S-TAB> :bprevious<CR>
 
-
   " Alternate way to save
   nnoremap <silent> <C-s> :w<CR>
   " Alternate way to quit
@@ -48,5 +49,8 @@ else
   nnoremap <silent> <C-c> <Esc>
   " <TAB>: completion.
   inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+
+  " Frequently Used Applications
+  nnoremap <C-\> :Vifm<CR>
 endif
 

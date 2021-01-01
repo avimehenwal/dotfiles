@@ -50,7 +50,10 @@ else
     source $HOME/dotfiles/nvim/external-plugins.vim
 
     " execute lua file
-    luafile $HOME/dotfiles/nvim/lua/nvcodeline.lua
+    " luafile $HOME/dotfiles/nvim/lua/statusline-galaxyline.lua
+    luafile $HOME/dotfiles/nvim/lua/galaxyline-spaceline.lua
+    " luafile $HOME/dotfiles/nvim/lua/galaxyline-new-evilline.lua
+    " luafile $HOME/dotfiles/nvim/lua/galaxyline-eviline.lua
     luafile $HOME/dotfiles/nvim/lua/plug-colorizer.lua
     luafile $HOME/dotfiles/nvim/lua/treesitter.lua
   endif

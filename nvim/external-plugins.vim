@@ -64,10 +64,11 @@ endif
 " Themes and Statusline
 " ---------------------------------------------------------------------------------------------------------------------
 Plug 'morhetz/gruvbox'                                                    "dark/light mode
+Plug 'Iron-E/nvim-highlite'                                               "used by a galaxyline statusline file
 if has('nvim')
   Plug 'glepnir/galaxyline.nvim'                                          "statusline plugin on steroids
   Plug 'norcalli/nvim-colorizer.lua'                                      "Fastest colorizer with no external dependency
-  " Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'
 endif
 
 

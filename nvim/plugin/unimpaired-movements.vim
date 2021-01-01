@@ -11,7 +11,7 @@
 "
 " MOVEMENT KEYS
 "   []     previous, next
-"   p,\    first, last
+"   p,\    first, last       ToDo: Maybe use CAPS varients for first and last
 "   -=     open, close
 "
 " used by :makeprg, :helpgrep, :vimgrep
@@ -23,48 +23,52 @@
 " use [] prior to q else it interferes with recording option
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
-nnoremap qp :cfirst<CR>
-nnoremap q\ :clast<CR>
-nnoremap q= :copen<CR>
-nnoremap q- :cclose<CR>
+nnoremap pq :cfirst<CR>
+nnoremap \q :clast<CR>
+nnoremap =q :copen<CR>
+nnoremap -q :cclose<CR>
 " cfile -> read errors from a file
 
 " Location List, individual to each buffer
-nnoremap c[ :lprevious<CR>
-nnoremap c] :lnext<CR>
-nnoremap cp :lfirst<CR>
-nnoremap c\ :llast<CR>
-nnoremap c= :lopen<CR>
-nnoremap c- :lclose<CR>
+nnoremap [c :lprevious<CR>
+nnoremap ]c :lnext<CR>
+nnoremap pc :lfirst<CR>
+nnoremap \c :llast<CR>
+nnoremap =c :lopen<CR>
+nnoremap -c :lclose<CR>
 " lfile -> read errors from a file
 
 " Buffer List :ls
-nnoremap b[ :bprevious<CR>
-nnoremap b] :bnext<CR>
-nnoremap bp :bfirst<CR>
-nnoremap b\ :blast<CR>
-nnoremap b= :Buffers<CR>
-nnoremap b- :bdelete<CR>
+nnoremap [b :bprevious<CR>
+nnoremap ]b :bnext<CR>
+nnoremap pb :bfirst<CR>
+nnoremap \b :blast<CR>
+nnoremap =b :Buffers<CR>
+nnoremap -b :bdelete<CR>
 
 " Tab List :tabs
 " t -> t-th occourence of character
-nnoremap t[ :tabprevious<CR>
-nnoremap t] :tabnext<CR>
-nnoremap tp :tabfirst<CR>
-nnoremap t\ :tablast<CR>
-nnoremap t= :tabedit<CR>
-nnoremap t- :tabclose<CR>
+nnoremap [t :tabprevious<CR>
+nnoremap ]t :tabnext<CR>
+nnoremap pt :tabfirst<CR>
+nnoremap \t :tablast<CR>
+nnoremap =t :tabedit<CR>
+nnoremap -t :tabclose<CR>
 
 " Argument List :args, low priority
 " still to uncover quality use-case
 " a -> Append text after, normal->insert mode
-nnoremap a[ :prev<CR>
-nnoremap a] :next<CR>
-nnoremap ap :first<CR>
-nnoremap a\ :last<CR>
-nnoremap a= :args<CR>
+nnoremap [a :prev<CR>
+nnoremap ]a :next<CR>
+nnoremap pa :first<CR>
+nnoremap \a :last<CR>
+nnoremap =a :args<CR>
 
 " HelpGrep :lhelpgrep, use global quickfix window
 cnoreabbrev h helpgrep
 " https://vi.stackexchange.com/questions/28603/how-to-navigate-vim-buffers-using-quickfix-list
-cnoreabbrev ls cexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>
+cnoreabbrev ls lexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>
+
+" Automatically open QuickFix window when there are errors from compilers
+au QuickFixCmdPost [^l]* nested cwindow
+au QuickFixCmdPost    l* nested lwindow

@@ -21,10 +21,10 @@ if exists(":CompilerSet") != 2
 endif
 
 CompilerSet makeprg=shellcheck\ --format=gcc\ --check-sourced
+" use the default 'errorformat'
+CompilerSet errorformat&		
 
 " CompilerSet errorformat='%f:%l:%c: %trror: %m,' .
 "     \ '%f:%l:%c: %tarning: %m,' .
 "     \ '%f:%l:%c: %tote: %m'
 
-" use the default 'errorformat'
-CompilerSet errorformat&		
