@@ -13,9 +13,9 @@ while [ ! -d ./.git ]
 do
   cd ..
   GITROOT=$(pwd)
-  [ ${GITROOT} == "$HOME" ] && break
+  [ "${GITROOT}" == "$HOME" ] && break
 done
 
-[ ${GITROOT} == "$HOME" ] && echo "." || echo ${GITROOT}
+[ "${GITROOT}" == "$HOME" ] && echo "." || echo "${GITROOT}"
 
 # END

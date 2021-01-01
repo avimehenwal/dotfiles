@@ -92,6 +92,24 @@ Tree Sitter?::
 - How to set different colorschemes for different buffers? Like difference colorscheme for cheat.sh buffer.
 - Markdown Preview
 
+== Compiler Options
+
+[List of compilers from syntastic plugin](https://github.com/vim-syntastic/syntastic/tree/master/syntax_checkers)
+
++-----------------+     +--------------+
+| compiler plugin | --> | error format |
++-----------------+     +--------------+
+  |
+  |
+  v
++-----------------+
+|     makeprg     |
++-----------------+
+
+|===
+| BASH | https://github.com/koalaman/shellcheck[ShellCheck static analysis]
+|===
+
 == Resources
 
 * https://stackoverflow.com/questions/42905008/quickfix-list-how-to-add-and-remove-entries

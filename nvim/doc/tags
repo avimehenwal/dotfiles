@@ -48,6 +48,7 @@ TagHL-TypesFilePrefix	sample-doc.txt	/*TagHL-TypesFilePrefix*
 TagHL-UserLibraries	sample-doc.txt	/*TagHL-UserLibraries*
 TagHL-UserLibraryDir	sample-doc.txt	/*TagHL-UserLibraryDir*
 TagHighlight	sample-doc.txt	/*TagHighlight*
+TagHighlight	unimpaired-navigation.txt	/*TagHighlight*
 TagHighlight-add-example	sample-doc.txt	/*TagHighlight-add-example*
 TagHighlight-adding	sample-doc.txt	/*TagHighlight-adding*
 TagHighlight-adding-libraries	sample-doc.txt	/*TagHighlight-adding-libraries*
@@ -55,6 +56,7 @@ TagHighlight-colours	sample-doc.txt	/*TagHighlight-colours*
 TagHighlight-commands	sample-doc.txt	/*TagHighlight-commands*
 TagHighlight-config	sample-doc.txt	/*TagHighlight-config*
 TagHighlight-contents	sample-doc.txt	/*TagHighlight-contents*
+TagHighlight-contents	unimpaired-navigation.txt	/*TagHighlight-contents*
 TagHighlight-copyright	sample-doc.txt	/*TagHighlight-copyright*
 TagHighlight-custom	sample-doc.txt	/*TagHighlight-custom*
 TagHighlight-example-configs	sample-doc.txt	/*TagHighlight-example-configs*
@@ -66,8 +68,10 @@ TagHighlight-install-guide	sample-doc.txt	/*TagHighlight-install-guide*
 TagHighlight-install-main	sample-doc.txt	/*TagHighlight-install-main*
 TagHighlight-install-stdlib	sample-doc.txt	/*TagHighlight-install-stdlib*
 TagHighlight-intro	sample-doc.txt	/*TagHighlight-intro*
+TagHighlight-intro	unimpaired-navigation.txt	/*TagHighlight-intro*
 TagHighlight-language-colours	sample-doc.txt	/*TagHighlight-language-colours*
 TagHighlight-manual	sample-doc.txt	/*TagHighlight-manual*
+TagHighlight-manual	unimpaired-navigation.txt	/*TagHighlight-manual*
 TagHighlight-option-details	sample-doc.txt	/*TagHighlight-option-details*
 TagHighlight-option-list	sample-doc.txt	/*TagHighlight-option-list*
 TagHighlight-remove-old	sample-doc.txt	/*TagHighlight-remove-old*
@@ -83,3 +87,4 @@ TagHighlight.txt	sample-doc.txt	/*TagHighlight.txt*
 b:TagHighlightSettings	sample-doc.txt	/*b:TagHighlightSettings*
 g:TagHighlightSettings	sample-doc.txt	/*g:TagHighlightSettings*
 taghl_config.txt	sample-doc.txt	/*taghl_config.txt*
+unimpaired-navigation.txt	unimpaired-navigation.txt	/*unimpaired-navigation.txt*

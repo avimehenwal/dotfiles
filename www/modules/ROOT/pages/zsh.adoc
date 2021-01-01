@@ -68,6 +68,18 @@ Parameter Expansion::
   echo ${days[@]}
   ```
 
+== Development
+
+* How to debug shell scripts?
+* Shell scripts compilers? and compiler options?
+
+`-x` option with bash compiler and within script.
+`-n`, `-v`
+
+* Static checking and analysis tools
+* https://github.com/koalaman/shellcheck
+* https://github.com/vim-syntastic/syntastic
+
 === Resources
 
 * https://github.com/k4m4/terminals-are-sexy
