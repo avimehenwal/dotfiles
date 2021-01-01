@@ -108,6 +108,7 @@ Tree Sitter?::
 
 |===
 | BASH | https://github.com/koalaman/shellcheck[ShellCheck static analysis]
+| VimL | https://github.com/Vimjas/vint[vint - linter for vimscript]
 |===
 
 == Resources

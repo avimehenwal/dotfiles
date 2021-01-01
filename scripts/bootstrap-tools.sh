@@ -7,7 +7,7 @@
 # Install commonly used CLI tools (if not already installed)
 # Idempotent Behaviour via dnf,Homebrew package managers
 
-PIP=(termgraph)
+PIP=(termgraph vim-vint)
 BREW=(git-flow-avh zplug diff-so-fancy spark rename lazygit lazydocker jesseduffield/lazynpm/lazynpm)
 DNF=(ShellCheck perl-Graph-Easy zsh fish cloc bat cargo flatpak cpan starship curl httpie exa ncdu wget hunspel parallel libwebp-tools fira-code-fonts fd-find toilet figlet prettyping)
 CARGO=()
@@ -24,9 +24,9 @@ loop_over() {
   shift
   # rebuild array with rest of the arguments
   local LIST=("$@")
-  for ITEM in ${!LIST[@]}; do
+  for ITEM in "${!LIST[@]}"; do
     echo "$CMD ${LIST[$ITEM]}"
-    $CMD ${LIST[$ITEM]}
+    $CMD "${LIST[$ITEM]}"
   done
 }
 
@@ -48,7 +48,7 @@ from_cargo() {
 }
 
 from_dnf() {
-  sudo dnf install -y ${DNF[@]}
+  sudo dnf install -y "${DNF[@]}"
 }
 
 from_git() {
@@ -62,7 +62,7 @@ from_curl() {
 }
 
 test() {
-  [ -x $HOME/.local/bin/diff-so-fancy ] && echo Y || echo N
+  [ -x "$HOME/.local/bin/diff-so-fancy" ] && echo Y || echo N
 }
 
 # MAIN

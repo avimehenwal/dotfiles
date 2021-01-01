@@ -89,10 +89,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 call plug#end()
 
-
-
-" automatically install missing plugins on startup
-autocmd VimEnter *
-      \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-      \|   PlugInstall --sync | q
-      \| endif
+augroup install_missing_plugins_onStartup
+  autocmd VimEnter *
+        \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+        \|   PlugInstall --sync | q
+        \| endif
+augroup end
