@@ -146,3 +146,5 @@ set guifont=JetBrainsMono\ Nerd\ Font
 
 " You can't stop me
 cmap w!! w !sudo tee %
+
+set shellcmdflag=-c
