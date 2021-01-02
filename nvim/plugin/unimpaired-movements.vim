@@ -23,8 +23,8 @@
 " use [] prior to q else it interferes with recording option
 nnoremap [q :cprevious<CR>
 nnoremap ]q :cnext<CR>
-nnoremap pq :cfirst<CR>
-nnoremap \q :clast<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]Q :clast<CR>
 nnoremap =q :copen<CR>
 nnoremap -q :cclose<CR>
 " cfile -> read errors from a file
@@ -70,5 +70,7 @@ cnoreabbrev h helpgrep
 cnoreabbrev ls lexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>
 
 " Automatically open QuickFix window when there are errors from compilers
-au QuickFixCmdPost [^l]* nested cwindow
-au QuickFixCmdPost    l* nested lwindow
+augroup onError_open_quickfix
+  au QuickFixCmdPost [^l]* nested cwindow
+  au QuickFixCmdPost    l* nested lwindow
+augroup end

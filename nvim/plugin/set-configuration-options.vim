@@ -16,7 +16,7 @@ endif
 
 " do not make VIM compatible with VI. Might have undesired side-effects
 " like- no undo file, no search highlights, no filetype and expandtab etc.
-set nocompatible           " -N switch
+" set nocompatible           " -N switch
 
 " Preferences
 set history=5000
@@ -96,6 +96,7 @@ set hidden                              " Required to keep multiple buffers open
 set nowrap                              " Display long lines as just one line
 set whichwrap+=<,>,[,],h,l
 set encoding=utf-8                      " The encoding displayed
+scriptencoding utf-8                    " Use scriptencoding when multibyte char exists
 set pumheight=10                        " Makes popup menu smaller
 set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
@@ -141,8 +142,7 @@ set guifont=JetBrainsMono\ Nerd\ Font
 " set autochdir                           " Your working directory will always be the same as your working directory
 " set foldcolumn=2                        " Folding abilities
 
-" au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+" autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " You can't stop me
 cmap w!! w !sudo tee %

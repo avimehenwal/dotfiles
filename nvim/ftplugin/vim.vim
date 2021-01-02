@@ -7,7 +7,14 @@
 " vim fileType
 "
 
-inoreabbrev iab inoreabbrev
-
 :compiler vint
-au BufWritePost * :make % | redraw!
+
+augroup run_static_analysis_onSave
+  autocmd BufWritePost * :make % | redraw!
+augroup end
+
+" frequently used abbreviations
+inoreabbrev iab inoreabbrev
+inoreabbrev nmap nnoremap
+inoreabbrev imap inoremap
+inoreabbrev vmap vnoremap

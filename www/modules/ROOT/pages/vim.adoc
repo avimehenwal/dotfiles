@@ -96,6 +96,8 @@ Tree Sitter?::
 
 [List of compilers from syntastic plugin](https://github.com/vim-syntastic/syntastic/tree/master/syntax_checkers)
 
+.vim Compiler Plugins
+....
 +-----------------+     +--------------+
 | compiler plugin | --> | error format |
 +-----------------+     +--------------+
@@ -105,10 +107,12 @@ Tree Sitter?::
 +-----------------+
 |     makeprg     |
 +-----------------+
+....
 
 |===
 | BASH | https://github.com/koalaman/shellcheck[ShellCheck static analysis]
 | VimL | https://github.com/Vimjas/vint[vint - linter for vimscript]
+| NodeJS | https://eslint.org/[ESlint]
 |===
 
 == Resources
