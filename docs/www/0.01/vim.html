@@ -301,6 +301,37 @@ When making a change the cursor position is remembered. <code>:changes</code>
 </div>
 </div>
 <div class="sect1">
+<h2 id="_vim_tmux_httpie"><a class="anchor" href="#_vim_tmux_httpie"></a>VIM + tmux + httpie</h2>
+<div class="sectionbody">
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p>Development Environment</p>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Modal editing jusing keyboards</p>
+</li>
+<li>
+<p>Search through all open Buffers only <code>//</code></p>
+</li>
+<li>
+<p><code>?? :Rg!&lt;cr&gt;</code> Run grep program</p>
+</li>
+<li>
+<p>Abuse <code>fzf</code> to get work done correctly</p>
+</li>
+<li>
+<p>Search through components line only for cows <code>componets:cow</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_interesting_reads"><a class="anchor" href="#_interesting_reads"></a>Interesting Reads</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -313,6 +344,118 @@ When making a change the cursor position is remembered. <code>:changes</code>
 </li>
 </ul>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_neovim"><a class="anchor" href="#_neovim"></a>NeoVIM</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<div class="title">Pros</div>
+<ol class="arabic">
+<li>
+<p>Language Server</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">Features</div>
+<ol class="arabic">
+<li>
+<p>Language Parser</p>
+</li>
+<li>
+<p>Queries</p>
+</li>
+<li>
+<p>Modules</p>
+</li>
+<li>
+<p>Asynchronous Job Control</p>
+</li>
+<li>
+<p>Pop up windows</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Tree Sitter?</dt>
+<dd>
+<p>Tree-sitter is a parser generator tool and an incremental parsing library.
+It can build a concrete syntax tree for a source file and efficiently update the syntax tree as the source file is edited.</p>
+</dd>
+</dl>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="_nvim_features_to_look_for"><a class="anchor" href="#_nvim_features_to_look_for"></a>NVIM Features to look for</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>How to add Fira code and ligatures to nvim?&#8201;&#8212;&#8201;<a href="https://github.com/tonsky/FiraCode#terminal-compatibility-list">Use Fira Code with ligatures in console?</a>&#8201;&#8212;&#8201;works with KDE Konsole terminal emulator</p>
+</li>
+<li>
+<p>How to set different colorschemes for different buffers? Like difference colorscheme for cheat.sh buffer.</p>
+</li>
+<li>
+<p>Markdown Preview</p>
+</li>
+<li>
+<p>autocmd <code>Formatprg</code> onSave</p>
+</li>
+<li>
+<p>Asynchronous linting commands, remove blocking commands</p>
+</li>
+<li>
+<p><a href="https://stackoverflow.com/questions/1413285/multiple-autocommands-in-vim">Multiple commands in autocommands</a></p>
+</li>
+<li>
+<p><code>formatprg</code> only fixes the indentation problesm. Use external program for code formatting.&#8201;&#8212;&#8201;<code>gg=G</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_compiler_options"><a class="anchor" href="#_compiler_options"></a>Compiler Options</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>[List of compilers from syntastic plugin](<a href="https://github.com/vim-syntastic/syntastic/tree/master/syntax_checkers" class="bare">https://github.com/vim-syntastic/syntastic/tree/master/syntax_checkers</a>)</p>
+</div>
+<div class="literalblock">
+<div class="title">vim Compiler Plugins</div>
+<div class="content">
+<pre>+-----------------+     +--------------+
+| compiler plugin | --&gt; | error format |
++-----------------+     +--------------+
+  |
+  |
+  v
++-----------------+
+|     makeprg     |
++-----------------+</pre>
+</div>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BASH</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/koalaman/shellcheck">ShellCheck static analysis</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VimL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/Vimjas/vint">vint - linter for vimscript</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NodeJS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://eslint.org/">ESlint</a></p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect1">

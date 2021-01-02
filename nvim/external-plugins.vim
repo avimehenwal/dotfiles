@@ -44,6 +44,7 @@ Plug 'markonm/traces.vim'                                                 "searc
 Plug 'jremmen/vim-ripgrep', { 'on':  'Rg' }                               "use rip-grep from within vim quickfix list
 Plug 'mhinz/vim-startify'                                                 "fancy start screen
 Plug 'SirVer/ultisnips'                                                   "vscode like snippets manager
+" Code Formatter - coc-prettier
 
 " auto code format on save https://github.com/neoclide
 Plug 'dbeniamine/cheat.sh-vim'                                            "https://github.com/dbeniamine/cheat.sh-vim

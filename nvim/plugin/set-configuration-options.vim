@@ -42,8 +42,7 @@ set incsearch					                "realtime incremental search as we type
 set hlsearch 						              "highlight search
 set ignorecase
 set smartcase           						  "ignores ignorecase
-set cindent						                "indent C code
-set autoindent
+" set cindent						                "indent C code
 set tagstack                          "start storing tags on tagstack
 
 " https://stackoverflow.com/questions/1878974/redefine-tab-as-4-spaces#:~:text=Always%20keep%20'tabstop'%20at%208,4%20(or%203)%20characters.
@@ -110,8 +109,6 @@ set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
 set expandtab                           " Converts tabs to spaces
-set smartindent                         " Makes indenting smart
-set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
 set number                              " Line numbers
 set relativenumber                      " Relative Numbering for quick jumping movements
@@ -147,4 +144,7 @@ set guifont=JetBrainsMono\ Nerd\ Font
 " You can't stop me
 cmap w!! w !sudo tee %
 
-set shellcmdflag=-c
+set shellcmdflag=-c                      " donot changes, messes up the icons in galaxyline
+set autoread                             " automatically ready changes in files when changed outside of vim 
+
+

@@ -169,6 +169,78 @@
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_basics"><a class="anchor" href="#_basics"></a>Basics</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Linux Basics Terminologies</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terminology</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meaning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terminal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">usually means terminal emulator program which emulates old styled terminals</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Shell</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Terminal emulator runs another program called shell, which is a programming language</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Command Line</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Line where you enter commands to be executed</p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Asking how to change keybindings (copy/paste) on bash? might be a wrong question</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Keybindings are managed by Terminal Emulator program</p>
+</li>
+<li>
+<p>Shell program just provides command line &gt; line where you enter commands</p>
+</li>
+<li>
+<p><strong>PROMPS</strong> are built into shell. like <code>PS1</code>, <code>PS2</code>, <code>PS3</code> etc</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>HOw to change prompt? is related to shell and NOT terminal Emulator.</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="title">change python shell prompt</div>
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">import sys
+sys.ps1 = "3.9&gt;&gt;&gt; "
+sys.ps2 = "3.9... "</code></pre>
+</div>
+</div>
+<div class="ulist">
+<div class="title">Shell Programs Examples</div>
+<ul>
+<li>
+<p>bash/zsh/sh/fish shell programs</p>
+</li>
+<li>
+<p>python/perl/ruby/javascript shells</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>

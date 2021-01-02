@@ -63,6 +63,9 @@ augroup source_MYVIMRC_onSave
   autocmd BufWritePost *.vim,*.lua source $MYVIMRC
 augroup end
 
+" COC Code Formatters
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile)
+
 " Understanding vim directory structure
 " ------------------------------------------------------------------------------------------
 " Whatever goes into plugin is loaded whenever vim starts whereas what you put in ftplugin

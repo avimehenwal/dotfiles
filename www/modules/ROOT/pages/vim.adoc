@@ -91,6 +91,11 @@ Tree Sitter?::
 -- works with KDE Konsole terminal emulator
 - How to set different colorschemes for different buffers? Like difference colorscheme for cheat.sh buffer.
 - Markdown Preview
+- autocmd `Formatprg` onSave
+- Asynchronous linting commands, remove blocking commands
+- https://stackoverflow.com/questions/1413285/multiple-autocommands-in-vim[Multiple commands in autocommands]
+- `formatprg` only fixes the indentation problesm. Use external program for code formatting.
+-- `gg=G`
 
 == Compiler Options
 
