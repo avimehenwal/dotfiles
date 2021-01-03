@@ -25,5 +25,5 @@ cnoreabbrev tidy tidy --show-body-only yes --quiet true --show-warnings false
 
 " Run spell-checker program in interactive mode
 " Google Drive and MS-Word uses Alt-F7
-nnoremap 7 :terminal hunspell %<CR>
+nnoremap <M-7> :terminal hunspell %<CR>
 

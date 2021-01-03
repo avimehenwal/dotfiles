@@ -13,3 +13,11 @@ if $1
 $0
 endif
 endsnippet
+
+snippet aug "auto group"
+augroup ${1:group_name}
+	" remove all other auto commands
+  autocmd!
+	$0
+augroup end
+endsnippet

@@ -138,9 +138,26 @@ gls.left[13] = {
     provider = 'DiagnosticWarn',
     icon = '  ',
     highlight = {colors.blue,colors.bg},
+    separator = '',
+    separator_highlight = {colors.green,colors.bg},
   }
 }
-
+gls.left[14] = {
+  BuffersCount = {
+    provider = function()
+      local buffers = {}
+      for _,val in ipairs(vim.fn.range(1,vim.fn.bufnr('$'))) do
+        if vim.fn.bufexists(val) == 1 and vim.fn.buflisted(val) == 1 then
+          table.insert(buffers,val)
+        end
+      end
+      return " " .. #buffers .. " "
+    end,
+     separator = '',
+    separator_highlight = {colors.green,colors.bg},
+    highlight = {colors.darkblue,colors.green}
+  }
+}
 
 gls.right[1] = {
   FileType = {
