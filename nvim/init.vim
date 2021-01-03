@@ -1,9 +1,11 @@
-"  @avimehenwal | 2020
 "                __     ___
 "  _ __   ___  __\ \   / (_)_ __ ___
 " | '_ \ / _ \/ _ \ \ / /| | '_ ` _ \
 " | | | |  __/ (_) \ V / | | | | | | |
 " |_| |_|\___|\___/ \_/  |_|_| |_| |_|
+"
+" Try to keep initial vim bootup LANGUAGE AGNOSTIC
+" All FileType specific configs go either into ftplugin dir or autocommands
 "
 " Don't seek mastery, seek proficiency
 "
@@ -22,9 +24,6 @@
 "
 " DIRECTORY STRUCTURE and Organization
 " cheat nvim
-"
-" Try to keep initial vim bootup Language agnostic
-" All FileType specific configs go either into ftplugin dir or autocommands
 "
 " linter Tools :retab
 " BootConfig: runtimepath
@@ -66,8 +65,20 @@ augroup end
 " useful when calling hunspell spellchecker
 augroup terminal_enterInInsertMode_setStatusline
   autocmd TermOpen *
-    \ setlocal statusline=%{b:term_title} |
-    \ startinsert
+        \ setlocal statusline=%{b:term_title} |
+        \ startinsert
+augroup end
+
+" can also use gg=G instead of == or ={motion}
+" using gg=G formatprg leaves cursor at the top of the files. Would have to jump back using ``
+augroup run_formatPrg_beforeWrite
+  autocmd BufWritePre * normal ==
+augroup end
+
+" Cursorhold(I) events depend on updatetime setting 
+" also write change to :help undofile
+augroup autosave_onTimeout
+  autocmd CursorHold,CursorHoldI * update
 augroup end
 
 " COC Code Formatters

@@ -9,6 +9,8 @@ if has('autocmd')
   set noswapfile											"only useful in multi-user systems
   set updatetime=4000                 "ms automatically write swaps to disk
   set autowrite                       "Automatically save before commands like :next and :make
+  " https://vi.stackexchange.com/questions/74/is-it-possible-to-make-vim-auto-save-files
+  set undofile                        "save local buffer undotree changes in file. Auto-save file alternative
 endif
 if has('syntax') && !exists('g:syntax_on')
   syntax enable
@@ -120,7 +122,6 @@ set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set shortmess+=c                        " Don't pass messages to |ins-completion-menu|.
 set signcolumn=yes                      " Always show the signcolumn, otherwise it would shift the text each time
-set updatetime=300                      " Faster completion
 set timeoutlen=100                      " By default timeoutlen is 1000 ms, used by which-key
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set incsearch

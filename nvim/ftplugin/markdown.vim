@@ -12,13 +12,13 @@ setlocal conceallevel=2
 :compiler markdownlint
 
 augroup run_static_analysis_onSave
-  " remove all other auto commands
-  autocmd!
-  autocmd BufEnter,BufWritePost *.md :make % | redraw!
+  " remove all other auto commands from current buffer only
+  " autocmd! * <buffer>
+  autocmd BufEnter,BufWritePost <buffer> :make % | redraw!
 augroup end
 
 augroup run_spellCheck_onBufferClose
-  autocmd BufLeave * :terminal hunspell %<CR>
+  autocmd BufLeave <buffer> :terminal hunspell %<CR>
 augroup end
 
 " TODO: deal with sublists

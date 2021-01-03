@@ -8,6 +8,7 @@
 "   t              Tabs
 "   h              Help grep in location/quickfix window
 "   a              Argument List
+"   u              Undotree and time travel on file changes
 "
 " MOVEMENT KEYS
 "   []     previous, next
@@ -70,7 +71,17 @@ cnoreabbrev h helpgrep
 cnoreabbrev ls lexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>
 
 " Automatically open QuickFix window when there are errors from compilers
-augroup onError_open_quickfix
+augroup open_quickfix_onError
   au QuickFixCmdPost [^l]* nested cwindow
   au QuickFixCmdPost    l* nested lwindow
 augroup end
+
+" Time travel with undo-trees :help undolist :help changes
+" :help undodir and undofile
+" [builtin] g- and g+ to move back and forward in time
+" try to popullate changes in location list and then travel?
+nnoremap [u :earlier<CR>
+nnoremap ]u :later<CR>
+nnoremap =u :undolist<CR>
+nnoremap -u :changes<CR>
+

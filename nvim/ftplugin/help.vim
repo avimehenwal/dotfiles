@@ -5,7 +5,8 @@
 " Make buffer comfortable to read on 14inch laptop screen
 
 augroup vertical_help
-autocmd!
-autocmd BufWinEnter <buffer> wincmd H | vertical resize 80
+  " Remove all auto-commands
+  autocmd! * <buffer>
+  autocmd BufWinEnter <buffer> wincmd H | vertical resize 90
 augroup END
 

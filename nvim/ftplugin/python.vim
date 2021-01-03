@@ -1,12 +1,24 @@
-" filetype=python
+"              _   _                 
+"  _ __  _   _| |_| |__   ___  _ __  
+" | '_ \| | | | __| '_ \ / _ \| '_ \ 
+" | |_) | |_| | |_| | | | (_) | | | |
+" | .__/ \__, |\__|_| |_|\___/|_| |_|
+" |_|    |___/                       
 "
+" https://vim.fandom.com/wiki/Keep_your_vimrc_file_clean
+
+setlocal tabstop=4
+setlocal shiftwidth=4
+setlocal expandtab
+setlocal autoindent
+setlocal smarttab
+setlocal formatoptions=croql filetype=python
+
+setlocal colorcolumn=80
+
 " applies only to local buffer
 setlocal path=.,**
 setlocal wildignore=*.pyc,*/__pycache__/*
-
-" linting
-set shiftwidth=4 tabstop=4 softtabstop=4 expandtab=4 autoindent smartindent
-set colorcolumn=80
 
 " include search
 setlocal include=^\\s*import

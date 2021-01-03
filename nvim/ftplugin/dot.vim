@@ -12,7 +12,7 @@
 if has('terminal')
   augroup xdot_graphviz_viewer
     " Remove all vimrc autocommands" 
-    autocmd!
+    autocmd! * <buffer>
     autocmd BufWritePost <buffer> call s:xdot_live_preview(expand("%:p"))
   augroup end
 endif

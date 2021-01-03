@@ -34,3 +34,6 @@ What is after directory?
 
 # call functions on visual selection
 https://vi.stackexchange.com/questions/17606/vmap-and-visual-block-how-do-i-write-a-function-to-operate-once-for-the-entire
+
+# autocommands local buffer
+https://vi.stackexchange.com/questions/8056/for-an-autocmd-in-a-ftplugin-should-i-use-pattern-matching-or-buffer

@@ -10,7 +10,7 @@
 :compiler vint
 
 augroup run_static_analysis_onSave
-  autocmd BufWritePost * :make % | redraw!
+  autocmd BufWritePost <buffer> :make % | redraw!
 augroup end
 
 " abbreviations

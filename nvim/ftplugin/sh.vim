@@ -12,5 +12,7 @@
 " shellcheck compiler options are already added in compiler/shellcheck.vim plugin file
 " set makeprg=shellcheck\ --format=gcc\ --check-sourced\ %
 :compiler shellcheck
-au BufWritePost * :make % | redraw!
-"au BufWritePost * :silent make | redraw!
+
+augroup run_makeprg_onWrite
+  autocmd BufWritePost <buffer> :make % | redraw!
+augroup end
