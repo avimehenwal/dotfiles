@@ -3,7 +3,7 @@
 "
 " Anchor Keys    Description
 "   q              Quickfix
-"   c              Location List
+"   l              Location List  :help [c, ]c already occupied by vimdiff
 "   b              Buffers
 "   t              Tabs
 "   h              Help grep in location/quickfix window
@@ -17,6 +17,14 @@
 "
 " used by :makeprg, :helpgrep, :vimgrep
 " The ! prevent using user mapping
+"
+" Quickfix/Location LIST USE-CASEs
+" 1. present changed files for next commit.  :G difftool --name-only
+" https://vi.stackexchange.com/questions/13433/how-to-load-list-of-files-in-commit-into-quickfix
+" 2. linter/code-formatter/compiler error messages
+" 3. list all open buffers
+" 4. collect project/file Symbols for rapid jumping
+" 5. Rg grep results
 
 
 " QUICKFIX List, 1 for entire session
@@ -31,12 +39,12 @@ nnoremap -q :cclose<CR>
 " cfile -> read errors from a file
 
 " Location List, individual to each buffer
-nnoremap [c :lprevious<CR>
-nnoremap ]c :lnext<CR>
-nnoremap [C :lfirst<CR>
-nnoremap ]C :llast<CR>
-nnoremap =c :lopen<CR>
-nnoremap -c :lclose<CR>
+nnoremap [l :lprevious<CR>
+nnoremap ]l :lnext<CR>
+nnoremap [L :lfirst<CR>
+nnoremap ]L :llast<CR>
+nnoremap =l :lopen<CR>
+nnoremap -l :lclose<CR>
 " lfile -> read errors from a file
 
 " Buffer List :ls
@@ -78,7 +86,8 @@ augroup end
 
 " Time travel with undo-trees :help undolist :help changes
 " :help undodir and undofile
-" [builtin] g- and g+ to move back and forward in time
+" [builtin] g- and g+ to move back and forward in time. g; g,
+" https://vimhelp.org/motion.txt.html#changelist
 " try to popullate changes in location list and then travel?
 nnoremap [u :earlier<CR>
 nnoremap ]u :later<CR>

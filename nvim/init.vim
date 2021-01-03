@@ -77,9 +77,9 @@ augroup end
 
 " Cursorhold(I) events depend on updatetime setting 
 " also write change to :help undofile
-augroup autosave_onTimeout
-  autocmd CursorHold,CursorHoldI * update
-augroup end
+" augroup autosave_onTimeout
+"   autocmd CursorHold,CursorHoldI * update
+" augroup end
 
 " COC Code Formatters
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
