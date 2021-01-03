@@ -18,3 +18,12 @@ nnoremap ob :!$BROWSER %<CR>
 " Makefile for each project to do various taska and then local keybindings with
 " project specific .vimrc
 " https://github.com/skywind3000/asynctasks.vim
+
+" tidy up HTML with external program
+" bat $HOME/EXP/neovim/runtime/compiler/tidy.vim
+cnoreabbrev tidy tidy --show-body-only yes --quiet true --show-warnings false
+
+" Run spell-checker program in interactive mode
+" Google Drive and MS-Word uses Alt-F7
+nnoremap 7 :terminal hunspell %<CR>
+

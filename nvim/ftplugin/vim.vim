@@ -13,8 +13,12 @@ augroup run_static_analysis_onSave
   autocmd BufWritePost * :make % | redraw!
 augroup end
 
-" frequently used abbreviations
+" abbreviations
 inoreabbrev iab inoreabbrev
+inoreabbrev cab cnoreabbrev
+
+" key maps
 inoreabbrev nmap nnoremap
 inoreabbrev imap inoremap
 inoreabbrev vmap vnoremap
+inoreabbrev tmap tnoremap

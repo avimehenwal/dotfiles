@@ -8,7 +8,8 @@
 " with VIM you can practically program every key
 "
 " Leader key, like \, <space>, J
-let g:mapleader="\<Space>"
+" <space> hinders with hunspell spell checker
+let g:mapleader="\\"
 " local to buffer <LocalLeader>
 " let maplocalleader="\\"
 
@@ -52,7 +53,8 @@ if exists('g:vscode')
   nmap <S-Tab> :Tabprev<CR>
 else
   " Frequently Used Applications
-  nnoremap <C-\> :Vifm<CR>
+  " <C-\> interferes with :terminal normal mode 
+  nnoremap \| :Vifm<CR>
 endif
 
 " nnoremap Q :q!<CR>     interferes with existing Q Multiple Ex-mode commands
@@ -75,6 +77,9 @@ if has('nvim')
   inoremap <M-i> <ESC>Bi*<ESC>Ea*
   inoremap <M-b> <ESC>Bi**<ESC>Ea**
   inoremap <M-m> <ESC>Bi`<ESC>Ea`
+
+  " terminal mode keybindings
+    tnoremap <Esc> <C-\><C-n>
 else
   execute "set <M-m>=\em"
   inoremap i <ESC>Bi*<ESC>Ea*

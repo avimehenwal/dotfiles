@@ -32,8 +32,8 @@ nnoremap -q :cclose<CR>
 " Location List, individual to each buffer
 nnoremap [c :lprevious<CR>
 nnoremap ]c :lnext<CR>
-nnoremap pc :lfirst<CR>
-nnoremap \c :llast<CR>
+nnoremap [C :lfirst<CR>
+nnoremap ]C :llast<CR>
 nnoremap =c :lopen<CR>
 nnoremap -c :lclose<CR>
 " lfile -> read errors from a file
@@ -41,8 +41,8 @@ nnoremap -c :lclose<CR>
 " Buffer List :ls
 nnoremap [b :bprevious<CR>
 nnoremap ]b :bnext<CR>
-nnoremap pb :bfirst<CR>
-nnoremap \b :blast<CR>
+nnoremap [B :bfirst<CR>
+nnoremap ]B :blast<CR>
 nnoremap =b :Buffers<CR>
 nnoremap -b :bdelete<CR>
 
@@ -50,8 +50,8 @@ nnoremap -b :bdelete<CR>
 " t -> t-th occourence of character
 nnoremap [t :tabprevious<CR>
 nnoremap ]t :tabnext<CR>
-nnoremap pt :tabfirst<CR>
-nnoremap \t :tablast<CR>
+nnoremap [T :tabfirst<CR>
+nnoremap ]T :tablast<CR>
 nnoremap =t :tabedit<CR>
 nnoremap -t :tabclose<CR>
 
@@ -60,8 +60,8 @@ nnoremap -t :tabclose<CR>
 " a -> Append text after, normal->insert mode
 nnoremap [a :prev<CR>
 nnoremap ]a :next<CR>
-nnoremap pa :first<CR>
-nnoremap \a :last<CR>
+nnoremap [A :first<CR>
+nnoremap ]A :last<CR>
 nnoremap =a :args<CR>
 
 " HelpGrep :lhelpgrep, use global quickfix window

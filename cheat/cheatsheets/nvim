@@ -31,3 +31,6 @@ What is after directory?
 
 # list all loaded plugins
 :scriptnames, :commands, :functions
+
+# call functions on visual selection
+https://vi.stackexchange.com/questions/17606/vmap-and-visual-block-how-do-i-write-a-function-to-operate-once-for-the-entire

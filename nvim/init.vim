@@ -63,8 +63,15 @@ augroup source_MYVIMRC_onSave
   autocmd BufWritePost *.vim,*.lua source $MYVIMRC
 augroup end
 
+" useful when calling hunspell spellchecker
+augroup terminal_enterInInsertMode_setStatusline
+  autocmd TermOpen *
+    \ setlocal statusline=%{b:term_title} |
+    \ startinsert
+augroup end
+
 " COC Code Formatters
-command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile)
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " Understanding vim directory structure
 " ------------------------------------------------------------------------------------------
