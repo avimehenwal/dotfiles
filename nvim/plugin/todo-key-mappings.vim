@@ -1,4 +1,3 @@
-"  _                                                _                 
 " | | _____ _   _       _ __ ___   __ _ _ __  _ __ (_)_ __   __ _ ___ 
 " | |/ / _ \ | | |_____| '_ ` _ \ / _` | '_ \| '_ \| | '_ \ / _` / __|
 " |   <  __/ |_| |_____| | | | | | (_| | |_) | |_) | | | | | (_| \__ \
@@ -9,7 +8,8 @@
 "
 " Leader key, like \, <space>, J
 " <space> hinders with hunspell spell checker
-let g:mapleader="\\"
+" By default, :echo mapleader is set to \ and command will say Undefined Variable
+" let g:mapleader="\\"
 " local to buffer <LocalLeader>
 " let maplocalleader="\\"
 
@@ -74,17 +74,16 @@ inoremap <C-d> <ESC>yypA
 " i_CTRL-V => insert next non-digit literally
 " make META key mappings work on nvim
 if has('nvim')
+  " Markup options
   inoremap <M-i> <ESC>Bi*<ESC>Ea*
   inoremap <M-b> <ESC>Bi**<ESC>Ea**
   inoremap <M-m> <ESC>Bi`<ESC>Ea`
+  " quickly close help buffer from any where in vim
+  nnoremap <BS> :helpclose<CR>
 
   " terminal mode keybindings
     tnoremap <Esc> <C-\><C-n>
-else
-  execute "set <M-m>=\em"
-  inoremap i <ESC>Bi*<ESC>Ea*
-  inoremap b <ESC>Bi**<ESC>Ea**
-endif
+  endif
 
 " vscode like bindings
 nnoremap <C-p> :GitFiles<CR>
@@ -93,7 +92,8 @@ nnoremap <C-p> :GitFiles<CR>
 " https://github.com/junegunn/fzf.vim/blob/master/README.md
 "
 nnoremap gb :Buffers<CR>
-nnoremap gc :Commands!<CR>
+" interferes with vim-commentary gc keybinding
+" nnoremap gc :Commands!<CR>
 nnoremap gh :History:<CR>
 nnoremap gk :Maps<CR>
 nnoremap gl :BCommits!<CR>
@@ -147,6 +147,7 @@ nnoremap <F12> :execute "!clear && " . getline('.')<CR>
 nnoremap <S-F12> :!!<CR>
 
 function! ToggleHelpF1()
+  " only works from inside the buffer
   if &buftype ==? 'help'
     execute 'helpclose'
   else

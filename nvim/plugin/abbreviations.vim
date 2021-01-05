@@ -29,6 +29,7 @@ cnoreabbrev hc helpclose
 cnoreabbrev help vertical help
 " delete buffer after quick config update
 cnoreabbrev ww write\|bdelete
+cnoreabbrev set verbose set
 
 " Emoji shortcuts
 " https://www.emojicopy.com/

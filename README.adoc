@@ -23,9 +23,13 @@ buffers are file porxies
 
 ### Project management with vim
 
-
-
 > compare vim and vscode resource consumption for your workflow
+
+=== Popularity comparision of IDEs via stackoverflow
+
+https://insights.stackoverflow.com/survey/2015#tech-editor[stackoverflow Developer Survey 2015]
+
+https://insights.stackoverflow.com/survey/2019#technology-_-most-popular-development-environments[stackoverflow Developer Survey 2019]
 
 .Vim Philospohies
 - good integration with other linux tools and piping

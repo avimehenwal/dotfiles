@@ -76,7 +76,8 @@ nnoremap =a :args<CR>
 " HelpGrep :lhelpgrep, use global quickfix window
 cnoreabbrev h helpgrep
 " https://vi.stackexchange.com/questions/28603/how-to-navigate-vim-buffers-using-quickfix-list
-cnoreabbrev ls lexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>
+" bad idea, then cant use !ls
+" cnoreabbrev ls lexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})<CR>
 
 " Automatically open QuickFix window when there are errors from compilers
 augroup open_quickfix_onError

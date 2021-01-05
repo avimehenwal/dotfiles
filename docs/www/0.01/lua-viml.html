@@ -3,21 +3,15 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Antora UI :: AviMehenwal Dotfiles</title>
-    <link rel="canonical" href="http://127.0.0.1:8080/www/0.01/chapter_5.html">
+    <title>Vimscripting in Lua :: AviMehenwal Dotfiles</title>
+    <link rel="canonical" href="http://127.0.0.1:8080/www/0.01/lua-viml.html">
     <meta name="generator" content="Antora 2.3.4">
 <link rel="stylesheet" href="../../_/css/site.css">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
 <link rel="stylesheet" href="../../_/css/search.css">
   <script async src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXXX"></script>
   <script>function gtag() { dataLayer.push(arguments) }; window.dataLayer = window.dataLayer || []; gtag('js', new Date()); gtag('config', 'GTM-XXXXXXXX')</script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.min.js" charset="utf-8"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.3.0/c3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"> </script>
   </head>
   <body class="article">
 <header class="header" role="banner">
@@ -92,7 +86,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="zsh.html">Shell-zsh,bash</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="lua-viml.html">vimscript with Lua</a>
   </li>
 </ul>
@@ -122,7 +116,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="chapter_4.html">Chapter 4</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="chapter_5.html">Chapter 5</a>
   </li>
 </ul>
@@ -156,104 +150,95 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">dotfile documentation</a></li>
-    <li>Chapters List</li>
-    <li><a href="chapter_5.html">Chapter 5</a></li>
+    <li><a href="lua-viml.html">vimscript with Lua</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///home/avi/dotfiles/www/modules/ROOT/pages/chapter_5.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///home/avi/dotfiles/www/modules/ROOT/pages/lua-viml.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Antora UI</h1>
-<div id="preamble">
+<h1 class="page">Vimscripting in Lua</h1>
+<div class="sect1">
+<h2 id="_why_lua"><a class="anchor" href="#_why_lua"></a>Why Lua?</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Antora uses <a href="https://www.npmjs.com/package/vinyl">vinyl</a> virtual filesystem aka <strong>content catalog</strong></p>
+<p>Why <a href="http://www.lua.org/" title="designed primarily for embedded use in applications">Lua</a>?</p>
+</div>
+<div class="paragraph">
+<p><a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/lua-python3.html">Perl &gt; Python &gt; Lua Performance Benchmark</a></p>
+</div>
+<div class="olist arabic">
+<div class="title">Pros</div>
+<ol class="arabic">
+<li>
+<p>Lightweight <code>C</code> api, good for embedding into other softwares/applications</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<div class="title">typish of lua</div>
+<ol class="arabic">
+<li>
+<p>No <code>{&#8230;&#8203;}</code> fence, blocs use <code>end</code> keyword</p>
+</li>
+<li>
+<p>Dynamically typed, outsource memory allocation to compiler</p>
+</li>
+<li>
+<p>English like <code>and</code>, <code>or</code>, and <code>not</code></p>
+</li>
+<li>
+<p>Function call, decleration+definition is same</p>
+</li>
+<li>
+<p>Global variables <code>_G.myValue</code></p>
+</li>
+<li>
+<p>Loop statements, <code>for</code> and <code>while</code> <strong>do not</strong> use parenthesis <code>(&#8230;&#8203;)</code></p>
+</li>
+<li>
+<p>Hash datastructure is called <code>table</code>, they have some <code>bash</code> like options</p>
+</li>
+<li>
+<p>comments <code>--</code></p>
+</li>
+<li>
+<p>Modules like nodejs <code>require("otherfile")</code></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Lua count starts from <code>1</code> unlike other languages which starts with <code>0</code>
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_framework_variable"><a class="anchor" href="#_framework_variable"></a>Framework Variable</h2>
+<h2 id="_what_can_you_do_to_via_with_lua"><a class="anchor" href="#_what_can_you_do_to_via_with_lua"></a>What can you do to via with Lua</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><a href="https://docs.antora.org/antora-ui-default/templates/">How to deal with antora handlebar templates?</a></p>
+<p><a href="http://www.lua.org/" title="designed primarily for embedded use in applications">Lua</a> Plugins can</p>
 </div>
-<div class="ulist">
-<div class="title">Template Variables</div>
-<ul>
-<li>
-<p><code>siteRootPath</code></p>
-</li>
-<li>
-<p><code>uiRootPath</code></p>
-</li>
-</ul>
-</div>
-<div class="openblock"><div class="ct-chart" data-chart-height="400" data-chart-width="600" data-chart-type="Line" data-chart-colors="#72B3CC,#8EB33B" data-chart-labels="January,February,March,April,May,June,July" data-chart-series-0="28,48,40,19,86,27,90" data-chart-series-1="65,59,80,81,56,55,40"></div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_data_attributes"><a class="anchor" href="#_data_attributes"></a>Data Attributes</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">How to use data attributes</a></p>
-</div>
-<div class="paragraph">
-<p>Store extra information with HTML elements</p>
-</div>
-<div class="listingblock">
-<div class="title">How to data attributes are defined?</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-html hljs" data-lang="html">&lt;div class="ct-chart"
-  data-chart-height="400"
-  data-chart-width="600"&gt;</code></pre>
-</div>
-</div>
-<div class="listingblock">
-<div class="title">How to access data-attributes?</div>
-<div class="content">
-<pre class="highlightjs highlight"><code class="language-js hljs" data-lang="js">element.dataset.chartHeight
-element.dataset.chartWidth</code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_use_cases"><a class="anchor" href="#_use_cases"></a>Use Cases</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Show captions <code>onHover</code> on certain elements</p>
+<p>Set vim options <code>vim.bo.tabstop</code> where <strong>bo</strong> means buffer specific local option</p>
 </li>
 <li>
-<p>Hide/Show some list items</p>
+<p>Keybindings <code>vim.api.nvim_set_keymap('t','&lt;ESC&gt;','&lt;C-\\&gt;&lt;C-n&gt;',opts)</code></p>
 </li>
 <li>
-<p>Pass data to javascript libraries/modules to do something interesting, like generating chart</p>
+<p>Add Commands <code>vim.cmd('au FileType cpp ia &lt;buffer&gt; itn int')</code></p>
 </li>
 </ol>
-</div>
-<div class="qlist qanda">
-<ol>
-<li>
-<p><em>How to access keys from <code>antora-playbook.yml</code> in partial templates?</em></p>
-<p><code>{{#with site.keys.googleAnalytics}}</code></p>
-</li>
-<li>
-<p><em>Prebuilt <code>HTML</code> pages?</em></p>
-<p>Put them inside <code>attachments</code> directory then add a link to them in <code>nav</code> file</p>
-</li>
-<li>
-<p><em>What are HTML Data Attributes?</em></p>
-<p>If you want to operate on elements based on data attributes, Eg: drawing charts etc</p>
-</li>
-</ol>
-</div>
-<div class="videoblock">
-<div class="content">
-<iframe src="https://www.youtube.com/embed/TisD-O6esD4?rel=0" frameborder="0" allowfullscreen></iframe>
-</div>
-</div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TisD-O6esD4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 </div>
 </div>
@@ -265,7 +250,6 @@ element.dataset.chartWidth</code></pre>
 </main>
 </div>
 <footer class="footer">
-    <h1>CHART true</h1>
   www
     0 <br>
     Key: www Values =
@@ -296,30 +280,9 @@ element.dataset.chartWidth</code></pre>
 
 <script src="../../_/js/site.js"></script>
 <script src="../../_/js/vendor/lunr.js"></script>
-<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/www/0.01/chapter_5.html"></script>
+<script src="../../_/js/vendor/search.js" id="search-script" data-base-path="../.." data-page-path="/www/0.01/lua-viml.html"></script>
 <script async src="../../_/../search-index.js"></script>
 <script async src="../../_/js/vendor/highlight.js"></script>
 
-  <script>
-    document.body.querySelectorAll('div.ct-chart').forEach((node) => {
-      const options = {
-        height: node.dataset['chartHeight'],
-        width: node.dataset['chartWidth'],
-        colors: node.dataset['chartColors'].split(',')
-      }
-      const dataset = Object.assign({}, node.dataset)
-      const series = Object.values(Object.keys(dataset)
-        .filter(key => key.startsWith('chartSeries-'))
-        .reduce((obj, key) => {
-          obj[key] = dataset[key]
-          return obj
-        }, {})).map(value => value.split(','))
-      const data = {
-        labels: node.dataset['chartLabels'].split(','),
-        series: series
-      }
-      Chartist[node.dataset['chartType']](node, data, options)
-    })
-  </script>
   </body>
 </html>

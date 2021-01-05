@@ -1,6 +1,18 @@
+"           _                      __ _       
+"  ___  ___| |_    ___ ___  _ __  / _(_) __ _ 
+" / __|/ _ \ __|  / __/ _ \| '_ \| |_| |/ _` |
+" \__ \  __/ |_  | (_| (_) | | | |  _| | (_| |
+" |___/\___|\__|  \___\___/|_| |_|_| |_|\__, |
+"                                       |___/ 
+"   ___  _ __ | |_(_) ___  _ __  ___ 
+"  / _ \| '_ \| __| |/ _ \| '_ \/ __|
+" | (_) | |_) | |_| | (_) | | | \__ \
+"  \___/| .__/ \__|_|\___/|_| |_|___/
+"       |_|                          
+"
 " vim global set configurations
-"
-"
+" use setlocal and bufferlocal, windowlocal options to set locally
+
 if has('autocmd')
   filetype plugin indent on 					"filetype detection:ON  plugin:ON  indent:ON
   set backspace=start,eol,indent			"make backspace work in Insert Mode
@@ -9,6 +21,12 @@ if has('autocmd')
   set noswapfile											"only useful in multi-user systems
   set updatetime=4000                 "ms automatically write swaps to disk
   set autowrite                       "Automatically save before commands like :next and :make
+
+  " Unicode Encoding
+  set encoding=utf-8                  " set encoding for editor itself
+  set fileencoding=utf-8              " The encoding written to file buffer
+  scriptencoding utf-8                " encoding used in vimscript, else vimlint will complain
+
   " https://vi.stackexchange.com/questions/74/is-it-possible-to-make-vim-auto-save-files
   set undofile                        "save local buffer undotree changes in file. Auto-save file alternative
 endif
@@ -96,10 +114,7 @@ syntax enable                           " Enables syntax highlighing
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set nowrap                              " Display long lines as just one line
 set whichwrap+=<,>,[,],h,l
-set encoding=utf-8                      " The encoding displayed
-scriptencoding utf-8                    " Use scriptencoding when multibyte char exists
 set pumheight=10                        " Makes popup menu smaller
-set fileencoding=utf-8                  " The encoding written to file
 set ruler              			            " Show the cursor position all the time
 set cmdheight=2                         " More space for displaying messages
 set mouse=a                             " Enable your mouse

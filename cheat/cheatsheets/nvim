@@ -1,8 +1,23 @@
+# select from previously executed CMD mode commands
+q:
+
 # vim command output in buffer
 :enew|put=execute('scriptnames')
 
+# start nvim without any plugins
+nvi -u NONE <filename>
+
 # popullate quickfix list with open buffers
 cexpr map(getbufinfo({'buflisted': 1}), {_, v -> v.name})
+
+# list all loaded plugins
+:scriptnames, :commands, :functions
+
+# call functions on visual selection
+https://vi.stackexchange.com/questions/17606/vmap-and-visual-block-how-do-i-write-a-function-to-operate-once-for-the-entire
+
+# autocommands local buffer
+https://vi.stackexchange.com/questions/8056/for-an-autocmd-in-a-ftplugin-should-i-use-pattern-matching-or-buffer
 
 # Directory Structure
 nvim/
@@ -28,12 +43,3 @@ Difference b/w plugin and ftplugin directories?
  
 What is after directory?
   In after you should put settings that you want to change from the normal plugin loading.
-
-# list all loaded plugins
-:scriptnames, :commands, :functions
-
-# call functions on visual selection
-https://vi.stackexchange.com/questions/17606/vmap-and-visual-block-how-do-i-write-a-function-to-operate-once-for-the-entire
-
-# autocommands local buffer
-https://vi.stackexchange.com/questions/8056/for-an-autocmd-in-a-ftplugin-should-i-use-pattern-matching-or-buffer

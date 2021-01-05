@@ -10,3 +10,5 @@ augroup vertical_help
   autocmd BufWinEnter <buffer> wincmd H | vertical resize 90
 augroup END
 
+" use MAN page like <SpaceBar> to navigate help.
+nnoremap <Space> <C-f>

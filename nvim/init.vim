@@ -13,6 +13,7 @@
 " -N              									Not fully Vi compatible: 'nocompatible'
 " -u <vimrc>      									Use <vimrc> instead of any .vimrc
 " vi -Nu NORC <filepath>
+" nvim -u NONE <filename>
 "
 " Order of rc-file detection
 " 1. $VIMINIT												Environment Variable
@@ -29,11 +30,10 @@
 " BootConfig: runtimepath
 set rtp+=$HOME/.fzf/bin/fzf
 
-" Project specific .vimrc files
 " https://superuser.com/questions/532593/how-do-i-get-vim-to-automatically-load-vimrc-config-from-the-current-directory
+" Project specific .nvimrc files
 set exrc
-" set secure
-
+set secure
 
 " VSCODE
 if exists('g:vscode')

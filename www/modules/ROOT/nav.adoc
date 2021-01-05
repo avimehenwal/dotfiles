@@ -5,6 +5,7 @@
 * xref:fedora.adoc[Fedora]
 * xref:linux.adoc[Linux]
 * xref:zsh.adoc[Shell-zsh,bash]
+* xref:lua-viml.adoc[vimscript with Lua]
 
 .Chapters List
 * link:{attachmentsdir}/chart.html[view prebuilt HTML page]

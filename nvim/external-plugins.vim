@@ -36,6 +36,7 @@ endif
 " ---------------------------------------------------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'                                                 "git from editor
 Plug 'tpope/vim-rhubarb'                                                  "fugitive suppliment
+Plug 'tpope/vim-commentary'                                               "toggle comment and uncomment with gc
 " Plug 'metakirby5/codi.vim'                                                "Interactive REPL
 Plug 'liuchengxu/vim-which-key'                                           "never forget keybindings, group and organize them
 Plug 'vifm/vifm.vim', { 'on':  'Vifm' }                                   "file manager, +ranger killer

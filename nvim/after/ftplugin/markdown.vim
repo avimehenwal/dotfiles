@@ -5,7 +5,6 @@
 " |_| |_| |_|\__,_|_|  |_|\_\__,_|\___/ \_/\_/ |_| |_|
 "                                                     
 " https://github.com/markdownlint/markdownlint
-" under after/ftplugin to override default markdown configs
 
 " remove the bold and italics markup in markdown files
 setlocal conceallevel=2
@@ -23,7 +22,7 @@ setlocal nocindent
 " Print *,-,> for unordered list on Enter
 setlocal comments=b:-      " auto wrap
 setlocal comments+=mb:*    " also break asian chars above 255
-setlocal comments+=b:>     " Markdown blockquotes 
+setlocal comments+=b:>      
 setlocal commentstring=<!--%s-->
 
 " setlocal formatoptions-=t  " auto-wrap text
@@ -35,7 +34,7 @@ setlocal formatoptions+=r  " print on Enter
 setlocal formatoptions+=o  " print comment leader on o or O
 setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
 
-" LINTER Program
+
 :compiler markdownlint
 
 augroup run_static_analysis_onSave

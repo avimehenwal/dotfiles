@@ -1,3 +1,4 @@
+#!/usr/bin/env bash 
 #  @avimehenwal - updated 2020-Dec
 #
 #    / \  | (_) __ _ ___  ___  ___
@@ -49,7 +50,7 @@ alias la='ls --color=always -lAh | fzf'
 
 alias md='mkdir -p'
 alias rd=rmdir
-alias refresh="source $HOME/.zshrc"
+alias refresh="source \$HOME/.zshrc"
 
 # Suffix aliases
 alias -s md='bat -l md'
@@ -57,8 +58,9 @@ alias -s json='bat -l json'
 
 # Commands - frequently used
 alias c='${COPY_PRG}'
-alias p='wl-paste'
 alias l='less --RAW-CONTROL-CHARS --quit-if-one-screen --no-init'
+alias p='wl-paste'
+alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 
 # Commands - common

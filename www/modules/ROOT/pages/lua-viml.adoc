@@ -1,0 +1,32 @@
+= Vimscripting in Lua
+:lua: http://www.lua.org/[Lua, title='designed primarily for embedded use in applications']
+
+== Why Lua?
+
+Why {lua}?
+
+https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/lua-python3.html[Perl > Python > Lua Performance Benchmark]
+
+.Pros
+. Lightweight `C` api, good for embedding into other softwares/applications
+
+.typish of lua
+. No `{...}` fence, blocs use `end` keyword
+. Dynamically typed, outsource memory allocation to compiler
+. English like `and`, `or`, and `not`
+. Function call, decleration+definition is same
+. Global variables `_G.myValue` 
+. Loop statements, `for` and `while` **do not** use parenthesis `(...)`
+. Hash datastructure is called `table`, they have some `bash` like options
+. comments `--`
+. Modules like nodejs `require("otherfile")`
+
+NOTE: Lua count starts from `1` unlike other languages which starts with `0`
+
+== What can you do to via with Lua
+
+{lua} Plugins can
+
+. Set vim options `vim.bo.tabstop` where **bo** means buffer specific local option
+. Keybindings `vim.api.nvim_set_keymap('t','<ESC>','<C-\\><C-n>',opts)`
+. Add Commands `vim.cmd('au FileType cpp ia <buffer> itn int')`
