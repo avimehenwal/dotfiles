@@ -6,6 +6,8 @@
 "                                                     
 " https://github.com/markdownlint/markdownlint
 
+" generic spell checking from main init.vim config
+
 " remove the bold and italics markup in markdown files
 setlocal conceallevel=2
 
@@ -32,7 +34,22 @@ setlocal commentstring=<!--%s-->
 setlocal formatoptions=q   " do not allow comment formatting with "gq"
 setlocal formatoptions+=r  " print on Enter
 setlocal formatoptions+=o  " print comment leader on o or O
-setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
+setlocal formatoptions+=n  " numbered list
+
+" setlocal formatlistpat=^\\s*\\d\\+\\.\\s\\+\\\|^\\s*[-*+]\\s\\+\\\|^\\[^\\ze[^\\]]\\+\\]:
+setlocal formatlistpat=^\\s*                     " Optional leading whitespace
+setlocal formatlistpat+=[                        " Start character class
+setlocal formatlistpat+=\\[({]\\?                "   Optionally match opening punctuation
+setlocal formatlistpat+=\\(                      "   Start group
+setlocal formatlistpat+=[0-9]\\+                 "     Numbers
+setlocal formatlistpat+=\\\|                     "     or
+setlocal formatlistpat+=[a-zA-Z]\\+              "     Letters
+setlocal formatlistpat+=\\)                      "   End group
+setlocal formatlistpat+=[\\]:.)}                 "   Closing punctuation
+setlocal formatlistpat+=]                        " End character class
+setlocal formatlistpat+=\\s\\+                   " One or more spaces
+setlocal formatlistpat+=\\\|                     " or
+setlocal formatlistpat+=^\\s*[-–+o*•]\\s\\+      " Bullet points
 
 
 :compiler markdownlint

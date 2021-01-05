@@ -100,8 +100,6 @@ endif
 
 " -------------------------------------------------------------------------------------------
 " DO NOT UNCOMMENT THIS LINE-causes unpleasent highlights
-" set spell spelllang=en_us
-set spellfile=$HOME/.vim/en.utf-8.add
 set thesaurus+=~/Documents/thesaurus    "Add thesaurus file for ^X^T
 set dictionary+=~/Documents/dictionary  "Add dictionary file for ^X^K
 

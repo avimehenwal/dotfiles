@@ -35,6 +35,12 @@ set rtp+=$HOME/.fzf/bin/fzf
 set exrc
 set secure
 
+" EN-US Spell Checking
+set spell spelllang=en_us
+" browse and search mispelled words [s, ]s. zg to add correct word to spellfile.
+" zG internal-wordlist
+set spellfile=$HOME/dotfiles/nvim/spell/en.utf-8.add
+
 " VSCODE
 if exists('g:vscode')
   source $HOME/.config/nvim/vscode/settings.vim
