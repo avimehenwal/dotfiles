@@ -1,0 +1,27 @@
+---
+syntax: markdown
+tags: [ css, design ]
+---
+
+# Form Input like Material Design Specification using only CSS3
+
+## What happens? Behaviour
+
+out of focus    Label is bigger + Bottom border color is grey
+in focus        Label shrinks + Bottom border color is blue
+on Error        Bottom border is red and HINT is suggested
+
+## CSS Properties to use
+
+- display
+- position
+- width
+- height
+- z-index
+
+## Advanced CSS
+
+- input:focus
+- input:valid
+- input:focus + label , label style is affected each time input is clicked
+- transition property: all 0.3s ease on label

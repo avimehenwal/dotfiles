@@ -79,7 +79,8 @@ alias bat='bat --color=always'
 alias env='env | bat --language=bash | fzf'
 # todo fzf unset from list of env vars
 alias rsync='rsync --progress --verbose'
-alias tmux='byobu-tmux'
+# might want to use normal tmux commands
+# alias tmux='byobu-tmux'
 alias psa='ps aux | fzf'
 alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers'
 

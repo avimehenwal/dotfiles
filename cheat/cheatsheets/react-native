@@ -1,0 +1,11 @@
+# Frameworks
+1. React native CLI
+2. Expo CLI - eject to get individual iOS and Android project bundles.
+
+npm install -g expo-cli
+
++ Can directly send link to try out the application without having to goto the app store
+
+# Install android studio to see changes in realtime
+flatpak install flathub com.google.AndroidStudio
+

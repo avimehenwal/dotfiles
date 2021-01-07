@@ -45,7 +45,7 @@ augroup run_static_analysis_onSave
 augroup end
 
 augroup run_spellCheck_onBufferClose
-  autocmd BufLeave <buffer> :terminal hunspell %<CR>
+zsh:1: command not found: jg
 augroup end
 
 " TODO: deal with sublists

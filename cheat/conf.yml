@@ -8,8 +8,8 @@
 #
 # https://github.com/cheat/cheat
 #
-# The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
-editor: vim
+# # The editor to use with 'cheat -e <sheet>'. Defaults to $EDITOR or $VISUAL.
+# editor: $EDITOR
 
 # Should 'cheat' always colorize output?
 colorize: true

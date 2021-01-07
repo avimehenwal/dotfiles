@@ -1,0 +1,25 @@
+---
+syntax: markdown
+tags: [frontend, css]
+---
+
+# Responsive Design = Fluid design like Water
+
+> Design which adapts itself as per the screen size aka viewport
+
+# Mobile First development approach
+
++-------+  to   +-------+
+| small | ----> | large |
++-------+       +-------+
+
+### How to make responsive design?
+
+1. `viewport` meta tag in HTML
+2. use `em`, `rem`, `vw`, `vh`, percentages etc instead of hard-coding pixel values
+3. Media Queries to set breakpoints
+4. Control `<img>` tag using `max-width` property
+5. Layouts with Modern `CSS` properties like
+6. FlexLayout
+7. Grids
+8. Multi-columns

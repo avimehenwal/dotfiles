@@ -1,0 +1,47 @@
+---
+syntax: markdown
+tags: [ frontend, native, mobile ]
+---
+
+# Mobile App
+
+Facebook, Instagram, Pinterest, UberEats, Skypee are all made with javascript (react-native)
+
++-------------------+  compiles   +-----------------------+
+| ReactNative (js)  | ----------> | native Android bundle |
++-------------------+             +-----------------------+
+  |
+  | compiles
+  v
++-------------------+
+| native iOS bundle |
++-------------------+
+
+* Markup is different than HTML
+* Remote Debugging, either in browser or in vscode
+
+## Bundler Tools
+
+1. React Native CLI
+2. Expo CLI - can later `eject` to individual iOS and Android bundles
+3. Expo has its own Export Store (~google playstore)
+
++------------------+     +-----------------+  compiles   +---------------------+
+| React-Native api | ==> |  JS Components  | ----------> | Android Native Code |
++------------------+     +-----------------+             +---------------------+
+                           |
+                           | compiles
+                           v
+                         +-----------------+
+                         | iOS Native Code |
+                         +-----------------+
+
+* Most react-native apis are cross-platform **BUT** some apis are platform specific like <SafeAreaView>
+* React-Native Stylesheets are inspired by CSS stylesheets but are actually different.
+
+## Mobile development
+
+* Assign action with BACK_BUTTON and HOME_BUTTON
+* Handle Dimensions based on Orientation
+
+

@@ -23,7 +23,10 @@ nnoremap ob :!$BROWSER %<CR>
 " bat $HOME/EXP/neovim/runtime/compiler/tidy.vim
 cnoreabbrev tidy tidy --show-body-only yes --quiet true --show-warnings false
 
+" create project specific .nvimrc file and open in buffer to edit
+nnoremap <M-1> :edit .nvimrc<CR>
 " Run spell-checker program in interactive mode
 " Google Drive and MS-Word uses Alt-F7
 nnoremap <M-7> :terminal hunspell %<CR>
-
+" run clocl to #lines of code
+nnoremap <M-8> :terminal cloc --git .<CR>

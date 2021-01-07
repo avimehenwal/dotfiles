@@ -31,3 +31,5 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 # Loops can read from STDIN
 while IFS= read -r line; do printf "%s\n" $line done < ./projectNames.data
 
+# Run a command only when a ENV-VAR is set. Use -z test flag to test the length of variable
+[ -z "$ENV_VAR_NAME" ] && echo "Length is non-zero" || echo  "length is zero"

@@ -1,0 +1,19 @@
+# How to draw diagrams and banners
+* Graphviz
+
+# ASCII Art
+* figlet
+* cowsay
+* boxes - draw any kind of box around text
+
+echo "Hey, this is Tecmint.com! Thanks for following us." | boxes -d boy
+echo "Tecmint.com wishes you a Merry Christmas and a Happy New Year 2019" | boxes -d santa
+
+# GRAPHS and CHARTS
+
+1. termgrgaph
+2. sparklines
+3. graph-easy
+
+echo "[ Bonn ] -- car --> [ Berlin ], [ Ulm ]" | graph-easy
+
