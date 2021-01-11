@@ -1,3 +1,11 @@
+---
+tags: [ vim, nvim, editor ]
+---
+
+# close all buffers, including terminal buffers
+:bufdo bd!
+:1,1000bd!
+
 # select from previously executed CMD mode commands
 q:
 

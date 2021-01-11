@@ -5,8 +5,9 @@
 set t_Co=256
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_contrast_light = 'hard'
-colorscheme gruvbox
 set background=dark
+" configure gruvbox before setting colorscheme
+colorscheme gruvbox
 
 
 " markdown preview MDP https://github.com/iamcco/markdown-preview.nvim

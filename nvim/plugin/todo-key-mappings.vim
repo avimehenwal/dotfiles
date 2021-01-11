@@ -86,7 +86,7 @@ if has('nvim')
   endif
 
 " vscode like bindings
-nnoremap <C-p> :GitFiles<CR>
+" nnoremap <C-p> :GitFiles<CR>
 
 " Use g for GIT and GOTO
 " https://github.com/junegunn/fzf.vim/blob/master/README.md
@@ -103,6 +103,13 @@ nnoremap gp :edit $HOME/.vim/packages.vim<CR>
 nnoremap gs :Snippets<CR>
 nnoremap gv :edit $MYVIMRC<CR>
 nnoremap g? :Helptags<CR>
+
+" Telescope Keymappings
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <M-4> <cmd>Telescope live_grep<cr>
+nnoremap <leader>b <cmd>Telescope buffers<cr>
+nnoremap <M-1> <cmd>Telescope help_tags<cr>
+nnoremap <M-r> <cmd>Telescope registers<cr>
 
 " open vimrc
 nnoremap sv :source $MYVIMRC<CR>
@@ -173,3 +180,7 @@ function! EncloseWord(symbol)
   ":execute "normal" count . "w"
 endfunction
 
+" REFACTOR with LeaderKey
+vnoremap <Leader>ol :call avi_autoload#OrderedList()<CR>
+" uppercase only the first character and then lowercase the rest.
+vnoremap g~ :s/\<./\u&/g<CR>

@@ -44,8 +44,10 @@ augroup run_static_analysis_onSave
   autocmd BufEnter,BufWritePost <buffer> :make % | redraw!
 augroup end
 
+" leaves a number of open terminal buffers.
 augroup run_spellCheck_onBufferClose
-zsh:1: command not found: jg
+  " autocmd BufDelete <buffer> :terminal hunspell %
+  " autocmd BufLeave <buffer> :terminal hunspell %
 augroup end
 
 " TODO: deal with sublists

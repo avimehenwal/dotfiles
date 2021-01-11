@@ -11,8 +11,6 @@
 "
 " open external programs with vim is as easy like Breathing
 
-" open current files in browser
-nnoremap ob :!$BROWSER %<CR>
 
 " vscode like Task Management with vim?
 " Makefile for each project to do various taska and then local keybindings with
@@ -30,3 +28,5 @@ nnoremap <M-1> :edit .nvimrc<CR>
 nnoremap <M-7> :terminal hunspell %<CR>
 " run clocl to #lines of code
 nnoremap <M-8> :terminal cloc --git .<CR>
+" open current files in browser
+nnoremap <M-9> :!$BROWSER %:p<CR>

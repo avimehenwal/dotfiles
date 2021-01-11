@@ -28,7 +28,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }                       "fzf c
 if has('nvim')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-telescope/telescope.nvim'                                    "harness git, files, LSP, tree-sitter
 endif
 
 
@@ -65,12 +65,12 @@ endif
 
 " Themes and Statusline
 " ---------------------------------------------------------------------------------------------------------------------
-Plug 'morhetz/gruvbox'                                                    "dark/light mode
+Plug 'gruvbox-community/gruvbox'                                          "dark/light mode
 Plug 'Iron-E/nvim-highlite'                                               "used by a galaxyline statusline file
 if has('nvim')
   Plug 'glepnir/galaxyline.nvim'                                          "statusline plugin on steroids
   Plug 'norcalli/nvim-colorizer.lua'                                      "Fastest colorizer with no external dependency
-  Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'kyazdani42/nvim-web-devicons'                                     "lua fork of vim devicons
 endif
 
 

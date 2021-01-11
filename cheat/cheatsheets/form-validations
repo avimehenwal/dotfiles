@@ -1,0 +1,17 @@
+---
+syntax: markdown
+tags: [ frontend, validation ]
+---
+
+# Types of Client side Validations
+
++-----------------------------+     +----------------+
+|   client side validation    | --> | HTML5 built In |
++-----------------------------+     +----------------+
+  |
+  |
+  v
++-----------------------------+
+| Javascript Form Validations |
++-----------------------------+
+

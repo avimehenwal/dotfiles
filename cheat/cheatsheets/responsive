@@ -23,3 +23,14 @@ tags: [frontend, css]
 6. FlexLayout
 7. Grids
 8. Multi-columns
+
+# How to work with CSS?
+
+1. Remove all Default CSS
+2. Then start adding your own custom CSS
+
+# Layouts
+0. Display Positions
+1. FlexBox
+2. Grids
+3. Animations and Transitions

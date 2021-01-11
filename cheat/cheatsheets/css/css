@@ -1,0 +1,136 @@
+---
+syntax: markdown
+tags: [frontend, css]
+---
+
+> How to be a CSS GOD!
+
+_C_ Cascading _S_ Styled _S_ Sheets
+
+- Programming Language
+- CSS Selectors `styles.css`
+- [Css selectors MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+- [css selectors specification](https://www.w3.org/TR/CSS21/selector.html%23id-selectors)
+- Use Variables to be consistent throughout the whole design
+
+```css
+<css Selector > {
+  style-property: style-value;
+}
+```
+
+- Difference b/w _ID_ and _class_
+  - Specificity
+- **PseudoSelectory** widely used in transitions and animations
+  - `selector:pseudoselector`, `h2:hover`, `li:first-child`, `li:nth-child(2)`
+  - Adjust link, visited colors `#google-links:visited`
+  - `:hover` Behaviour, feedback
+
+| Selectors | Description        |
+| :-------: | ------------------ |
+|     +     | Adjascent Selector |
+
+- Use class when REUSING CSS properties
+- Use other complicated selectors under SPecificity conditions only
+
+# Most important CSS properties
+
+- colors
+- Layouts
+- Effects
+- Reusable Properties in class-names (seperated by hyphen) convention
+- How to select a background on everything?
+  - Colors, Images
+  - Linear and Radial Gradients
+- CSS Units
+  - Absolute Units
+    - px Pixels
+    - mm
+    - pt
+    - pc
+  - Relative Units
+    - em, rem
+    - Percentage
+    - vh, vw relative to the percentage of viewport
+- Font and Typography manipulation
+  - text-decoration
+  - text-transform
+  - text-align
+  - Font Manipulation | websites generally uses 2 fonts, 1 headings and 2nd for main text
+    - font-weight 100 to 800 usually, already set for the specific font
+    - Fallback fonts, font-family: "Times New Roman", serif;
+
+## The Box Model
+
+Padding | Internal space
+Margin | External Space
+
+- `display: none` very popular with games, making sites interactive
+
+## CSS Positions
+
+static | How markup is written
+relative | change top, left, right, bottom relative to where it is supposed to be
+absolute | completely removes the element from DOM, tlbr works in conjunction with relative
+fixed | fixed based on entire HTML document, not affected by parent
+sticky | relative + fixed
+
+### Display Property
+
+block full line length
+inline as small space as possible, NO height and width
+inline-block can have height and width
+
+## FlexBox
+
+> One Dimensional
+
+- Arrange elements on page, different than BoxModel.
+- Has a _Container_ and _child_ elements
+- Flex-direction
+
+## Grid System
+
+> Two Dimensional
+
+- functionally same like Flexbox BUT with more (magnitude) of options
+- Fancy text with title and subheading and price over an image
+- [Responsive design using CSS grids](https://youtu.be/68O6eOGAGqA)
+
+```css
+@media only screen and (max-width: 600px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr, 0.4fr, 2.2fr, 1.2fr, 1.2fr, 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "menu"
+      "content 1/2/3"
+      "footer";
+  }
+}
+```
+
+https://youtu.be/9zBsdzdE4sM
+
+## Transitions
+
+Transition gracefully from one property to another.
+
+- Changing background on hover
+- translate
+- SkewX/Y
+- rotate()
+
+## Browser Specific CSS
+
+Prefix, use them seperately, cant chain them in one.
+
+Chrome `-webkit-`
+Mozilla `-moz-`
+Opera `-o-`
+
+## CSS Animations
+
+Are Keyframes driven
