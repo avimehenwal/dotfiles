@@ -6,6 +6,13 @@
 "                                                     
 " https://github.com/markdownlint/markdownlint
 
+" INDENTATION CONTROLS
+" already mapped to COC, so override
+" i  <Tab>       * <C-R>=UltiSnips#ExpandSnippetOrJump()<CR>                                                                                           
+iunmap <Tab>
+inoremap <Tab> <Esc>>>A
+inoremap <S-Tab> <Esc><<A
+
 " generic spell checking from main init.vim config
 
 " remove the bold and italics markup in markdown files
@@ -60,7 +67,7 @@ augroup run_static_analysis_onSave
   autocmd BufEnter,BufWritePost <buffer> :make % | redraw!
 augroup end
 
-augroup run_spellCheck_onBufferClose
-  autocmd BufLeave <buffer> :terminal hunspell %<CR>
-augroup end
+" augroup run_spellCheck_onBufferClose
+"   autocmd BufLeave <buffer> :terminal hunspell %<CR>
+" augroup end
 

@@ -19,20 +19,6 @@ node() {
 # https://superuser.com/questions/105375/bash-spaces-in-alias-name
 #
 
-# GIT Plugin
-# Git CheckOut Remote
-gcor () {
-  echo "git checkout --track <remote/branch-name>"
-  git checkout --track $(git branch --all | sed 's/remotes\///' |
-    fzf --preview='git diff --stat --patch master...{-1}')
-}
-# Git CheckOut Local Branch
-gco() {
-  echo "git checkout <local-branhc>"
-  git checkout $(git branch |
-    fzf --preview='git diff --stat --patch master...{-1}')
-}
-
 # print ls after each cd 
 # cd:1: maximum nested function level reached; increase FUNCNEST?
 # function cd() {

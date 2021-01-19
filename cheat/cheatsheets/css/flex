@@ -1,0 +1,36 @@
+---
+syntax: css
+tags: [ css, frontend ]
+---
+# Header Section with 3 items to be placed at left, centre and right
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+# Two columns 50%-50%
+.flexContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: left;
+}
+
+.flexContainer .form {
+  flex: 50%;
+}
+
+# 80/20% of flexbox
+https://jperasmus.me/posts/the-80-20-of-flexbox

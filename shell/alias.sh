@@ -62,6 +62,8 @@ alias l='less --RAW-CONTROL-CHARS --quit-if-one-screen --no-init'
 alias p='wl-paste'
 alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
+alias fd='fd --color always'
+alias cp='cp --verbose --interactive'
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'

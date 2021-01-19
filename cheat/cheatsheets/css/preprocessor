@@ -1,0 +1,37 @@
+---
+syntax: markdown
+tags: [frontend, css]
+---
+
++-----------+  compiled/interpreted   +-------------+
+| sass/scss | ----------------------> | vanilla CSS |
++-----------+                         +-------------+
+
+* No NEW css feature are added by them
++ Aims to make css futureproof
++ Mixins       Custom Functions
++ Nesting      less code
++ Extension    inherit same property as other element
++ Operators    use math in css
+
+# Is a preprocessor worth learning in 2020?
+
+> To try Sass, you just need to know how to set up the compiler.
+
+- Vanilla CSS is catching up with SASS's functionality?
+- Can use Math and pre-built functions with SCSS
+
+## How to organize your CSS?
+
+1. Root Styles
+2. Styling Elements / Classes
+3. Custom Elements / Classes Conventions
+  1. BEM Block-Element-Modifier Model
+  2. Object Oriented CSS
+  3. Atomic CSS
+4. CSS Modules
+5. CSS-in-JS
+
+## Resources
+
+[What is the difference b/w SCSS and SASS?](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi2ypPY6ZjuAhWGyIUKHWlxDJ8QFjAFegQIBxAC&url=https%3A%2F%2Fstackoverflow.com%2Fquestions%2F5654447%2Fwhats-the-difference-between-scss-and-sass&usg=AOvVaw2dyL_wNkXp-nG4T_nW9a-U)

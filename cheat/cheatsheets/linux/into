@@ -1,0 +1,41 @@
+---
+syntax: markdown
+tags: [linux, os]
+---
+
+# Why Linux doesnt dominate the desktop world?
+https://youtu.be/KFKxlYNfT_o
+
+- How android took off, wasen't first release, wasen't the second. Need preinstalls
+
+# 2012 Linus Interview
+
+> Biggest collaborative effort of mankind
+
+- Cant even buy ready made programs, they dont work
+- wrote his own assembler, editor, tools for doing this and that
+- Main UNIX users in 90's were banks
+
+> Assembly Language = SYmbolic form of machine code
+
+- Wrote machine code by hand
+- initally 2 linux images, 1 floppy boot and 2nd, root fs, no INIT system
+  - just a root shell, thats how real men do things
+- C is best language for hardware
+- 9,000,000 activations of linux devices every single day
+- Most people dont want to install OS on their system, either desktop or mobile or any other IOT device
+- Agrees with GPL v2, even though doesnt agree with Richard Stallmann
+- Most of the open source projects have 3 active people involved, linux has 50
+- git, linux damm design from scratch
+- Single kernel for every linux device, may it be cell phone or ccomputer. No one else is doing it 
+  - Windows and Apple are claiming it to do, but they are lying, they are full of shit
+- Multi core processing in cell phone came work linux for super-computer.
+- Nvidia is one of the worst trouble sopt of linux hardware spot manufacturers. Nvidia fuck you.
+- We as a specie have a strength in specializing
+- Edison quote- 99% perspiration and 1% inspiration
+- Open source games, like Nintendo, Xbox, Playstation
+- Startup should build upon opensource, because its nimble and adjustable, you make your own special sauce using open
+source
+
+## History of Open softwares, FOSS
+https://avimehenwal2.netlify.app/screenshots/foss-timeline.png

@@ -1,0 +1,36 @@
+---
+syntax: markdown
+tags: [ frontend, css]
+---
+
+proposed in 1994 
+
+# CSS Pseudo Elements
+
+Add extra styles/content to elements without writing extra markup, directly from CSS
+
+::after
+::before
+
+- Add code to your page directly from CSS
+- before and after needs *content* css property to work, else wont work.
+- Are inline by default
+
+NOTE: PesudoElement on <img> tag do not work, image with src attribute is the content.
+
+## Pseudo Elements Use cases
+
+1. Add * afer labels, or special decorations on lists
+2. Control tooltip behaviour, just using CSS, no JS required
+3. Add Hello before greeting the user by name
+4. Bring in icons before/after the headings, list-items etc.
+5. Add open/close quote around text
+6. Section seperators
+7. Title bars which grows and shrinks with text
+
+### Resources
+
+- [css PseudoElements in 8 mins](https://youtu.be/OtBpgtqrjyo)
+- [locate pseudoElements in DOM](https://youtu.be/zGiirUiWslI)
+- [Numbered List](https://youtu.be/xoRbkm8XgfQ)
+- [Modern design using css pseudoElements](https://youtu.be/djbtPnNmc0I)

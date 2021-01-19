@@ -1,0 +1,13 @@
+---
+tags: [ hardware, raspberrypi, computer, embedded ]
+syntax: markdown
+---
+
+* The Raspberry Pi 400 uses the same power supply as a Raspberry Pi 4 - a 5.1V 3A USB-C power supply.
+* ARM CPU base Single Board Computer, SBC
+
+NOTE: Have to pay 19% VAT tax additional to cost of product as shown on www.reichelt.de
+
+## OS
+
+- [Fedora 33](https://docs.fedoraproject.org/en-US/quick-docs/raspberry-pi/)

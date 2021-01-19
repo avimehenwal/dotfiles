@@ -7,6 +7,12 @@ tags: [frontend, css]
 
 > Design which adapts itself as per the screen size aka viewport
 
+
+# Responsiveness vs Adaptiveness
+
+- Website should look good on any device
+- [Adaptive Web Design](https://en.wikipedia.org/wiki/Adaptive_web_design)
+
 # Mobile First development approach
 
 +-------+  to   +-------+
@@ -34,3 +40,7 @@ tags: [frontend, css]
 1. FlexBox
 2. Grids
 3. Animations and Transitions
+
+## Resources
+
+[Avi Mehenwal responsive design](https://avimehenwal.in/notes/responsive-design/)

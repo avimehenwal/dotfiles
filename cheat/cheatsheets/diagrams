@@ -1,5 +1,5 @@
 # How to draw diagrams and banners
-* Graphviz
+* [Graphviz examples](https://ncona.com/2020/06/create-diagrams-with-code-using-graphviz/)
 
 # ASCII Art
 * figlet
@@ -17,3 +17,6 @@ echo "Tecmint.com wishes you a Merry Christmas and a Happy New Year 2019" | boxe
 
 echo "[ Bonn ] -- car --> [ Berlin ], [ Ulm ]" | graph-easy
 
+# How to draw Venn Diagram?
+
+https://stackoverflow.com/questions/8713994/venn-diagram-proportional-and-color-shading-with-semi-transparency

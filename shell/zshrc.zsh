@@ -25,10 +25,12 @@ SAVEHIST=10000
 setopt appendhistory
 
 # MyPlugins
-source ${BASE}/plugins/projectManagement.zsh
+PLUGINS=${BASE}/plugins
+source ${PLUGINS}/projectManagement.zsh
 generateProjectAlias
-source ${BASE}/plugins/internals.zsh
-source ${BASE}/plugins/myFunctions.zsh
+source ${PLUGINS}/internals.zsh
+source ${PLUGINS}/myFunctions.zsh
+source ${PLUGINS}/gitFzf.zsh
 
 # Plugin Configurations
 export ABBR_AUTOLOAD=1

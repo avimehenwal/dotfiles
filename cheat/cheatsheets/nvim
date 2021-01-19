@@ -2,6 +2,13 @@
 tags: [ vim, nvim, editor ]
 ---
 
+# Telescope/FZF Gods of Plugin
+1. Find Files
+2. grep, live and static
+3. git status
+4. vim buffers, registers
+5. LSP - symbols
+
 # close all buffers, including terminal buffers
 :bufdo bd!
 :1,1000bd!
