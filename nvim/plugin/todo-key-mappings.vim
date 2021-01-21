@@ -184,3 +184,7 @@ endfunction
 vnoremap <Leader>ol :call avi_autoload#OrderedList()<CR>
 " uppercase only the first character and then lowercase the rest.
 vnoremap g~ :s/\<./\u&/g<CR>
+
+" Leader Key Operations
+nnoremap <leader><leader> :call avi_autoload#RunLineUnderCursor()<CR>
+" inoremap <leader><leader> :call avi_autoload#RunLineUnderCursor()<CR>

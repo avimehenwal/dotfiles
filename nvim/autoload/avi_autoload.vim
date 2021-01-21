@@ -15,6 +15,10 @@ function! avi_autoload#OrderedList() range abort
   execute a:firstline . ',' . a:lastline . l:number_line
 endfunction 
 
-
-
+" execute and copy output to system clipboard
+function! avi_autoload#RunLineUnderCursor() abort
+  " better output buffer window
+  " execute '!clear && ' . getline('.')
+  execute 'term ' . getline('.') . ' | tee >(wl-copy)'
+endfunction
 
