@@ -1,0 +1,39 @@
+---
+syntax: css
+tags: [frontend, css]
+---
+
+https://youtu.be/-QgJgZCJvo4
+https://codepen.io/avimehenwal/pen/xxEBXqr?editors=1100
+
+/* Position any Element in center */ div {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+}
+
+/* Draw triangle using CSS only div */
+div {
+  width: 0;
+  height: 0;
+  background: white;
+  border: 100px solid transparent;
+  /*
+    border-left-color: yellow;
+    border-right-color: cyan;
+    border-top-color: orange;
+  */
+  border-bottom-color: teal;
+}
+
+/* Style only first and last div on page */
+div:first-of-type {
+}
+div:last-of-type {
+}
+
+/* make circle shape from a div using css */
+div.circle {
+  border-radius: 50%;
+}

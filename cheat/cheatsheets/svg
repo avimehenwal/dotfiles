@@ -1,0 +1,65 @@
+---
+syntax: markdown
+tags: [frontend, css, svg]
+---
+
+# SVG
+
+_S_ Scalable
+_V_ Vector
+_G_ Graphics
+
+XML like markup to draw designs, reached version 2.
+Everything inside <svg> tags is XML
+
+> How to make the web and how to make it look good!
+
+## Advantages of SVG over CSS Styling
+
+- Geometric Thinking
+- Make Icon Systems
+- IN-LINE SVGs give more CSS control as compared to external SVG called with img tag
+
+## How to use inline SVG without cluttering page markup
+
+<svg>
+  <use href="#example"></use>
+<svg>
+
+## How to scale SVG
+
+The viewBox controls the coordinate system of the objects it contains and
+the height and width attributes control how big it looks.
+
+<svg xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 1 1" height="1em" width="1em" y="7em">
+      <polygon points='0 0, 0 1, 1 0' />
+  </svg>
+  <circle cx='6em' cy='7em' r='2em' fill="none" stroke="red" />
+</svg>
+
+or
+
+<polygon points='0 0, 0 1, 1 0' transform='scale(2em 1.5em)' />
+
+CSS | SVG
+border | stroke stroke-width, half on inside and half on outside
+background | fill
+
+### Shapes
+
+1. circle
+2. Rectangle
+3. Line
+4. Polygon
+
+## Viewport | ViewBox
+
+ViewPort - viewable area
+viewBox - controls whats inside the viewport area, zooming and panning
+
+- [your own svg](https://youtu.be/TBYJ2V1jAlA)
+
+## SVG Attributes
+
+preserveAttributes - if you want vector to use up all space in viewbox

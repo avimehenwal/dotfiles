@@ -1,0 +1,31 @@
+---
+tags: [ software, personal, os ]
+----
+
+1912-54     Alan Turing - Father of modern computers
+1960        Computing Started
+1969        early UNIX at AT&T Bell Labs by Ken Thompson and Dennis Ritchie
+1991        LINUX - Linus Torvalds
+
+
+# Why Operating System?
+
+- Provides set of functions frequently needed by application programs
+- KERNEL FEATURES
+
+1. Memory Management
+2. Process Management
+3. IO devices and Peripheral Management
+4. Networking Stack
+
+# ISA
+The actual circuitry in the processor of the computer is what "determines" the instruction set.
+
+
+## Resources
+
+- https://en.wikipedia.org/wiki/History_of_operating_systems
+- https://en.wikipedia.org/wiki/Unix
+- https://en.wikipedia.org/wiki/Alan_Turing
+- [PDP11 Handbook](http://gordonbell.azurewebsites.net/digital/pdp%2011%20handbook%201969.pdf)
+- [Legacy C code for PDP11](https://github.com/mortdeus/legacy-cc)

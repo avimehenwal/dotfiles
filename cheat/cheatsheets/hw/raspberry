@@ -1,0 +1,34 @@
+---
+tags: [ hardware, raspberrypi, computer, embedded ]
+syntax: markdown
+---
+
+* The Raspberry Pi 400 uses the same power supply as a Raspberry Pi 4 - a 5.1V 3A USB-C power supply.
+* ARM CPU base Single Board Computer, SBC
+
+NOTE: Have to pay 19% VAT tax additional to cost of product as shown on www.reichelt.de
+
+# Raspberry Pi 400 Computer
+
+SoC         Broadcom BCM2711C0 quad-core A72 (ARMv8-A) 64-bit @ 1.8GHz
+RAM         4GB LPDDR4 SDRAM
+Power       5 Watts
+Networking  2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN, gigabit Ethernet
+Bluetooth   5.0, Bluetooth Low Energy (BLE)
+GPIO        40-pin GPIO header, populated
+Storage     microSD
+
+## OS
+
+- [Fedora 33](https://docs.fedoraproject.org/en-US/quick-docs/raspberry-pi/)
+
+## ADAPTERS I WON
+
+### Type C
+
+Nokia Phone    5V 2A
+Apple iPad     5V 3A
+RaspberryPi    5V 3A
+
+# Datasheet
+[ARM Cortex A72 by Broadcom used in raspberry pi](https://en.wikipedia.org/wiki/ARM_Cortex-A72)

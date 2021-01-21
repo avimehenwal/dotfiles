@@ -1,0 +1,121 @@
+---
+syntax: markdown
+tags: [frontend, javascript, typescript]
+---
+
+# Typescript
+
+- Programming Language by Microsoft Apachey 2 License in 2012
+- [How to compiler ts -> js using webpack bundler?](https://webpack.js.org/guides/typescript/)
+
+## Advanced Typescript
+
+- Type of static checking
+- Decorators
+- Symbols | used with iterators, next() and done()
+- Generators, lazily iterable instances, generate next value on-demand
+- Generic and Conditional Types, Type parameter that we can pass to another type
+- `never` for functions which do not return anything
+- TYPES
+  - Mixins to combine Types :First & Second
+  - Union Types
+  - Intersection Types `Programmer | Tester`
+- String Literals - accept values ONLY specified in type definition
+
+```typescript
+export type Grade = "A" | "B" | "C" | "D" | "F"
+```
+
+## Meta Programming Syntax
+
+[Meta Programming](https://en.wikipedia.org/wiki/Metaprogramming)
+
+- treat other **programs** as **data**
+- program can even modify itself at runtime
+- move computation from **runtime** to **compile-time**
+- DESCRIPTORS
+
+Meta Programming in Javascript, **Proxy** and `Reflect`
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Meta_programming
+- https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming
+
+## Decorator
+
+~ to [functional composition in mathematics](https://en.wikipedia.org/wiki/Function_composition)
+    
+    h(x) = g(f(x))
+    new function h is formed by applying g to the result of function f with x
+
+It's a straight up function used with a annotation syntax.
+
+> What can you do with decorate? Use cases?
+
+[Types of Decorator](https://www.stackchief.com/blog/TypeScript%20Decorators%20%7C%20Examples%20%7C%20Use%20Cases%20)
+
+1. Class Decorator | Eg: @sealed decorator to make a class final, closed for changes
+2. Method Decorator | propertyDescriptor
+3. Accessors Decorator | Descriptors, getters and setters
+4. Properties
+5. Parameters
+
+```typescript
+function smithFamily(constructor:T) {
+   return class extends constructor {
+       lastName = "Smith"
+   }
+}
+
+@smithFamily
+class Person {
+   firstName: string;
+   constructor(m: string) {
+       this.firstName = m;
+   }
+}
+
+console.log(new Person("John"));
+
+# output
+class_1 { firstName: 'John', lastName: 'Smith' }
+```
+
+## Typescript
+
+> I need the warm hug of a compiler that forces me to deal with UnhandledException and Type Errors
+
+- Structural subtyping, in contrast to C/C++ nominal subtyping
+- type guards, `result instanceof Programmer`
+- Tuples are the first step towards Objects
+
+```ts
+let list1: Arrya<number> = [1,2,3]
+```
+
+## Types
+
++-----------+  <T>
+|   TYPE    |
++-----------+
+|   State   | 
++-----------+
+| Behavious |
++-----------+
+
+echo "[TYPE|State|Behavious]" | graph-easy
+
+## Type Definitions
+
+- index.d.ts
+- Add type definitions in vscode `/// <reference path="../node_modules/@types/jquery/index.d.ts" />`
+
+### Search type files on internet
+
+https://www.npmjs.com/~types
+https://www.typescriptlang.org/dt/search?search=
+
+### Resources
+
+- https://youtu.be/wD5WGkOEJRs
+- https://youtu.be/kqdsC_Oj9Gk
+- https://www.freecodecamp.org/news/typescript-curry-ramda-types-f747e99744ab/

@@ -1,0 +1,87 @@
+---
+syntax: markdown
+tags: [frontend, javascript, nextjs]
+---
+
+# NEXT.JS Framework
+
+- write lesser code, dont have to use react routes and router
+- Multiple build Modes: SSG (hydration) and SSR
+- Multiple Build Environment and variables support
+  - .env.local|development|production
+  - .env.local overrides development and .production
+  - Which file will it choose? Depends on NODE_ENV
+  - Next.js will NOT leak environment variables to client, only available on server
+  - NEXT_PUBLIC_VAR_NAME to expose them to client
+
+## Routing
+
+Static Pages           Dynamic Pages
+/pages/some-page.js    /pages/[dynamic-page].js enclosed within []
+
+At buildtime, next.js marks certain routes which have `getServerSideProps(context)`
+
+> Server-like experience from next.js
+
+1. getServerSideProps gets executed for every single request, most important method
+2. render the page
+3. Redirect the page
+4. Insert props to page Components
+
+### getStaticPaths()
+
+- How to get params into getStaticProps
+- Build pages ahead of time
+- use `fallback: blocking`
+  - No flashes of loading/missing content
+  - 1st use has to experience some delay
+
+### Use cases
+
+- Connect to db, then destructure rows from cursor, then use them to fill page view
+- Network, api calls without being CORS binded
+- require files using commonJS syntax or dynamic imports
+- getStaticProps `revalidate: 10` at most generate only 1 page in 10 seconds 
+  - very solid way to implement counters and launch timers
+
+Generate pages at Build Time
+
+## Router
+
+```javascript
+import { useRouter } from 'next/router'
+
+export default function Home(props){
+  const router = useRouter()
+  if (router.isFallback) {
+    return <h1>Loading</h1>
+  }
+  return <h1>Loaded</h1>
+}
+```
+
+## Dynamic Routes
+
+- used hydration, bundle of js is loaded only when its required
+- 2 Page Components, Authenticated and NonAuthenticated, load only 1 bundle
+
+```javascript
+dynamic(() => import('./DynamicH1'))
+
+user ? <AuthenticatedPanel /> : <NonAuthenticated /> 
+```
+
+## Image Component
+
+.Problems
+- CLS Cumulative Layout Shift
+- Are images put on S3 optimized?
+
+.pros 
+- Automatically compresses the image, webp
+- Lazy loading for free
+- Automatically scales image
+
+
+## Resources
+https://youtu.be/EJVGzyWSCBE
