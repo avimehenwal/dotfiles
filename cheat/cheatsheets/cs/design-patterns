@@ -1,0 +1,21 @@
+--- 
+tags: [ cs, programming, design-patterns ]
+---
+# Career progression from framework consumer --> framework creator
+1. Language proficiency
+2. Data structures and Algorithms
+3. Design Patterns
+
+# Command Pattern
+If a Object has a method called execute()
+
+# Singleton Pattern
+An app can have only 1 database connector to a table at a time
+Application configs in singleton
+
+# Facade Pattern
+Abstracted interface, software like compiler,tokenizer, Scanner/Parser, syntax tree, semantic tree, optimizations
+
+# Observer Pattern, pub/sub pattern, most commonly used
+multiple publishers and multiple subscribers
+

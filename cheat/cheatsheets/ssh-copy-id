@@ -1,0 +1,25 @@
+---
+tags: [ ssh ]
+---
+# copy specific key to remote host (wihout looking in ssh-agent / ssh-add)
+ssh-copy-id -i ./home-server pi
+
+  /usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "./home-server.pub"
+  /usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+  /usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+  pi@192.168.0.105's password: 
+
+  Number of key(s) added: 1
+
+  Now try logging into the machine, with:   "ssh 'pi'"
+  and check to make sure that only the key(s) you wanted were added.
+
+# To copy a key to a remote host:
+ssh-copy-id <user>@<host>
+
+# To copy a key to a remote host on a non-standard port:
+ssh-copy-id <user>@<host> -p 2222
+
+# To copy a key to a remote host on a non-standard port with non-standard ssh key:
+ssh-copy-id ~/.ssh/otherkey "username@host -p 2222"
+

@@ -1,0 +1,18 @@
+---
+tags: [cs, terminologies, programming ]
+---
+# Business Logic
+encode real world rules on how data is creates, stored and mutated/changed
+
+# Policies
+course of actions proposed by organization, government
+
+# Dependency Injection. Why use it?
+@runtime
+Dependency is Pushed into the Class from OUTSIDE. Using setters to class and NOT via constructor
+Dependency are implemented as Boundary Interfaces, Lower level details could be swapped later
+
+> A good architecture is that allows you to make decisions late
+
+https://medium.com/@EddieMachete/designing-a-typescript-todo-list-application-following-clean-architecture-principles-8bd7b77bae3d
+

@@ -1,0 +1,83 @@
+---
+tags: [ rpm, build, packaging ]
+--- 
+The package manager used by Fedora, Red Hat Enterprise Linux, Mageia, OpenSUSE and others.
+Originally RPM stood for "Red Hat Package Manager" but now it is a recursive acronym "RPM Package Manager"
+originally written in 1997
+
+rpmbuild --target noarch -bb utils.spec
+
+echo "[rpm] -- build --> [Source Package], [Binary Package]" | graph-easy
+
++----------------+  build   +----------------+
+|      rpm       | -------> | Binary Package |
++----------------+          +----------------+
+  |
+  | build
+  v
++----------------+
+| Source Package |
++----------------+
+
+dnf install fedora-packager @development-tools rpmdevools
+usermod -a -G mock <your username>
+rpmdev-setuptree
+/home/avi/rpmbuild
+  ├── BUILD
+  ├── RPMS
+  ├── SOURCES
+  ├── SPECS
+  └── SRPMS
+cd ~/rpmbuild/SPECS
+rpmdev-newspec hello
+rpmbuild -ba SPECS/hello.spec
+
+# What is RPM?
+- Headers and Metadata
+- CPIO (copy i/p o/p from archive) archive
+- name-version-release-arch.rpm
+- noarch packages - Cross Platform packages which depends on no-architecture like docs
+
+## SPEC Files
+
+%                SECTIONS
+Name             used to set a name for the package.                                                                                                                                                                                                                                                                                                                                                
+Version          should mirror upstream.                                                                                                                                                                                                                                                                                                                                                         
+Release          numbers you work within Fedora.                                                                                                                                                                                                                                                                                                                                                 
+Summary          is a brief one                                                                                                                                                                                                                                                  line description of the package, the first letter should be uppercase to avoid rpmlint complaints.              
+License          check the License status of the software by inspecting the source files and/or their LICENSE files, and/or by talking to the authors.                                                                                                                                                                                                                                           
+URL              specifies the home page of the software package.                                                                                                                                                                                                                                                                                                                                    
+Source0          specifies the source files. It can be a direct URL or a path of the software’s compressed source code.                                                                                                                                                                                                                                                                          
+BuildRequires    specifies the dependencies needed to build the software. what do I need to run the build?
+Requires         specifies the dependencies needed to run the software. what do I need to install the package on system?
+%prep            is used to create the environment for building the rpm package.                                                                                                                                                                                                                                                                                                                   
+%build           is used to compile and to build the source codes.                                                                                                                                                                                                                                                                                                                                
+%install         this is used to install the programs. It lists command(s) to needed to copy the resultant file from the build process to the BUILDROOT directory.                                                                                                                                                                                                                              
+%files           this section lists the files provided by the package, which will be installed on the system.                                                                                                                                                                                                                                                                                     
+%changelog       should stores the work on preparing the RPM, especially if there are security and bug patches included on top of the base upstream source. It’s automatically generated while creating the hello.spec file. The changelog data is usually displayed by rpm                                                                                                       changelog   q <packagename>.
+%pre
+%prerun
+%post
+%postrun              start a service, talk to linker etc
+%files                copied from source to installation path
+
+
+install dependencies with spectool -g ./SPECS/python-dateutil.tzr.gz
+
+## Build commands
+
+rpmbuild -bp              run preperation only prep
+rpmbuild -bc              short circuit, do not run full build
+rpmbuild -bi              install, place files as on actual target
+rpmbuild -bb              Build binary rpm
+rpmbuild -bs              Build source rpm
+rpmbuild -ba              Build both binary and source rpm
+
+## Problems
+
+- can only do one distro version at a time
+  - use mock rpm package
+  - too many BuildRequires might take forever
+
+# How to expand/print the value of a macro?
+rpm --eval 

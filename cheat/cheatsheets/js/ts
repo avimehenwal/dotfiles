@@ -105,9 +105,16 @@ let list1: Arrya<number> = [1,2,3]
 echo "[TYPE|State|Behavious]" | graph-easy
 
 ## Type Definitions
-
+when you create your own types, you can have custom definitions for them
 - index.d.ts
 - Add type definitions in vscode `/// <reference path="../node_modules/@types/jquery/index.d.ts" />`
+
+```ts
+export type SumArgs = {
+  firstArg: string;
+  secondArg: number
+}
+```
 
 ### Search type files on internet
 

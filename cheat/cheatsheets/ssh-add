@@ -1,0 +1,10 @@
+---
+tags: [ ssh ]
+---
+
+# List all keys already added to ssh-agent
+ssh-add -l
+
+# in full verbose format
+ssh-add -L
+

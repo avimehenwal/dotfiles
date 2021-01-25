@@ -22,13 +22,22 @@ Storage     microSD
 
 - [Fedora 33](https://docs.fedoraproject.org/en-US/quick-docs/raspberry-pi/)
 
-## ADAPTERS I WON
+## ADAPTERS I OWN
 
 ### Type C
 
 Nokia Phone    5V 2A
 Apple iPad     5V 3A
 RaspberryPi    5V 3A
+
+# GPIO 
+
+.types
+1. Power supply 3V and 5V
+2. Ground pins
+3. programmable pins
+
+? How to build raspberry pi os from scratch using yocto?
 
 # Datasheet
 [ARM Cortex A72 by Broadcom used in raspberry pi](https://en.wikipedia.org/wiki/ARM_Cortex-A72)

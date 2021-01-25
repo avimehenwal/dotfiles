@@ -1,0 +1,13 @@
+---
+syntax: markdown
+tags: [typescript, design-patterns, frontend]
+---
+# Singleton Pattern in TS
+Allow a class to have ONLY one instance in memory at a time
+UC: database driver 1 open connection, startup app configurations
+T1       Error is class has NO or zero instance at runtime
+T2       One instance of singelton class pass normal expected behaviour
+T3       Two instances of singelton class should Fail
+https://stackoverflow.com/questions/39190154/typescript-restrict-count-of-objects-properties
+
+> TypeScript uses the same runtime as JavaScript

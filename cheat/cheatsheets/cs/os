@@ -1,5 +1,5 @@
 ---
-tags: [ software, personal, os ]
+tags: [ software, personal, os, cs ]
 ----
 
 1912-54     Alan Turing - Father of modern computers
@@ -29,3 +29,4 @@ The actual circuitry in the processor of the computer is what "determines" the i
 - https://en.wikipedia.org/wiki/Alan_Turing
 - [PDP11 Handbook](http://gordonbell.azurewebsites.net/digital/pdp%2011%20handbook%201969.pdf)
 - [Legacy C code for PDP11](https://github.com/mortdeus/legacy-cc)
+

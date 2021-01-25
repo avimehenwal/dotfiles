@@ -1,0 +1,58 @@
+---
+tags: [cs, oo, programming, mixin]
+---
+# Object Oriented Programming
+[ procedure + State ] and state is evil in FP world
+states are supposed to hidden, or private
+OO is more than just STATES, its Dependency Management
+Dependency Inversion  Highlevel concepts are independent and low-level concepts depends on high-level concepts
+We use Polymorphism to do Dependency Inversion in OO, types of decoupling
+
+# Mixins
+In OO, class that contains methods to be used by other classes without having to be parent class of those other classes
++ encourages code reuse
++ could be used as a mechanism to implement Multiple Inheritance (diamond problem)
+  https://www.typescriptlang.org/docs/handbook/mixins.html
+
+# Inheritance
+is a mechanism to implement runtime polymorphism where once class is dereived from another
+class, but overriding all or part of the implementation.
+
+# types of Inheritance
+1. Class Inheritance, as in Python, java
+2. Protocol Inheritance, as in js
+
+# Polymorphism
+single interface to entities of multiple types
+
+1. Ad-Hoc Polymorphism        explicitly define functions to deal with various types using operator/function OVERLOADING
+2. Parametric Polymorphism    type independence achieved via, Generic Type Parameters, @runtime
+3. Subtyping                  restrict the range of types that can be used in a particular case of polymorphism. Liskov Substitution principle
+                              SubType <: SuperType
+
+  [ Parametric Polymorphism >> Adhoc Polymorphism ]
+
+# Function/Method Overloading
+ability to create multiple functions with same name but with different implementations
+
+# SubTyping vs SubClassing
+SubType       interface Inheritance, reuse of purpose/meaning
+SubClassing   implementation Inheritance, reuse of code
+
+# Generic Types Variables
+- type checking @runtime
+- can use multiple Generic Type Variables
+- can be used within Interfaces
+- can put constraints on Generics             <T extends {firstName: string; lastName: string}>
+- can use Generics in JSX
+
+# What if I want to return last element from any type of Array? Number, string don't care!
+const last = <T>(arr: Array<T>): <T> => {
+  return arr[arr.length -1];
+}
+
+## Generics with React
+- Prop types are known in advance, not know Ahead-Of-Time
+- use within JSX
+
+

@@ -34,3 +34,11 @@ tags: [ css, frontend ]
 
 # 80/20% of flexbox
 https://jperasmus.me/posts/the-80-20-of-flexbox
+
+# Flex patterns
+https://youtu.be/vQAvjof1oe4
+
+# Do not let content influence the size of column, Always Fixed sized column independent of data
+.evem-columns > * {
+  flex-basis: 100%;
+}

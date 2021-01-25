@@ -1,0 +1,51 @@
+--- 
+tags: [ cs, programming, design-patterns ]
+---
+
+# Programming Paradigm
+> How do you reason about the structure of your code!
+
+    Programming = ( Data + Logic )
+
+> Strive to rise above all. Make it work!
+
+# Functional Programming Paradigm
+> Function is Logic and Data is passed around with arguments
+- Pure Functions
+- Recursion, Iterators over for/while loops
+- variables are immutable
+- Functions are First class Objects
+
+> Models vs reality
+
+# Object Oriented Programming Paradigm
+> Logic in objects and classes
+- Class Attributes
+- Access Modifiers public | private | protected | static
+- class Methods
+- class objects/instances
+- Follow SOLID principles
+
+> Nothing is more dangerous than an idea, when its the only idea you have.
+
+# Procedural Paradigm
+Sequential instructions without any logic
+
+# Imperative Programming Paradigm
+Declarative Programming     f(x) --> return(value)
+Imperative Programming      f(x) --> sequence of statements
+
+# Composition vs Inheritance Pattern?
+
+# How to make phone connect to car? Use phone to call from car?
+
+- Turn it into a s/w problem
+- Determine inputs to programs and outputs to desired goal
+- Doing Abstraction for living, abstraction is a double edged sword
+
+> Complicated logic should be complicated for a reason
+
+Why isn't app telling whats its doing? instead telling me how it is made?
+At the highest level web is an IO device, delivery mechanism.
+Architecture is about intent
+Use Cases drive the application, an action user will perform on system

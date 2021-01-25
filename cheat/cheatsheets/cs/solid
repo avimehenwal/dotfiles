@@ -1,0 +1,168 @@
+---
+tags: [ cs, programming, oo ]
+--- 
+
+# How were programmers writing before OO?
+Big ass C++ functions
+
+# When was OO invented?
+- 1966 by 2 guys working on ALGOL, block structured language
+- They moved the variables from stack to Heap and we got OO
+
+# Where are local variables stored? Which part of the memory?
+stack frame memory
+
+# What is OO?
+- Couple Data to Behaviours
+- Oak turned into java in 1995
+
+> Back in the days, C++ compiler output was C
+
+# Why do we use OO? Why all languages are OO these days?
+Allows us to load functions at runtime. Eg: .dll Dynamic Link Library
+Plugin System
+Core business logic can load GUI, database from DLLs at runtime without knowing them at compiletime.
+
+## Encapsulation
+- C has perfect Encapsulation
+  - Forward declare variable and functions in header files, define them later
+  - C++ destroyed it, as compiler need to know size for allocation, for that variables and functions in class
+  - Fixed by a hack called, protected varibles and private vars
+
+> Java and its daughter C#, Microsoft copied sun's java project idea
+
+## Inheritance
+- C could implement Inheritance using pointers
+- Multiple Inheritance problem, the diamond problem.
+  - mostly all languages have solved it except java and C#
+
+# What are interfaces? Why this keyword?
+To avoid Multiple inheritance
+
+## Polymorphism
+single interface for ENtities with Multiple Types
+
+> Key to whole OO adoption, its not Encapsulation, abstraction or Inheritance
+
+- Does C had polymorphism?
+  - yes, Eg: getChar() get a character from stdin, doesnt matter what stdin was, terminal or file
+  - Polymorphism on IO devices is an old technique, Device Independence
+- Compiletime dependency vs runtime dependency, who is calling who?
+- Allows to call a function, that we dont know anything about, except its signature
+- Nothing that happens to the plugin function can affect us in compiletime, isolated
+- Ability to create one module calling another, and yet have the compile time dependency against the flow of control.
+
+# UNIX IO Devices
+UNIX stored all IO devices with 5 standard functions as table with pointers
+5 IO Magic Functions
+  1. open
+  2. close
+  3. read
+  4. write
+  5. seek
+- New Device registered to OS
+  - UNIX gets pointers to these 5 functions and put them in a table called VTABLE
+  - Pointers to Functions (C# has funny things, java doesnt had it). Why?
+    - dont need it if we have Polymorphism
+- If you have a polymorphic dispatch, you dont need pointers to functions
+
+# Standard structure of a software application
+- main know about HigherLevel functions by name. How? coz of all imports, requires
+- without polymorphism, flow of control and runtime and buildtime dependency have same direction
+- Put your Businee Rules in a SAFE area, who can screw who?
+
+# Why Does database exists?
+To make it easy for us to read/write.
+Earlier read/write were slow and expensive from magnetic disks, mechanical things going on there
+
+# What kind of DS do people like to have in RAM?
+- Linked lists
+- Binary Trees
+- Hash Tables
+- Heaps
+
+> In RAM databases, everything is save as B-tree, indexed hash tables
+
++------+  calls   +-----------------------+     +--------------------+     +--------------------+
+| main | -------> | higher level function | --> | mid level function | --> | low level function |
++------+          +-----------------------+     +--------------------+     +--------------------+
+
+isolation, boundary, security
++----------------+     +----------+     +-----+
+| Business Logic | --- | Database | --- | GUI |
++----------------+     +----------+     +-----+
+
+- changing icons should not mess up the business logic
+
+echo "[main] -- calls --> [higher level function] --> [mid level function ] --> [low level function ]" | graph-easy
+echo "[Business Logic] -- [Database] -- [GUI]" | graph-easy
+
+# SOLID Principles
+
+1. SRP - SINGLE RESPONSIBILITY PRINCIPLE
+    one class should have only and only 1 reason to change
+    Good software design has high cohesion and low coupling.
+2. OCP - OPEN/CLOSE PRINCLIPLE
+    sounds like oxymoronic
+    Able to implement new feature without changing any old code
+    Open to Extension and Closed to Modification
+    Add Polymorphic Interfaces to the areas which can change? likely to change!
+    Proactive work + Agile, which has changed before are more likely to change again
+    Less Rigidity, compile too much after a change
+3. LSP - LISKOV SUBSTITUTION PRINCIPLES
+    All class should be easily substituted by its derreived classes
+4. ISP - THE INTERFACE SEGGREGATION PRINCIPLES
+    More is better than few
+5. DIP - THE DEPENDENCY INVERSION PRINCIPLE
+form of decoupling
+    High level modules should not depend on low-level module directly
+    High level functions should not have direct dependency on low  level implementation details
+
++------------+  abstraction   +-----------------+  interface   +-------------------+  BL   +---------+
+| paypal api | -------------> | paypalProcessor | -----------> | IPaymentProcessor | ----> | e-store |
++------------+                +-----------------+              +-------------------+       +---------+
+                                ^                                ^
+                                : testable                       |
+                                :                                |
++------------+  abstraction   +-----------------+  interface     |
+| stripe api | -------------> | stripeProcessor | ---------------+
++------------+                +-----------------+
+
+- Every 5 years the popullation of programmers doubles
+- You dont go fast by rushing, you want to go fast you go and do good job, study the problem
+
+# Whats BAD code?
+- you look at the code and says Huhhh?? Doesnt explains what's its doing
+- If you modify something and it breaks something else, its bad code
+- Slows you down
+- Rigidity, to implement one change, need to make 10 other chages to balance the ripple changes, Snake dependency
+- compile too much, because of a change
+- Bad Dependency, coupled systems
+- Fragility, make change here and something over there breaks
+- 3rd party code, balance between desirable code vs undesirable code, mostrocity that comes along with 3rd party s/w
+- A change in small low-level detail affects a high level policy
+
+# Interface vs Abstract classes difference
+https://stackoverflow.com/questions/50110844/what-is-the-difference-between-interface-and-abstract-class-in-typescript
+https://stackoverflow.com/questions/40973074/difference-between-interfaces-and-classes-in-typescript
+
+# Why does java has Interfaces along with abstract classes?
+Because authors of language did not like Multiple Inheritance
+
+# Clean Architecture BCE Model
+1. Interactor Object          Main application, app business rules, choreographer of the dance of entities
+2. Entity, Business Object    Domain Driven Design. Eg: customer, employee etc.
+3. Boundary Objects           could be Interfaces, all data comes in through boundary and gets polymorphically deployed inside Interactor
+
+Add all DETAILS to the App as a plugin, like database (its bits)
+What are Objects? They are NOT data, but a bunch of methods. Data is none of their business
+Business Rules are the Jewels
+
+How did MVC come in?
+MVC is a Delivery Pattern
+
+# Links
+https://blog.cleancoder.com/
+
+# Diagrams
+echo "[paypal api] -- abstraction --> [paypalProcessor] -- interface --> [IPaymentProcessor] [stripe api] -- abstraction --> [stripeProcessor] -- interface --> [IPaymentProcessor] -- BL --> [e-store] [stripeProcessor] .. testable ..> [paypalProcessor]" | graph-easy

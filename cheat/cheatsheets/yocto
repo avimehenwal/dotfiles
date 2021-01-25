@@ -1,0 +1,10 @@
+---
+tags: [ yocto, build, packaging, embedded, linux ]
+--- 
+
+The Yocto Project is a Linux Foundation collaborative open source project whose goal is to produce
+tools and processes that enable the creation of Linux distributions for embedded and IoT software
+that are independent of the underlying architecture of the embedded hardware.
+
+- Inception in 2010 and launched in 2011 in collaboration with 22 organizations, including OpenEmbedded
+- In October 2018, Arm Holdings partnered with Intel in order to share code for embedded systems through the Yocto Project.

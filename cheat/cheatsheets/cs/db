@@ -1,0 +1,15 @@
+---
+tags: [cs, db, programming, software]
+---
+# Database Relationship Modelling
+1 to 1 Relationship
+1 to Many Relationship | Many to 1 Relationship
+Many to Many Relationship
+
+# SQL vs NoSQL
++ Entire data is within same document, you see what you get
+- Multiple copies of data, No single source of truth
+
+SQL               NoSQL
+Table oriented    json document oriented
+

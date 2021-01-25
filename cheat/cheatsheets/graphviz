@@ -1,0 +1,14 @@
+---
+tags: [diagram, modelling, svg]
+---
+# Compile
+dot -Tsvg -O sample.dot
+
+# Draw Use case diagrams
+https://martin.elwin.com/blog/2008/05/uml-use-case-diagrams-graphviz/
+
+# Class UML Diagram
+https://lornajane.net/posts/2011/uml-diagrams-with-graphviz
+
+# Live online Preview
+http://graphs.grevian.org/graph/5284342037217280

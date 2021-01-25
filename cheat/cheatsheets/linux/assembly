@@ -1,0 +1,13 @@
+--- 
+tags: [ linux, assemly, assembler ]
+--- 
+# How to run assembly language on linux?
+https://www.nasm.us/
+https://montcs.bloomu.edu/Information/LowLevel/Assembly/assembly-tutorial.html
+
+# How to analyze binary file? a.out ?
+You can use `nm` to see the internal symbols and `objdump` to get the disassemble.
+objdump -D a.out | bat -l asm
+
+# How to compile C programs to binary?
+gcc -o helloWorld -time hello-world.c

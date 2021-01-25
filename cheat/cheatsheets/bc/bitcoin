@@ -1,0 +1,85 @@
+--- 
+tags: [ bitcoin, blockchain ]
+---
+# What is Bitcoin?
+1. Decentralized
+2. Digital currency
+
+# What is Blockchain?
+Immutable Distributed Ledger over P2P network
+Huge linked-listed make by Merkel trees
+next block depends on cryptographic hash of previous block
+its a Data Structure
+
+> Holy grail of transactions
+
+# Block
+- Data, script, contract
+- hash
+- hash of previous block
+
+# Why computational puzzle solving is important on blockchain? Bitcoin mining
+Networking solving more computational power has the real say in consensus
+Solves a cryptographic puzzles for nothing ==> Proof of work, reach CONSENSUS
+
+# What is Etherium?
+Network is called Etherium and currency is Ether -> Planetary scale computer
+Add scripting and computing power inside blockchain
+Infrastructure for running DAPPS worldwide
+
+# Smart Contract written in SOLIDITY
+distributed ledger of digital contracts
+Eg: Kickstarter
+codify business logic
+store rules, verify rules and self execute rules
+
+# SOLIDITY
+- high level object oriented language ~ js
+- EVM -> Etherium Virtual Machine
+
+# History
+1991        Digital Timestamps, like notary, cannot backdate them
+2009        Satoshi Nakamoto, Enter Bitcoin
+2014        Etherium, Vitalik Buterin, co-founder of Bitcoin magazine
+
+# Blockchain in JS
+
+# Challenges
+- Counterfeitting
+- Terrorism and Money Laundring
+
+# Jobs
+Blockchain Developer      150,000 USD
+Mobile Developer          100,000 USD
+Web Developer              75,000 USD
+
+> only 20% people earn in 6 figures in USA
+
+# Problesm it is trying to solve
+- Urban Farming, canadien company
+- Kidney Donations
+- Census, where govt should spend money? education, bridges
+- Authenticating, prepaid card to refugees in Finland, goto bank and open account, trust is given
+- DEFI - decentralized Financial Services
+
+# Which programming languages to learn to be blockchain developer?
+- SOLIDITY
+- javascript
+- python
+- Go
+- rust
+- C++
+
+# What does a blockchain developer do?
+- writing smart contracts
+- blockchain websites
+- mobile apps
+- Backend, infrastructures, creating/updating existing blockchains
+
+# Passive Income via
+- Trading bots, make money on autopilot, Arbitrage
+- Flash Loans
+- Yield Farming
+
+## Reading
+https://en.wikipedia.org/wiki/Merkle_tree

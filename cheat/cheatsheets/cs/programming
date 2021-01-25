@@ -1,0 +1,19 @@
+---
+tags: [cs, programming]
+---
+Do not fall victim to Best Practises
+
+# Universal laws of programming
+- Writing BAD code is a pre-requisite to writing GOOD code
+- you need to stop trying to skip steps
+- start creating your own best practises
+
+# Interface
+How your software object interacts with the outside world and expose functionality
+Similar to hardware interface like HDMI port on display, Type C charging on laptops, disk drive
+Human Interfaces, built for humans - Keyboards
+Anything that is Public/plugin should have an Interface, to prevent misuse.
+Who can mess up who? Can plugin messup the host s/w? Can host s/w messup the plugin s/w?
+
+
+

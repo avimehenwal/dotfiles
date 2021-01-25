@@ -1,0 +1,15 @@
+---
+tags: [typescript, type, frontend]
+---
+# types
+In Typescript, it’s better to think of a type as a set of values that share something in common.
+Because types are just sets, a particular value can belong to many sets at the same time.
+
+objects are not of a single exact type
+For example, if we construct an object that satisfies an interface
+we can use that object where that interface is expected even though there was no declarative relationship between the two.
+
+TypeScript’s type system is structural, not nominal(existing in name only)
+
+If the structures of these classes are the same but have different names, they could be used interchangeably
+

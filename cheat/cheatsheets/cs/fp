@@ -1,0 +1,44 @@
+---
+tags: [cs, fp, programming]
+---
+# Inception, Why?
+1957        before OO
+Amongst the first 3 programming paradigms to be invented BUT last one to be adopted due to memory
+to solve Multi-Core Problem, now memory is cheap
+
+# Functional Programming languages
+ML
+F#
+Scale
+lisp
+Haskell        real functional programming language
+Erlang         high reliability market, very good recovery mechanism, Elixer
+Clojure        essentially lisp, runs on both java and dotnet stack
+               Assignment opens up a new Transaction, enforces you to control it
+
+# FP core Concepts
+Pure function           no Side Effects
+avoid shared States                                   
+avoid mutating states                                 
+avoid Side Effects      cause by assignment statement  
+immutable variables                                   
+function Composition                                  
+Declarative Programming f(x) --> return(value)
+
+# Pros, strengths
+- No temporal coupling, no side-effects
+- Fewer concurrency issues, no worries which function to call before or after another function 
+- Don't have to worry about the STATE of variable
+
+# Side Effects
+only assignment operations can cause side-effects, Why? Because they can change State over time.
+When we have function that gives us a side effect, we need another function to undo the side-effect.
+  Eg: open-close, malloc-free, semaphore-release
+      and one must precede another with time, Like open proceeds close ELSE memory leaks might happen
+
+# How do we deal with memory leaks?
+Garbage collection - greatest hack ever imposed on any programmer. We are terrible at dealing with side-effects
+
+> RAM is Cheap these days. Rotating Disks are replaced by SSDs
+> It was not like this always, It was woven by hand, bit by bit by bit
+

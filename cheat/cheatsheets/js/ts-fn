@@ -1,0 +1,20 @@
+---
+tags: [frontend, javascript, typescript, function]
+---
+# Variable number of arguments in typescript
+let varArgs = (...args: any[]) => {
+  console.log(...args);
+}
+
+# Arrow fn vs Regular function difference
+FEATURE               REGULAR FUNCTION   ARROW FUNCTION 
+*HOISTING                  maybe            x
+*this variable             .                no this, borrowed from outer scope
+named functions            .                x
+Anonymous function         .                always
+arguments variable         .                x
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
+
+# Hoisting
+call a function before its deceleration

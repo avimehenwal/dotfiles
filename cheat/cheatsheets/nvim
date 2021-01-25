@@ -34,6 +34,9 @@ https://vi.stackexchange.com/questions/17606/vmap-and-visual-block-how-do-i-writ
 # autocommands local buffer
 https://vi.stackexchange.com/questions/8056/for-an-autocmd-in-a-ftplugin-should-i-use-pattern-matching-or-buffer
 
+# How to print current filename in current buffer?
+Use `#` and `%` registers, In insert mode <Ctrl-R>%
+
 # Directory Structure
 nvim/
 ├── after/                      these scripts are executed last

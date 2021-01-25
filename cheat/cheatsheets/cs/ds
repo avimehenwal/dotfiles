@@ -1,0 +1,6 @@
+---
+tags: [cs, ds, programming]
+---
+# Linked Lists techniques
+In programming language implementation, we can create multiple linked lists just by changing/moving the HEAD
+without copying the data-structure
