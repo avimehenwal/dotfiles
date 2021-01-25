@@ -30,3 +30,6 @@ nnoremap <M-7> :terminal hunspell %<CR>
 nnoremap <M-8> :terminal cloc --git .<CR>
 " open current files in browser
 nnoremap <M-9> :!$BROWSER %:p<CR>
+" use linux column command to tabularize
+" no <CR> in end gives us an opportunity to edit command before running
+vnoremap <leader>ct :!column --table

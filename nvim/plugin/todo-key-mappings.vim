@@ -185,6 +185,11 @@ vnoremap <Leader>ol :call avi_autoload#OrderedList()<CR>
 " uppercase only the first character and then lowercase the rest.
 vnoremap g~ :s/\<./\u&/g<CR>
 
-" Leader Key Operations
+" Leader Key VIM Settings
 nnoremap <leader><leader> :call avi_autoload#RunLineUnderCursor()<CR>
+nnoremap <leader>lc :call on_Enter#ListCharacter()<CR>
 " inoremap <leader><leader> :call avi_autoload#RunLineUnderCursor()<CR>
+" remove empty lines
+nnoremap <leader>rel :call avi_autoload#RemoveEmptyLines()<CR>
+
+

@@ -22,3 +22,7 @@ function! avi_autoload#RunLineUnderCursor() abort
   execute 'term ' . getline('.') . ' | tee >(wl-copy)'
 endfunction
 
+" remove empty lines, empty lines with only whitespace chars
+function! avi_autoload#RemoveEmptyLines() abort
+  :g/^\s*$/d
+endfunction
