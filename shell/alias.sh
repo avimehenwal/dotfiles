@@ -89,6 +89,9 @@ alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers
 # ZSH Specific
 alias fpath='print -l $fpath'
 
+# System Management
+alias publicip='curl ifconfig.me'
+
 # FZF inspired
 # Package Manager
 alias brewl='brew list | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always --highlight-line 2 -l gitlog"'

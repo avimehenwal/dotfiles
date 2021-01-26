@@ -189,7 +189,7 @@ vnoremap g~ :s/\<./\u&/g<CR>
 nnoremap <leader><leader> :call avi_autoload#RunLineUnderCursor()<CR>
 nnoremap <leader>lc :call on_Enter#ListCharacter()<CR>
 " inoremap <leader><leader> :call avi_autoload#RunLineUnderCursor()<CR>
-" remove empty lines
-nnoremap <leader>rel :call avi_autoload#RemoveEmptyLines()<CR>
+" remove empty lines from selection
+vnoremap <leader>rel :g/^\s*$/d<CR>
 
 
