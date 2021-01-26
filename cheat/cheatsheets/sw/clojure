@@ -1,0 +1,88 @@
+---
+syntax: markdown
+tags: [ software, plang, cs, programming, compiler ]
+---
+# CLOJURE
+built on top of JVM, dialect of LISP, Dynamically Typed, compiled language
+clojure compiles to bytecode (JVM)
+2007        Initial release
+Macros      source code as i/p and source code as o/p
+* Dynamic Compilation to JVM bytecode on the fly
+* Functional Programming
+* Lisp
+* Runtime Polymorphism
+* Concurrent Programming, programs that runs on multiple cores
+* Hosted on the JVM
+* Persistant Data Structures, all versions of mutations on state, without time decay, they ALL are TREES
+
+## Vocabulary
+**Arity** is the number of arguments or operands taken by a function or operation in logic, mathematics, and computer science.
+
+## Core Clojure Functions
+> Do you feel in full control when you write each and every single line of code
+
+## How does clojure deals with mutable state of a variable?
+avoid mutable objects in FP. Why? => avoid side effects and promote Pure functions
+How do we get any computation done with this model then? => Create new Copy data with changes
+Deep copy is expensive? => Persistant Collection data structures
+What about IO, file, network? => 
+Clojure Reference Type => When processing mutable data over multiple uses, threads, processes
+
+## Monads
+Statically types languages like Haskell, Scala uses special data-type called monads
+encapsulates state changes while appearing stateless to the rest of the program
+
+```clojure
+(command arguments*)
+(+ 1 3)
+```
+
+## FP as opposed to OO
+Mutable stateful objects are the new spaghetti code => Concurrency disaster
+It is better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures."
+Thread Safe => Share freely between threads
+
+## Immutability = Value + Function
+- Timeless, stateless
+- easier to reason about, facilitates correctness
+
+## Language Syntax
+namespace     (ns )
+variables     immutable, dynamic types, types are assigned based on the value
+
+## Persistent Data Structures and Managed References
+- functional part and imperative part in programming s/w 
+- Identity, state and values
+- OO has big problems when facing concurrency
+- Pure function has no notion of Time
+- What is usually a program doing?
+  - talking over sockets, web, internet, rcp, other systems, distributed IoT
+  - putting things on screen, rendering
+  - r/w things in database
+  - Data computation, mutations
+- program is a process, how does changing with time part interact with pure part?
+
+STATE       if you ask same question twice and get different answers at different times
+            value of a IDENTITY at a Time
+PURE FN     if you ask same question twice and get SAME answer every single time
+VALUE       Immutable
+IDENTITY    value at any point in Time, program should facilitate this
+INDIRECTION
+
+Time proceeds, functions of past create the future
+
+# Mutations in Clojure
+The only thing that mutates are REFERENCES, in a controlled way
+1. Refs     shared/synchronous co-ordinated
+2. Agents   shared/asynchronous/autonomous
+3. Atoms    shared/synchronous/autonomous
+4. Vars     Isolated changes within threads
+
+## Toolchain
+jupyter lab     https://github.com/HCADatalab/IClojure
+
+### Resources
+Who is using Clojure?   https://clojure.org/community/success_stories
+use cases?              https://stackoverflow.com/questions/4622419/what-are-the-best-use-cases-for-using-clojure-for-new-development
+Clojure tutorial        https://youtu.be/ciGyHkDuPAE
+

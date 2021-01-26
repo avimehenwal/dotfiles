@@ -1,0 +1,12 @@
+---
+tags: [ software, typescript, cs, programming, compiler ]
+---
+# How much and where is compiler is spending its time on? Performance Tracing
+tsc -p ./some/project/src/tsconfig.json --generateTrace tracing_output_folder
+
+    Visit edge://tracing or chrome://tracing depending on which browser you use
+    Click on the Load button at the top left
+    Open the generated JSON file in your output directory.
+    https://github.com/microsoft/TypeScript/wiki/Performance-Tracing
+
+

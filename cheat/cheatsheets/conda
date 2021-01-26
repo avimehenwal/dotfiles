@@ -1,0 +1,14 @@
+# Install conda
+dnf install -y conda
+
+# create new environment
+conda create --name <env-name>
+
+# activate cenv
+conda activate <env-name>
+
+# deactivate
+conda deactivate
+
+# initalize settings for shell
+conda init

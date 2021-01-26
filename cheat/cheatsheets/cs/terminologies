@@ -11,8 +11,53 @@ course of actions proposed by organization, government
 @runtime
 Dependency is Pushed into the Class from OUTSIDE. Using setters to class and NOT via constructor
 Dependency are implemented as Boundary Interfaces, Lower level details could be swapped later
+https://stackoverflow.com/questions/24838989/what-is-the-real-use-case-of-dependency-injection
 
 > A good architecture is that allows you to make decisions late
 
 https://medium.com/@EddieMachete/designing-a-typescript-todo-list-application-following-clean-architecture-principles-8bd7b77bae3d
 
+# Concurrency in CS
+Processes as main building block of your system
+Modelled in a way to run concurrently, different than Parallelism where process are running in ||
+
+CONCURRENCY MODEL WITH MUTABLE STATE
+  shared memory, any thread having access to shared memory can edit it.
+  Programming with LOCKs and Semaphores, Mutex Locks
+  - loose everything is a thread dies/crashes, can corrupt the whole shared memory states
+  - difficult to isolate errors
+  + single machine on the same network and nothing goes wrong
+  + when computational time is critical, financial trading compute and place order if fails then discard
+  + graphic rendering
+CONCURRENCY MODELS WITH IMMUTABLE STATE
+  processes do NOT share memory
+  communicate via Message Passing, copying data from one process to another
+  + if a process crashes/dies, other processes are not affeccted by it. Each has its own copy
+  + easier to isolate issues if a process dies
+
+> If there is a network, something will go wrong with it
+
+# Concurrency | Parallelism
+Sequential    1 cpu 1 task until it finishes
+Concurrency   1 cpu running multiple threads, context switching
+Parallelism   * cpu running * threads, NO context switching
+Parallel Concurrent Execution = [ concurrency on Multi CPU systems + Parallelism ] 2 CPU, 4 threads
+
+# Linking
+Combining multiple compiled files into single or multiple binary executable format files. Like bin,dll,exe etc
+         object modules
+	 of user files		LINKING
+	      +		  --------------------> Executable program
+	 existing library
+	 modules
+
+https://youtu.be/Y1pgpn2gOSg
+
+# Programming Languages Virtual Machines
+Virtual Machine     abstraction that defines a Computing Model, Turing Machine, JVM, Compiler (middle and Backend), JVM- compiler Frontend
+A virtual machine is a program that can execute machine code that's not intended for the platform your computer uses.
+So, for example an x86 Windows computer can execute x86 Windows machine code directly, but it can't execute Java bytecode.
+That's what the JVM is for: to bridge the gap, so that your x86 Windows computer can execute Java bytecode.
+https://en.wikipedia.org/wiki/Stack_machine
+https://medium.com/@allansendagi/javascript-fundamentals-call-stack-and-memory-heap-401eb8713204
+https://medium.com/javascript-in-plain-english/understanding-javascript-heap-stack-event-loops-and-callback-queue-6fdec3cfe32e

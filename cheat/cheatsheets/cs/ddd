@@ -1,0 +1,17 @@
+---
+tags: [cs, oo, modelling, design, fp]
+---
+# Mastering the Art of designing Microservices Architecture using Domain Driven designs
+Ubiquitous Language - same voculabulary as used in real language by domain experts, s/w modelled language
+Book in 2004-05
+looking at s/w Top-Down
+focus on business and not on technology
+Domain: Banking, avaiation, energy, ecommerce, cargo Logistic app
+SubDomains: Payroll, Product, UserAccount
+"We are working on resolving your issue" - avoid this, be proactive
+Credit card transaction, stateful object, instance of something which goes through various states. track through time
+
+# Onion Architecture
+
+# Resources
+https://en.wikipedia.org/wiki/Domain-driven_design

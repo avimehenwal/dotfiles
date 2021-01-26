@@ -21,7 +21,7 @@ Pure function           no Side Effects
 avoid shared States                                   
 avoid mutating states                                 
 avoid Side Effects      cause by assignment statement  
-immutable variables                                   
+immutable variables     share what you can and copy what you cann't
 function Composition                                  
 Declarative Programming f(x) --> return(value)
 
@@ -42,3 +42,26 @@ Garbage collection - greatest hack ever imposed on any programmer. We are terrib
 > RAM is Cheap these days. Rotating Disks are replaced by SSDs
 > It was not like this always, It was woven by hand, bit by bit by bit
 
+# Higher Order Functions HOF
+Take fn as i/p and returns new fn as o/p
+* No loops instead use ==> map, reduce, filter HOF
+Map reduce sandwich example
+
+# Persistent data structures
+Immutability on arrays by copying ds. In traditional immutable world. How to do it better?
+Represent array as TREE, and just update the new Node, Structural Sharing avoid copying the whole thing
+JS lib, mori, immutable.js by Facebook
+
+# Commandments of FP
+https://codewords.recurse.com/issues/one/an-introduction-to-functional-programming
+
+# PROS of Immutable data structures
+1. Immutable data structures are quite simple in a way that it has only state and remains in one state. It becomes easier to reason.
+2. They are thread-safe(Thread safety) i.e. multiple threads operating on them cannot modify/corrupt the state.
+3. They can be shared easily i.e. by references. One doesn't have to employ a strategy like defensive copying(Object copy) like in mutable structures.
+4. It also eases out debugging as there is only one value for the structure.
+
+# CONS of Immutable data-structure
+1. No data-structures with constant time O(1) update or lookup (*). Some idiomatic usages, lead to quadratic algorithms O(n2) versus linear algorithms O(n) for mutable structures.
+2. Updates tend to require multiple allocations and can lead to excessive garbage collection work.
+3. Loss of block-free data-structures (in general). Or STM specifically.

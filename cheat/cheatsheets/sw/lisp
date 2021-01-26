@@ -1,0 +1,6 @@
+--- 
+tags: [cs, programming, software, plang]
+--- 
+# LISP
+all gets compiled to assembly in the end.
+model your own language structures and extend it using MACROS and METAPROGRAMMING

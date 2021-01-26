@@ -1,0 +1,67 @@
+---
+tags: [cs, search, programming, software]
+---
+# Elasticsearch vs Apachey Solr
+FEATURE            Solr    ElasticSearch
+opensource         x       x
+simplicity         .       x
+java centric       x       .
+cloud friendly     x       x
+*Anlytics          .       x
+well documented    x       x
+Size             150MB    35MB
+
+https://github.com/elastic/elasticsearch
+
+# History
+1999        Lucene search engine software library written in java
+2004        Solr started java
+2010        Solr merged with Lucene
+Traditionally search operation is performed on SELECT * FROM TABLE, full table scans. No feasible for millions of records
+
+# Search Systems
+Based on Lucene Index system
+Full text search techniques          all/selected portions of documents. Indexing and searching stages
+Structured search
+Queries, filters and caches
+Faceted Search, stats, enumerations
+
+# Search result operations
+- search backend to sort the results
+- Fuzzy search, rect (mispelled)
+- Multiple words using and, else wont show
+! search this and that?
+
+# Use with web frontend
+Downshift       WAI-ARIA compliant autocomplete
+React.js        reactivity and web components
+elastic-search  text search backend
+apollo          graphQL server
+caddy           HTTP2 enabled web server, proxy, load-balancing, http3. Nginx killer
+
+# Elastic Search Features | google like search functionality
+[ ] autocompletion
+[ ] correcting typos
+[ ] Highlighting Matches
+[ ] Handling Synonyms
+[ ] Adjusting relevance, ranking
+[ ] Complex Analytics on Aggregated data + search terms
+
+# Technology
+Elastic search = { cluster of nodes (Multiple sharded Lucene Indexes) }
+Shard = Lucene Index, Segments (mini indexes) -> inverted index key DS -> 
+
+# elastic search server
+/etc/elasticsearch/elasticsearch.yml
+Determine INIT system on your linux         ps -p 1
+application logs                            sudo journalctl --unit elasticsearch
+http://localhost:9200/
+
+# indexinf Images
+Indexing a document containing image data is not much different from indexing any other document.
+The API is the same, but the exception is that we want to put binary data in the image field.
+Since JSON does not support binary data as a native value, the plugin expects the data to be base 64 encoded as a JSON string.
+To distinguish these strings from normal strings, we also have to define the mappings explicitly for the image field.
+
+
+

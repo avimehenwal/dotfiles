@@ -1,0 +1,16 @@
+---
+syntax: markdown
+tags: [ software, nginx, webserver ]
+---
+# install
+sudo apt-get install nginx
+sudo systemctl start nginx
+sudo nvim /etc/nginx/sites-enabled/default
+sudo systemctl reload nginx.service
+
+# Reverse Proxy
+Proxy server accessable from public internet
+
+# Alternatives
+Caddy
++ Analytics dashboard webpage

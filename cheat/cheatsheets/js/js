@@ -2,9 +2,15 @@
 syntax: markdown
 tags: [frontend, javascript]
 ---
+## Concurrency in JS | vs Parallelism
+IO Driven                 ------- single event -----|-------- multiple events -------
+{ Synchronous << Asynchronous (callbacks | Promises | async/await) << Streams/Observables }
+* JS is async but its NOT parallel, single threaded event loop environment
+* Eg; network call, scrolling the page and repainting the screen
+* Promises and Generators
+* Channels in JS https://developer.mozilla.org/en-US/docs/Web/API/Channel_Messaging_API/Using_channel_messaging
 
 # Javascript Interactive Runtime
-
 Download RunJS appimage https://runjs.dev/
 
 - JS is single threaded programming language
@@ -47,3 +53,11 @@ DOM was not originally specified—it came about when browsers began implementin
 Dead code elimination, or Tree shaking, as it’s often called, is very important to achieve the optimum bundle size and hence app performance.
 
 - Code Splitting - seperate bundler
+
+## JS Machine | javascript to C++ world
+memory heap         as a place to store and write information on RAM. store global variables
+call stack          helps us keep track of where we are in the code so that we can run the code in order
+                    stack memory is good for primitive data types. Not so much for complex data structures like Objects
+                    so we put pointers to Objects on stack
+                    Virtual Machine     abstraction that defines a Computing Model, Turing Machine, JVM
+Javascript is a garbage-collected language, its NOT a perfect system though. Clearing Heap memory is a challenge

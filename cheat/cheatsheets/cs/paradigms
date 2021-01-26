@@ -35,6 +35,10 @@ Sequential instructions without any logic
 Declarative Programming     f(x) --> return(value)
 Imperative Programming      f(x) --> sequence of statements
 
+# Place Oriented Programming | Rich Hickey | Clojure
+New information is replacing the old information, doesn't matter if framework is doing that or you.
+Doing it decades ago, because of very very tiny RAM and disks, NOW its gone, lots of memory
+
 # Composition vs Inheritance Pattern?
 
 # How to make phone connect to car? Use phone to call from car?

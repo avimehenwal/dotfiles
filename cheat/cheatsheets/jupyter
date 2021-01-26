@@ -1,0 +1,16 @@
+# Install from conda on fedora
+conda install -c conda-forge jupyterlab
+
+# List installed Kernels
+jupyter kernelspec list
+  Available kernels:
+    iclojure    /home/avi/.local/share/jupyter/kernels/iclojure
+    jslab       /home/avi/.local/share/jupyter/kernels/jslab
+    tslab       /home/avi/.local/share/jupyter/kernels/tslab
+    python3     /home/avi/.conda/envs/cenv/share/jupyter/kernels/python3
+
+# Run typescript on jupyter
+npm install -g tslab
+tslab install --version
+tslab install --python=python3
+

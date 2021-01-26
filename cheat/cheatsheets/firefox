@@ -1,0 +1,3 @@
+# respect local DNS from /etc/hosts
+about:config --> local dns
+Enable DNS over HTTPS

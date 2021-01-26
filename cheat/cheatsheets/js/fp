@@ -1,0 +1,26 @@
+---
+tags: [fp, programming, javascript, plang]
+---
+# Immutablility and FP in JS
+How immutable data rocks, its just sits there like a rock
+
+# Problems with mutability
+- Track who is been changing what and when
+- system might not be able to handle the mutation and break, bugs introduction
+Eg: list of animals in zoo, someone puts an alien in list, now system breaks because it was expecting only earth animals!
+
+copying is a waste of both time/space
+do dances to the gods of time and complexity
+
+# Immutable Data Structures | Persistant Data Structures (partially, full time-travel) git | Path Copying
+how?  Trees and Sharing
+Immutable data structures only carries most recent value
+partially persistant DS keeps track of changes but allows you to work with only latest value
+fully persistant DS keep track and well as all values in time, allows full time-travel
+
+# TRIE | Bitmapped Vector Trie | Hash Array Mapped Trie
+tree where leaves holds the values and paths represents the keys. Eg: search suggestions
+
+# How to usse it?
+Mori
+immutable.js

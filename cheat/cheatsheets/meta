@@ -1,0 +1,28 @@
+---
+tags: [meta]
+---
+# Tagging Strategy
+
++----------+     +-----------------------+
+                  | software | --> | programming languages |
+                  +----------+     +-----------------------+
+                    ^
+                    H                +------------------------------------+
+                    H                |                                    v
++-----------+     +----------+     +-----------------------+     +-----++------------+
+| hardware  | <== |          | ==> |       frontend        | --> | css || javascript |
++-----------+     |          |     +-----------------------+     +-----++------------+
+                  |          |       |
+                  | personal |       +------------------------+
+                  |          |                                |
++-----------+     |          |     +-----------------------+  |
+| lifestyle | <== |          | ==> |    ComputerScience    |  |
++-----------+     +----------+     +-----------------------+  |
+                    H                                         |
+                    H                                         |
+                    v                                         |
+                  +----------+     +-----------------------+  |
+                  | bitcoin  |     |      typescript       | <+
+                  +----------+     +-----------------------+
+
+echo "[personal] ==> [lifestyle],[bitcoin],[ComputerScience],[hardware],[frontend],[software] [frontend] --> [css],[javascript],[typescript] [software] --> [programming languages]" | graph-easy

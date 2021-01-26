@@ -15,5 +15,12 @@ Human Interfaces, built for humans - Keyboards
 Anything that is Public/plugin should have an Interface, to prevent misuse.
 Who can mess up who? Can plugin messup the host s/w? Can host s/w messup the plugin s/w?
 
+# Accessors, Getter-setter pattern on class attributes
+Use setters when you want to restrict/validate the values being set. Preprocessing before setting required
 
+# Information Systems
+In Memory/RAM         mutable abstract modelled software objects
+Persistant storage    database, disk, files, internet
+code 1 machine program to N machine program
 
+> Specificity can  kill the reuse, Promise of OO, code reuse

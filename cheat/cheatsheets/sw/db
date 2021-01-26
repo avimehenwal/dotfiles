@@ -1,4 +1,5 @@
 ---
+syntax: markdown
 tags: [cs, db, programming, software]
 ---
 # Database Relationship Modelling
@@ -6,10 +7,15 @@ tags: [cs, db, programming, software]
 1 to Many Relationship | Many to 1 Relationship
 Many to Many Relationship
 
-# SQL vs NoSQL
+## SQL vs NoSQL
 + Entire data is within same document, you see what you get
 - Multiple copies of data, No single source of truth
 
 SQL               NoSQL
 Table oriented    json document oriented
 
+## Functional Database, db is a software machine in itself 
+- persistance
+- other db things like consistency, reliability
+- Computation (fiddeling with data) seperate from process (running the db machine)
+> in FP, most of the data structures are persistent data-structure
