@@ -1,0 +1,17 @@
+---
+syntax: html
+tags: [frontend, responsive, ui]
+---
+# link previews | Open graph protocol | using pages meta-data
+maybe difficult to do with client side rendering, only possible
+1. when static pages are generated ahead of time
+   - new pages CANNOT be built at runtime
+2. for dynamic/unknown number of pages, SSR server side rendering, sites like medium, reddit
+   + new pages CAN be built at runtime
+
+<meta  property="og:site-name"  content="website name" />                 
+<meta  property="og:image"      content="https://example.com/ogp.jpg" />                        
+<meta  property="og:title"      content="some title for open graph" />
+
+# ARIA a11y | web readers
+internet is for everyone

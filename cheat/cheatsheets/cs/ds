@@ -1,6 +1,21 @@
 ---
-tags: [cs, ds, programming]
+tags: [cs, ds, programming, data-structure]
 ---
 # Linked Lists techniques
 In programming language implementation, we can create multiple linked lists just by changing/moving the HEAD
 without copying the data-structure
+
+# Trees
+inverted trees in computer science
+
+# Self Balancing Trees
+- B-Trees
+- Red Black Trees
+- AVL Trees
+
+# Use case B Trees
+
+# How to balance the trees?
+we need 2 piece of information
+  1. height of each node
+  2. balance factor of every node

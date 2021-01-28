@@ -48,7 +48,7 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "graphvizPreview.engine": "dot",
   "editor.minimap.enabled": false,
-  "terminal.integrated.shell.linux": "/usr/bin/zsh",
+  "terminal.integrated.shell.linux": "/usr/bin/fish",
   "vim.easymotion": true,
   "vim.hlsearch": true,
   "vim.cursorStylePerMode.insert": "block",
@@ -1102,4 +1102,7 @@
   ],
   "vscode-neovim.neovimInitVimPaths.linux": "/home/avi/dotfiles/nvim/init.vim",
   "workbench.colorTheme": "Visual Studio Dark",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
 }

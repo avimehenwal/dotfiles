@@ -1,0 +1,11 @@
+---
+syntax: markdown
+tags: [frontend, javascript, library, software]
+---
+## Downshift
+is currently implemented as a render prop component, pland to use reducer pattern (inversion of control) in future
+Inversion Of Control is related to, but different from, the dependency inversion principle,
+which concerns itself with decoupling dependencies between high-level and low-level layers through shared abstractions.
+Dependency injection is a specific type of IoC.
+https://kentcdodds.com/blog/the-state-reducer-pattern-with-react-hooks
+

@@ -16,5 +16,9 @@ arguments variable         .                x
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 
+# Anonymous functions
+* Is a function going to be used only once? can I reuse it?
++ good for dispatching events, we already know the name of event
+
 # Hoisting
 call a function before its deceleration

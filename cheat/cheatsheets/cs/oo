@@ -17,10 +17,20 @@ In OO, class that contains methods to be used by other classes without having to
 # Inheritance
 is a mechanism to implement runtime polymorphism where once class is dereived from another
 class, but overriding all or part of the implementation.
+- Inheritance/Subclassing hierarchies can become trouble as project grows, brittle tight coupling with parent types, rippling down side effects
+-> Gorilla / Banana Problem
+
+> Prototype-based programming uses generalized objects, which can then be cloned and extended.
 
 # types of Inheritance
-1. Class Inheritance, as in Python, java
-2. Protocol Inheritance, as in js
+1. Class Inheritance      as in Python, java, classes are often seen as analogous to types 
+  2. Protocol Inheritance   as in js -> just a working copy, ECMAScript 6 introduced classes as syntactic sugar over JavaScript's existing prototypes
+    1. Deligate Prototypes                    ditch new k/w with Object.create(prototype)
+    2. Cloning / Concatenation Prototypes     heavely used with MIXINS, deep copy mechanism
+    3. Functional Prototypes                  data privacy using closures, private attributes
+__proto__ is a historical getter/setter for [[Prototype]] == Prototype property, akin to python world __dict__
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
+https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript
 
 # Polymorphism
 single interface to entities of multiple types

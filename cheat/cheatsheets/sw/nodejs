@@ -1,0 +1,6 @@
+---
+tags: [compiler, javascript, plang, software]
+---
+Written in C++ v8 and javascript
+- very INSECURE, 3rd party code has access to almost everything, IO, disk, network => deno
+- unnecessarily complicated packaging system, lots of guessing work

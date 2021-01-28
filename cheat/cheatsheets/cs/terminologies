@@ -1,13 +1,24 @@
 ---
+syntax: markdown
 tags: [cs, terminologies, programming ]
 ---
-# Business Logic
+## Architecture
+decisions that are hard to change, choice of programming language is hard to change
+What the most important thing about architecture? => Business use cases
+
+## Component
+component mean a glob of software that's intended to be used, without change, by an application that is out of
+the control of the writers of the component
+
+> Code is a craft, trying to improve my craft
+
+## Business Logic
 encode real world rules on how data is creates, stored and mutated/changed
 
-# Policies
+## Policies
 course of actions proposed by organization, government
 
-# Dependency Injection. Why use it?
+## Dependency Injection. Why use it?
 @runtime
 Dependency is Pushed into the Class from OUTSIDE. Using setters to class and NOT via constructor
 Dependency are implemented as Boundary Interfaces, Lower level details could be swapped later
@@ -17,7 +28,7 @@ https://stackoverflow.com/questions/24838989/what-is-the-real-use-case-of-depend
 
 https://medium.com/@EddieMachete/designing-a-typescript-todo-list-application-following-clean-architecture-principles-8bd7b77bae3d
 
-# Concurrency in CS
+## Concurrency in CS
 Processes as main building block of your system
 Modelled in a way to run concurrently, different than Parallelism where process are running in ||
 
@@ -37,13 +48,13 @@ CONCURRENCY MODELS WITH IMMUTABLE STATE
 
 > If there is a network, something will go wrong with it
 
-# Concurrency | Parallelism
+## Concurrency | Parallelism
 Sequential    1 cpu 1 task until it finishes
 Concurrency   1 cpu running multiple threads, context switching
 Parallelism   * cpu running * threads, NO context switching
 Parallel Concurrent Execution = [ concurrency on Multi CPU systems + Parallelism ] 2 CPU, 4 threads
 
-# Linking
+## Linking
 Combining multiple compiled files into single or multiple binary executable format files. Like bin,dll,exe etc
          object modules
 	 of user files		LINKING
@@ -53,7 +64,7 @@ Combining multiple compiled files into single or multiple binary executable form
 
 https://youtu.be/Y1pgpn2gOSg
 
-# Programming Languages Virtual Machines
+## Programming Languages Virtual Machines
 Virtual Machine     abstraction that defines a Computing Model, Turing Machine, JVM, Compiler (middle and Backend), JVM- compiler Frontend
 A virtual machine is a program that can execute machine code that's not intended for the platform your computer uses.
 So, for example an x86 Windows computer can execute x86 Windows machine code directly, but it can't execute Java bytecode.
@@ -61,3 +72,65 @@ That's what the JVM is for: to bridge the gap, so that your x86 Windows computer
 https://en.wikipedia.org/wiki/Stack_machine
 https://medium.com/@allansendagi/javascript-fundamentals-call-stack-and-memory-heap-401eb8713204
 https://medium.com/javascript-in-plain-english/understanding-javascript-heap-stack-event-loops-and-callback-queue-6fdec3cfe32e
+
+## Inversion Of Control IoC
+> Reply on Abstractions rather than Concrete Implementations
+User class is now only check if data is valid, now something else tells the use what data access layer to use! User doesn't create data access layer.
+IoC is usually accompanied/implemented by Dependency Injection
+Instead of user injecting Dependencies, let Framework Layer do it for you coherently across the entire source code
+  Google Search string
+    inversion of control uncle bob
+    inversion of control martin fowler
+https://stackoverflow.com/questions/3058/what-is-inversion-of-control?page=1&tab=oldest#tab-top
+https://softwareengineering.stackexchange.com/questions/205681/why-is-inversion-of-control-named-that-way
+* Why Inversion in name? How does it invert the flow of control?
+      for the time the dependency code is running, you are NOT in control
+
+## Dependency Injection
+Explicitly provide the dependency to the code/function from outside, during function call in contrast to assuming things or accessing globals.
+> Write batteries included Objects, fuctions, classes, behaviours
+? Why? It looks like a extra step | benefits
+  + Makes dependencies explicit and more clear
+  + makes code more testable
+
+  https://stackoverflow.com/questions/3912504/difference-between-inversion-of-control-dependency-inversion-and-decouplin
+
+```js
+function getAnimals(fetch, id) {
+  return fetch('http://animals.api/' + id)
+    .then(response => response.json())
+    .then(date => data.results[0])
+
+// window.fetch is added as a dependency to function getAnimals
+getAnimals(window.fetch, 123)
+  .then(animal => document.querySelector('.animal').innerHTML = animal.name)
+}
+
+// inject testing library into the DI function
+getAnimals(fakeFetch, 123)
+test1: if 2nd arg gets added to make the complete url
+test2: if a network call is made => fakeFetch method  is called once
+test3: call fakeFetch with correct/proper URI
+```
+
+> More than 8,000,000 million people commit suicide every year, every 40 sec someone commits suicide
+> one in 10 will try to commit suicide, can not deal with inner deamons, 1/4 suffer from alcoholism
+> we have extended our life, what about Fullfillment?
+
+## Flow of Control
+order in which individual statements, instructions or function calls of an imperative program are executed or evaluated.
+Language Primitives determines the flow-of-control. Usually modelled using Flowcharts Eg:
+* sequential && blocking FOC
+* conditional branching FOC
+* iteration / looping FOC
+* unconditional jumping GOTO FOC
+* Exception Handling Constructs like try {...} catch {...} finally {...}
+* Asynchronous calls using async/await, callbacks, Promises
+* temporarily yield control to a Generator Function, pause/resume FOC http://es6-features.org/#GeneratorFunctionIteratorProtocol
+* Co-operative multitasking without threads, yield control to each other using Coroutines, aka non-preemptive multitasking, as OS is NOT involved
+   * in js, stackless coroutine functionality through "generators" and yield expressions is provided.
+
+## Refactoring | green-2-green
+compiler desnt care, customers doesnt care then why? => Economical reasons, able to deliver NEW features faster
+new fetures using small cheap changes, without having to understand a lot of code
+

@@ -1,0 +1,71 @@
+---
+tags: [programming, javascript, plang]
+---
+60fps => leads to 16ms to repaint the screen, if user javascript time budget overshoots it causes JANK
+browser has to process user events, compute layouts, style recalc, paint areas, composite, actual pixel on screen
+
+# Lexical Scoping
+Nested functions have access to variables declared in their outer scope.
+
+# Closure is JS | Where to use and why NOT to use?
+inner function is returned from the outer function before being executed
+A closure is the combination of a function and the lexical environment within which that function was declared.
+Used analogous to OOP objects instances with methods on data
+It is unwise to unnecessarily create functions within other functions if closures are not needed for a particular task,
+as it will negatively affect script performance both in terms of processing speed and memory consumption.
+> Delayed Execution, collect timeStamp/time-based data on events and then process/store-in-db them later ~Command Pattern
+
+// Global Scope
+function tsDataSample() {
+  // Outer Lexical Scope
+  var timestamp = Date.now();
+  function addToTimeseriesDatabase() {
+    // Local Scope
+    console.log(timestamp);
+  }
+  return displayName;
+}
+var sample1 = tsDataSample();
+// print a function
+console.log(sample1.toString())
+console.log(sample1.name)
+//sample1.name = "changed"     // readonly
+// console.log(sample1.name)
+// Delayed Execution -> bulk write to disk
+sample1();
+
+# Concurrency in JS
+1. web worker Browser API, shares nothing with main js thread, do NOT have access to DOM, run analytics/tracking apps on web workers
+2. Callback Functions
+readFile('file.txt', (content) => {
+    console.log(content);
+})
+3. Promises | Chaining promises. Eg: get friends -> get profile of each friend -> send each of them a friend request
+readFile('file.txt')
+  .then(...)           // still uses callback
+  .catch(...);
+4. Generator Functions: not for concurrency, just to pause/resume the execution, with * after function
+function* generatorFn() {
+  let result = fetch('/users');
+  // pause execution
+  yield result;
+  // later SOMEONE should resume it
+  console.log('we are back!');
+}
+5. async/await: on top of Generators and Promises, exceptions are treated like normal exception, no seperation from await promise world
+async function always returns a promise
+
+# Dealing with IO approaches
+1. Blocking/synchronous
+2. Non-blocking/event-loop/asynchronous
+Always Blocking         Alerts, prompts, confirms 
+
+function getUserName() {
+  let name;
+  $.get('/user/123', (user) => {
+    name = user.name;
+  });
+  return name;
+}
+// why Doesnt it work??
+console.log('User Name:', getUserName());

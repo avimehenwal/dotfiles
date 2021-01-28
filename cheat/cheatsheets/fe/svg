@@ -63,3 +63,4 @@ viewBox - controls whats inside the viewport area, zooming and panning
 ## SVG Attributes
 
 preserveAttributes - if you want vector to use up all space in viewbox
+

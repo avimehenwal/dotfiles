@@ -1,0 +1,85 @@
+---
+syntax: markdown
+tags: [frontend, javascript, build]
+---
+## Javascript Modules
+? How to build modules?
+? How to use modules? Old and new syntax?
+? How to share modules? Repositories?           npm, self-hosted, github package
+
+## Challenges
+Global namespace pollution, yahoo object, jquery global object
+JS Module Patter -> IIFE with closure fn to keep private data hidden. Possible use logic within closure and decide what to return
+```js
+// Module Pattern using IIFE
+var myDIYModule = (function() {
+    // private variables
+    var counter = 0;
+    return {
+        increment: function() {
+            counter += 1;
+        },
+        print: function() {
+            console.log(counter);
+        }
+    };
+}
+)();
+
+myDIYModule.print();      // 0
+myDIYModule.increment();
+myDIYModule.print()       // 1
+  console.log(myDIYModule.counter); // undefined
+```
+## How to use Modules in browser?
+```html
+// add a module script
+<script type="module" src="main.js"></script>
+// older browsers
+<script nomodule src="bundle.js"></script>
+```
+
+## JS Module Timeline
+1995-2000     Pre modules era, netscape navigator was thing, only inline scripting, Dark Ages
+2010          commonjs = nodes implementation of Modules, require syntax, synchronously load modules
+2011-today    Standardization still in progress
+
+All these bundlers came up with a different approach of solving a problem which existing tools couldn’t solve.
+UMD     that can either be used as module (through an import), or as a global (when run in an environment without a module loader).
+        Universal Module Definition, support both AMD and CJS modules, lots of boilerplate
+
+## Why use one in the first place?
++ single bundle or code-splitting js bundles
++ compress and minified production builds, bundle size
++ resolved Name Colissions, and load sequence
++ bundle together multiple js files (your own + 3rd party dependency) into single bundle js file
++ How to distribute js bundles? Bundle --format UMD, commonJS, AMD. Make bundle ready for consumption
+
+## Webpack
+
+> Webpack was designed to solve the problems of asset management 
+
+- slower comparative to rollup and parcel
+- more hassle, writing webpack.config file and including plugins and loaders
++ battle tested, been there for a while
+
+## Parcel-bundler
+
+> worker processes uses multiple cores, and rebuilds uses filesystem cache, FASTEST among browserify, webpack, parcel
+
++ Supports HTML, CSS, JS/TS, file assets, images, videos without plugins. automatic scss/sass compile. Futureproof Rust + wasm Transformations
++ Babel, PostCSS, PostHTML
++ code splitting with dynamic import syntax
++ Hot module replacement
++ Friendly debugging
+
+! issues with web-sockets
+One more important thing. You'll need to rm -rf .cache after changing tsconfig.json
+! create index.d.ts file in folder src,and add this line    declare module '*.jpg';
+
+https://adrianhall.github.io/javascript/react/2020/03/29/parcel-typescript-react/
+
+## Rollup
+> using a standardised format (i.e. ES2015 module format) to write your code and tries to get
+> really small builds with the help of dead code elimination
+. very much like webpack, with little less config and plugins

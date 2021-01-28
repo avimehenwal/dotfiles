@@ -1,0 +1,18 @@
+---
+tags: [frontend, js, component, design-pattern ]
+---
+# Build an collapsable Accordion | Header then body | in 30 lines of code using design pattern
+feature request: Can I choose my own state icons, expanded, collapsed
+feature request: can you make it display body first then header? Or on left side or on right side?
+  css changes: flexbox to css grids
+  x: left={true}            dont make impossible states possible
+  v: position="left"
+feature request: expand, collapse individually and in bulk, all at once
+  single={true}
+  preventClose={true}       at least one should be expanded
+!Props Explosion == APROPCALYPSE
+  components with 30-60 props     increased bundle size
+its easy when you have control over rendering
+
+https://youtu.be/AiJ8tRRH0f8
+https://egghead.io/lessons/react-course-overview-advanced-react-component-patterns
