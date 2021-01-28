@@ -11,6 +11,7 @@
     "readme",
     "vscode",
     "zsh-plugin",
-    "nvim"
+    "nvim",
+    "cheat"
   ]
 }
