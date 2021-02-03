@@ -1,0 +1,8 @@
+---
+tags: [cs, programming, design-patterns]
+---
+# Meta Programming
+treating other programs as data, self modifying code
+read, generate, transform other code/programs, even modify itself while running
+
+# Generative Programming

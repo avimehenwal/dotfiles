@@ -2,6 +2,23 @@
 syntax: markdown
 tags: [cs, terminologies, programming ]
 ---
+## Entity Relationship | Domain
+A data entity is anything real or abstract about which we want to store data.
+Entity types fall into five classes: roles, events, locations, tangible things or concepts.
+E.g. employee, payment, campus, book. Specific examples of an entity are called instances.
+E.g. the employee John Jones, Mary Smith's payment, etc.
+A data relationship is a natural association that exists between one or more entities.
+DOMAIN        targetted subject area where application is intended to apply
+1. Artificial intelligence.
+2. Computation & data security.
+3. cloud computing.
+4. Data mining.
+5. Database security.
+6. Distributed Computing.
+7. Grid computing.
+8. Image processing.
+9. Distributed Networking.
+
 ## Architecture
 decisions that are hard to change, choice of programming language is hard to change
 What the most important thing about architecture? => Business use cases
@@ -9,6 +26,12 @@ What the most important thing about architecture? => Business use cases
 ## Component
 component mean a glob of software that's intended to be used, without change, by an application that is out of
 the control of the writers of the component
+
+## Namespace
+maps variable names to Objects in memory within a namespace. References are changes on assignment operator
+Python, do not care about deassigned values, maybe left for garbage collector
+Clojure, remembers all mutations and allows us to time-travel
+C, doesn't have namespace
 
 > Code is a craft, trying to improve my craft
 
@@ -30,9 +53,9 @@ https://medium.com/@EddieMachete/designing-a-typescript-todo-list-application-fo
 
 ## Concurrency in CS
 Processes as main building block of your system
-Modelled in a way to run concurrently, different than Parallelism where process are running in ||
+Modeled in a way to run concurrently, different than Parallelism where process are running in ||
 
-CONCURRENCY MODEL WITH MUTABLE STATE
+### CONCURRENCY MODEL WITH MUTABLE STATE
   shared memory, any thread having access to shared memory can edit it.
   Programming with LOCKs and Semaphores, Mutex Locks
   - loose everything is a thread dies/crashes, can corrupt the whole shared memory states
@@ -40,18 +63,18 @@ CONCURRENCY MODEL WITH MUTABLE STATE
   + single machine on the same network and nothing goes wrong
   + when computational time is critical, financial trading compute and place order if fails then discard
   + graphic rendering
-CONCURRENCY MODELS WITH IMMUTABLE STATE
+### CONCURRENCY MODELS WITH IMMUTABLE STATE
   processes do NOT share memory
   communicate via Message Passing, copying data from one process to another
-  + if a process crashes/dies, other processes are not affeccted by it. Each has its own copy
+  + if a process crashes/dies, other processes are not affected by it. Each has its own copy
   + easier to isolate issues if a process dies
 
 > If there is a network, something will go wrong with it
 
 ## Concurrency | Parallelism
-Sequential    1 cpu 1 task until it finishes
-Concurrency   1 cpu running multiple threads, context switching
-Parallelism   * cpu running * threads, NO context switching
+Sequential    1 CPU 1 task until it finishes
+Concurrency   1 CPU running multiple threads, context switching
+Parallelism   * CPU running * threads, NO context switching
 Parallel Concurrent Execution = [ concurrency on Multi CPU systems + Parallelism ] 2 CPU, 4 threads
 
 ## Linking
@@ -80,7 +103,7 @@ IoC is usually accompanied/implemented by Dependency Injection
 Instead of user injecting Dependencies, let Framework Layer do it for you coherently across the entire source code
   Google Search string
     inversion of control uncle bob
-    inversion of control martin fowler
+    inversion of control martin Fowler
 https://stackoverflow.com/questions/3058/what-is-inversion-of-control?page=1&tab=oldest#tab-top
 https://softwareengineering.stackexchange.com/questions/205681/why-is-inversion-of-control-named-that-way
 * Why Inversion in name? How does it invert the flow of control?
@@ -88,7 +111,7 @@ https://softwareengineering.stackexchange.com/questions/205681/why-is-inversion-
 
 ## Dependency Injection
 Explicitly provide the dependency to the code/function from outside, during function call in contrast to assuming things or accessing globals.
-> Write batteries included Objects, fuctions, classes, behaviours
+> Write batteries included Objects, functions, classes, behaviors
 ? Why? It looks like a extra step | benefits
   + Makes dependencies explicit and more clear
   + makes code more testable
@@ -108,18 +131,18 @@ getAnimals(window.fetch, 123)
 
 // inject testing library into the DI function
 getAnimals(fakeFetch, 123)
-test1: if 2nd arg gets added to make the complete url
+test1: if 2nd arg gets added to make the complete URL
 test2: if a network call is made => fakeFetch method  is called once
 test3: call fakeFetch with correct/proper URI
 ```
 
 > More than 8,000,000 million people commit suicide every year, every 40 sec someone commits suicide
-> one in 10 will try to commit suicide, can not deal with inner deamons, 1/4 suffer from alcoholism
-> we have extended our life, what about Fullfillment?
+> one in 10 will try to commit suicide, can not deal with inner daemons, 1/4 suffer from alcoholism
+> we have extended our life, what about Fulfillment?
 
 ## Flow of Control
 order in which individual statements, instructions or function calls of an imperative program are executed or evaluated.
-Language Primitives determines the flow-of-control. Usually modelled using Flowcharts Eg:
+Language Primitives determines the flow-of-control. Usually modeled using Flowcharts Eg:
 * sequential && blocking FOC
 * conditional branching FOC
 * iteration / looping FOC
@@ -127,10 +150,10 @@ Language Primitives determines the flow-of-control. Usually modelled using Flowc
 * Exception Handling Constructs like try {...} catch {...} finally {...}
 * Asynchronous calls using async/await, callbacks, Promises
 * temporarily yield control to a Generator Function, pause/resume FOC http://es6-features.org/#GeneratorFunctionIteratorProtocol
-* Co-operative multitasking without threads, yield control to each other using Coroutines, aka non-preemptive multitasking, as OS is NOT involved
-   * in js, stackless coroutine functionality through "generators" and yield expressions is provided.
+* Co-operative multitasking without threads, yield control to each other using Co-routines, aka non-preemptive multitasking, as OS is NOT involved
+   * in js, stack-less co-routine functionality through "generators" and yield expressions is provided.
 
-## Refactoring | green-2-green
-compiler desnt care, customers doesnt care then why? => Economical reasons, able to deliver NEW features faster
-new fetures using small cheap changes, without having to understand a lot of code
+## Re-factoring | green-2-green
+compiler doesn't care, customers doesn't care then why? => Economical reasons, able to deliver NEW features faster
+new features using small cheap changes, without having to understand a lot of code
 

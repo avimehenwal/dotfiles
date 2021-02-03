@@ -1,0 +1,9 @@
+---
+syntax: markdown
+tags: [frontend, typescript, build, compiler, plang]
+---
+## target:es5
+()=>null will become function(){return null} as ES5 doesn't have arrow functions.
+
+## target:es6
+()=>null will become ()=>null as ES6 has arrow functions.

@@ -1,0 +1,71 @@
+---
+syntax: markdown
+tags: [ software, llvm, cs, programming, compiler ]
+---
+## Low Level Virtual MAchine | Compiler Development Ecosystem
+build your own compilers for programming language
+compiler building blocks, toolchain written in C++
+open source compiler framework, nice APIs, lots of great tools, used by Apple for almost everything
+Supports multiple compiler Frontends and compiler Backends
++ Reuse years worth of optimizations written by people in new compiler frontends
+https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/index.html
+
+> awesome library, reflection of some other program having the entire power of Compiler
+
+Modern Compiler Design Pipeline, GCC recently introduced IR few years (~2015) back
+
++----------------+  IR   +---------------------------------------+     +---------------+
+| Frontend .c/.h | ----> | Middlend, optimization passes .ll/.bc | --> | Backend .o/.s |
++----------------+       +---------------------------------------+     +---------------+
+
+## Programming Language Features
+regular expressions to machine code
+
+> taking the power of the omnipotent compilers and giving it back to the normal people
+
+## Programming language frontends written in LLVM
+Ada, C#, common LISP, Fortran, Haskell, java bytecode, julia, kotlin, Lua, Objective C, OpenCL, PostgresSQL, Ruby, rust, scala
+
+## Compiler Frontend
+1. Lexer/Parser/Tokenizer Program
+2. Lexical Analysis
+2. Syntax Tree
+3. Semantic Analysis
+4. pass AST to Optimizer Stage
+
+## Linkers
+assembly code call for print function? Where is print function definition? What provides print fn?
+External/library function calls are linked by a linker program after compilation and before runtime
+https://en.wikipedia.org/wiki/Linker_(computing)#GNU_linker
+
+## IR - Intermediate Representation
+low level programming language similar to assembly. Core strength of LLVM
+Strongly typed, RISC, optimization passes
+emit IR or assembly code from clang, using -S -emit-llvm switches -emit-ir
+https://godbolt.org/
+https://cs.lmu.edu/~ray/notes/ir/
+
+## Who uses it?
+Apple swift, rust, google tensor flow, clang C/C++ compiler
+Apple uses it end-to-end to develop programming language like swift
+https://www.freecodecamp.org/news/the-programming-language-pipeline-91d3f449c919/
+
+## How to Debug
+LLDB         https://en.wikipedia.org/wiki/LLDB_(debugger)
+
+## x86 Assembly language
+https://youtube.com/playlist?list=PLmxT2pVYo5LB5EzTPZGfFN0c2GDiSXgQe
+
+## LLVM Tools
+lldb        Debugger
+opt         optimizer, core of llvm
+lld         llvm linker program
+lljvm       C to java bytecode
+
+> Apple swift was designed by designer of LLVM, now working @tesla. Tesla now uses GCC
+
+echo "[Frontend .c/.h] -- IR --> [Middlend, optimization passes .ll/.bc] --> [Backend .o/.s]" | graph-easy
+
+## Resources
+Peter Goldsborough     https://youtu.be/E6i8jmiy8MY
+Chandler Carruth       https://youtu.be/fHNmRkzxHWs

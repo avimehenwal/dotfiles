@@ -1,0 +1,21 @@
+---
+tags: [cs, plang, programming, api]
+---
+# How did APIs develop in the history of programming?
+1948    sub routine library, Goldstine von Neumann
+
+# Current APIs types?
+- RPC remote procedure calls
+- REST HTTP based APIs, web APIs
+- communicate between software and hardware components
+
+# Oldest APIs
+- CPU ISA instruction set architecture operations
+- Fortran Math functions
+- UNIX system calls, kernel and linux apis
+
+# Use Cases
+- interportable, reusable softwares
+
+# Resources
+- [History of the API](https://youtu.be/LzMp6uQbmns)

@@ -13,3 +13,10 @@ TypeScript’s type system is structural, not nominal(existing in name only)
 
 If the structures of these classes are the same but have different names, they could be used interchangeably
 
+# Default values to function parameters
+You cannot provide default values for interfaces or type aliases
+as they are compile time only and default values need runtime support
+
+# Difference b/w types and classes?
+Types are primitives, classes are user defined Model of data
+https://stackoverflow.com/questions/468145/what-is-the-difference-between-type-and-class

@@ -67,3 +67,26 @@ https://youtu.be/zid-MVo7M-E
 - https://github.com/CoatiSoftware/Sourcetrail
 - https://youtu.be/zid-MVo7M-E
 - https://martin.elwin.com/blog/2008/05/uml-use-case-diagrams-graphviz/
+
+# UML - Unified Modelling Language
+## Generalization vs Inheritance similarities and differences
+The generalization/specialization relationship is implemented in object-oriented programming languages with inheritance.
+Some Forms of Generalization
+1. Hierarchy      In the case of hierarchy, the commonalities are organized into a tree structured form. At the root of any subtree are found all the attributes and behavior common to all of the descendents of that root.
+2. Genericity     In this case, the commonality is expressed with the aid of a parameter. Various specializations are distinguished by what they provide for the parameter. For example, using genericity it is possible to represent the common properties of a "stack" through the generalization of a "stack of anything", where "anything" represents the parameter.
+3. Polymorphism   Polymorphism captures commonality in algorithms. Polymorphism allows the nested logic (or case statement) to be collapsed to a single case in which the different object types are treated in a uniform manner.
+4. Patterns       A pattern expresses a general solution (the key components and relationships) to a commonly occurring design problem. The attributes and behavior of the individual components are only partially defined to allow the pattern to be interpreted and applied to a wide range of situations.
+
+## Composition | Inheritance
+Inheritance       is-a relationship
+Composition       has-a r/s
+
+## UML Relationships - Interactions b/w classes
+1. Association            uni-directional, bi-directional association. class X knows nothing about class Y. Multiplicity, unary & Binary associations 
+Unary: Person ---> Address.
+  1.1 Aggregation         <>-----> Existence of X is INDEPENDENT of Y
+  1.2 Composition         </>----> Existence of SALARY dependes on the existence of Employee. No employee => no salary
+2. Dependency             ----> X uses Y
+3. Generalization         inheritance is-a r/s
+4. Realization
+5. Aggregation

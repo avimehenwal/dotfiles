@@ -19,3 +19,40 @@ Abstracted interface, software like compiler,tokenizer, Scanner/Parser, syntax t
 # Observer Pattern, pub/sub pattern, most commonly used
 multiple publishers and multiple subscribers
 
+# Container class and Content class pattern to implement Deligation 
+EmployeeClass is NOT a SalaryClass, cannot use inheritance, so we use deligation/composition pattern
+SalaryClass object lives only as long as Employee object lives. Salary calculation is deligated to another class by container class
+
+```python
+class Salary:pass
+
+class Employee:
+    annual_salary = Salary.calculate_annual_salary()
+```
+
+# Composition vs Inheritance
+Inheritance makes you think in terms of taxonomies ahead in project, which are most likely to change in future
+Monkey - Banana Problem
+Inheritance     what they are  
+Composition     what they do
+
+```javascript
+Object.assign({}, composeObj1, composeObj2, composesObj3)
+```
+
+# Factory Function pattern | create and return objects
+closure have access to private functions, sound is private. Factory functions are slower than classes in JS
+const dog = () => {
+  const sound = 'woof'
+  return {
+    talk: () => console.log(sound)
+  }
+}
+
+# Interfaces | Inversion of Control (DI) + Polymorphism
+If you are NOT using interfaces, you are NOT using the half potential of programming language
+
+# Computational Reflection in programming language, write dynamic code
+Modify code (itself) @runtime, self modifying code according to a goal related to a closure
+ES6 has Reflect Object API
+https://stackoverflow.com/questions/37628/what-is-reflection-and-why-is-it-useful/37638

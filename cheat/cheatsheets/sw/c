@@ -1,0 +1,31 @@
+---
+syntax: markdown
+tags: [ software, plang, cs, programming, compiler ]
+---
+1969-1973 	Dennis Ritchie (Bell Labs) 	Was an enhancement of Ken Thompson's B language.
+ANSI C      standardized version of C, C89, C90
+1984        GNU Project in 1984 to build a UNIX-like open source software system
+2000        LLVM was originated from the research by Chris Lattner on UUIC 
+
+## Clang vs gcc
+1. Visual C++
+2. GNU Compiler Collection (GCC)                compiler developed by GNU
+3. Clang/Low Level Virtual Machine (LLVM)       series of toolchains and compiler tools
+Clang is designed to provide a frontend compiler that can replace GCC
+
+are three mainstream C/C++ compilers in the industry
+
+## Why multiple implementations for the same language?
+Earlier each company had their own implementation, IBM, Motorolla, Sun
+No Mono-cultures
+clang and llvm are more or less written from scratch
+
+## Core Concepts
++ variables and memory allocations, references
++ static types in C, arrays
++ Header files? How to write your own?
++ pointer = Memory address of a RAM location
+
+## Usecases
+- get inputs from user? fgets()
+- how to access memeory locations? using dereference operator &

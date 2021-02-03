@@ -1101,7 +1101,7 @@
     }
   ],
   "vscode-neovim.neovimInitVimPaths.linux": "/home/avi/dotfiles/nvim/init.vim",
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Default Dark+",
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },

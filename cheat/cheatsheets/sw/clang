@@ -1,0 +1,13 @@
+# redable assembly level code for x86 backend
+clang -S -mllvm --x86-asm-syntax=intel hello-world.c 
+
+# on linux
+objdump -drwC -Mintel
+  -r shows symbol names on relocations (so you'd see puts in the call instruction below)
+    -R shows dynamic-linking relocations / symbol names (useful on shared libraries)
+    -C demangles C++ symbol names
+    -w is "wide" mode: it doesn't line-wrap the machine-code bytes
+    -Mintel: use GAS/binutils MASM-like .intel_syntax noprefix syntax instead of AT&T
+    -S: interleave source lines with disassembly.
+
+

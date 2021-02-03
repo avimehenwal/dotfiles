@@ -1,0 +1,26 @@
+---
+tags: [protocol, webserver, websocket, polling]
+---
+# Websocket
+web protocol which enables FULL-DUPLEX communication b/w @client and @server
+uses websocket Handshaking to establish TCP connection
+
+# Half-duplex communication methods
+1. Polling - short/long
+2. Web push
+
+# How to implement?
+@client side      WebSocket client API
+@server side      2013      Apachey HTTP Server, Nginx
+2017      lighttpd
+
+# Use Cases
+1. Realitime Multi player Gamming
+2. News/Social Feeds
+3. Real time collaborative editing
+4. Real time data visualization
+5. Audio/Video chats
+
+# Questions
+- How to use websockets with HTTP2 Multiplexing?
+https://medium.com/platform-engineer/web-api-design-35df8167460

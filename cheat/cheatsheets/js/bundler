@@ -83,3 +83,7 @@ https://adrianhall.github.io/javascript/react/2020/03/29/parcel-typescript-react
 > using a standardised format (i.e. ES2015 module format) to write your code and tries to get
 > really small builds with the help of dead code elimination
 . very much like webpack, with little less config and plugins
+
+## WASM - Web Assembly
+binary format, compile JS to LLVM-IR, optimizations like DCE- dead code Elimination
+wasm-opt - 20% WASM code reduction

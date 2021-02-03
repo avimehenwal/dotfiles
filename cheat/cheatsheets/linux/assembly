@@ -11,3 +11,19 @@ objdump -D a.out | bat -l asm
 
 # How to compile C programs to binary?
 gcc -o helloWorld -time hello-world.c
+
+# Assemlbler
+converts Assembly code to native cpu architecture ISA code
+Eg: nasm
+https://www.youtube.com/playlist?list=PLmxT2pVYo5LB5EzTPZGfFN0c2GDiSXgQe
+
+# ex1.asm
+global _start
+_start:
+  mov eax, 1
+  mov ebx, 42
+  int 0x80
+
+# Assembler 
+nasm -f elf32 ex1.asm -o ex1.o
+ld -m elf_i386 ex1.o -o ex1

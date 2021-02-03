@@ -24,3 +24,11 @@ Persistant storage    database, disk, files, internet
 code 1 machine program to N machine program
 
 > Specificity can  kill the reuse, Promise of OO, code reuse
+
+# Interface vs Types vs classes
+A key principle of design is to prohibit access to all resources by default, allowing access only through well-defined entry points
+i.e., interfaces. Software interfaces provide access to computer resources (such as memory, CPU, storage, etc.) of the underlying
+computer system; direct access (i.e., not through well-designed interfaces) to such resources by software can have major
+ramifications—sometimes disastrous ones—for functionality and stability.
+Interfaces between software components can provide constants, data types, types of procedures, exception specifications,
+           and method signatures. Sometimes, public variables are also defined as part of an interface
