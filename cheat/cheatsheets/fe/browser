@@ -1,0 +1,38 @@
+---
+tags: [frontend, responsive, ui, api, browser]
+---
+# Web APIs | long list of APIs
+https://developer.mozilla.org/en-US/docs/Web/API
+
+# Job of Browser
+- OS for webpages.
+- Life of a pixel
+- Page rendering, updating, styling, event-handling, web workers
+
+# Code base organization for 2 presentation layers, Mobile and Web | code sharing
+- Entities
+- Use cases
+- Infrastructure
+- Presentation Layer
+
+https://github.com/eduardomoroni/react-clean-architecture
+
+./counter
+├── share/common
+│   └── lib
+│       ├── Reducer/Action Functions
+│       │   └── redux
+│       ├── entities
+│       ├── frameworks/components
+│       ├── controllers/Event Handlers
+│       └── useCases
+├── native
+│   └── src
+│       ├── components
+│       └── stylesheets
+└── web
+    └── src
+        ├── assets
+        ├── components
+        └── stylesheets
+

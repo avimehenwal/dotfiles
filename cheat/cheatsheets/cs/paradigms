@@ -1,18 +1,19 @@
 --- 
 tags: [ cs, programming, design-patterns ]
 ---
-
-# Programming Paradigm
-> How do you reason about the structure of your code!
+# Programming Paradigm | https://youtu.be/CV4vPsEizJM
+How do you reason about the STRUCTURE of your code!
 
     Programming = ( Data + Logic )
 
-> Strive to rise above all. Make it work!
+  Strive to rise above all. Make it work! Lets not get hung up on names and get the things done
 
 # Functional Programming Paradigm
 > Function is Logic and Data is passed around with arguments
 - Pure Functions
 - Recursion, Iterators over for/while loops
+- Recursion requires lot stack memory, can cause stack-overflows
+
 - variables are immutable
 - Functions are First class Objects
 

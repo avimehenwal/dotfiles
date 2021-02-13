@@ -1,0 +1,19 @@
+---
+syntax: markdown
+tags: [ software, plang, cs, programming, compiler ]
+---
+# History of java
+James Gosling was a smalltalk programmer, he developed JVM, initally for interactive television
+1991 as Oka, 1995 renamed as java (based on indonesian island java coffee)
+today all chip ID cards, SIM cards/smart cards have JVM on them, Telephone,Card API
+Ancestory, was realted to C++ and C
+
+# JVM | JRE | JDK
+
++------------------+     +----------------+     +-------------------+     +----------------+     +------------------------+
+| compiler program | --> | linker program | --> | assembler program | --> | loader program | --> | into RAM for execution |
++------------------+     +----------------+     +-------------------+     +----------------+     +------------------------+
+
+# Programming language index
+https://www.tiobe.com/tiobe-index/
+echo "[compiler program] --> [linker program] --> [assembler program] --> [loader program] --> [into RAM for execution]" | graph-easy

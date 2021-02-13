@@ -1,0 +1,180 @@
+# How to write clean Functions? Polite Functions
+- No more than 3 parameters to functions. => use Objects
+- Do not use booleans in functions, make 2 seperate functions with redable names
+- No double takes on code
+- All statements in function should belong to same level of abstraction, no high level instruction followed by low-level call
+- No side-effect, change the state of system. They come in pairs. Always 2 there are. Open/close, alloc/free, semephores
+
+# What are jar and dll files?
+Dynamic Linked languages, jar files are to independently deploy your system, dynamically Linked code @runtime
+
+# How to deal with side-effects?
+Use Lambdas to deal with side-effects. Auto close a file from the same open function
+pass lambda processing function along with config to drill down to leaf node and process the value
+
+# CQS - Command Query Seperation convention
+commands      changes state of app, handle side-effects
+query         only return values, no side-effects
+
+# Tests
+- demostrate s/w is NOT incorrect by writing tests
+
+# Lecture 1
+
+Event Presentation
+Presenter Introduces Uncle Bob
+Uncle Bob Introduction / My Tribe
+How Far is the Sun?
+Introduction to Clean Code
+The current Society works with Software
+Volkswagen case / Introduction to the Ethics of Software Development
+Why are Programmers so slow?
+What is a Clean Code?
+Analyzing some lines of code
+Long code is not Good Code
+Good Code / Refactored Function
+Polite Code / Rules for writing a news paper article
+Shrunk Code / The Rules of Functions
+Shrunk Code / Drawing a Function
+When and why was Java invented?
+Prose Code / Arguments
+Avoid Switch Statements / Problems and Evolution of some programming languages
+The Uncle Bob's wife message (funny moment)
+Output Arguments No Side Effects / Garbage Collection
+No Side Effects / Using Lambda
+No Side Effects / Command and Query Separation
+No Side Effects / Prefer Exceptions to returning error codes
+DRI Principle (Don't Repeat Yourself)
+Structured Programming / Edsger Dijkstra Vision vs Actual Vision of the programming
+Science and Correct Software
+
+# LEcture 2
+- How the moon was formed? something stormed into the earth and splashed it into 2
+- Programming Ethics, what do you profess?
+
+Where did the moon come from?
+What is the Purpose of the Comment? / About Fortran - make code speak for itself
+Schindler List / Right and Wrong reason to do comment
+Comments are a last resort / The proper use of comments
+Comments Lie - comments degrade over-time, silently rotes
+Comments do not make up for bad code / Explain Yourself in code
++ Legal and  Informative Comments / About Design Patterns book
++ comments over regular expressions, what is REGEX trying to match
++ name the function as such you dont need a comment to explain what it does
++ Mention when the code is NOT thread safe
+Explanation of Intent / Clarification
+Warning of Consequences / TODO Comments
+Amplification / Javadocs in Public APIs
+Bad and Redundant Comments / Mumbling 
+Mandated Comments
+Journal Comments / Source code control system
+Noise Comments / Scary Noise / Use explanatory code, not comments
+Position Markers / Closing Brace Comments / Attributions and Bylines
+Commented - Out Code / HTML in comments ICK!
+Non - Local Information
+How many lines should there be in a source file? <150, its rude to make readers scroll towards right, because they wont
+Analysis of the lengths of lines
+Names are Everywhere / Reveal your intent / Rules to write Names
+long scopes - long names, small scope - small names, loop variable i
+class and function Names, prefix parameter, arguments ang global variables
+code reviews are very inefficient, pair programming is very efficient
+Disambiguate / Avoid Convenient Mispellings
+Number Series / Noise Words / Distinguish Names Meaninfully
+How much time should you spend on a Code Review? Comments - explain the purpose of code what it generally can'nt
+
+> Knowledge and desire to profess
+> Software = { Soft (easily changable) + ware (product) } and NOT HARDware, inexpensive changes, else it will be no value in future
+
+# Lesson 3
+About our genetic origins. How many biological parents do we have? grandparents? great grand-grand parents?
+mathematical certainity that we all originated from Adam and Eve
+X chromoseme Adam(M) 70,000 years ago
+Y chromoseme Eve(F)  150,000 years ago - eastern Africa
+How many programmers are there in world? 100M - Alan Turing 1st programmer 1947
+Do you believe that code must have bugs? Are we a BETA programmer? When you release code as higher quality code that you can attain
+I am your new CTO / About the growth rate of programmers and it effects.
+Expectations / We will Not Ship Shit.
+We will always be ready / Iteration Length. 1 week sprint length, shippable code at the end of each sprint. Means all tests, docs are done
+Stable Productivity, adding new features should not slow you down
+Inexpensive Adaptability / The software must be changeable.
+Continuous Improvement / The code should improve over time. We are not bacteria, degrading with time
+Fearless Competence / Conquer the fear with Test. Check-in code always which is little bit better than previous version
+Fragile test problem | are an integral part of system | 100% code coverage - asymptotic goal
+We will not dump on QA / QA will find nothing. How do you know QA is doing a good job?
+Automation! If a computer can do it, computer should do it
+We cover for each other / Teamwork. Cover for each other in a team if someone goes down. Pair programming enough to cover for each other
+Introduction to "Honest Estimates".
+
+# Chapter 4
+Honest Estimates / What is the chemical formula of water?
+What do we do when we program? Nobody have developed anything new with programming language after PROLOG
+1967  Simula, first Object oriented programming language
+1968  Dijkstra (netherlands)
+1957  First Functional Programming language LISP
+Selection, sequence and Interaction / No innovations have been made in the software for decades.
+The Hardware has gone nuts/crazy!: comparison between the innovation level of hardware and software today.
+You to say "No".
+Test-Driven Development / TDD rules. How surgeons wash their hands before surgery, 10 times across nails
+Our code is a document / Double entry Bookkeeping. you wanna know how the system works- read the tests, set of tests for every way an API can be called
+About inheritance / Mutation Testing.
+unit tests - written by developers for developers.
+Demo of Test-Driven Development. Test a Stack, 2 push and 1 pop should not be empty, learn as an external exercise
+Some tips to learn and practice Test-Driven Development.
+Questions and Answers.
+
+# Resources
+https://cleancoders.com/series/comparativeDesign
+https://sc-london.com/
+first wiki ever        http://c2.com/
+
+# Lesson 5
+Diffraction: Why do incandescent lights glow? Why do hot things glow? what's the mechanism? vibrations
+Agile is NOT the absence of architecture
+Architecture Introduction / I've built lots of apps / "I want to be a programmer" anecdote.
+The Architecture rules are independent of every other variable. Living breathing thing, adjust and tweak throughout the lifetime of app
+Dont fall into the trap that something NEW is better, nothing is NEW in s/w, everything is old, rules haven't changed in 70 years
+Working vs. Working Right. Most of the s/w are written wrong these days
+What is Design in Architecture? Good if matches the customer demands, efforts required with time increases then its bad
+time(release) proportional #(programmers)
+What is the goal of Software Architecture? Minimize manpower required to build and maintain the system
+Case study of bad Architecture. Issue of Hare and Tortoise
+Executive View / What went wrong / Secret to going fast. Prevent the roadblocks which might slow you down in future?
+Messes aren't faster even in the short term. TDD feels slower but when you measure it, its faster, all disciplines feels slow
+Solution of the Executive's Dilema / Two Values of Sofware., Flexible softwares which can take future changes
+Behavior  / Are we going to see self driving cars? Singularity. If a car kills a 2 year old? who do we put in the stand?
+Programmers are the defenders of architecture and money, architecture is important and NOT urgent, it has long term value
+Scope vs. Shape / Stakeholders want changes.
+Urgency and Importance / Eisenhower Matrix.
+
+# Clean Architecture
+- At top level, show me what the app is doing? don't give control to frameworks
+- OS was invented to deal with multiple IO devices
+Fight for the Architecture.
+A Rails App / The web is a Ddelivery Mechanism. Web is an IO device
+Architecture Floor Plans / A Use Case Driven Approach.
+Interactors (Business logic | Usecase) / Entities (data | business independent) / Interfaces Objects (external code/libraries/plugins).
+Use case = User story in Agile/Scrum
+SQL- text based language for data, super insecure, SQL Injections
+DB is a detail. We want details on the other side of the boundary
+ORM implementation- data and no objects, objects work independent of data and have a behaviour
+Request Model.
+What about MCV? / Design Patterns / How MCV goes wrong as a web Architecture.
+Model View Presenter / Dependency Rule.
+What about the Database? / The Database is a detail / ORM
+Fitnesse: a wiki page porject development. Delay decisions = good architecture
+A good Architecture allows major decisions to be defered!  / About IntelliJ and Visual Studio.
+Frameworks / Plugin Model. Who can mess up who? Create assemetry
+
+# Lesson 6
+
+Leds / Introduction vs Incadescent lamps, quantum lights, power efficient
+How do you manage a software project? What is project mismanagement? trade-offs, Good, fast, cheap, done (pick any 3)
+agile is a way to produce data, to destroy all hopes, manage how messed up project is
+Finding the optimum solution / Data.
+What is the firts thing know about project / The Management Paradox.
+The Waterfall Model. What is Analysis?
+Iterative Development / Calculate Day.
+The Control Knobs of project mgt. collect use cases
+Short Cycles / Agile Software Development Practices / Extreme Programming.
+Questions and Answers.
+WW2 was managed on index cards / it scales, cards and boards scales

@@ -1,6 +1,8 @@
 ---
 tags: [ vim, nvim, editor ]
 ---
+# How to run a macro on visual selection?
+:'<,'>normal @q
 
 # Telescope/FZF Gods of Plugin
 1. Find Files

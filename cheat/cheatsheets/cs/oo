@@ -32,7 +32,9 @@ __proto__ is a historical getter/setter for [[Prototype]] == Prototype property,
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto
 https://stackoverflow.com/questions/9959727/proto-vs-prototype-in-javascript
 
-# Polymorphism
+# Polymorphism | Replace conditionals with Polymorphic objects?
+way of achieving dynamic dispatch, coupled ONLY to interfaces and not to concrete classes. https://en.wikipedia.org/wiki/Dynamic_dispatch
+languages like smalltalk doesnt even have if conditionals
 single interface to entities of multiple types. Enforced by Interfaces upto an extent. Classes using the same interfaces are kind-of Equivalent
 
 1. Ad-Hoc Polymorphism        explicitly define functions to deal with various types using operator/function OVERLOADING
@@ -72,3 +74,21 @@ Interfaces allow us to define polymorphism in a declarative way, unrelated to im
 polymorphism was this big benefit of object orientation, but without interfaces there was no way to enforce it, verify it
 or even express it, except in informal ways, or language-specific ways
 https://www.cs.utexas.edu/~mitra/csSummer2012/cs312/lectures/interfaces.html
+
+## List Of objects
+```typescript
+interface Product {
+    name: string;
+    price: number;
+    description: string;
+}
+
+let pen: Product = {
+  name: "Pen",
+  price: 1.43,
+  description: "Userful for writing"
+}
+
+let products: Product[] = [];
+products.push(pen);
+```

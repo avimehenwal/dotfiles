@@ -4,10 +4,11 @@ tags: [ packaging ]
 # in a package folder will create a symlink in the global folder {prefix}/lib/node_modules/<package>
 # that links to the packagewhere the npm link command was executed. Like GNU Stow
 npm link <pacakage>
+# use npm link to test packages locally
  
 # Every command shown here can be used with the `-g` switch for global scope
 
-# To install a package in the current directory:
+# Polymorphic Interface, install local package, tarball, from github, @scope/package
 npm install <package>
 
 # To install a package, and save it in the `dependencies` section of `package.json`:

@@ -1,0 +1,9 @@
+---
+syntax: markdown
+tags: [ software, plang, cs, programming, compiler ]
+---
+- Ocaml uses lots of recurssion (stack memory based)
+- Facebooks internal scripting languages uses a cmopiler written in OCaml
+- Ocaml (OO) -> superset of caml -> Dialect of ML (Meta Language)
+  - First mathematical formal proof software
+

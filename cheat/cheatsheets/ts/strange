@@ -1,0 +1,15 @@
+# classes are fns. Why? js language inherently have no classes. They are implemented as Prototype Inheritance
+class Item {}
+function someFn() {}
+const A = new Item();
+console.log(typeof someFn)    // function
+console.log(typeof Item);     // function
+console.log(typeof A);        // object
+
+# Anti-patterns
+Ineffective and counterproductive
+https://stackoverflow.com/questions/39967892/is-javascript-compiled-to-machine-code-when-executed-in-a-web-browser-environmen
+
+# In the global execution context (outside of any function), this refers to the global object whether in strict mode or not.
+console.log(this)
+  window url

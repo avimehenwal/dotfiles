@@ -5,6 +5,7 @@ tags: [frontend, javascript, typescript, function]
 let varArgs = (...args: any[]) => {
   console.log(...args);
 }
+Dick move, use Objects, max 3 parameters
 
 # Arrow fn vs Regular function difference
 FEATURE               REGULAR FUNCTION   ARROW FUNCTION 
@@ -22,3 +23,4 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/argu
 
 # Hoisting
 call a function before its deceleration
+

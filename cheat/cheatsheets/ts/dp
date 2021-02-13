@@ -2,12 +2,81 @@
 syntax: markdown
 tags: [typescript, design-patterns, frontend]
 ---
+# Design Pattersn
+What RECIPE is in cooking is DESIGN-PATTERN in programming | put your personal touch on it like a REAL chef
+solutions to frequently occouring problems
+
 # Singleton Pattern in TS
 Allow a class to have ONLY one instance in memory at a time
 UC: database driver 1 open connection, startup app configurations
-T1       Error is class has NO or zero instance at runtime
+UC: Facade objects are often singletons because only one facade object is required.
+    UC: Singletons are often preferred to global variables because: They do not pollute the global namespace, permit lazy allocation and initialization
+T1       Error if class has NO or zero instance at runtime
 T2       One instance of singelton class pass normal expected behaviour
 T3       Two instances of singelton class should Fail
 https://stackoverflow.com/questions/39190154/typescript-restrict-count-of-objects-properties
 
 > TypeScript uses the same runtime as JavaScript
+
+# Module Pattern
+divide your code like a book, into chapters, articles, paragraphs, sections. Be polite
+Follow Principle of journalism and allow user option to drill down into depth (if they want to). Mindfully create Abstraction Layer
+usually built into the languages like Python. BUT NOT in javascript
+
+https://github.com/SavjeeTutorials/typescript-design-patterns
+
+# What are STATES in computer science? | https://en.wikipedia.org/wiki/State_(computer_science)
+a system is described as stateful if it is designed to remember preceding events or user interactions
+the remembered information is called the state of the system. 
+Eg: digital logic circuits, Automata, formal languages
+n some of these programs, information about previous data characters or packets received is stored in variables
+and used to affect the processing of the current character or packet. This is called a stateful protocol and the
+data carried over from the previous processing cycle is called the state. In others, the program has no information
+about the previous data stream and starts fresh with each data input; this is called a stateless protocol.
+
+# State Pattern | https://youtu.be/gMyRtqwxr10
+Replacing conditionals with Polymorphism. Why interface? we want to deal with a shape uniformly + Subtyping Polymorphism
+Build a state machine in OO fashion, Memoryless machines, decisions are made are on state and NOT how we got there!
+- An object should change its behavior when its internal state changes. Change in state changes the behaviour of object
+- State-specific behaviour should be independent, open to extension/close to modification
++ Actions/Methods happen on STATE Polymorphically
+https://youtu.be/-Yicg2TTMPs | https://youtu.be/0z0XGXBtI3A | https://youtu.be/N12L5D78MAA
+- we cannot instantiate interface, so How to deligate responsibility down to concrete implementation?
+Dependency Injection in UML https://stackoverflow.com/questions/4488481/how-to-show-dependency-injection-on-a-uml-class-diagram
+https://stackoverflow.com/questions/6550700/inversion-of-control-vs-dependency-injection/6551303
+
+            uses
+  +-------------------+
+  v                   |
++---------+  uses   +---------+
+| class A | ------> | class B |
++---------+         +---------+
+
+# Circular Dependency Injection Problem | Chicken-egg problem
+class A is trying to use class B AND class B is trying to use class A
+How to solve it? Use INTERFACES or use EVENTS-system, emit out events with Pub/Sub Pattern
+
+# Dependency Injection DI | enforce Dependency Inversion principle and Inversion of Control
+Accept dependency from class constructor, INSTEAD of instantiating it from within he class
+facilitating the creation of nicely decoupled components and thus more testable ones, avoid side-effects
+https://gist.github.com/xgbuils/65e3b0fcf8a3d9fac7006001376c0cc5
+https://youtu.be/IKD2-MAkXyQ
+
+echo "[class A] -- uses --> [class B] -- uses --> [class A]" | graph-easy
+https://stackoverflow.com/questions/48377525/replace-conditional-with-polymorphism
+
+# Command Pattern
+lazy execution of commands, can chain multiple commands for bulk execute, can have UNDO, can queue them
+
+# Factory Pattern | Creational Pattern
+make NEW objects with associated boilerplate code in it.
+
+# Facade Pattern
+Simplified interaction for you, extra layer of abstraction, Does the low-level wiring for you
+
+# Behavioural Patterns
+Decorator     stack N number of things around an Object. Preprocessing, postprocessing arguments. Additional responsibilities through composition
+Facade        layer of indirection, no polymorphism https://en.wikipedia.org/wiki/Indirection
+Adaptor       Interface transformations, unions, intersections, conditional interfaces
+Bridge        
+Proxy         

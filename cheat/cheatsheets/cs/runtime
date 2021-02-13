@@ -1,0 +1,28 @@
+---
+tags: [cs, runtime, programming, plangs, metaprogramming, reflection]
+---
+# Reflection
+Feature, ability of a programming language to modify/query/introspect itself @runtime
+usually implemented using Metaprogramming
+
+# Why use reflection and metaprogramming? Advantages
++ Dynamic Program Analysis
++ Handle new situations without recompilation
++ self modifying code
+
++----------+  computation   +--------------+
+| @runtime | -------------> | @compiletime |
++----------+                +--------------+
+
+# MetaProgramming
+technique to read/transform/write-new/consume other programs from current program
++ Mocking and testing
+js:   Function, eval()
+Eg1  assign new Function (native Function Object) definitions @runtime to existing functions
+Eg2  shell scripting writing another shell script, changing its permissions to executable and then executing it
+echo "[@runtime] -- computation --> [@compiletime]" | graph-easy
+
+# Metaprogramming in Typscript 
+https://stackoverflow.com/questions/15338610/dynamically-loading-a-typescript-class-reflection-for-typescript
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+https://stackoverflow.com/questions/2571401/why-exactly-is-eval-evil

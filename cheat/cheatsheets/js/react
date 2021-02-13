@@ -127,3 +127,6 @@ echo "[store + action] -- DISPATCH --> [Reducer Function] -- ACTION(s) --> [Stor
 | Debugging                          | sitemaps                              |
 
 - use **peer dependency** when packaging
+
+## Code Samples
+https://github.com/httpJunkie/kr-todo-hooks
