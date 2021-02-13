@@ -2,20 +2,11 @@
 " -------------------------------------------------- 
 " :make % is synchronous and it blocks editing until preview window is open
 
+" live preview Hotkey
+nnoremap <leader>lp :!xdot % &<CR>
+!xdot % &
+:call autosave#As()
 
-" augroup run_static_analysis_onSave
-"   autocmd!
-"   autocmd BufEnter,BufWritePost * :make % | redraw!
-" augroup end
-
-" :compiler xdot
-if has('terminal')
-  augroup xdot_graphviz_viewer
-    " Remove all vimrc autocommands" 
-    autocmd! * <buffer>
-    autocmd BufWritePost <buffer> call s:xdot_live_preview(expand("%:p"))
-  augroup end
-endif
 
 " Asynchronous job
 " FIXME: a new terminal window buffer is created each time
