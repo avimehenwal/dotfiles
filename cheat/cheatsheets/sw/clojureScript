@@ -1,0 +1,64 @@
+---
+tags: [ software, plang, cs, programming, compiler, javascript, script]
+---
+# What kind of app you are building?
+Interactive webapp - Full duplex 2-way communiaction
+recieve i/ps from multiple sources (not only from UI) and cordinate on client reasonably
+react to problems ~1000 events per second, BUT updates the UI twice per second
+FP approach vs OO approach
+
+# Problems/ Issues
+How to we draw all the animation? How do we control and cordinate various components?
+Browse janks when there are too many animations and async fetching going on? How to solve that?
+Where all problems in browser code are? Rendering and Service, keep them seperate. but how?
+-> cljs no direct function calls, put messages on queues
+
+# Information Model
+organize and store data, tree- nested maps
+state transition model    Atom: Reference type to dereference a immutable value. Can add watcher to Atom with old and new values
+AppEngine                 wiring up the functions, pipelines will run the code
+Change Report             store messages and replay them later
+WebWorker                 decide Ahead of time what needs to be run on web-worker
+
+# How does using the clojure instead of JS actually make the project easy?
+Clojure conceptes of FP, immutability, persistant DS, channels queues, app engines
+
+# How can we avoid mutable state, mutating states and other side-effects?
+Minimize         keep of turns by a variable name, OR function to count unfilled grids and determine whos turn based on count
+                 persistant DS instead of mutate-in-place
+                 make and pass lambdas around map reduce transducers tied to a context higher order functions,
+                 concentrate + defer      jQuery vs react defer, redux pattern older in clojure re-frame
+
+# How to many a library like aws-sdk? Multiple language frontends
+Data Structures are the purest forms for Information
+Service based JSON Interfacs (data) implemented in multiple languages. Code sharing?
+
+# How to convert a OO code to FP paradigm? Solving Problems the Clojure Way - Rafal Dittwald
+Where do I have
+- states? values that change?
+- mutations that change these values?
+- side-effects, other code that triggers OTHER code?
+
+# What is DDP Data Driven Programming?
+> Its better to have 100 functions operate on 1 data structure than 10 functions on 10 data structures
+Data structures are the purest form of information, mutations over time through pure functions
+Data-first program, transformation Pipelines, dont have types, structs
+Side Effects      talk to DB, REST calls, sending emails, read/write file system. Lets just do our best to avoid it
+transparency is about understanding, understanding is about predictions, Moser's circle problem
+if predictions are wrong we dont understand, sometimes right predictions may be lucky
+
+# What makes code transparent, predictions?
+Constraints like static types, immutability, pure functions
+RegEx are non turing complete, Non-deterministic automata, RE2/J halt regex in resonable amount of time
+with great power comes great unpredictability
+Tim BErners-Lee - rule of least power, DSL
+Maps can be used as functions in clojure
+avoid loops and recursion is the easiest way to avoid turing completness
+inheritance trees for clojure keywords along with namespaces, multiple inheritance
+
+# Tools
+charts    https://www.highcharts.com/demo    https://dmitrybaranovskiy.github.io/raphael/
+
+# How to compile to JS? https://stackoverflow.com/questions/27109510/how-to-compile-clojurescript-to-javascript
+lein new mies hello-world
+cd hello-world

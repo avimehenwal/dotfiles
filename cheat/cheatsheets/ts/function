@@ -24,3 +24,9 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/argu
 # Hoisting
 call a function before its deceleration
 
+# Call by Value and Call by Reference
+Call by Value         Primitives values, strings, numbers, boolean, symbol, undefined, null
+Call by Reference     Objects, functions, arrays
+https://stackoverflow.com/questions/35606970/typescript-is-there-a-way-to-pass-parameter-to-method-by-reference/35608020
+https://stackoverflow.com/questions/35473404/pass-by-value-and-pass-by-reference-in-javascript
+

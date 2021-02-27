@@ -10,13 +10,14 @@ Macros      source code as i/p and source code as o/p
 * Dynamic Compilation to JVM bytecode on the fly
 * Functional Programming
 * Lisp
-* Runtime Polymorphism
-* Concurrent Programming, programs that runs on multiple cores
+* Compiletime + Runtime Polymorphism (dynamic method dispatch) by method overloading and overriding.
+* solves how to write Concurrent Programming easily!, programs that runs on multiple cores
 * Hosted on the JVM
-* Persistant Data Structures, all versions of mutations on state, without time decay, they ALL are TREES
+* Persistant/Immutable/partially-persistant Data Structures, all versions of mutations on state, without time decay, they ALL are TREES
 
 ## Vocabulary
-**Arity** is the number of arguments or operands taken by a function or operation in logic, mathematics, and computer science.
+Arity         is the number of arguments or operands taken by a function or operation in logic, mathematics, and computer science.
+Monad         function with single arguments
 
 ## Core Clojure Functions
 > Do you feel in full control when you write each and every single line of code
@@ -53,7 +54,7 @@ variables     immutable, dynamic types, types are assigned based on the value
 ## Persistent Data Structures and Managed References
 - functional part and imperative part in programming s/w 
 - Identity, state and values
-- OO has big problems when facing concurrency
+- OO has big problems when facing concurrency, https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.91.1310&rep=rep1&type=pdf
 - Pure function has no notion of Time
 - What is usually a program doing?
   - talking over sockets, web, internet, rcp, other systems, distributed IoT
@@ -62,8 +63,7 @@ variables     immutable, dynamic types, types are assigned based on the value
   - Data computation, mutations
 - program is a process, how does changing with time part interact with pure part?
 
-STATE       if you ask same question twice and get different answers at different times
-            value of a IDENTITY at a Time
+STATE       if you ask same question twice and get different answers at different times value of a IDENTITY at a Time
 PURE FN     if you ask same question twice and get SAME answer every single time
 VALUE       Immutable
 IDENTITY    value at any point in Time, program should facilitate this
@@ -75,7 +75,7 @@ Time proceeds, functions of past create the future
 The only thing that mutates are REFERENCES, in a controlled way
 1. Refs     shared/synchronous co-ordinated
 2. Agents   shared/asynchronous/autonomous
-3. Atoms    shared/synchronous/autonomous
+3. Atoms    shared/synchronous/autonomous, used for Memoization, (def my-atom (atom 0 :validator even?))
 4. Vars     Isolated changes within threads
 
 ## Toolchain
@@ -86,3 +86,55 @@ Who is using Clojure?   https://clojure.org/community/success_stories
 use cases?              https://stackoverflow.com/questions/4622419/what-are-the-best-use-cases-for-using-clojure-for-new-development
 Clojure tutorial        https://youtu.be/ciGyHkDuPAE
 
+# Syntax
+'(1 2 3)        list are NOT indexed
+[1 2 3]         Vectors are an indexed, sequential data structure
+#"pattern"      regular expression
+#{1 2 3}        sets
+#()             Anonymous functions
+defn            def (scope, block) + fn (function)
+closure         captures function values beyond the lexical scope.
+contains?       find a key within a map
+Records         polymorphic behavious, more performant than maps ->
+namespaces      variable value mapping context :require load a namespace
+Macros          allows the compiler to be extended by user code, only run @compiletime, 4 writing DSL, factory fns/reflection @compiletime
+@               is used to get the current value of a reference
+:               is the indicator for a keyword
+::              is used to auto-resolve a keyword in the current namespace
+/               Namespace separator
+->              Thread first macros, implies conversions, castings
+comp            Function composition in clojure
+?               predicates, true/false
+pipe            const pipe = (f, g) => (input) => g(f(input)); // in typescript
+Transducers     core logic + veraious Context, like map, reduce on all types of lists, vectors, channels, streams etc
+CSP             Communicating sequential processes, golang go routines and clojure channels
+let binds symbols to values in a "lexical scope"
+multi-arity functions       Ad-hoc and Parametric Polymorphism
+variadic functions
+Any function that "changes" a collection returns a new instance
+Clojure collection types: vectors, lists, sets, and maps. Of those four collection types, sets and
+maps are hashed collections, designed for efficient lookup of elements.
+In Java, expressions return values, whereas statements do not.
+In Clojure, however, everything is an expression! Everything returns a value, and a block of multiple expressions returns the last value.
+
+# Runtime Polymorphism
+using defmulti and defmethod macros
+
+# Hosting on AWS lambda function
+aws lambda create-function \
+  --function-name clj-hello \
+  --handler hello::handler \
+  --runtime java8 \
+  --memory 512 \
+  --timeout 10 \
+  --role arn:aws:iam::awsaccountid:role/lambda_exec_role \
+  --zip-file fileb://./target/lambda-clj-examples-0.1.0-standalone.jar
+
+# Java
+  Why package names starts with .org, .com?
+
+# Resources
+https://clojureverse.org/t/review-what-is-data-oriented-programming/6065/6
+https://swannodette.github.io/2013/07/12/communicating-sequential-processes/
+https://8thlight.com/blog/myles-megyesi/2012/04/26/polymorphism-in-clojure.html
+http://mishadoff.com/blog/clojure-design-patterns/

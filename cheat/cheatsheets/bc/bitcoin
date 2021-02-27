@@ -4,6 +4,7 @@ tags: [ bitcoin, blockchain ]
 # What is Bitcoin?
 1. Decentralized
 2. Digital currency
+can only process 3 transactions per second, which is incredably slow
 
 # What is Blockchain?
 Immutable Distributed Ledger over P2P network
@@ -41,6 +42,7 @@ store rules, verify rules and self execute rules
 1991        Digital Timestamps, like notary, cannot backdate them
 2009        Satoshi Nakamoto, Enter Bitcoin
 2014        Etherium, Vitalik Buterin, co-founder of Bitcoin magazine
+            Mt. Gox, the largest cryptocurrency exchange at the time, suspended trading, closed its website and exchange service, and filed bancrupcy
 
 # Blockchain in JS
 

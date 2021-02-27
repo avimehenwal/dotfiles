@@ -3,11 +3,30 @@ tags: [ bitcoin, blockchain, cryptocurrency ]
 ---
 # FIAT Currency
 Fiat money is a currency established as money, often by government regulation.
-Fiat money does not have intrinsic value and does not have use value.
+Fiat money does not have intrinsic value and does not have use value. Have NO Gold Standard
 It has value only because a government maintains its value, or because parties engaging in exchange agree on its value.
+cryptocurrency exchange, digital currency exchange (DCE), DCP- Digital currency Provider https://en.wikipedia.org/wiki/Cryptocurrency_exchange
+
++------------+  crypto Exchange   +------------------+
+| fiat money | -----------------> | cryptocurrencies |
++------------+                    +------------------+
+
+# Who/What sets the bitcoin price?
+Market forces, its specific to market. Bitcoin prices vary in India, germany, south-africa etc.
+Demand and Supply market forces
+
+# BITCOIN
+1st decorated crypto currency launched in 2008, finite amount of bitcoins
+21 Million and it will stop mining, more than 80% of bitcoin has already been mined and made available to public
+Some cryptocurrency are backed by gold turns out to be fraud https://www.justice.gov/opa/pr/new-york-man-charged-cryptocurrency-scheme
 
 # Bitstamp
 Bitstamp is a bitcoin exchange based in Luxembourg.
 It allows trading between fiat currency, bitcoin and other cryptocurrency.
 It allows USD, EUR, GBP, bitcoin, XRP, ethereum, litecoin, bitcoin cash, XLM, Link, OMG Network, USD Coin or PAX deposits and withdrawals.
 
+Google trends     https://trends.google.com/trends/explore?date=today%205-y&q=bitcoin
+
+
+
+echo "[fiat money] -- crypto Exchange --> [cryptocurrencies]" | graph-easy

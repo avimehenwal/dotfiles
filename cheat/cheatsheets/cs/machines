@@ -1,0 +1,33 @@
+---
+tags: [cs, oo, modelling, design, programming]
+---
+Everything is a machine, even a software
+
+# Machine
+mechanical energy (force, pressure, movement, direction)
+https://www.youtube.com/c/LowLevelJavaScript
+
+# Programming languages are stack based machines
+https://en.wikipedia.org/wiki/Forth_(programming_language)
+
+# Backtracking - DFS (using stacks) | similar to Branch & Bound (BFS)
+8-queen problem , critial solution set *, 
+solution set/tree state space tree -  tree of all possible solutions, respecting CONSTRAINTS
+Problem solving strategy using Brute Force
+that incrementally builds candidates to the solutions, and abandons a candidate ("backtracks")
+as soon as it determines that the candidate cannot possibly be completed to a valid solution
+
+The only thing computers are good at is Enumeration and the speed at which they can enumerate
+
+# Dynamic Programming
+Fibinacchi Series solution by recursion
+simplifying a complicated problem by breaking it down into simpler sub-problems in a RECURSIVE manner.
+https://en.wikipedia.org/wiki/Dynamic_programming
+
+# Stack machine | 16-bit virtual machine | https://youtu.be/mamop8aqFNk
+Some Programming languages are implemented using a data structure called StackFrame
+just an abstraction over Memory
+Registers - special memory locations, Eg: stackPointer
+all instructions on STACK
+your own ISA in any programming language of your choice
+https://github.com/francisrstokes/16bitjs

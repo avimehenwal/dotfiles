@@ -1,6 +1,5 @@
 {
   "git.autofetch": true,
-  "window.zoomLevel": 0,
   "[cpp]": {
     "editor.defaultFormatter": "ms-vscode.cpptools"
   },

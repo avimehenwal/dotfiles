@@ -1,0 +1,22 @@
+---
+tags: [frontend, responsive, ui, api, browser, wasm]
+---
+# Why wasm?
+speed, smaller footprint, distributed computing
+Security: Rigid sandbox, Memory Isolation, Buffer overrun security exploit not possible
+rapid Continuous deployment, portable, browser, cloud, IoT
+0 downtime deployment, live module version swap without containers
+
+# How to write wasm? Wasm is Polyglott
+Emscripten, rust, go, Assemlbyscript, C/C++
+
+> build amazing thing outside the browser
+
+# wasm runtime?
+out of browser runtimes
+add1.wat        low-level IR code
+wasmtime add1.wasm --invoke add 2 2 
+
+# How to build cloud native services in web assembly?
+cloud/service health checks
+no tight coupling, dynamically bound @runtime
