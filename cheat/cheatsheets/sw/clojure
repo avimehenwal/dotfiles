@@ -108,6 +108,7 @@ comp            Function composition in clojure
 pipe            const pipe = (f, g) => (input) => g(f(input)); // in typescript
 Transducers     core logic + veraious Context, like map, reduce on all types of lists, vectors, channels, streams etc
 CSP             Communicating sequential processes, golang go routines and clojure channels
+protocol        is all about polymorphism, collection of abstract methods no implementation like Interfaces, defrecrod, deftype
 let binds symbols to values in a "lexical scope"
 multi-arity functions       Ad-hoc and Parametric Polymorphism
 variadic functions
@@ -133,8 +134,12 @@ aws lambda create-function \
 # Java
   Why package names starts with .org, .com?
 
+# Build tool - Leiningen akin to cargo
+  CLI tool to manage, artifacts and dependencies, run test, create scaffolds, templates
+
 # Resources
 https://clojureverse.org/t/review-what-is-data-oriented-programming/6065/6
 https://swannodette.github.io/2013/07/12/communicating-sequential-processes/
 https://8thlight.com/blog/myles-megyesi/2012/04/26/polymorphism-in-clojure.html
 http://mishadoff.com/blog/clojure-design-patterns/
+http://www.metasimple.org/2017/02/28/clarifying-rules-engines.html

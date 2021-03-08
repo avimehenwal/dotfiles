@@ -1,0 +1,11 @@
+# What is Elm
++ FP, replacement for HTML/JS/CSS
++ If it compiles, is runs
+- integration with other JS libraries, NO interop
+
+# difference with closurescript
+. syntax is different
+. clojurescript only for JS, eml for entire frontend stack
+- no IO in go blocks, are DB reads/writes considered as IO
+- js + java platform reach
+- stability

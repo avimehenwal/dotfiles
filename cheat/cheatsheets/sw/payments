@@ -1,0 +1,47 @@
+According to Globe News Wire, the “eCommerce payment market worldwide is projected to grow by US$32.
+7 Billion, driven by a compounded growth of 12. 9%.”
+
+# Online | commerce payment systems | Payment Gateways
+.challenges
+- Historic data payments
+- payment security, 3d security pin
+- Multi party transactions
+- multi currency support
+- fraud and risk prevention
+- performance
+- retries on failure - store card information locally
+
+# Payment Processor
+IOS 8583 standard   https://en.wikipedia.org/wiki/ISO_8583
+A payment processor is a company or financial institution that processes online transactions.
+It is either a bank or a payment system, such as Visa, Mastercard, AmEx, etc. To integrate with a
+processor, you need to obtain their API documentation and implement it as instructed. You will also
+need to develop an external API for your clients. They will use it to send payments (one-time or recurring)
+  for processing and receive the payment statuses back.
+
+# PCI payment card industry standards | compliances
+echo "[merchant] -- payment method --> [payment gateway] --> [payment processor] --> [bank] -- accept/decline --> [merchant] " | graph-easy
+
+             pass/fail
+  +--------------------------------------------------------------------------------+
+  v                                                                                |
++----------+  payment method   +-----------------+     +-------------------+     +------+
+| merchant | ----------------> | payment gateway | --> | payment processor | --> | bank |
++----------+                   +-----------------+     +-------------------+     +------+
+
+# How to build a online payment gateway for yourself?
+- Follow security guidelines by PCI and local regional security policies
+- partner | alliance with banks, payment processors
+- study bank payment API and handle all kinds of possible errors
+- There is a reason why FinTech still runs on maineframe, large scale throughput
+
+# What does visa | mastercard do? What is visa network?
+are they bank, credit card company?, loan money?
+=> Payments Technology company, 3B accounts, 200 countries, 2019 >200B payment and transactions
+
+# How visa actually makes money?
+Issuing Bank
+Acquiring Bank
+
+# Resources
+https://stackoverflow.com/questions/2647430/building-a-complete-online-payment-gateway-like-paypal

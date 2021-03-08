@@ -1,0 +1,40 @@
+# Instagram
+built using python Django
+Feature load testing - GATED on production, does not go to the user.
+Risk of prematurely exposing the features to the world. Has happened to instagram unfortunately
+acceptance tests - 500 vs 200 on canary, How long is canary? couple of minutes
+deployment - 10 mins, to deploy instagram over 20,000+ servers
+training culture - facebook engineers go through bootcamp, s/w pieces, infrastructure
+automatic master|slave promotion on postgres DB, >1 min, TAO DB (C++ implementation)
+facabook vs instagram => PHP vs Python3
+
+# How slack is built?
+UC1     persistent group messaging, IRC, self curated channels of people with same common interest 
+UC2     writing automation bots
+What is it doing largely? storage, in memory and computing, in house experts understand all of it.
+Slack was earlier a Massive multiplayer online game company
+
+tech stack    PHP, MySQL, job Queues RTM - real time messaing/magic. >1000's of SQL queries
+PHP monolith business objects, LAMP stack
+code reviews  would it work in event of conflicts/failures? Is it thread safe?
+
+there is a lot of value in being a idiot
+
+# How Netflix works?
+  Homepage of netflix has 125M custom landing page, one each for each user
+Recommendation system - time(picking movie) > time(watching)
+background PUSH notifications
+P Persistant
+U Until
+S Something
+H Happens
+Hystrix to retry HTTP microservice calls, fail fast and recover polling
+CAP Theorem, Cassandra for high availability and eventual consistency
+outage on christmas eve 2012     https://netflixtechblog.com/a-closer-look-at-the-christmas-eve-outage-d7b409a529ee
+Multi region Strategy, one node dies everythign dies, ANTI-pattern
+chaos money, what happens is a node is down => should be a non event with auto-scaling
+
+# Reddit
+4th largest website in USA, alexa ranking
+r2    big python monolith blob
+comment page going slow today doesn't affect the frontpage, app load balancer

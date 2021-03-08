@@ -1,0 +1,12 @@
+# list all public variables in namespace
+(dir user)
+(dir clojure.string)
+
+# list all public methods in namespace
+  (keys (ns-publics 'user))
+
+# promises and futures
+blocks the deref call (current thread) until future execution is completed
+predicates: future? future-done? future-cancelled?
+If a future is cancelled, all the side-effects in future block has to be rollbacked, handled manually
+promise can only be set ONCE

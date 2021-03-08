@@ -62,3 +62,7 @@ charts    https://www.highcharts.com/demo    https://dmitrybaranovskiy.github.io
 # How to compile to JS? https://stackoverflow.com/questions/27109510/how-to-compile-clojurescript-to-javascript
 lein new mies hello-world
 cd hello-world
+
+# Open source projects
+https://github.com/penpot/penpot
+https://github.com/CircleCI-Archived/frontend

@@ -20,3 +20,11 @@ as they are compile time only and default values need runtime support
 # Difference b/w types and classes?
 Types are primitives, classes are user defined Model of data
 https://stackoverflow.com/questions/468145/what-is-the-difference-between-type-and-class
+
+# Why Type Systems?
+used less in industry, more in academia
+- More Efficient, compiler catches some errors/potential bugs, less documentation (types are the documentation), fewer tests
+- better tooling IDE, safety for maintenance
+- Generics Types promotes Polymorphism
+
+great designs are discovered and not invented. Using patterns and constraints and sensible abstractions, its not random
