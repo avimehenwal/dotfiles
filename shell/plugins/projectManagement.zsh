@@ -18,7 +18,6 @@
 
 PM_DATA_FILE=$HOME/dotfiles/shell/plugins/projectNames.data
 
-
 # Todo: display bat->file and tree->dir preview
 function ll() {
   local head="{1} user,group,others Permission \#hard-links={2}"
@@ -82,12 +81,12 @@ pp() {
   while IFS= read -r PROJ; do
     local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
     result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n"
-  done < $PM_DATA_FILE
+  done <$PM_DATA_FILE
   selection=$(echo -e ${result} |
     column --table --table-columns Name,Path |
     fzf --header-lines=1 \
-    --height=70% \
-    --preview 'tree -C -L 1 {-1} --sort=mtime -r')
+      --height=70% \
+      --preview 'tree -C -L 1 {-1} --sort=mtime -r')
   cd $(echo $selection | awk '{print $2}') && treeGraph
 }
 
@@ -97,18 +96,37 @@ generateProjectAlias() {
     local value="cd ${loc} && lf"
     alias $PROJ="${value}"
     # echo "alias $PROJ='$value'"
-  done < $PM_DATA_FILE
+  done <$PM_DATA_FILE
 }
 
 # Add Project
 ap() {
   local project=$(basename $PWD)
-  echo $project >> $PM_DATA_FILE
+  echo $project >>$PM_DATA_FILE
   echo $bold_color$bg[green]$fg[black] $project ${reset_color} Added to $PM_DATA_FILE
 }
 
 # regex match doesnt work on zsh
 # [[ $line =~ ^- ]] && echo file
 # [[ $line =~ ^d ]] && echo directory
+
+# only for NPM projects
+run() {
+  if [ -f ./package.json ]; then
+    echo \t $bold_color$bg[green]$fg[black] NPM RUN ${reset_color} project scripts
+    npm run $(
+      jq ".scripts" <./package.json |
+        sed -e '1d;$d' -e 's/"//g' -e 's/,//g' |
+        column --table -s ":" |
+        bat -l bash --style=plain |
+        fzf --no-multi --cycle --height=50% --margin=5% --padding=5% --info=inline \
+          --prompt='npm run ' --ansi
+      # --preview='bat -l sh {}'
+    )
+  else
+    echo $bold_color$bg[red]$fg[black] package.json ${reset_color} File not found in CWD
+  fi
+
+}
 
 # END

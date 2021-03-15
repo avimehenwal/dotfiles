@@ -1100,8 +1100,9 @@
     }
   ],
   "vscode-neovim.neovimInitVimPaths.linux": "/home/avi/dotfiles/nvim/init.vim",
-  "workbench.colorTheme": "Default Dark+",
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
+  "workbench.colorTheme": "Gruvbox Material Dark",
+  "typescript.updateImportsOnFileMove.enabled": "always",
 }

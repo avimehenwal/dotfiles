@@ -36,3 +36,13 @@ https://github.com/eduardomoroni/react-clean-architecture
         ├── components
         └── stylesheets
 
+# How do we change browser contents? => DOM How do I change DOM?
+in memory tree DS representation of page
+DOM API specification are different from browser and JS specification. you can have your own implementation
+SHADOW DOM, enable from preferences to see shadown DOM, video tag controls, localized/scoped CSS changes. Decoupled from rest of the webpage
+          el.createShadowRoot() then append contents to it.
+          Encapsulation and isolation from normal DOM
+          does webkit allocate memory each time for shadow DOM CSS? or is it shared?
+          not a absolute black box, corruptable boundary when you choose to do that 
+          https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
+
