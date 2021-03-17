@@ -1,3 +1,6 @@
+# files changes in last 2 seconds
+watch --interval 2 --difference 'find . -type f -newermt 2 seconds ago'
+
 # exclude a path from search -prune
 sudo find / -not \( -path /home/avi -prune \) -type d -name '*font*' -print
 find . ! \( -path ./node_modules -prune \) -type d -name '*node*' -print

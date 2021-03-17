@@ -20,3 +20,6 @@ aws --profile personal-avi s3api list-objects --bucket avi-anime --query 'Conten
 aws --profile personal-avi s3api list-objects --bucket avi-anime --max-items=2 --output json \
     --starting-token eyJNYXJrZXIiOiBudWxsLCAiYm90b190cnVuY2F0ZV9hbW91bnQiOiA2fQ== | jq
 
+# SNS (pub/sub) vs SQS
+    decouple systems, even if systems are temporary down
+https://stackoverflow.com/questions/13681213/what-is-the-difference-between-amazon-sns-and-amazon-sqs

@@ -128,7 +128,6 @@
   "editor.formatOnSave": true,
   "aws.samcli.location": "",
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
-  "aws.profile": "profile:cndx-dev",
   "npm.enableRunFromFolder": true,
   "npm.scriptExplorerAction": "run",
   "editor.lineNumbers": "relative",
@@ -1105,4 +1104,5 @@
   },
   "workbench.colorTheme": "Gruvbox Material Dark",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.sideBar.location": "right",
 }

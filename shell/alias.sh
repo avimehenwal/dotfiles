@@ -50,7 +50,7 @@ alias la='ls --color=always -lAh | fzf'
 
 alias md='mkdir -p'
 alias rd=rmdir
-alias refresh="source \$HOME/.zshrc"
+alias refresh="exec zsh"
 
 # Suffix aliases
 alias -s md='bat -l md'
@@ -97,3 +97,8 @@ alias publicip='curl ifconfig.me'
 alias brewl='brew list | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always --highlight-line 2 -l gitlog"'
 alias brews='brew install $(brew search | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always
 --highlight-line 2 -l gitlog")'
+
+# Git
+alias gcl='git clone --progress --verbose'
+alias gca='git commit --amend'
+

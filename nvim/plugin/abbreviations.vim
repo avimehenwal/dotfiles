@@ -55,6 +55,7 @@ inoreabbrev :-1: 👎
 inoreabbrev :v: ✌️
 inoreabbrev :): 😎
 inoreabbrev :hi: 🙋
+inoreabbrev :run: 🏃
 
 " Markdown abbrevitions
 " better use inoremap as they do not leave a

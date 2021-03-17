@@ -66,8 +66,8 @@ treeGraph() {
 
 pp() {
   # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html#index-colors
-  autoload -U colors
-  colors
+  # autoload -U colors
+  # colors
   # echo $bold_color$bg[red]bold red${reset_color} plain
   # echo $bold_color$fg[white]$bg[black]bold red${reset_color} plain
   # echo $bold_color$fg[black]$bg[green]bold red${reset_color} plain
@@ -79,9 +79,9 @@ pp() {
   local result=""
   echo 📌 $bold_color$fg[black]$bg[yellow] MyProjects ${reset_color} ${MyProjects}
   while IFS= read -r PROJ; do
-    local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
+    loc=$(find $HOME -maxdepth 2 -type d -name ${PROJ})
     result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n"
-  done <$PM_DATA_FILE
+  done < $PM_DATA_FILE
   selection=$(echo -e ${result} |
     column --table --table-columns Name,Path |
     fzf --header-lines=1 \
@@ -91,12 +91,13 @@ pp() {
 }
 
 generateProjectAlias() {
+  # Internal FIeld Seperator
   while IFS= read -r PROJ; do
-    local loc=$(find ~ -maxdepth 2 -type d -name ${PROJ} -print)
+    local loc=$(find ${HOME} -maxdepth 2 -type d -name ${PROJ} -print)
     local value="cd ${loc} && lf"
     alias $PROJ="${value}"
     # echo "alias $PROJ='$value'"
-  done <$PM_DATA_FILE
+  done < $PM_DATA_FILE
 }
 
 # Add Project
@@ -112,14 +113,17 @@ ap() {
 
 # only for NPM projects
 run() {
+  clear
+  DELIMITER='#' # want to retain colons in script names, its pretty standard
   if [ -f ./package.json ]; then
-    echo \t $bold_color$bg[green]$fg[black] NPM RUN ${reset_color} project scripts
+    echo 🏃 $bold_color$bg[green]$fg[black] NPM RUN ${reset_color} project scripts 🏃 
     npm run $(
-      jq ".scripts" <./package.json |
-        sed -e '1d;$d' -e 's/"//g' -e 's/,//g' |
-        column --table -s ":" |
+    jq ".scripts" < ./package.json |
+      sed -e "s/\": \"/$DELIMITER/g" |
+      sed -e '1d;$d' -e 's/"//g' -e 's/,//g' |
+        column --table -s "$DELIMITER" --table-right 1 |
         bat -l bash --style=plain |
-        fzf --no-multi --cycle --height=50% --margin=5% --padding=5% --info=inline \
+        fzf --no-multi --cycle --height=50% --margin=15% --padding=1% --info=inline \
           --prompt='npm run ' --ansi
       # --preview='bat -l sh {}'
     )

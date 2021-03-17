@@ -1,0 +1,2 @@
+# disable bark alert sound for good
+dconf write /org/gnome/desktop/sound/event-sounds "false"

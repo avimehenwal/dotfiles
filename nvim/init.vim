@@ -60,7 +60,7 @@ else
     " luafile $HOME/dotfiles/nvim/lua/galaxyline-new-evilline.lua
     " luafile $HOME/dotfiles/nvim/lua/galaxyline-eviline.lua
     luafile $HOME/dotfiles/nvim/lua/plug-colorizer.lua
-    luafile $HOME/dotfiles/nvim/lua/treesitter.lua
+    " luafile $HOME/dotfiles/nvim/lua/treesitter.lua
   endif
 endif
 
