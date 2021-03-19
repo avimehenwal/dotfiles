@@ -1,4 +1,4 @@
-#!/bin/zsh
+#dd/!/bin/zsh
 #  ____            _   __  __                 _
 # |  _ \ _ __ ___ (_) |  \/  | __ _ _ __ ___ | |_
 # | |_) | '__/ _ \| | | |\/| |/ _` | '_ ` _ \| __|
@@ -101,10 +101,15 @@ generateProjectAlias() {
 }
 
 # Add Project
-ap() {
+project_add () {
+  local project=$1
+  echo ${project} >> ${PM_DATA_FILE} && echo $bold_color$bg[green]$fg[black] $project ${reset_color} Added to $PM_DATA_FILE
+}
+# check if already exists
+pa() {
   local project=$(basename $PWD)
-  echo $project >>$PM_DATA_FILE
-  echo $bold_color$bg[green]$fg[black] $project ${reset_color} Added to $PM_DATA_FILE
+  grep -q ^${project} ${PM_DATA_FILE} && echo "$bold_color$bg[yellow]$fg[black] ${project} ${reset_color} Already exists in list 🏃" || project_add ${project}
+  bat $PM_DATA_FILE
 }
 
 # regex match doesnt work on zsh
