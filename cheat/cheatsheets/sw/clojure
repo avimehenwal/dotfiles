@@ -41,7 +41,7 @@ encapsulates state changes while appearing stateless to the rest of the program
 ## FP as opposed to OO
 Mutable stateful objects are the new spaghetti code => Concurrency disaster
 It is better to have 100 functions operate on one data structure than to have 10 functions operate on 10 data structures."
-Thread Safe => Share freely between threads
+Thread Safe => Share freely between threads, clojure is thread agnostic (most of the time)
 
 ## Immutability = Value + Function
 - Timeless, stateless
@@ -136,6 +136,14 @@ aws lambda create-function \
 
 # Build tool - Leiningen akin to cargo
   CLI tool to manage, artifacts and dependencies, run test, create scaffolds, templates
+
+# Event Driven Programming using Publisher Subscriber Architecture Model, EDA Event Driven Architecture
+Problem: We spend more time WAITING than COMPUTING our responses
+Solution: Batch waiting operations, Concurrent execution
+BUT threads (OS threads) don't grow on trees
+Implementation? callback in subscriber, iterate through all list of subscribers
+Push Mechanism, Pull Mechanism, Hybrid push-pull approach
+channel - Transactional Queue
 
 # Resources
 https://clojureverse.org/t/review-what-is-data-oriented-programming/6065/6

@@ -16,3 +16,20 @@ its easy when you have control over rendering
 
 https://youtu.be/AiJ8tRRH0f8
 https://egghead.io/lessons/react-course-overview-advanced-react-component-patterns
+
+# Is your Web component library your Design System? | build like LEGO blocks
+Uber and AirBnB have multidisciplinary teams to maintain their design systems
+A Design System is a ever evolving collection of reusable components, guided by rules that ensure consistent speed, by being
+single source of truth for any product development.
+https://airbnb.design/the-way-we-build/
+https://medium.com/uber-design/uber-design-platform-1ebff86c89e7
+
+- High velocity design
+- Remove inconsistencies in design
+- seperation of concern, Division of responsibility
+
+# Component Library
+- Live/hot-reloading component view
+- Live visual testing view/component page, storybook
+- Identify STATES and Behaviour
+- Atomic design development, Composition and HOC

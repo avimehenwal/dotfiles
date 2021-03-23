@@ -1102,6 +1102,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "workbench.colorTheme": "Default Light+",
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "workbench.colorTheme": "Visual Studio Dark",
 }

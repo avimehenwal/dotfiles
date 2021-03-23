@@ -54,3 +54,10 @@ Why isn't app telling whats its doing? instead telling me how it is made?
 At the highest level web is an IO device, delivery mechanism.
 Architecture is about intent
 Use Cases drive the application, an action user will perform on system
+
+# Reactive Programming is a Declerative Programming 
+multiple data streams and propagating changes automatically   a := b + c    What if b or c changes values in future?
+the value of a is automatically updated whenever the values of b or c change, without the program having to explicit re-execute the statement a := b + c
+Eg: Verilog, in MVC architecture
+CHANGE PROPAGATION ALGORITHMS
+Push based, pull based, Hybrid push and pull based, cyclic dependencies

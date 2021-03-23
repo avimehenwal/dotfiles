@@ -28,3 +28,8 @@ npm install -g npm
 
 # To uninstall a package:
 npm uninstall <package>
+
+# list number of intalled packaged dependencies in a project, implicitly dedupes your dependencies
+npm list --parseable | wc --list
+npm list
+tree -d node_modules -L 1 | wc --list

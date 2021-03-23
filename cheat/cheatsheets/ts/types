@@ -15,7 +15,7 @@ If the structures of these classes are the same but have different names, they c
 
 # Default values to function parameters
 You cannot provide default values for interfaces or type aliases
-as they are compile time only and default values need runtime support
+as they are compile time only and default values need run-time support
 
 # Difference b/w types and classes?
 Types are primitives, classes are user defined Model of data
@@ -28,3 +28,16 @@ used less in industry, more in academia
 - Generics Types promotes Polymorphism
 
 great designs are discovered and not invented. Using patterns and constraints and sensible abstractions, its not random
+
+# Why have interfaces in typescript? to overcome the flexibility provided by dynamic typing system in js?
+Is this language flexibility?
+```js
+var a = 2
+a = function () {
+  console.log("I was initialized with a value of an integer, but now I'm a function")
+}
+```
+Use interfaces as to enforce DIP, Dependency Inversion Principle. To write more testable/maintainable code
+- High-level modules should not depend on low-level modules. Both should depend on abstractions.
+- Abstractions should not depend on details. Details should depend on abstractions.
+

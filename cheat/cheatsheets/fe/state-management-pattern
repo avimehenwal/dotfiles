@@ -1,0 +1,48 @@
+---
+tags: [frontend, state, management, pattern, redux]
+---
+# Why use a state-management pattern at all? What are the Issues?
+Prop drilling, component states tends to move UPWARD from the low level components
+
++---------------+  precursor   +-------+
+| facebook flux | -----------> | redux |
++---------------+              +-------+
+
+         subscribe
+  +-----------------------------------------------------------+
+  v                                                           |
++------+  dispatch Action   +-------------------------+     +-------+
+| View | -----------------> | Reducer Fn with actions | --> | store |
++------+                    +-------------------------+     +-------+
+
+# Observer Pattern vs Publisher-Subscriber Pattern difference
+Direct connection b/w observable and Observer
++ Multiple redux stores       https://stackoverflow.com/questions/33619775/redux-multiple-stores-why-not
++ Observer Pattern IMplementation for reactivity
+
+# Observer Pattern
+Have you change? Have you changed? Asking pollingly is a bas idea, waste of resources
+Push - change only when I have changed! How quickly changes are picked up
+-) Memory leaks, strong vs weak references
+
++------------------------------+  push   +-------------+
+| Observable / State / Subject | ------> | Observer(s) |
++------------------------------+         +-------------+
+
++---------+  has-a | push   +---------------+
+| state/1 | --------------> | */Observer(s) |
++---------+                 +---------------+
+
+# Publisher Subscriber Pattern
+No DIRECT connection, publisher do NOT even know about the subscribers or #subscribers
+
++-----------+     +----------------------------------+     +---------------+
+| Publisher | --> | Filtering/Routing/Intermediatory | <-- | Subscriber(s) |
++-----------+     +----------------------------------+     +---------------+
+
+echo "[Publisher] --> [Filtering/Routing/Intermediatory] [Subscriber(s)] --> [Filtering/Routing/Intermediatory]" | graph-easy
+echo "[state/1] -- has-a | push --> [*/Observer(s)]" | graph-easy
+echo "[Observable / State / Subject] -- push --> [Observer(s)]" | graph-easy
+echo "[facebook flux] -- precursor --> [redux]" | graph-easy
+echo "[View] -- dispatch Action --> [Reducer Fn with actions] --> [store] -- subscribe --> [View]" | graph-easy
+
