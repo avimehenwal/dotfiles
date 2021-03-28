@@ -1,0 +1,30 @@
+# Using docker with local users?
+
+# How to use vagrant image with libvirt?
+systemctl status libvirtd
+sudo journalctl --unit=libvirtd
+firewall-cmd --get-active-zones
+sudo rm /etc/firewalld/zones/trusted.xml
+
+sudo systemctl restart firewalld
+sudo systemctl restart libvirtd
+sudo virsh net-start default
+
+firewall-cmd --get-active-zones        
+FedoraWorkstation
+  interfaces: wlp5s0
+docker
+  interfaces: docker0
+libvirt
+  interfaces: virbr0
+
+  https://nts.strzibny.name/qemu-bridge-helper-missing-virbr0-interface/
+
+# VMbox Guest Additions
+  Make working with guest OS smoother, drag-n-drop, bidirectional clipboard sharing, shared folders
+
+# Take SSH on guest VM from Host using Port Forwarding on NAT network
+  https://medium.com/platform-engineer/port-forwarding-for-ssh-http-on-virtualbox-459277a888be
+
+# How to access server running on guest on host OS?
+  Add Bridge Network adapter and if using webpack add --host 192.168.0.101

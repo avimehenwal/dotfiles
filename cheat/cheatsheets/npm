@@ -33,3 +33,12 @@ npm uninstall <package>
 npm list --parseable | wc --list
 npm list
 tree -d node_modules -L 1 | wc --list
+
+# Why package-lock.json file is widely different on macos and linux?
+OS specific optional dependencies          npm install --legacy-peer-deps
+https://stackoverflow.com/questions/45335169/why-do-i-get-vastly-different-package-lock-json-files-when-i-run-npm-install
+https://stackoverflow.com/questions/66020820/npm-when-to-use-force-and-legacy-peer-deps
+
+# cleanup
+npm prune       remove extraneous packages, which are NOT in package.json
+

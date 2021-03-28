@@ -1,0 +1,48 @@
+# To start the docker daemon:
+docker -d
+
+# To start a container with an interactive shell:
+docker run -ti <image-name> /bin/bash
+
+# To "shell" into a running container (docker-1.3+):
+docker exec -ti <container-name> bash
+
+# To inspect a running container:
+docker inspect <container-name> (or <container-id>)
+
+# To get the process ID for a container:
+docker inspect --format {{.State.Pid}} <container-name-or-id>
+
+# To list (and pretty-print) the current mounted volumes for a container:
+docker inspect --format='{{json .Volumes}}' <container-id> | python -mjson.tool
+
+# To copy files/folders between a container and your host:
+docker cp foo.txt mycontainer:/foo.txt
+
+# To list currently running containers:
+docker ps
+
+# To list all containers:
+docker ps -a
+
+# To remove all stopped containers:
+docker rm $(docker ps -qa)
+
+# To list all images:
+  docker images
+
+# To remove all untagged images:
+docker rmi $(docker images | grep "^<none>" | awk "{print $3}")
+
+# run docker with same use as local to write file
+docker run --rm -it -v ${PWD}:/webapp --user Avi:Avi coindex/develop bash
+
+# mkdir system call fails on fedora? How to use local user on docker
+trying to create directory with root user context has permission dr-xr-xr-x (no write permission)
+use chown ${USER} ${DIR_PATH}
+-v host-ap:guest-absolute-path:z|Z
+SELinuz - Security Enhanced LInux is a linux kernel module, access control security
+https://www.projectatomic.io/blog/2015/06/using-volumes-with-docker-can-cause-problems-with-selinux/
+
+# Exclude node_modules directories when COPYing inside docker container?
+use **/node_modules in .dockerignore file adjascent to Dockerfile

@@ -1,0 +1,11 @@
+# Webapp not working on linux?
+1. Server Side - npm dependencies 
+- Module not found: Error: Can't resolve 'child_process' in '/home/avi/WORK/webap
+- Critical dependency: the request of a dependency is an expression
+=> troubleshooting NPM package versions BY HAND
+2. Client Side - console errors, doesnt render anything?
+dont know what to do?
+3. Docker volume mount on SELinux (security enabled)
+  => use :z | :Z after volume mount and correct user and linux like folder permissions
+
+

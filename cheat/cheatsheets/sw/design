@@ -1,0 +1,38 @@
+# What is system design
+system goals/use-cases + CONSTRAINTS
+
+# System that run forever, self-heal and scale?
+Problem Domain, one big black dark circle provided by plang and everything (computation) needs to done within its domain
+in general, start with an architecture that will work at scale (in trillions) and then SCALE IT DOWN, is a better idea
+than start small and SCALE UP!
+
++--------------------------+     +--------+     +----------+
+| Millions of smart phones | --> | Erlang | --> | Internet |
++--------------------------+     +--------+     +----------+
+
+if Base Stations from Ericsson
+
+1. Isolated Components, fault-tolerance?, scalability? 12M transactions/day, reliability?, testability?, comprehensibility?, code-upgrade?
+2. Concurrency? can I describe the computation in terms of concurrent processes? If its distributed its concurrent
+3. Graceful Failures, everything dies (internet, machines, network, server, client)
+4. Stable Storge, no backup system, keep crash report
+
+catch error symptoms early on
+
+Alan Kay- its not about objects/classes, big idea is Messaging
+All sequential Programming languages gets error handling wrong! Main thread crashes, everything crashes
+
+# Erlang
+one erlang node can have millions of processes, 300bytes/process
+On a multi-core the processes spread over the cores
+
+# Gamification + SRS + Knowledge Based FACT system | Exists to entertain, predictable fun and cool
+- Add Levels, Points, Badges, Leader Boards to encourage competition. Rewards and compitition
+- Identify particular behavious you want to encourage and then reward a user with Points
+- value of rewards diminish overtime
+- User goals | Business goals, User learning centric
+- Eg: Starbucks, khan academy, duolingo, youtube, air flight points, stackexchange
+
+# Micro-Interactions
+How and when they are triggered? Small quick feedbacks, Hey Siri!
+- prevent errors, let user know system is active and ready, are purposeful, keep user informed

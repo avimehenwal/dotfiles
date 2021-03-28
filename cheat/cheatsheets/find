@@ -56,3 +56,5 @@ find . -type f -exec chmod 644 {} \;
 # can use multiple -exec
 find . -name '*png' -exec basename --suffix=.png {} \; -exec echo {} \;
 
+# find and remove node_modules
+find . -maxdepth 3 -type d -name 'node_modules' -print -exec rm -rfv {} \;

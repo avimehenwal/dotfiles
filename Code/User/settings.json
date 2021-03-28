@@ -47,7 +47,7 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "graphvizPreview.engine": "dot",
   "editor.minimap.enabled": false,
-  "terminal.integrated.shell.linux": "/usr/bin/fish",
+  "terminal.integrated.shell.linux": "/usr/bin/zsh",
   "vim.easymotion": true,
   "vim.hlsearch": true,
   "vim.cursorStylePerMode.insert": "block",
@@ -1103,5 +1103,8 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
   "workbench.colorTheme": "Visual Studio Dark",
 }
