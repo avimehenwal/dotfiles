@@ -36,3 +36,15 @@ On a multi-core the processes spread over the cores
 # Micro-Interactions
 How and when they are triggered? Small quick feedbacks, Hey Siri!
 - prevent errors, let user know system is active and ready, are purposeful, keep user informed
+
+# Visualization driven programming?
+How to put data on screen for marketting in a special way. Data itself creates visual thing you see
+
++------+     +--------+     +------+
+| date | --> | sketch | --> | code |
++------+     +--------+     +------+
+
+ITs d3 under the hood, svg for smaller data seets, canvas for something bigger and webGL is you want to go crazy
+echo "[date] --> [sketch] --> [code]" | graph-easy
+
+Emacs is written in C and customized using Emacs Lisp.

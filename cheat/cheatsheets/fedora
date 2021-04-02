@@ -1,0 +1,13 @@
+---
+tags: [fedora, linux, os]
+---
+# How to upgrade fedora?
+sudo dnf upgrade --refresh
+sudo dnf install dnf-plugin-system-upgrade
+sudo dnf system-upgrade download --refresh --releasever=34
+dnf system-upgrade reboot
+
+rpm --rebuilddb
+dnf distro-sync --setopt=deltarpm=0
+dnf install rpmconf
+rpmconf -a

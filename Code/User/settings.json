@@ -130,7 +130,6 @@
   "vscode-neovim.neovimExecutablePaths.linux": "/usr/bin/nvim",
   "npm.enableRunFromFolder": true,
   "npm.scriptExplorerAction": "run",
-  "editor.lineNumbers": "relative",
   "workbench.iconTheme": "material-icon-theme",
   "vscode-neovim.mouseSelectionStartVisualMode": true,
   "vscode-neovim.revealCursorScrollLine": true,

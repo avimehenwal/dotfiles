@@ -27,6 +27,9 @@ It allows USD, EUR, GBP, bitcoin, XRP, ethereum, litecoin, bitcoin cash, XLM, Li
 
 Google trends     https://trends.google.com/trends/explore?date=today%205-y&q=bitcoin
 
+# Financial terms
+Portfolio = { collection of multiple ASSETS } for each user
+Asset = Index-based asset, ETH BITCOIN RIPPLE LITECOIN are index || Individuelles Portfolio || Star Plan (proposed plan) Automatic Investment contributions
 
 
 echo "[fiat money] -- crypto Exchange --> [cryptocurrencies]" | graph-easy

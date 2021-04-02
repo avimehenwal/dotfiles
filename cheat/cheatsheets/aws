@@ -23,3 +23,8 @@ aws --profile personal-avi s3api list-objects --bucket avi-anime --max-items=2 -
 # SNS (pub/sub) vs SQS
     decouple systems, even if systems are temporary down
 https://stackoverflow.com/questions/13681213/what-is-the-difference-between-amazon-sns-and-amazon-sqs
+
+# Access token from CLI
+aws sts get-session-token --duration-seconds 129600
+aws cognito-idp initiate-auth --auth-flow USER_PASSWORD_AUTH --client-id xxxxxx --auth-parameters USERNAME=xxxxxx,PASSWORD=xxxxxx
+

@@ -28,3 +28,9 @@ libvirt
 
 # How to access server running on guest on host OS?
   Add Bridge Network adapter and if using webpack add --host 192.168.0.101
+
+# Virtual Box from CLI, docker/vagrant like feel
+vboxmanage list vms
+vboxmanage list runningvms
+vboxmanage startvm ubuntu20 --type headless
+vboxmanage controlvm ubuntu20 poweroff soft

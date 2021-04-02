@@ -101,4 +101,5 @@ alias brews='brew install $(brew search | fzf --preview-window=right:65% --previ
 # Git
 alias gcl='git clone --progress --verbose'
 alias gca='git commit --amend'
+alias gcm='git checkout main'
 

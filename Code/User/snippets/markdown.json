@@ -384,5 +384,25 @@
 			""
 		],
 		"description": "bytefield"
+	},
+	"code group": {
+		"prefix": "code-group",
+		"body": [
+			"<code-group>",
+			"<code-block title=\"$1\">",
+			"```$1",
+			"$0",
+			"```",
+			"</code-block>",
+			"",
+			"<code-block title=\"$2\">",
+			"```$2",
+			"",
+			"```",
+			"</code-block>",
+			"</code-group>",
+			""
+		],
+		"description": "code group"
 	}
 }

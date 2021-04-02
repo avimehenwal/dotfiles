@@ -1,0 +1,14 @@
+---
+tags: [network]
+---
+# How to set static IP address on linux systems?
+1. /etc/netplan/<file>.yaml
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    enp0s8:
+      addresses: [192.168.178.119/24]
+      dhcp4: no
+      sudo netplan --debug apply

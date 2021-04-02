@@ -87,3 +87,9 @@ https://adrianhall.github.io/javascript/react/2020/03/29/parcel-typescript-react
 ## WASM - Web Assembly
 binary format, compile JS to LLVM-IR, optimizations like DCE- dead code Elimination
 wasm-opt - 20% WASM code reduction
+
+# How to build multiple projects, patterns for javascript repositories?
+1. Monorepository pattern          1 repo multiple projects. Eg learna, npm/yarn workspaces
+                                   companies like google and facebook are known for their massive monorepos. 
+2. Single-repo Monolith            1 repo for 1 system in entirity
+3. Multi-repository pattern        Multiple repositories for single system, microservice architecture SOA
