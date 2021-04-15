@@ -1105,5 +1105,11 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
 }

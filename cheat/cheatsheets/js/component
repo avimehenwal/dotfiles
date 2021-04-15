@@ -33,3 +33,6 @@ https://medium.com/uber-design/uber-design-platform-1ebff86c89e7
 - Live visual testing view/component page, storybook
 - Identify STATES and Behaviour
 - Atomic design development, Composition and HOC
+
+# Issues Pitfalls
+Cross Component Communication

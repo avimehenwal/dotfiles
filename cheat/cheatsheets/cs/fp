@@ -65,3 +65,6 @@ https://codewords.recurse.com/issues/one/an-introduction-to-functional-programmi
 1. No data-structures with constant time O(1) update or lookup (*). Some idiomatic usages, lead to quadratic algorithms O(n2) versus linear algorithms O(n) for mutable structures.
 2. Updates tend to require multiple allocations and can lead to excessive garbage collection work.
 3. Loss of block-free data-structures (in general). Or STM specifically.
+
+# Why FP is terrible?
+- Tail calls

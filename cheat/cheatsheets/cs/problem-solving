@@ -1,0 +1,10 @@
+---
+tags: [cs, interview, problem, solving]
+---
+# FizBuzz Problem
+- DRY, KISS, YAGNI, Lazy Generation, Polish for distribution, in FP and OO
+
+- String Anagrams
+- string left/right rotation
+- Number of orders Fulfilled, multiple orders and limited stock inventory
+- Cost per day to manufacture fixed number of OK products, cost of defected products is counted but not added to quotas

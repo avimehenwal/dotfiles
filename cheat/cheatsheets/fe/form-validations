@@ -16,3 +16,10 @@ tags: [ frontend, validation ]
 +-----------------------------+
 
 
+HTML built-ins              required, max, min, pattern, type
+Use CSS pseudo selectors    :disabled :invalid :optional :required :valid
+JS Form Validations
+JS Form Validation API
+
+
+

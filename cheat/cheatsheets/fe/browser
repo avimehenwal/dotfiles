@@ -46,3 +46,8 @@ SHADOW DOM, enable from preferences to see shadown DOM, video tag controls, loca
           not a absolute black box, corruptable boundary when you choose to do that 
           https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM
 
+# Browser Devtools | what is firefox developer edition? Future release
+- Firefox has better support to debug CSS grids and flexbox, latest CSS animations, mozilla fonts panel https://youtu.be/Tv7z-HzkF7U
+- Firefox: 6 weeks release cycle, Chrome: quarterly release cycle
+- developer edition, relaxed security constrainsts, test unreleased extensions
+- Browser maintains DOM and BOM too

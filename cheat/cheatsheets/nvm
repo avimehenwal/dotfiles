@@ -1,0 +1,3 @@
+# set default node environment version
+nvm list
+nvm alias default v15

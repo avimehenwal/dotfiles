@@ -58,3 +58,6 @@ find . -name '*png' -exec basename --suffix=.png {} \; -exec echo {} \;
 
 # find and remove node_modules
 find . -maxdepth 3 -type d -name 'node_modules' -print -exec rm -rfv {} \;
+
+# Find only html OR css files
+find . -type f \( -name "*.html" -or -name "*.css" \)

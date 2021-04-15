@@ -11,3 +11,7 @@ rpm --rebuilddb
 dnf distro-sync --setopt=deltarpm=0
 dnf install rpmconf
 rpmconf -a
+
+# Clipboard Managers, can't use copyQ as its only for X Windowing system and fedora uses Wayland windowing system
+clipman
+https://copyq.readthedocs.io/en/latest/build-source-code.html?highlight=fedora#fedora-rhel-centos

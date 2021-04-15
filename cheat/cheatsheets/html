@@ -4,3 +4,28 @@
   <input type="number" id="b" value="25"> =
   <output name="x" for="a b" form="form1"></output>
 </form>
+
+# How to link pages? via links for SPA controllers? Entire internet is build by linking? Nav menu. Why use li in menu?
+<nav>
+  <h1>Main Menu</h1>
+  <strong>Home</strong>
+    <a href="about.html">About Us</a>
+    <a href="clients.html">Our Clients</a>
+    <section>
+      <h2>Product Menu</h2>
+      <a href="#">Product One</a>
+      <a href="#">Product Two</a>
+    </section>
+    <a href="services.html">Our Services</a>
+    <a href="contact.html">Contact Us</a>
+</nav>
+
+# Turning image into an interactive element
+<nav>
+  <img src="skillset.gif" alt="A web developer's skillset - web standards, browser bugs and user impact" usemap="#skillset_Map">
+  <map name="skillset_Map">
+    <area shape="poly" alt="W3C Guidelines" coords="90,70,113,112,67,112,90,70" href="w3c.html">
+    <area shape="poly" alt="Browser Bugs" coords="61,120,115,120,137,157,40,157,62,120" href="browser.html">
+    <area shape="poly" alt="User Impact" coords="35,166,142,166,171,216,6,216,35,166" href="userimpact.html">
+  </map>
+  </nav>

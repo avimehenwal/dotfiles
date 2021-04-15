@@ -1,0 +1,8 @@
+---
+tags: [software, os, linux]
+---
+# How to make app entry searchable
+/use/share/applications/application.desktop
+
+# How to quickly navigigate to your workspace and project directories
+shell script a fzf shell utility

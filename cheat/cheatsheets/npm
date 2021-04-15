@@ -42,3 +42,5 @@ https://stackoverflow.com/questions/66020820/npm-when-to-use-force-and-legacy-pe
 # cleanup
 npm prune       remove extraneous packages, which are NOT in package.json
 
+# system information and node environment information and versions
+npx envinfo --system --binaries

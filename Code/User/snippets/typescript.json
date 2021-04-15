@@ -80,5 +80,12 @@
 			""
 		],
 		"description": "express request"
+	},
+	"ts ignore": {
+		"prefix": "ts-ignore",
+		"body": [
+			"// @ts-ignore */"
+		],
+		"description": "ts ignore"
 	}
 }

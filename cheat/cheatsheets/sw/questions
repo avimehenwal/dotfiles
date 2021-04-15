@@ -1,0 +1,10 @@
+# What is the worst idea in a plang? and how can we keep money on keep it going?
+- too many parens in a plang
+- unlabelled mutability is the worst idea
+
+# What are the most import constructs and concepts are most important?
+- Functions & data
+
+# How do we harness the power of vector, multiprocessor? Advanced resources, cpu, memeory, io capabilities?
+- efficient intelligent kernels, speech processing and NLP built into kernel (cpu intensive)
+

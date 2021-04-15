@@ -1,0 +1,4 @@
+proc linux internal state filesystem
+
+# How to recover deleted files back? If we know the pid
+ls /proc/11847/exe -l

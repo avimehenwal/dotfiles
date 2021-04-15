@@ -1,0 +1,12 @@
+OS is a tool, learning it makes you a better, faster programmer
+
+# OS learning strategies
+1. strace everything
+2. Linux weekly magazines, news
+3. Write your own Kernel Modules
+
+# Load your own kernel module
+sudo insmod rickroll.so
+
+# remove the loaded kernel module
+sudo rmmod rickroll

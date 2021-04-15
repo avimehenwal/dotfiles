@@ -404,5 +404,12 @@
 			""
 		],
 		"description": "code group"
+	},
+	"prettier ignore": {
+		"prefix": "ignore",
+		"body": [
+			"<!-- prettier-ignore -->"
+		],
+		"description": "prettier ignore"
 	}
 }

@@ -1,0 +1,41 @@
+---
+tags: [frontend, responsive, ui, css, browser]
+---
+# Black and white to colored transition!
+Animating a filter takes a lot of computation and might hurt performance in some browsers.
+You can get better performance by animating the opacity of a grayscale image to reveal a full-color image beneath it.
+#monalisa {
+  filter:grayscale(100%);
+  opacity:1;
+  transition:opacity .5s linear
+}
+#monalisa:hover{
+  opacity:0;
+}
+* Make them browser compatible by addting browser specific implementation tags
+
+# Animate on element creation/addition to DOM
+@keyframes expand {
+  from {
+    transform: scale(0);
+    opacity: 0;
+    background: #5470B0;
+  }
+}
+.box {
+  float: left;
+  background: #00DECF;
+  width: 100px;
+  height: 100px;
+  animation: expand .5s ease-in-out;
+}
+https://codepen.io/ericwshea/pen/EyzZQg
+
+# Animate element removal from DOM
+Create another CSS animation called fadeOut, say. Then when you want to remove the element, change the animation property on the element
+to that new animation, and use the animationend event to trigger the actual removal of the element once the animation is done
+
+# Animating DOM changes
+https://medium.com/samsung-internet-dev/animating-dom-changes-33b031927e96
+
+CSS + SVG = Raw Power

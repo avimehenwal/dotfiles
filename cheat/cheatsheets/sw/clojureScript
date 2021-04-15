@@ -63,6 +63,19 @@ charts    https://www.highcharts.com/demo    https://dmitrybaranovskiy.github.io
 lein new mies hello-world
 cd hello-world
 
+# How to add dependency? to manipulate DOM via google closure library?
+(ns so-doc.events
+  (:require
+   [goog.dom :as dom]
+   [goog.events :as events]))
+
+(defn handle-click [event] (js/alert "button pressed"))
+(events/listen (dom/getElement "button") (.-CLICK events/EventType) handle-click )
+
+# What is ^ carat sign in cljs?
+^ is "the meta character" it tells the reader to add the symbol starting with ^ as metadata to the next symbol
+(provided it is something that implements IMetas)
+
 # Open source projects
 https://github.com/penpot/penpot
 https://github.com/CircleCI-Archived/frontend

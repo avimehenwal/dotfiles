@@ -1,0 +1,11 @@
+---
+tags: [software, dsl, plang]
+---
+# DSL Domain Specific Languages
+Banking, Finance, Insurance and Policy, governance
+
+# Existing Examples
+SQL, CSS
+
+# How to make your own DSL
+Jetbrains MPS   https://www.jetbrains.com/mps/

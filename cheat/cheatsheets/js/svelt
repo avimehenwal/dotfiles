@@ -1,0 +1,16 @@
+---
+tags: [javascript, svent, frontend]
+---
+# Why svelt
+As programmer we should be offended by how inefficiently react works!
+vDOM diffing is  very expensive and inefficient, bundle size matters
+react should not be named as react
+
+compilers are the new frameworks. Svelt is a compiler
+
+# Reactive programming at frontend
+if you do SSR with svelt your AWS bills will be low, tell your product managers that
+
+browser has to compute 60 frames/sec. 60 hertz
+style handling is built in to the framework
+CSS animations runs off the main thread, hence CSS only alternatives are more performant and battery friendly

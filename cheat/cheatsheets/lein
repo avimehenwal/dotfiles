@@ -1,0 +1,13 @@
+# How to create new cljs project? webapp?
+lein new my-awesome-project
+lein new figwheel hello-world
+lein new figwheel fw-cljs-reagent-app -- --reagent
+lein new reframe <app-name>
+lein new re-frame woolybear +10x +re-frisk +routes
+https://github.com/day8/re-frame-template#extras
+
+# How to view all dependencies of a clojure project?
+lein deps :tree
+
+# figwheel vs shadowcljs
+lein run -m figwheel.main

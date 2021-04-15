@@ -14,3 +14,5 @@ npm install -g tslab
 tslab install --version
 tslab install --python=python3
 
+# How to search all jupyter notbooks on system
+find ~ -type f -name '*.ipynb' -print
