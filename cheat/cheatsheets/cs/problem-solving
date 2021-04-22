@@ -8,3 +8,12 @@ tags: [cs, interview, problem, solving]
 - string left/right rotation
 - Number of orders Fulfilled, multiple orders and limited stock inventory
 - Cost per day to manufacture fixed number of OK products, cost of defected products is counted but not added to quotas
+- Reversing a linked list, a -> b -> c -> d to d -> c -> b -> a -> None
+- invert a Binary tree, use recursion
+
+identify Base Base, do a dry run of algorithm with base case, generalize the pattern
+when to use iteration and when to use recursion?
+recursion - put things on stack and they roll back to execute
+
+- Knapsack Problem - maximize the value of items you put into bag, while ensuring you dont exceed maximum weight
+- items in groups and chats rooms

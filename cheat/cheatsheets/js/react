@@ -130,3 +130,21 @@ echo "[store + action] -- DISPATCH --> [Reducer Function] -- ACTION(s) --> [Stor
 
 ## Code Samples
 https://github.com/httpJunkie/kr-todo-hooks
+
+# Explain at least 4 hooks
+
+# How react re-renders? When does it re-render?, What hooks causes re-render?
+- React.useState()
+- React.useCallback()    caches function
+- use react Performance Tools Perf.start(), Perf.stop()
+
+  What is a wasted render? How to identify one? react developer tools highlights updates
+
+# useReducer vs useContext hook diff?
+- useState is built using useReducer, when to use when?
+newState = reducer(currentState, action)
+- returns 2 values, newState and dispatch
+useReducer with useContext to maintain GLOBAL STATE Management
+
+# Drag and drop container?
+drop, dragOver Events   https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer

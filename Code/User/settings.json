@@ -107,7 +107,6 @@
   "editor.wordWrap": "on",
   "svg.preview.mode": "svg",
   "search.collapseResults": "auto",
-  "editor.tabSize": 2,
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
@@ -120,7 +119,8 @@
   "asciidoc.use_kroki": true,
   "asciidoc.previewFrontMatter": "show",
   "files.associations": {
-    "*.adoc": "asciidoc"
+    "*.adoc": "asciidoc",
+    "*.py": "python"
   },
   "editor.fontLigatures": true,
   "editor.fontWeight": null,
@@ -1105,7 +1105,7 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "Visual Studio Dark",
   "workbench.editorAssociations": [
     {
       "viewType": "jupyter.notebook.ipynb",

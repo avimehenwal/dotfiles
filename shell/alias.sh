@@ -45,6 +45,13 @@ function d() {
 }
 compdef _dirs d
 
+function venv() {
+  [ -d venv ] || python -m venv venv 1>&2
+  source ./venv/bin/activate
+  python -V
+  pip list
+}
+
 # List directory contents
 alias la='ls --color=always -lAh | fzf'
 
@@ -103,3 +110,5 @@ alias gcl='git clone --progress --verbose'
 alias gca='git commit --amend'
 alias gcm='git checkout main'
 
+# Python
+alias venv='venv'

@@ -46,3 +46,6 @@ https://www.projectatomic.io/blog/2015/06/using-volumes-with-docker-can-cause-pr
 
 # Exclude node_modules directories when COPYing inside docker container?
 use **/node_modules in .dockerignore file adjascent to Dockerfile
+
+# SE Linux Security Enhanced Linux volume mount
+https://stackoverflow.com/questions/34031397/running-docker-on-ubuntu-mounted-host-volume-is-not-writable-from-container

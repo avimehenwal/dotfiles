@@ -19,3 +19,65 @@ Table oriented    json document oriented
 - other db things like consistency, reliability
 - Computation (fiddeling with data) seperate from process (running the db machine)
 > in FP, most of the data structures are persistent data-structure
+
+# Database Questions
+- Can DB support >300M records? https://stackoverflow.com/questions/3779088/database-that-can-handle-500-millions-rows
+- What are joins? How and when to write them? inner, outer, left, right
+- diff b/w CHAR and VARCHAR2? fixed vs variable length
+- What are KEYS? Primary,
+- What are Constraints? Not Null, Check , Default, Unique, Primary Key, Foreign Key
+- Data Integrity, accuracy of data
+- How to display current data in SQL query? SELECT GETDATE();
+- Explain Index? Unique, Clustered, Non-Clustered, special lookup tables
+- Cursor Object, allows traversal on multiple records
+- What happens if a foreign key referenced object is deleted? https://stackoverflow.com/questions/54284084/how-are-foreign-keys-maintained-when-a-related-object-is-deleted
+
+# What is Normalization? and Denormalization
+Insertion, update, deletion Anomaly
+1NF deal with Atomicity, no repeating groups
+2NF 1NF and no Partial Dependency
+3NF no transitive dependency
+3.5NF BCNF 
+  
+- Query Optimization
+- DROP vs TRUNCATE
+- ACID Transactions on DB
+- Trigger stored procedures
+- Queries and Sub-Queries
+- What are VIEWS, virtual table +takes less space
+
+# List the ways to get the count of records in a table?
+SELECT * FROM table1
+SELECT COUNT(*) FROM table1
+SELECT rows FROM sysindexes WHERE id = OBJECT_ID(table1) AND indid < 2
+
+# Write a SQL query to get the third-highest salary of an employee from employee_table?
+SELECT TOP 1 salary
+FROM(
+  SELECT TOP 3 salary
+  FROM employee_table
+  ORDER BY salary DESC) AS emp
+ORDER BY salary ASC;
+
+# Between and IN
+SELECT * FROM Students where ROLL_NO BETWEEN 10 AND 50;
+SELECT * FROM students where ROLL_NO IN (8,15,25);
+
+# How can you select unique records from a table?
+Select DISTINCT studentID from Student
+
+# How to create an index?
+CREATE INDEX index_name ON table_name;
+DROP INDEX index_name;
+ALTER INDEX index_name on object_name;
+
+# Named Foreign Key - referential integrity, Candidate
+ALTER TABLE courses
+ADD CONSTRAINT FK_CustomerCourse
+FOREIGN KEY (customerID) REFERENCES Customers(customerID);
+
+# JOIN
+SELECT A.some B.thing
+FROM Table_A AS A         # left table
+FULL JOIN Table_B AS B    # right table
+ON A.col = B.col;         # How the 2 tables are joined?

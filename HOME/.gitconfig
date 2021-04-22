@@ -103,3 +103,7 @@
     old 	   = red bold
     new 	   = green bold
     whitespace = red reverse
+[pill]
+	rebase = false
+[pull]
+	rebase = false
