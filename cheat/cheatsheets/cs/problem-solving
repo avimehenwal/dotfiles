@@ -17,3 +17,5 @@ recursion - put things on stack and they roll back to execute
 
 - Knapsack Problem - maximize the value of items you put into bag, while ensuring you dont exceed maximum weight
 - items in groups and chats rooms
+
+- Skip a function execution if it fails 10 times in a row. How to add this behaviour to other Objects?

@@ -1,0 +1,18 @@
+install via dnd
+
+redis-server
+redis-cli
+set key value
+get key
+
+# list all keys
+KEYS *
+
+# count of keys?
+INFO
+
+# How do I clean all keys?
+redis-cli flushall
+
+# does redis persist data? Why do I still see data after server restart?
+https://stackoverflow.com/questions/25328317/does-redis-persist-data

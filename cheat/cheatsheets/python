@@ -1,0 +1,22 @@
+# Basic example of server with python
+# Will start a Web Server in the current directory on port 8000
+# go to http://127.0.0.1:8000
+
+# Python v2.7
+python -m SimpleHTTPServer
+# Python 3
+python -m http.server 8000
+
+# SMTP-Server for debugging, messages will be discarded, and printed on stdout.
+python -m smtpd -n -c DebuggingServer localhost:1025
+
+# Pretty print a json
+python -m json.tool foo.json
+
+- everything in python follows Protocol. Its a protocol driven language, and each stage has hooks
+- MetaClasses, impose restrictions/constraints on library functions. Asserts on user facing functions using library functions
+- you can ask python Objects questions at execution time, what is your bytecode? what parameters do you use? inspect module
+
+# tox - test a python package in a python environment
+command runner to pick python interpretor version.
+tox -e py38 -- test -k fstring

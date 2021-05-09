@@ -1,0 +1,20 @@
+---
+tags: [python, django]
+---
+- high level web framework with batteries included
+- instagram, pinterest
+- creating Django Data Models and then rendering them into Views
+
+# startup commands
+python -m venv venv && source ./venv/bin/activate
+pip install django && django-admin startproject dj2021 && cd dj2021
+# create local sqlite DB, run it anytime after to make new, change django models
+python manage.py migrate
+python manage.py runserver
+
+# Ruby of rails
+- twitter, shopify 14 years ago
+
+# Django | node.js | ruby on rails
+# production web-server | database
+postgresSQL vs mySQL

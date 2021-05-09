@@ -1,0 +1,52 @@
+# Vanilla JS vs React library
+- there is a limit with vanilla JS
+- Managable, reusable UI components
+- control parts of page OR often the entire website, Eg: netflix
+- bringing things on screen and updating it when modal changes
+- nodejs is JS runtime
+- flexible component, building blocks
+
+> When react component state changes, whole component Fn is re-evaluated and rendered, all scoped fns are evaluated
+
+# How to program
+- Any constraint could be written as nested conditionals
+- Any loop, data driven behaviour could be achieved using loop and iteration
+- How to change screens, change states
+- pass functions attached to props, factory objects
+- How to make our own components wrappable?
+- Scoped CSS modules with react?
+- Can use context without reducer, would have to add data manupulation functions ourselves
+
+> React schedules the state changes fns, to utilize previous state change use functions
+
+# Best Practises
+- Use states to update Input.value? dont do it directly!
+- helper/api.js to make all network calls     https://gist.github.com/elsetiyawan/7483356832c7b3d593045dc59213fc88#file-gistfile1-txt
+- cannot use async/await to react components as it should return JSX and NOT PROMISES
+- Global context Store name begin with a capital letter. Consuming context as <name>Ctx. Can pass fns as object
+  properties
+
+# Design System | Design Library | Component Library | Atomic Design
+- Decouple UI Elements from app logic
+- Components which gets data from API calls have local states like isLoading, data, status
+- isActive, isFocus states on input forms to make them super interactive
+- Mark, add Favourites features, using global store
+- Modal, Heros, Badges, Forms, Carasoule, Image Gallery
+- Cohesive web page in the end
+- Design Bankrupcy, Design system catalogue
+- user should not learn new things on new webpages
+- webapp logic breaths life into design systems
+- Internalization and Localizationa and Accessability
+- Extreme (max char limit) and Empty use case of component
+
+# Design Systems Examples
+- https://jina.design/
+- http://styleguides.io/
+
+# Usability Features
+- Utilize history web api and back/forward button behaviour
+- Accessability and aria tags
+- Lighthouse performance reports
+
+# Examples
+How to build a react+css modal? https://blog.bitsrc.io/build-a-simple-modal-component-with-react-16decdc111a6

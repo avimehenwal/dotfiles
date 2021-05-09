@@ -1,0 +1,8 @@
+# Convert dot to png via graphviz
+dot -Tpng filename.dot -o filename.png
+
+# Convert dot to svg via graphviz
+dot -Tsvg filename.dot -o filename.svg
+
+# Convert dot to eps via graphviz
+dot -Tps filename.dot -o filename.eps

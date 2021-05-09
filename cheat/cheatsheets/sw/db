@@ -31,6 +31,7 @@ Table oriented    json document oriented
 - Explain Index? Unique, Clustered, Non-Clustered, special lookup tables
 - Cursor Object, allows traversal on multiple records
 - What happens if a foreign key referenced object is deleted? https://stackoverflow.com/questions/54284084/how-are-foreign-keys-maintained-when-a-related-object-is-deleted
+- What is GROUP BY? Aggregations on groups, like max(), min(), count()
 
 # What is Normalization? and Denormalization
 Insertion, update, deletion Anomaly
