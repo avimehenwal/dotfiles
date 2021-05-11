@@ -35,5 +35,129 @@
 			"}"
 		],
 		"description": "new component"
+	},
+	"ts ignore": {
+		"prefix": "ignore",
+		"body": [
+			"// @ts-ignore"
+		],
+		"description": "ts ignore"
+	},
+	"create context hook": {
+		"prefix": "createContext",
+		"body": [
+			"import * as React from \"react\";",
+			"",
+			"interface ${1:AppContextInterface} {",
+			"  name: string;",
+			"  author: string;",
+			"  url: string;",
+			"  ${0}",
+			"}",
+			"",
+			"const AppCtx = React.createContext<${1:AppContextInterface} | null>(null);"
+		],
+		"description": "create context hook"
+	},
+	"useEffect TS hook": {
+		"prefix": "useEffect",
+		"body": [
+			"React.useEffect((): void => {",
+			"  $0",
+			"",
+			"  return () => {",
+			"    // cleanup, WebSocket, clearTimeout, remove EventListners",
+			"  }",
+			"}, [$1])",
+			""
+		],
+		"description": "useEffect TS hook"
+	},
+	"useRef TS hook": {
+		"prefix": "useRef",
+		"body": [
+			"const ${1:name}Ref = React.useRef<HTMLInputElement>(null)"
+		],
+		"description": "useRef TS hook"
+	},
+	"useState TS hook": {
+		"prefix": "useState",
+		"body": [
+			"const [${1:localState}, set${1/(.*)/${1:/capitalize}/}] = React.useState<I${1/(.*)/${1:/capitalize}/} | null>(null);",
+			""
+		],
+		"description": "useState TS hook"
+	},
+	"react FC TS": {
+		"prefix": "rfc",
+		"body": [
+			"/*",
+			"*  zeplin design url",
+			"*/",
+			"import * as React from \"react\";",
+			"import * as ReactDOM from \"react-dom\";",
+			"",
+			"type ${1:Props} = {",
+			"  text: string,",
+			"  isEnabled?: boolean,",
+			"}",
+			"",
+			"export const Header: React.FC<${1/(.*)/${1:/capitalize}/}> = (props) => {",
+			"  return ($0)",
+			"}",
+			""
+		],
+		"description": "react FC TS"
+	},
+	"TS reducer scaffold": {
+		"prefix": "reducer",
+		"body": [
+			"import * as React from \"react\";",
+			"import * as ReactDOM from \"react-dom\";",
+			"",
+			"",
+			"const initialState = { count: 0 };",
+			"",
+			"type ACTIONTYPE =",
+			"  | { type: \"increment\"; payload: number }",
+			"  | { type: \"decrement\"; payload: string };",
+			"",
+			"function reducer(state: typeof initialState, action: ACTIONTYPE) {",
+			"  switch (action.type) {",
+			"    case \"increment\":",
+			"      return { count: state.count + action.payload };",
+			"    case \"decrement\":",
+			"      return { count: state.count - Number(action.payload) };",
+			"    default:",
+			"      throw new Error();",
+			"  }",
+			"}",
+			"",
+			"type Props = {",
+			"  text: string,",
+			"  isEnabled?: boolean,",
+			"}",
+			"",
+			"export const Counter: React.FC<Props> = (props) => {",
+			"  const [state, dispatch] = React.useReducer(reducer, initialState);",
+			"  return (",
+			"    <>",
+			"      Count: {state.count}",
+			"      <button onClick={() => dispatch({ type: \"decrement\", payload: \"5\" })}>",
+			"        -",
+			"      </button>",
+			"      <button onClick={() => dispatch({ type: \"increment\", payload: 5 })}>",
+			"        +",
+			"      </button>",
+			"    </>",
+			"  );",
+			"}"
+		],
+		"description": "TS reducer scaffold"
 	}
+	// TAB Transformations https://code.visualstudio.com/docs/editor/userdefinedsnippets#_grammar
+	// "test": {
+	// 	"prefix": "test",
+	// 	"body": "$1 ${1/(.*)/${1:/upcase}/}  ->  ${1/(.*)/${1:/downcase}/}  ->  ${1/(.*)/${1:/capitalize}/}"
+	// }
 }

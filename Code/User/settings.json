@@ -1112,4 +1112,5 @@
       "filenamePattern": "*.ipynb"
     }
   ],
+  "editor.tabSize": 2,
 }

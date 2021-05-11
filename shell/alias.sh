@@ -112,3 +112,6 @@ alias gcm='git checkout main'
 
 # Python
 alias venv='venv'
+
+# New Projects
+alias cra='npx create-react-app --template typescript frontend'
