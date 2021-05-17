@@ -23,8 +23,8 @@ CONFIG_DIRS=(nvim alacritty vifm git cheat)
 
 function create_dir() {
 	# CONFLICT when stowing alacritty: existing target is not owned by stow: alacritty.yml
-	rm -rv --force $TARGET
-	mkdir --parents --verbose $TARGET
+	rm -rvf $TARGET
+	mkdir -pv $TARGET
 }
 
 function usage() {
@@ -49,8 +49,8 @@ function install_homedir_config() {
 	[ -L "$ZSHRC" ] && rm -vf $ZSHRC
 	[ -f "$BASHRC" ] && rm -vf $BASHRC
 	[ -L "$BASHRC" ] && rm -vf $BASHRC
-	ln --symbolic --verbose $SOURCE/shell/zshrc.zsh $ZSHRC
-	ln --symbolic --verbose $SOURCE/shell/bashrc.bash $BASHRC
+	ln -sv $SOURCE/shell/zshrc.zsh $ZSHRC
+	ln -sv $SOURCE/shell/bashrc.bash $BASHRC
 }
 
 function install_vim() {
