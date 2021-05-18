@@ -43,7 +43,7 @@ set spellfile=$HOME/dotfiles/nvim/spell/en.utf-8.add
 
 " VSCODE
 if exists('g:vscode')
-  source $HOME/.config/nvim/vscode/settings.vim
+  " source $HOME/.config/nvim/vscode/settings.vim
 else
   " TUI based config
   if (has('termguicolors'))

@@ -51,6 +51,8 @@ function install_homedir_config() {
 	[ -L "$BASHRC" ] && rm -vf $BASHRC
 	ln -sv $SOURCE/shell/zshrc.zsh $ZSHRC
 	ln -sv $SOURCE/shell/bashrc.bash $BASHRC
+	ln -sv $HOME/dotfiles/HOME/.gitconfig .gitconfig
+
 }
 
 function install_vim() {

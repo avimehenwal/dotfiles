@@ -54,15 +54,15 @@ cheatpaths:
   #
   # Once downloaded, ensure that 'path' below points to the location at which
   # you downloaded the community cheatsheets.
-  - name: community
-    path: /usr/share/cheat/
-    tags: [community]
-    readonly: true
+  # - name: community
+  #   path: /Users/avimehenwal/dotfiles/cheat/cheatsheets
+  #   tags: [community]
+  #   readonly: true
 
   # If you have personalized cheatsheets, list them last. They will take
   # precedence over the more global cheatsheets.
   - name: personal
-    path: /home/avi/dotfiles/cheat/cheatsheets
+    path: ~/dotfiles/cheat/cheatsheets
     tags: [personal]
     readonly: false
 

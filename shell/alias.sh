@@ -115,3 +115,9 @@ alias venv='venv'
 
 # New Projects
 alias cra='npx create-react-app --template typescript frontend'
+# List what (top level) packages are installed globally
+alias list-installed-npm-packages="npm ls -g --depth=0."
+# List what globally installed packages are outdated
+alias list-outdated-npm-packages="npm outdated -g --depth=0."
+# Update outdated globally installed npm packages
+alias update-npm-packages="npm update -g"

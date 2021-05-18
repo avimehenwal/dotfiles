@@ -12,6 +12,15 @@
     "vscode",
     "zsh-plugin",
     "nvim",
-    "cheat"
-  ]
+    "cheat",
+    "mac"
+  ],
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "files.associations": {
+    "**/.nvimrc": "viml",
+    "**/vifmrc": "viml",
+  },
+  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/avimehenwal/dotfiles/nvim"
 }

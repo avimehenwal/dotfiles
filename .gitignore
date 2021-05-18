@@ -3,3 +3,4 @@
 node_modules
 zsh/plugins
 MSG.md
+Brewfile.lock.json

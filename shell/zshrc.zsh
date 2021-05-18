@@ -7,7 +7,10 @@
 #
 # zsh shell run command configuration
 
-export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+# export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+# source $ZPLUG_HOME/init.zsh
+
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 BASE=$HOME/dotfiles/shell

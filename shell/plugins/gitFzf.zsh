@@ -14,17 +14,18 @@ gcob() {
     fzf --preview='git diff --stat --patch master...{-1}')
 }
 
+# /Users/avimehenwal/dotfiles/shell/plugins/gitFzf.zsh:18: defining function based on alias `gco'
 # use fzf finder to checkout git branches
-gco() {
-  git checkout $(git branch |
-    fzf \
-      --cycle \
-      --no-multi \
-      --margin=1% \
-      --padding=1% \
-      --height=80% \
-      --border=rounded \
-      --prompt="git checkout " \
-      --preview='git show-branch'
-  )
-}
+# gco() {
+#   git checkout $(git branch |
+#     fzf \
+#       --cycle \
+#       --no-multi \
+#       --margin=1% \
+#       --padding=1% \
+#       --height=80% \
+#       --border=rounded \
+#       --prompt="git checkout " \
+#       --preview='git show-branch'
+#   )
+# }
