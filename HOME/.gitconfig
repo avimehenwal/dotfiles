@@ -1,6 +1,9 @@
 [user]
     name  = avimehenwal
     email = avi.mehanwal@gmail.com
+    signingkey = 334545FE314EAD70
+[gpg]
+	program = gpg2
 [color]
     ui = always
     blame = highlightRecent
@@ -15,18 +18,21 @@
 [pager]
     status = true
     diff   = true
-[diff]
-    tool = meld
-[difftool "meld"]
-    cmd = meld "$LOCAL" "$REMOTE"
-[merge]
-    tool = meld
+
+# [diff]
+#     tool = meld
+# [difftool "meld"]
+#     cmd = meld "$LOCAL" "$REMOTE"
+# [merge]
+#     tool = meld
+
 [difftool]
     prompt = false
 [log]
     date = relative
 [commit]
     template = ~/.gitmessage
+	gpgsign = true
 [grep]
     lineNumber = true
 [blame]
@@ -68,28 +74,27 @@
     cmp  = !git log master... --oneline | fzf --prompt='git show --format=fuller --stat {+1} --patch: ' --preview 'git show --format=fuller --stat {+1} --patch'
     lol  = !tig
 
-    last = log -1 HEAD --compact-summary
-    first = log --reverse
-    top  = shortlog
-    sl 	 = shortlog --summary --numbered
-    visual = !gitkraken
+    last      = log -1 HEAD --compact-summary
+    first     = log --reverse
+    top       = shortlog
+    sl        = shortlog --summary --numbered
+    visual    = !gitkraken
     renameTag = "!sh -c 'set -e;git tag $2 $1; git tag -d $1;git push origin :refs/tags/$1;git push --tags' -"
-    plog = log --graph --pretty=format:'%h -%d %s %n' --abbrev-commit --date=relative --branches
-    graphviz = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
-
+    plog      = log --graph --pretty = format:'%h -%d %s %n' --abbrev-commit --date = relative --branches
+    graphviz  = "!f() { echo 'digraph git {' ; git log --pretty='format:  %h -> { %p }' \"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
 
 	# ADVANCED ALIASES using ! external commands
     whatadded = log --diff-filter=A -- 		# which commit added the file
 	# log everything what happend to file ASEE: git.whathappened
-    whathapp = !git log --all --oneline --full-history -- $1
+    whathapp  = !git log --all --oneline --full-history -- $1
 	# !Arguments to fish functions
 	# select and track multiple files
     trackfile = !fish -c git.trackfile
-    br = !fish -c git.branches.graph
-    sayhello = !(echo "from sayhello git alias")
-    say = "!f() { msg=${1-from say git alias}; echo $msg;  }; f && git sayhello"
+    br        = !fish -c git.branches.graph
+    sayhello  = !(echo "from sayhello git alias")
+    say       = "!f() { msg=${1-from say git alias}; echo $msg;  }; f && git sayhello"
 	# Multiple Commands
-    b 	 = !fish -c git.branches && fish -c git.branches.graph && git branch --all --verbose
+    b 	      = !fish -c git.branches && fish -c git.branches.graph && git branch --all --verbose
 
 [color "diff-highlight"]
     oldNormal 	 = red bold
@@ -103,7 +108,8 @@
     old 	   = red bold
     new 	   = green bold
     whitespace = red reverse
-[pill]
-	rebase = false
 [pull]
-	rebase = false
+    rebase     = true
+	default    = current
+[push]
+	default    = current

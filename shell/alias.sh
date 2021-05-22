@@ -45,15 +45,10 @@ function d() {
 }
 compdef _dirs d
 
-function venv() {
-  [ -d venv ] || python -m venv venv 1>&2
-  source ./venv/bin/activate
-  python -V
-  pip list
-}
-
 # List directory contents
-alias la='ls --color=always -lAh | fzf'
+alias la='ls -lAhG | fzf'
+alias ll='ls -lAhG'
+alias ls='ls -G'
 
 alias md='mkdir -p'
 alias rd=rmdir
@@ -104,6 +99,7 @@ alias publicip='curl ifconfig.me'
 alias brewl='brew list | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always --highlight-line 2 -l gitlog"'
 alias brews='brew install $(brew search | fzf --preview-window=right:65% --preview="brew info {} | bat --color=always
 --highlight-line 2 -l gitlog")'
+alias bs='brew search'
 
 # Git
 alias gcl='git clone --progress --verbose'
@@ -111,6 +107,12 @@ alias gca='git commit --amend'
 alias gcm='git checkout main'
 
 # Python
+function venv() {
+  [ -d venv ] || python -m venv venv 1>&2
+  source ./venv/bin/activate
+  python -V
+  pip list
+}
 alias venv='venv'
 
 # New Projects

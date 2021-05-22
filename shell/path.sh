@@ -11,4 +11,7 @@ CARGO=$HOME/.cargo/bin
 RVM=$HOME/.rvm/bin
 MY=$HOME/dotfiles/scripts/bin
 
-export PATH="$PATH:${LBIN}:${BREW}:${YARN}:${CARGO}:${RVM}:${MY}"
+# on macbook, add python3 packages
+PYPACK=$HOME/Library/Python/3.9/bin
+
+export PATH="$PATH:${LBIN}:${BREW}:${YARN}:${CARGO}:${RVM}:${MY}:${PYPACK}"

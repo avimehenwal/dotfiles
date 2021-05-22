@@ -13,7 +13,8 @@
     "zsh-plugin",
     "nvim",
     "cheat",
-    "mac"
+    "mac",
+    "security"
   ],
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,
