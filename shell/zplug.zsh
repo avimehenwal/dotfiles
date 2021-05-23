@@ -17,6 +17,12 @@ zplug "zsh-users/zsh-autosuggestions", defer:2
 # zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zdharma/fast-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-history-substring-search", defer:2
+zplug "stedolan/jq", from:gh-r, as:command
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
+zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
+zplug "b4b4r07/enhancd", use:init.sh
+# zplug "sharkdp/bat", as:command, defer:2
+# zplug "BurntSushi/ripgrep", as:command, defer:2
 
 # Completions
 zplug "cheat/cheat", use:"scripts/cheat.zsh"
@@ -27,18 +33,10 @@ zplug "wfxr/emoji-cli"
 
 # Group dependencies
 # Load "emoji-cli" if "jq" is installed in this example
-zplug "stedolan/jq", \
-  from:gh-r, \
-  as:command, \
-  rename-to:jq \
-  use:"*linux64"
 # zplug "b4b4r07/emoji-cli", \
 #   on:"stedolan/jq"
 
-zplug "jhawthorn/fzy", \
-  as:command, \
-  rename-to:fzy, \
-  hook-build:"make && sudo make install"
+zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make install"
 
 # Set the priority when loading
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
@@ -49,6 +47,8 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # THEME
 # zplug 'dracula/zsh', as:theme
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+# zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+# zplug "themes/agnoster", from:oh-my-zsh
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -61,3 +61,7 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
+
+# FZF CTRL-R and CTRL-T keybindings
+source $ZPLUG_REPOS/junegunn/fzf/shell/key-bindings.zsh
+source $ZPLUG_REPOS/junegunn/fzf/shell/completion.zsh

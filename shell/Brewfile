@@ -22,7 +22,6 @@ brew "luajit", args: ["HEAD"]
 brew "neovim", args: ["HEAD"]
 brew "prettyping"
 brew "ranger"
-brew "ripgrep"
 brew "starship"
 brew "stow"
 brew "toilet"

@@ -49,6 +49,7 @@ compdef _dirs d
 alias la='ls -lAhG | fzf'
 alias ll='ls -lAhG'
 alias ls='ls -G'
+alias tree='tree -C'
 
 alias md='mkdir -p'
 alias rd=rmdir
@@ -89,7 +90,7 @@ alias psa='ps aux | fzf'
 alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers'
 
 # ZSH Specific
-alias fpath='print -l $fpath'
+alias fpath="echo $FPATH | tr ':' '\n'"
 
 # System Management
 alias publicip='curl ifconfig.me'

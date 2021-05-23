@@ -1,0 +1,7 @@
+# prepare to install mac ports
+xcode-select --install
+sudo xcodebuild -license
+
+# how to get graphviz on macbook? install macports and download graphviz from there
+sudo port selfupdate
+sudo port upgrade outdated
