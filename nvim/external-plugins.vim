@@ -97,3 +97,10 @@ augroup install_missing_plugins_onStartup
         \|   PlugInstall --sync | q
         \| endif
 augroup end
+
+"load plugins config ONLY if plugins are loaded
+source $HOME/dotfiles/nvim/external-plugin-configs.vim
+source $HOME/dotfiles/nvim/which-key-external-plugin.vim
+" source $HOMEk/dotfiles/nvim/coc.vim
+" source $HOMEk/dotfiles/
+" source $HOMEk/dotfiles/

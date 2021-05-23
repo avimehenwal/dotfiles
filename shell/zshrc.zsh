@@ -45,7 +45,7 @@ fpath=($fpath "/home/avi/.zfunctions")
 eval "$(starship init zsh)"
 
 # Line Editor Mode
-set -o vi
+# set -o vi
 
 # Perl - Larry Wall
 PATH="/home/avi/perl5/bin${PATH:+:${PATH}}"; export PATH;

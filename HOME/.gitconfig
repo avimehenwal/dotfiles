@@ -19,12 +19,12 @@
     status = true
     diff   = true
 
-# [diff]
-#     tool = meld
-# [difftool "meld"]
-#     cmd = meld "$LOCAL" "$REMOTE"
-# [merge]
-#     tool = meld
+[diff]
+    tool = meld
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+    tool = meld
 
 [difftool]
     prompt = false
