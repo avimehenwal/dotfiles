@@ -1,6 +1,10 @@
 [user]
     name  = avimehenwal
     email = avi.mehanwal@gmail.com
+    signingkey = 334545FE314EAD70
+    signingkey = 1D002B4CA2EBCC81
+[gpg]
+	program = gpg2
 [color]
     ui = always
     blame = highlightRecent
@@ -49,7 +53,7 @@
     untrack = rm --cache
     undoo	= reset --hard	# remove all cahnges as well
     undo 	= reset --soft	# remove commit but keep the changes
-    rebase  = rebase -v -i
+  rebase  = rebase -v -i
     blame   = blame --show-stats --progress
 
     dt 	 = difftool --dir-diff HEAD 	# show everything staged + unstaged

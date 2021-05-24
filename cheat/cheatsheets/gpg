@@ -1,0 +1,14 @@
+# generate GPG key
+gpg --full-generate-key
+
+# list all keys
+gpg --list-secret-keys --keyid-format LONG
+
+# print publich key
+gpg --armor --export 3AA5C34371567BD2
+
+# sign a sample text
+echo "test" | gpg --clearsign
+
+# enable git commit signing | git commit -S -m "This is a signed commit"
+git config --global commit.gpgsign true
