@@ -28,14 +28,15 @@ SAVEHIST=10000
 setopt appendhistory
 
 # Plugin Configurations
+PLUGINS=${BASE}/plugins
+
 export ABBR_AUTOLOAD=1
 export ABBR_USER_ABBREVIATIONS_FILE=${BASE}/abbreviations.sh
 
-PLUGINS=${BASE}/plugins
 source ${PLUGINS}/internals.zsh
 source ${PLUGINS}/myFunctions.zsh
 source ${PLUGINS}/gitFzf.zsh
-source ${PLUGINS}/projectManagement.zsh
+# source ${PLUGINS}/projectManagement.zsh
 generateProjectAlias
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -69,3 +70,7 @@ excludeFromTmux() {
 # STARTUP Programs
 # start KDE Konsole with byobu-tmux if len(KONSOLE_VERSION) is NOT zero
 [ -z "$KONSOLE_VERSION" ] || byobu-tmux
+
+# ls on everytime cd is used to change directory
+autoload -U run-ls-on-cd
+run-ls-on-cd -Uz chpwd (){ ls -a; }

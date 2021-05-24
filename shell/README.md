@@ -15,7 +15,9 @@
 - What's the difference between sourcing and autolaoding custom functions in zsh? Preloading vs lazyloading
 
 ```zsh
-autoload -Uz vcs_info
+fpath=(~/.zsh/completion $fpath) 
+
+autoload -Uz vcs_info or ‘functions -u’ or ‘typeset -fu’
 
 -U  Mark as autoloading, lazy loaded function
 -z  use zsh shell rather than ksh
@@ -23,6 +25,22 @@ autoload -Uz vcs_info
 functions
 ```
 
+#### How to write a zsh plugin
+
+We can run any zsh code inside your plugin, that means that you can automate all sorts of stuff, or set up aliases or functions for frequently-used commands.
+
+To make a plugin you just create a file named <plugin-name>.plugin.zsh and stick it in $ZSH/custom/<plugin-name>/, then enable it in plugins=(... <plugin-name>) in your zshrc file. The wiki explains it best.
+
+Let me know if you have further questions.
+
+[Some awesome plugins examples ](https://github.com/unixorn/awesome-zsh-plugins)
 ### Plugin Manager
 
 - [x] zplug
+
+## Resources
+
+- [ZSH Manual](http://zsh.sourceforge.net/Doc/Release/index.html#Top)
+- [Shell Expansions 6+ types](http://zsh.sourceforge.net/Doc/Release/Expansion.html)
+- [special hook functions](https://stackoverflow.com/questions/3964068/zsh-automatically-run-ls-after-every-cd)
+- [What does zsh do?](https://unix.stackexchange.com/questions/214657/what-does-zstyle-do)

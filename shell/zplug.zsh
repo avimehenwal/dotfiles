@@ -20,7 +20,7 @@ zplug "zsh-users/zsh-history-substring-search", defer:2
 zplug "stedolan/jq", from:gh-r, as:command
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:"fzf", frozen:1
 zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
-zplug "b4b4r07/enhancd", use:init.sh
+# zplug "b4b4r07/enhancd", use:init.sh
 # zplug "sharkdp/bat", as:command, defer:2
 # zplug "BurntSushi/ripgrep", as:command, defer:2
 
@@ -42,7 +42,7 @@ zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # LOCAL PLUGINS
-# zplug "~/.zsh", from:local
+zplug "~/dotfiles/shell/plugins/project-management", from:local, as:plugin
 
 # THEME
 # zplug 'dracula/zsh', as:theme

@@ -16,32 +16,11 @@
 
 # --preview='echo -e "size={5} number-of-hard-links={2}\nowner={3} group={4}]\n{1} user,group,others Permissions"; bat --color=always {-1}'\
 
-PM_DATA_FILE=$HOME/dotfiles/shell/plugins/projectNames.data
+PM_DATA_FILE=$HOME/dotfiles/shell/plugins/project-management/projectNames.data
 
-# Todo: display bat->file and tree->dir preview
-function ll() {
-  local head="{1} user,group,others Permission \#hard-links={2}"
-  local lsFZF="fzf \
---multi \
---header-lines=1 \
---bind ctrl-a:select-all \
---preview-window=right:50% \
---preview='echo $head; bat --color=always {-1}'\
-"
-  locallsCMD="ls \
---color=always \
---classify \
---group-directories-first \
---block-size=K \
--halt\
-"
-  # maybe because of eval newlines in echo are not reported
-  eval ${lsCMD} | eval ${lsFZF}
-}
-# unfunction ll; unalias ll;source projectManagement.zsh; ll
 
-# list files in project for editing
-function lf() {
+# list Project Files for editing
+function pf() {
   local RG='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}"'
   $EDITOR $(
     eval ${RG} | fzf \
@@ -79,13 +58,14 @@ pp() {
   local result=""
   echo 📌 $bold_color$fg[black]$bg[yellow] MyProjects ${reset_color} ${MyProjects}
   while IFS= read -r PROJ; do
-    loc=$(find $HOME -maxdepth 2 -type d -name ${PROJ})
+    loc=$(find $HOME -not \( -path $HOME/.Trash -prune \) -maxdepth 2 -type d -name ${PROJ})
     result+="$bold_color$fg[green]${PROJ}${reset_color} ${loc}\n"
   done < $PM_DATA_FILE
   selection=$(echo -e ${result} |
-    column --table --table-columns Name,Path |
-    fzf --header-lines=1 \
-      --height=70% \
+    column -t -c Name,Path |
+    fzf --header-lines=0 \
+      --height=50% \
+      --prompt='select Project >' \
       --preview 'tree -C -L 1 {-1} --sort=mtime -r')
   cd $(echo $selection | awk '{print $2}') && treeGraph
 }

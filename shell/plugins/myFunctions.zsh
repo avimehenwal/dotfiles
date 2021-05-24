@@ -25,3 +25,19 @@ node() {
 #   command cd $1
 #   command ls -l
 # }
+
+# Todo: display bat->file and tree->dir preview
+function lavi() {
+  local head="{1} User,Group,Others Permission \#hard-links={2}"
+  local lsFZF="fzf \
+--multi \
+--header-lines=1 \
+--bind ctrl-a:select-all \
+--preview-window=right:50% \
+--preview='echo ${head}; bat --color=always {-1}'\
+"
+  local lsCMD="ls -halt"
+  # maybe because of eval newlines in echo are not reported
+  eval ${lsCMD} | eval ${lsFZF}
+}
+# unfunction ll; unalias ll;source projectManagement.zsh; ll
