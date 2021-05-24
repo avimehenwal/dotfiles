@@ -43,8 +43,9 @@ zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # LOCAL PLUGINS
-zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin
 # zplug "avimehenwal/zsh-bookmarks"
+zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin
+zplug "~/dotfiles/shell/plugins/directory-specific-alias", from:local, as:plugin
 
 # THEME
 # zplug 'dracula/zsh', as:theme

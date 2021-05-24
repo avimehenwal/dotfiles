@@ -70,5 +70,8 @@ excludeFromTmux() {
 [ -z "$KONSOLE_VERSION" ] || byobu-tmux
 
 # ls on everytime cd is used to change directory
-autoload -U run-ls-on-cd
-run-ls-on-cd -Uz chpwd (){ ls -a; }
+# autoload -U run-ls-on-cd
+# run-ls-on-cd -Uz chpwd () {
+#   ls -a;
+#   echo "PWD = $PWD"
+# }

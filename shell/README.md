@@ -15,7 +15,7 @@
 - What's the difference between sourcing and autolaoding custom functions in zsh? Preloading vs lazyloading
 
 ```zsh
-fpath=(~/.zsh/completion $fpath) 
+fpath=(~/.zsh/completion $fpath)
 
 autoload -Uz vcs_info or ‘functions -u’ or ‘typeset -fu’
 
@@ -34,9 +34,11 @@ To make a plugin you just create a file named <plugin-name>.plugin.zsh and stick
 Let me know if you have further questions.
 
 [Some awesome plugins examples ](https://github.com/unixorn/awesome-zsh-plugins)
+
 ### Plugin Manager
 
 - [x] zplug
+- [ ] [GNU Parallel](https://www.gnu.org/software/parallel/)
 
 ## Resources
 
