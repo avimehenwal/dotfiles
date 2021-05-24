@@ -40,6 +40,17 @@ Let me know if you have further questions.
 - [x] zplug
 - [ ] [GNU Parallel](https://www.gnu.org/software/parallel/)
 
+```bash
+#!/usr/bin/env bash
+CWD=`pwd`
+TMP=${TMP:-/tmp/tmpdir}
+
+# use trap to exit out of application cleanly
+trap \
+ "{ /usr/bin/rm -r "${TMP}" ; exit 255; }" \
+ SIGINT SIGTERM ERR EXIT
+```
+
 ## Resources
 
 - [ZSH Manual](http://zsh.sourceforge.net/Doc/Release/index.html#Top)

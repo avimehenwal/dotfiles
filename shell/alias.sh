@@ -67,6 +67,7 @@ alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 alias fd='fd --color always'
 alias cp='cp --verbose --interactive'
+alias PATH="echo $PATH | tr ':' '\n'"
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'

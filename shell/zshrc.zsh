@@ -75,3 +75,10 @@ excludeFromTmux() {
 #   ls -a;
 #   echo "PWD = $PWD"
 # }
+
+# Get list of gnubin directories
+export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
+
+for bindir in ${GNUBINS[@]}; do
+  export PATH=$bindir:$PATH;
+done;

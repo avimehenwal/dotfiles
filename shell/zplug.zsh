@@ -45,6 +45,7 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # LOCAL PLUGINS
 # zplug "avimehenwal/zsh-bookmarks"
 zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin
+# zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin, lazy:true
 zplug "~/dotfiles/shell/plugins/directory-specific-alias", from:local, as:plugin
 
 # THEME
