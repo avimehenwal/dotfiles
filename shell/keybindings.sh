@@ -5,6 +5,7 @@ function git_root() {
 	zle accept-line
 }
 
+
 # bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
 # bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
 

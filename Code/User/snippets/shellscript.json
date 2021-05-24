@@ -67,5 +67,13 @@
 			"#!/bin/env zsh"
 		],
 		"description": "zsh shebang"
+	},
+	"zplug entry": {
+		"prefix": "zplug",
+		"body": [
+			"zplug \"~/${1:plugi-dir-path}\", from:${2|local,github|}, as:${3|plugin,theme|}",
+			""
+		],
+		"description": "zplug entry"
 	}
 }

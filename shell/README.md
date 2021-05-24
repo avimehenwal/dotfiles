@@ -13,6 +13,7 @@
 - [x] ✨ [Has autoloading features](https://stackoverflow.com/questions/30840651/what-does-autoload-do-in-zsh) `man zshbuiltins`
 - [ ] In zsh, the function search path ($fpath) defines a set of directories, which contain files that can be marked to be loaded automatically when the function they contain is needed for the first time.
 - What's the difference between sourcing and autolaoding custom functions in zsh? Preloading vs lazyloading
+- Change `zshrc` file location using `ZDOTDIR` environment variable
 
 ```zsh
 fpath=(~/.zsh/completion $fpath)
@@ -39,6 +40,11 @@ Let me know if you have further questions.
 
 - [x] zplug
 - [ ] [GNU Parallel](https://www.gnu.org/software/parallel/)
+- [ ] Completions
+  - [x] git
+  - [ ] find command
+  - [ ] yarn command
+  - [ ] docker
 
 ```bash
 #!/usr/bin/env bash
@@ -50,6 +56,10 @@ trap \
  "{ /usr/bin/rm -r "${TMP}" ; exit 255; }" \
  SIGINT SIGTERM ERR EXIT
 ```
+
+- Add completions location to `fpath` like so `fpath=($HOME/.local/zsh/completions $fpath)`
+- Lazy load completions `autoload -U compinit`
+- initialize `compinit -i`
 
 ## Resources
 

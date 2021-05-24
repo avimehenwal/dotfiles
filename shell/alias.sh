@@ -67,7 +67,9 @@ alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 alias fd='fd --color always'
 alias cp='cp --verbose --interactive'
-alias PATH="echo $PATH | tr ':' '\n'"
+alias PATH="echo $PATH | tr ':' '\n' | awk '{print} END {print \"TOTAL=\" NR}'"
+# ZSH Specific
+alias FPATH="echo $FPATH | tr ':' '\n' | awk '{print} END {print \"TOTAL=\" NR}'"
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'
@@ -90,8 +92,6 @@ alias rsync='rsync --progress --verbose'
 alias psa='ps aux | fzf'
 alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers'
 
-# ZSH Specific
-alias fpath="echo $FPATH | tr ':' '\n'"
 
 # System Management
 alias publicip='curl ifconfig.me'

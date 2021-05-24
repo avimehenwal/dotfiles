@@ -48,6 +48,7 @@ zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin
 # zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin, lazy:true
 zplug "~/dotfiles/shell/plugins/directory-specific-alias", from:local, as:plugin
 
+
 # THEME
 # zplug 'dracula/zsh', as:theme
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme

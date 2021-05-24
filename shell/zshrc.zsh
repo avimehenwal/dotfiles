@@ -38,7 +38,6 @@ source ${PLUGINS}/myFunctions.zsh
 source ${PLUGINS}/gitFzf.zsh
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-fpath=($fpath "/home/avi/.zfunctions")
 
 # THEME
 ( $(command -v starship > /dev/null )) && eval "$(starship init zsh)" || echo "starship theme NOT INSTALLED"
