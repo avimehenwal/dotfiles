@@ -80,34 +80,35 @@
 	"git log graph tree": {
 		"prefix": "graph-git",
 		"body": [
-		  "digraph G {",
-		  "  layout=dot",
-		  "  rankdir=\"LR\";",
-		  "  bgcolor=transparent",
-		  "",
-		  "  node[width=0.20, height=0.20, shape=point, colorscheme=accent8];",
-		  "  edge[weight=2, arrowhead=none];",
-		  "",
-		  "  node[group=master];",
-		  "  edge[color=green]",
-		  "  1 -> 2 -> 3 -> 4 -> 5;",
-		  "",
-		  "  node[group=branch];",
-		  "  edge[color=red]",
-		  "  2 -> 6 -> 7 -> 4;",
-		  "}",
-		  ""
+			"digraph G {",
+			"  layout=dot",
+			"  rankdir=\"LR\";",
+			"  bgcolor=transparent",
+			"",
+			"  node[width=0.20, height=0.20, shape=point, colorscheme=accent8];",
+			"  edge[weight=2, arrowhead=none];",
+			"",
+			"  node[group=master];",
+			"  edge[color=green]",
+			"  1 -> 2 -> 3 -> 4 -> 5;",
+			"",
+			"  node[group=branch];",
+			"  edge[color=red]",
+			"  2 -> 6 -> 7 -> 4;",
+			"}",
+			""
 		],
 		"description": "git log graph tree"
-	  },
-		"graphviz subgraph": {
-			"prefix": "subgraph",
-			"body": [
-				"subgraph cluster_1 {",
-				"    label=\"${1:subgraph_1}\";",
-				"    sa; sb;",
-				"}"
-			],
-			"description": "graphviz subgraph"
-		}
+	},
+	"graphviz subgraph": {
+		"prefix": "subgraph",
+		"body": [
+			"subgraph cluster_${1:subgraph_1} {",
+			"    label=\"${1:subgraph_1}\";",
+			"    rank=\"${2|same,min,source|}\"",
+			"    sa [fillcolor=6, label=\"termgraph\", shape=oval]",
+			"}"
+		],
+		"description": "graphviz subgraph"
+	}
 }

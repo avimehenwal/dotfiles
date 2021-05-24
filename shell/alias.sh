@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 #  @avimehenwal - updated 2020-Dec
 #
 #    / \  | (_) __ _ ___  ___  ___
@@ -71,10 +71,10 @@ alias cp='cp --verbose --interactive'
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'
 alias bashrc='$EDITOR $HOME/.bashrc'
-alias sysinfo='clear && screenfetch'
 
 # Conditional alias
 prettyping --help >/dev/null && alias pping='prettyping'
+(( $+commands[screenfetch] )) && alias sysinfo='clear && screenfetch'
 
 # open terminal failed: missing or unsuitable terminal: xterm-256color
 alias rg='rg --pretty'

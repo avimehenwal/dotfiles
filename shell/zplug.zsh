@@ -24,6 +24,7 @@ zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tm
 # zplug "sharkdp/bat", as:command, defer:2
 # zplug "BurntSushi/ripgrep", as:command, defer:2
 
+
 # Completions
 zplug "cheat/cheat", use:"scripts/cheat.zsh"
 
@@ -42,7 +43,8 @@ zplug "jhawthorn/fzy", as:command, rename-to:fzy, hook-build:"make && sudo make 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # LOCAL PLUGINS
-zplug "~/dotfiles/shell/plugins/project-management", from:local, as:plugin
+zplug "~/GITHUB/zsh-bookmarks", from:local, as:plugin
+# zplug "avimehenwal/zsh-bookmarks"
 
 # THEME
 # zplug 'dracula/zsh', as:theme

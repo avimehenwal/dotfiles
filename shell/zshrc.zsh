@@ -36,14 +36,12 @@ export ABBR_USER_ABBREVIATIONS_FILE=${BASE}/abbreviations.sh
 source ${PLUGINS}/internals.zsh
 source ${PLUGINS}/myFunctions.zsh
 source ${PLUGINS}/gitFzf.zsh
-# source ${PLUGINS}/projectManagement.zsh
-generateProjectAlias
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 fpath=($fpath "/home/avi/.zfunctions")
 
 # THEME
-eval "$(starship init zsh)"
+( $(command -v starship > /dev/null )) && eval "$(starship init zsh)" || echo "starship theme NOT INSTALLED"
 
 # Line Editor Mode
 # set -o vi
