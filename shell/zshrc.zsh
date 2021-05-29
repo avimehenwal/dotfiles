@@ -9,8 +9,10 @@
 
 # export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
 # source $ZPLUG_HOME/init.zsh
+# export ZPLUG_HOME=/opt/homebrew/opt/zplug
 
-export ZPLUG_HOME=/opt/homebrew/opt/zplug
+export ZPLUG_HOME=$HOME/.zplug
+[ -d $HOME/.zplug ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
 source $ZPLUG_HOME/init.zsh
 
 BASE=$HOME/dotfiles/shell
@@ -40,7 +42,8 @@ source ${PLUGINS}/gitFzf.zsh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # THEME
-( $(command -v starship > /dev/null )) && eval "$(starship init zsh)" || echo "starship theme NOT INSTALLED"
+( $(command -v starship > /dev/null )) || sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+eval "$(starship init zsh)" 
 
 # Line Editor Mode
 # set -o vi

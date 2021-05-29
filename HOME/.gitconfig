@@ -1,8 +1,8 @@
 [user]
     name  = avimehenwal
     email = avi.mehanwal@gmail.com
-    signingkey = 334545FE314EAD70
-    signingkey = 1D002B4CA2EBCC81
+    signingkey = DB72090A5F7586E6
+    # signingkey = 1D002B4CA2EBCC81
 [gpg]
 	program = gpg2
 [color]
@@ -12,7 +12,7 @@
 # 	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
 [core]
     editor = vim
-    hooksPath = ~/.config/git
+    # hooksPath = ~/.config/git
     pager = diff-so-fancy | less --tabs=4 -RFX
 [help]
     autocorrect = 1
@@ -20,19 +20,19 @@
     status = true
     diff   = true
 
-[diff]
-    tool = meld
-[difftool "meld"]
-    cmd = meld "$LOCAL" "$REMOTE"
-[merge]
-    tool = meld
+# [diff]
+#     tool = meld
+# [difftool "meld"]
+#     cmd = meld "$LOCAL" "$REMOTE"
+# [merge]
+#     tool = meld
 
 [difftool]
     prompt = false
 [log]
     date = relative
 [commit]
-    template = ~/.gitmessage
+    # template = ~/.gitmessage
 	gpgsign = true
 [grep]
     lineNumber = true
