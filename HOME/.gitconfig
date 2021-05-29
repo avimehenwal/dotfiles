@@ -75,7 +75,7 @@
     cmp  = !git log master... --oneline | fzf --prompt='git show --format=fuller --stat {+1} --patch: ' --preview 'git show --format=fuller --stat {+1} --patch'
     lol  = !tig
 
-    last      = log -1 HEAD --compact-summary
+    last      = log -1 HEAD --compact-summary --patch
     first     = log --reverse
     top       = shortlog
     sl        = shortlog --summary --numbered
