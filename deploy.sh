@@ -43,15 +43,23 @@ function usage() {
 EOF
 }
 
+function remove_if_file_or_symlink_exists() {
+	local FILE_NAME=$1
+	if [[ -f $FILE_NAME || -L $FILE_NAME || -d $FILE_NAME ]]; then
+		rm -rvf $FILE_NAME
+	fi
+}
+
 function install_homedir_config() {
 	# zsh
 	ZSHRC=$HOME/.zshrc
 	BASHRC=$HOME/.bashrc
 	GITCONFIG=$HOME/.gitconfig
-	[ -f "$ZSHRC" ] && rm -vf $ZSHRC
-	[ -L "$ZSHRC" ] && rm -vf $ZSHRC
-	[ -f "$BASHRC" ] && rm -vf $BASHRC
-	[ -L "$BASHRC" ] && rm -vf $BASHRC
+
+	remove_if_file_or_symlink_exists $ZSHRC
+	remove_if_file_or_symlink_exists $BASHRC
+	remove_if_file_or_symlink_exists $GITCONFIG
+
 	ln -sv $SOURCE/shell/zshrc.zsh $ZSHRC
 	ln -sv $SOURCE/shell/bashrc.bash $BASHRC
 	ln -sv $HOME/dotfiles/HOME/.gitconfig $GITCONFIG
@@ -68,9 +76,13 @@ function install_vscode() {
   #   Windows %APPDATA%\Code\User\settings.json
   #   macOS $HOME/Library/Application Support/Code/User/settings.json
   #   Linux $HOME/.config/Code/User/settings.json
+
+  	# remove settings and snippets files if already exists
 	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 		stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User User
 	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		# remove_if_file_or_symlink_exists $HOME/Library/Application\ Support/Code/User/settings.json
+		# remove_if_file_or_symlink_exists $HOME/Library/Application\ Support/Code/User/snippets
 		stow -v --dir=$HOME/dotfiles/Code --target=$HOME/Library/Application\ Support/Code/User User
 		# elif [[ "$OSTYPE" == "win32" ]]; then
 					# I'm not sure this can happen.
