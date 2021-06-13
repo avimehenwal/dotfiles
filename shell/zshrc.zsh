@@ -22,6 +22,21 @@ source ${BASE}/keybindings.sh
 source ${BASE}/path.sh
 source ${BASE}/env.sh
 source ${BASE}/shared.sh
+# Condtitional loading of zsh settings per platform
+if command apt > /dev/null; then
+    source ${BASE}/debian.zsh
+elif command systemctl > /dev/null; then
+    source ${BASE}/systemd.zsh
+elif command freebsd-version > /dev/null; then
+    source $ZSH_CUSTOM/os/freebsd.zsh
+elif [[ `uname` == "Darwin" ]]; then
+    source ${BASE}/macos.zsh
+elif command kubectl > /dev/null; then
+    source $ZSH_CUSTOM/os/kubernetes.zsh
+else
+    echo 'Unknown OS!'
+fi
+
 
 # History - reverse-search
 HISTFILE=~/.zsh_history
@@ -43,7 +58,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # THEME
 ( $(command -v starship > /dev/null )) || sh -c "$(curl -fsSL https://starship.rs/install.sh)"
-eval "$(starship init zsh)" 
+eval "$(starship init zsh)"
 
 # Line Editor Mode
 # set -o vi
@@ -79,8 +94,30 @@ excludeFromTmux() {
 # }
 
 # Get list of gnubin directories
-export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
+# export GNUBINS="$(find /usr/local/opt -type d -follow -name gnubin -print)";
+# for bindir in ${GNUBINS[@]}; do
+#   export PATH=$bindir:$PATH;
+# done;
 
-for bindir in ${GNUBINS[@]}; do
-  export PATH=$bindir:$PATH;
-done;
+# NVM automatically use the right node version
+# place this after nvm initialization!
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc

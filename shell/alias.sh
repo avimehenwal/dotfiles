@@ -78,6 +78,7 @@ alias bashrc='$EDITOR $HOME/.bashrc'
 # Conditional alias
 prettyping --help >/dev/null && alias pping='prettyping'
 (( $+commands[screenfetch] )) && alias sysinfo='clear && screenfetch'
+type cloc >/dev/null 2>&1 && alias cloc='cloc --exclude-dir=node_modules .'
 
 # open terminal failed: missing or unsuitable terminal: xterm-256color
 alias rg='rg --pretty'
@@ -119,6 +120,7 @@ alias venv='venv'
 
 # New Projects
 alias cra='npx create-react-app --template typescript frontend'
+alias cna='yarn create next-app --typescript'
 # List what (top level) packages are installed globally
 alias list-installed-npm-packages="npm ls -g --depth=0."
 # List what globally installed packages are outdated
