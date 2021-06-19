@@ -121,3 +121,6 @@ load-nvmrc() {
 }
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
+
+# Issues
+# https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories

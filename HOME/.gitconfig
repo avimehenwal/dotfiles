@@ -14,6 +14,7 @@
     editor = vim
     # hooksPath = ~/.config/git
     pager = diff-so-fancy | less --tabs=4 -RFX
+	excludesfile = $HOME/dotfile/HOME/.gitignore_global
 [help]
     autocorrect = 1
 [pager]

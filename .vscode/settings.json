@@ -14,7 +14,8 @@
     "nvim",
     "cheat",
     "mac",
-    "security"
+    "security",
+    "git"
   ],
   "editor.fontFamily": "Fira Code",
   "editor.fontLigatures": true,

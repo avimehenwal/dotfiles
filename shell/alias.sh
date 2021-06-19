@@ -107,7 +107,6 @@ alias bs='brew search'
 # Git
 alias gcl='git clone --progress --verbose'
 alias gca='git commit --amend'
-alias gcm='git checkout main'
 
 # Python
 function venv() {
