@@ -1,0 +1,6 @@
+kubectl config get-contexts
+
+kubectl create namespace helmtesting
+
+helm install my-wordpress bitnami/wordpress --namespace helmtesting
+help status

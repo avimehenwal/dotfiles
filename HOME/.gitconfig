@@ -1,8 +1,8 @@
 [user]
     name  = avimehenwal
-    email = avi.mehanwal@gmail.com
+	email = avi.mehanwal@gmail.com
     signingkey = DB72090A5F7586E6
-    # signingkey = 1D002B4CA2EBCC81
+    signingkey = EF8AB75A62B4CA77
 [gpg]
 	program = gpg2
 [color]
@@ -14,7 +14,7 @@
     editor = vim
     # hooksPath = ~/.config/git
     pager = diff-so-fancy | less --tabs=4 -RFX
-	excludesfile = $HOME/dotfile/HOME/.gitignore_global
+	excludesfile = /Users/avi/dotfiles/HOME/.gitignore_global
 [help]
     autocorrect = 1
 [pager]

@@ -128,6 +128,9 @@ echo "[store + action] -- DISPATCH --> [Reducer Function] -- ACTION(s) --> [Stor
 
 - use **peer dependency** when packaging
 
+* Each time a state changes in component, entire component is re-rendered
+  -> create a child component for the element which re-renders to save wasted render, improve performance
+
 ## Code Samples
 https://github.com/httpJunkie/kr-todo-hooks
 

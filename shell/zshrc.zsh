@@ -124,3 +124,9 @@ load-nvmrc
 
 # Issues
 # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/avi/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/avi/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/avi/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/avi/google-cloud-sdk/completion.zsh.inc'; fi
