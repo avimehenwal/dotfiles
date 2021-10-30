@@ -45,11 +45,16 @@ eval "$(starship init zsh)"
 set -o vi
 
 # Perl - Larry Wall
-PATH="/home/avi/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/avi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/avi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/avi/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/avi/perl5"; export PERL_MM_OPT;
+PATH="/home/avi/perl5/bin${PATH:+:${PATH}}"
+export PATH
+PERL5LIB="/home/avi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+export PERL5LIB
+PERL_LOCAL_LIB_ROOT="/home/avi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+export PERL_LOCAL_LIB_ROOT
+PERL_MB_OPT="--install_base \"/home/avi/perl5\""
+export PERL_MB_OPT
+PERL_MM_OPT="INSTALL_BASE=/home/avi/perl5"
+export PERL_MM_OPT
 
 excludeFromTmux() {
 }
@@ -62,7 +67,12 @@ excludeFromTmux() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # STARTUP Programs
 # start KDE Konsole with byobu-tmux if len(KONSOLE_VERSION) is NOT zero
 [ -z "$KONSOLE_VERSION" ] || byobu-tmux
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi

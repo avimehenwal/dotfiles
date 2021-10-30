@@ -1,8 +1,7 @@
 [user]
     name  = avimehenwal
     email = avi.mehanwal@gmail.com
-    signingkey = 334545FE314EAD70
-    signingkey = 1D002B4CA2EBCC81
+    signingkey = DB72090A5F7586E6
 [gpg]
 	program = gpg2
 [color]

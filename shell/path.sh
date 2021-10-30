@@ -10,5 +10,6 @@ YARN=$HOME/.yarn/bin
 CARGO=$HOME/.cargo/bin
 RVM=$HOME/.rvm/bin
 MY=$HOME/dotfiles/scripts/bin
+FLUTTER=$HOME/mySoftwares/flutter/bin
 
-export PATH="$PATH:${LBIN}:${BREW}:${YARN}:${CARGO}:${RVM}:${MY}"
+export PATH="$PATH:${LBIN}:${BREW}:${YARN}:${CARGO}:${RVM}:${MY}:${FLUTTER}"

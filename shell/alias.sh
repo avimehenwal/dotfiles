@@ -1,4 +1,4 @@
-#!/usr/bin/env bash 
+#!/usr/bin/env bash
 #  @avimehenwal - updated 2020-Dec
 #
 #    / \  | (_) __ _ ___  ___  ___
@@ -71,6 +71,7 @@ alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 alias fd='fd --color always'
 alias cp='cp --verbose --interactive'
+alias PATH="echo $PATH | sed -e 's/:/\n/g' | awk '{print $0}END{print "\nTotal Paths = "NR}'"
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'

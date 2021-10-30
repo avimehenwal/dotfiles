@@ -1,0 +1,25 @@
+# DATA
+
+## Information
+
+- what KIND of data it is?
+  - structured, unstructured
+- what is the FREQUENCY of data change, CUD. Frequency of READS and WRITES
+
+## Knowledge Base
+
+Facts + Inferences + Events/
+
+> Schema first, data later approach
+
+## FSD Flexible Schema Data
+
+data first, schema later.
+
+We need to make unstructured data searchable, indexable and queryable
+
+- use RDBMS schema inheritance
+
+- How to deal with very BIG tables in postgresSQL? table with records > 32TB
+- TABLE PARTITION Technique : split big table into 2 based on time before and after and
+  - write a stored procedure to determine which table to use for further CRUD

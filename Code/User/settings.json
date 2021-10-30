@@ -1105,13 +1105,10 @@
   "[dockerfile]": {
     "editor.defaultFormatter": "ms-azuretools.vscode-docker"
   },
-  "workbench.colorTheme": "Visual Studio Dark",
-  "workbench.editorAssociations": [
-    {
-      "viewType": "jupyter.notebook.ipynb",
-      "filenamePattern": "*.ipynb"
-    }
-  ],
+  "workbench.colorTheme": "Gruvbox Dark Hard",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
   "editor.tabSize": 2,
-  "window.zoomLevel": 1,
+  "json.schemas": [],
 }
