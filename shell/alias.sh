@@ -74,9 +74,6 @@ alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 alias fd='fd --color always'
 alias cp='cp --verbose --interactive'
-alias PATH="echo $PATH | tr ':' '\n' | awk '{print} END {print \"TOTAL=\" NR}'"
-# ZSH Specific
-alias FPATH="echo $FPATH | tr ':' '\n' | awk '{print} END {print \"TOTAL=\" NR}'"
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'
@@ -117,6 +114,11 @@ alias brews='brew install $(brew search | fzf --preview-window=right:65% --previ
 alias gcl='git clone --progress --verbose'
 alias gca='git commit --amend'
 alias gemail='git config --local user.email avi.mehanwal@gmail.com'
+
+# ALIAS -> FUNCTIONS
+function PATH() {
+  echo $PATH | sed -e 's/:/\n/g' | awk '{print $0} END {print "\nTotal Paths = "NR}'
+}
 
 # Python
 function venv() {

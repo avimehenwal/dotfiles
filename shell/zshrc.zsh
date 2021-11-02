@@ -26,7 +26,7 @@ source ${BASE}/shared.sh
 if command apt > /dev/null; then
     source ${BASE}/debian.zsh
 elif command systemctl > /dev/null; then
-    source ${BASE}/systemd.zsh
+  # source ${BASE}/systemd.zsh
 elif command freebsd-version > /dev/null; then
     source $ZSH_CUSTOM/os/freebsd.zsh
 elif [[ `uname` == "Darwin" ]]; then
