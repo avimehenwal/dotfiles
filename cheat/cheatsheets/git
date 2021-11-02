@@ -161,3 +161,9 @@ git cherry-pick <commit SHA1>
 # Add upstream branch to fork repos
 git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git
 git merge upstream/main
+
+# When was branch created?
+git reflog show --date=local fix/vcard-vcf
+
+# rebase and squash second commit message into first
+git rebase -i --root main

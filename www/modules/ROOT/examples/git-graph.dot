@@ -2,7 +2,8 @@ digraph G {
   layout=dot
   rankdir="LR";
   bgcolor=transparent
-  node[width=0.15, height=0.15, shape=point, colorscheme=accent8];
+
+  node[width=0.20, height=0.20, shape=point, colorscheme=accent8];
   edge[weight=2, arrowhead=none];
 
   node[group=master];

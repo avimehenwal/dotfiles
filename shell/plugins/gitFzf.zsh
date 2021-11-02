@@ -14,6 +14,7 @@ gcob() {
     fzf --preview='git diff --stat --patch master...{-1}')
 }
 
+# /Users/avimehenwal/dotfiles/shell/plugins/gitFzf.zsh:18: defining function based on alias `gco'
 # use fzf finder to checkout git branches
 gco() {
   git checkout $(git branch |

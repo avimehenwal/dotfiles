@@ -4,7 +4,7 @@ CanonicalizeHostname yes
 
 # GENERIC CONFIGURATION
 Host *
-    ForwardX11 yes
+#    ForwardX11 yes
 
 # Personal GitLab.com
 Host gitlab.com

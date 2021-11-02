@@ -1,5 +1,17 @@
 # Updates editor information when the keymap changes.
 function zle-keymap-select() {
+
+  # Change cursor shape for different vi modes.
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+
   zle reset-prompt
   zle -R
 }

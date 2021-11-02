@@ -53,7 +53,10 @@ function venv() {
 }
 
 # List directory contents
-alias la='ls --color=always -lAh | fzf'
+alias la='ls -lAhG | fzf'
+alias ll='ls -lAhG'
+alias ls='ls -G'
+alias tree='tree -C'
 
 alias md='mkdir -p'
 alias rd=rmdir
@@ -71,7 +74,9 @@ alias nv='$EDITOR'
 alias lt='exa --long --classify --group-directories-first --links --header --tree --level=1'
 alias fd='fd --color always'
 alias cp='cp --verbose --interactive'
-alias PATH="echo $PATH | sed -e 's/:/\n/g' | awk '{print $0}END{print "\nTotal Paths = "NR}'"
+alias PATH="echo $PATH | tr ':' '\n' | awk '{print} END {print \"TOTAL=\" NR}'"
+# ZSH Specific
+alias FPATH="echo $FPATH | tr ':' '\n' | awk '{print} END {print \"TOTAL=\" NR}'"
 
 # Commands - common
 alias zshrc='$EDITOR $HOME/.zshrc'
@@ -80,6 +85,8 @@ alias sysinfo='clear && screenfetch'
 
 # Conditional alias
 prettyping --help >/dev/null && alias pping='prettyping'
+(( $+commands[screenfetch] )) && alias sysinfo='clear && screenfetch'
+type cloc >/dev/null 2>&1 && alias cloc='cloc --exclude-dir=node_modules .'
 
 # open terminal failed: missing or unsuitable terminal: xterm-256color
 alias rg='rg --pretty'
@@ -109,10 +116,23 @@ alias brews='brew install $(brew search | fzf --preview-window=right:65% --previ
 # Git
 alias gcl='git clone --progress --verbose'
 alias gca='git commit --amend'
-alias gcm='git checkout main'
+alias gemail='git config --local user.email avi.mehanwal@gmail.com'
 
 # Python
+function venv() {
+  [ -d venv ] || python -m venv venv 1>&2
+  source ./venv/bin/activate
+  python -V
+  pip list
+}
 alias venv='venv'
 
 # New Projects
 alias cra='npx create-react-app --template typescript frontend'
+alias cna='yarn create next-app --typescript'
+# List what (top level) packages are installed globally
+alias list-installed-npm-packages="npm ls -g --depth=0."
+# List what globally installed packages are outdated
+alias list-outdated-npm-packages="npm outdated -g --depth=0."
+# Update outdated globally installed npm packages
+alias update-npm-packages="npm update -g"

@@ -1,6 +1,56 @@
+# Why do we re-write code?
+
+> the real cost of software is maintenance overtime, because cahnges are inevitable
+
+1. Inexperience, inadequate time to understand others code
+2. It's fun to re-write
+3. Better solution available, more optimized, better architecture
+4. Recurring Technical debt, old libraries, migrations
+
+speed of adding new features decreases with time! => code refactor
+we trade constraints for safety and speed
+
+# Software Architecture
+- Enabling constraints
+- Explicit >> Implicit
+- which part(s) are depending on which parts?
+- Layered | Modular architecture | big ball of mud, ?What happens when you change something?
+
+code reuse is not a goal in and of itself, DECOUPLED >> DRY
+
+FOrbidden Dependency tests, break build if anybody try to depend on my code
+
+OOP   function pointers to classes
+FP    mutable -> immutable data, Eliminate race condition and concurrency problems
+var -> const        no more re-assignment
+jQuery -> react     no more direct DOM manipulation
+CSS -> CSS-in-JS    reduce global clashes, side-effects 
+
+business logic layer === Domain design
 
 # Code quality Parameters
 1. Cyclomatic Complexity    https://en.wikipedia.org/wiki/Cyclomatic_complexity
 
+# JS Frontend Architecture
+- low level details/changes should not affect high level abstractions. Eg, changing payment processor
+- its resource and time consuming
+- architecture is not file(s) organization, (its a part), relationship is the game. Volatility in code!
+-- How far are my changes going to propogate
+- presentation layer, UI charts, Specification layer - charting library details, processing data for presentation layer
+- dependency inversion pattern
+
 # Resources
 https://www.tiobe.com/files/TIOBEQualityIndicator_v4_8.pdf
+https://dev.to/huytaquoc/a-different-approach-to-frontend-architecture-38d4
+
+# cljs in age of TS
+lot of times our ideas are bound by tools. React have -ve perception in early 2013
+what does tooling, framework lets you do? and what is takes away from you?
+flavours of javascript, elm, clojurescript, typescript, babel. Only 3% uses cljs as per 2020 survey
+hot reloading without sabotaging the states of app, REPL
+tooling should help you with both, static part | dynamic part, debuggers only solves the static part of problem
+A shell should, let you add/remove/view modules
+developers work on things that has nothing to do with product, its programming stuff
+
+# React Anti Patterns
+passing function into a component? horrible practise, very hard to debug => Render props. onClick=(()=>this.enterLoading(1)) ?

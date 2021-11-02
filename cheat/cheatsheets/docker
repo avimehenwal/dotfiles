@@ -49,7 +49,3 @@ use **/node_modules in .dockerignore file adjascent to Dockerfile
 
 # SE Linux Security Enhanced Linux volume mount
 https://stackoverflow.com/questions/34031397/running-docker-on-ubuntu-mounted-host-volume-is-not-writable-from-container
-
-# How a docker image was created? List of commands used to generate the docker image?
-docker history --format "{{.ID}}: {{.CreatedBy}}" --no-trunc postgres | bat
-

@@ -1,3 +1,10 @@
 # compinit 503: /home/linuxbrew/.linuxbrew/share/zsh/site-functions/_brew_cask
 brew cleanup
 exec zsh
+
+# backup configuration
+brew tap Homebrew/bundle
+brew bundle dump
+
+# restore configurations
+brew bundle

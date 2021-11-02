@@ -1,3 +1,6 @@
+# install
+brew install homebrew/cask/vagrant 
+
 # To initate Vagrant:
 vagrant init
 

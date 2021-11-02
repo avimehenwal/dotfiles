@@ -65,6 +65,9 @@ https://youtu.be/IKD2-MAkXyQ
 echo "[class A] -- uses --> [class B] -- uses --> [class A]" | graph-easy
 https://stackoverflow.com/questions/48377525/replace-conditional-with-polymorphism
 
+DI increased reusability of our component by allowing late-binding of the random and round functions.
+-> use angular like services DI pattern with react https://jaysoo.ca/2015/06/09/react-contexts-and-dependency-injection/
+
 # Command Pattern
 lazy execution of commands, can chain multiple commands for bulk execute, can have UNDO, can queue them
 
@@ -80,3 +83,10 @@ Facade        layer of indirection, no polymorphism https://en.wikipedia.org/wik
 Adaptor       Interface transformations, unions, intersections, conditional interfaces
 Bridge        
 Proxy         
+
+Service Layer, controllers
+Component Layer
+pipes
+directives
+all design patters match throughout the projects
+

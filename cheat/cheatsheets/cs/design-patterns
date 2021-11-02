@@ -41,6 +41,7 @@ Object.assign({}, composeObj1, composeObj2, composesObj3)
 ```
 
 # Factory Function pattern | create and return objects
+https://stackoverflow.com/questions/42044861/factory-vs-constructor-function-performance-in-javascript
 closure have access to private functions, sound is private. Factory functions are slower than classes in JS
 const dog = () => {
   const sound = 'woof'
@@ -56,3 +57,8 @@ If you are NOT using interfaces, you are NOT using the half potential of program
 Modify code (itself) @runtime, self modifying code according to a goal related to a closure
 ES6 has Reflect Object API
 https://stackoverflow.com/questions/37628/what-is-reflection-and-why-is-it-useful/37638
+
+# Factory Pattern vs Strategy Pattern
+creational pattern vs operational pattern
+The strategy pattern allows you to polymorphically change behavior of a class.
+The factory pattern allows you to encapsulate object creation.

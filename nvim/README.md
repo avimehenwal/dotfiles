@@ -1,7 +1,7 @@
 # vim / neoVim config
 
 - How to use config from `/dotfile` folder?
-- Neovim is heavier than vim
+- ❗️ Neovim is heavier than vim
 
 ```bash
 apt show  vim neovim | grep -i size

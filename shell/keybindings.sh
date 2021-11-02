@@ -4,6 +4,14 @@ function git_root() {
 	BUFFER="cd $(git rev-parse --show-toplevel || echo ".")"
 	zle accept-line
 }
+
+
+# bindkey "[D" backward-word # ALT-left-arrow  ⌥ + ←
+# bindkey "[C" forward-word  # ALT-right-arrow ⌥ + →
+
+# bindkey "^[OC" forward-word                         # control + right arrow
+# bindkey "^[Od" backward-word                        # control + left arrow
+
 # zle -N git_root
 # bindkey "^g" git_root
 

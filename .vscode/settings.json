@@ -12,6 +12,15 @@
     "vscode",
     "zsh-plugin",
     "nvim",
-    "cheat"
-  ]
-}
+    "cheat",
+    "mac",
+    "security",
+    "git"
+  ],
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "files.associations": {
+    "**/.nvimrc": "viml",
+    "**/vifmrc": "viml",
+  },
+ }

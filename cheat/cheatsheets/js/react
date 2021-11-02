@@ -1,7 +1,9 @@
 ---
-syntax: markdown
+syntax: javascript
 tags: [javascript, react, design-patterns]
 ---
+
+Referential Integrity in js, all component functions are re-created on re-renders if NOT Memoized
 
 # React Hooks
 
@@ -128,6 +130,9 @@ echo "[store + action] -- DISPATCH --> [Reducer Function] -- ACTION(s) --> [Stor
 
 - use **peer dependency** when packaging
 
+* Each time a state changes in component, entire component is re-rendered
+  -> create a child component for the element which re-renders to save wasted render, improve performance
+
 ## Code Samples
 https://github.com/httpJunkie/kr-todo-hooks
 
@@ -135,8 +140,11 @@ https://github.com/httpJunkie/kr-todo-hooks
 
 # How react re-renders? When does it re-render?, What hooks causes re-render?
 - React.useState()
-- React.useCallback()    caches function
+- React.useCallback()    caches function, only purpose is performance
 - use react Performance Tools Perf.start(), Perf.stop()
+
+here if onChangeCallback is declared as just a function or arrow expression it will be re-created on each render.
+So it will be referentially different. And nested child will be re-rendered each time while it does not have to.
 
   What is a wasted render? How to identify one? react developer tools highlights updates
 
@@ -148,3 +156,137 @@ useReducer with useContext to maintain GLOBAL STATE Management
 
 # Drag and drop container?
 drop, dragOver Events   https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer
+
+# What is the difference between useCallback, useEffect and useMemo hooks?
+useCallback is often used in conjunction with useEffect to minimize re-renders.
+In js, every function is an object. So if a outer function is rendered/called, the inner function is also re-created!
+calling innerFunctions inside useEffect() can cause performance problems and infinite re-renders and infinite loops
+
+# State Management pattern with react
+1. local states
+2. global states
+3. DI, dependency Inject states and re-render
+4. states Factory
+
+import React, {
+	createContext,
+	FC,
+	useCallback,
+	useContext,
+	useMemo,
+	useState
+} from "react";
+
+const CheckboxContext = createContext();
+
+const CheckpoxProvider: FC = ({ children }) => {
+	const [checked, setChecked] = useState(false);
+	const check = useCallback(() => {
+		setChecked(true);
+	}, []);
+	const uncheck = useCallback(() => {
+		setChecked(true);
+	}, []);
+	const toggle = useCallback((requestedState?: boolean) => {
+		if (typeof requestedState === "boolean") {
+			setChecked(requestedState);
+		} else {
+			setChecked((previousState) => !previousState);
+		}
+	}, []);
+	const context = useMemo(() => ({ checked, check, uncheck, toggle }), [
+		checked,
+		check,
+		uncheck,
+		toggle
+	]);
+	return (
+		<CheckboxContext.Provider value={context}>
+			{children}
+		</CheckboxContext.Provider>
+	);
+};
+
+const useCheckbox = () => useContext(CheckboxContext);
+
+interface CheckboxProps {
+	checked?: boolean;
+	onChange(checked: boolean): void;
+}
+
+const Checkboxes = () => {
+	const { toggle, checked } = useCheckbox();
+	return (
+		<>
+			<Checkbox
+				checked={checked}
+				onChange={(requestedChecked) => {
+					toggle(requestedChecked);
+				}}
+			/>
+			<Checkbox
+				checked={checked}
+				onChange={(requestedChecked) => {
+					toggle(requestedChecked);
+				}}
+			/>
+		</>
+	);
+};
+
+const App = () => {
+	return (
+		<CheckpoxProvider>
+			<Checkboxes />
+		</CheckpoxProvider>
+	);
+};
+
+# understanding react source code
+1. Monorepository pattern
+2. https://github.com/numbbbbb/read-react-source-code
+3. Package sizes with diff(s)
+4. react hooks packages/react/src/ReactHooks.js
+
+# Dependency Injection in react using react custom hooks in Container Patter, => more testable
+
+const Component = (props) => {
+    return <div>{ props.data }</div>;
+};
+
+const Container = (props) => {
+    const data = useHook();
+
+    return <Component data={data} />;
+};
+
+/* So, the 2 main differences between references and state
+ * 
+ * 1. Updating a reference doesn’t trigger re-rendering, while updating the state makes the component re-render;
+ * 2. The reference update is synchronous (the updated reference value is available right away),
+ *    while the state update is asynchronous (the state variable is updated after re-rendering).
+ * 
+ * From a higher point of view, references store infrastructure data of side-effects,
+ * while the state stores information that is directly rendered on the screen.
+ * 
+*/
+
+import { useRef } from 'react';
+
+function LogButtonClicks() {
+  const countRef = useRef(0);  
+  const handle = () => {
+    countRef.current++;    console.log(`Clicked ${countRef.current} times`);
+  };
+
+  console.log('I rendered!');
+
+  return <button onClick={handle}>Click me</button>;
+}
+
+// useRef UseCases: https://stackoverflow.com/questions/66429202/what-are-production-use-cases-for-the-useref-usememo-usecallback-hooks
+1. To access the DOM: <div ref={myRef} />
+2. Store mutable value like instance variable (in class)
+3. A render counter
+4. A value to be used in setTimeout / setInterval without a stale closure issue.
+
