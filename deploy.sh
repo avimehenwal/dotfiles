@@ -37,6 +37,8 @@ function usage() {
 	deploy.sh link   - to generate symlinks to config directories
 	deploy.sh unlink - to remove symlinks from system config files
 	deploy.sh shell  - to use zshrc,bashrc from dotfiles and remove from $HOME
+	deploy.sh code   - use vscode configs from dotfiles
+	deploy.sh code!  - remove vscode configs from dotfiles
 
 EOF
 }
@@ -51,6 +53,7 @@ function install_homedir_config() {
 	[ -L "$BASHRC" ] && rm -vf $BASHRC
 	ln --symbolic --verbose $SOURCE/shell/zshrc.zsh $ZSHRC
 	ln --symbolic --verbose $SOURCE/shell/bashrc.bash $BASHRC
+	ln --symbolic --verbose $HOME/dotfiles/HOME/.gitconfig .gitconfig
 }
 
 function install_vim() {
@@ -60,11 +63,25 @@ function install_vim() {
 }
 
 function install_vscode() {
-	stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User User
+	# depending on platform
+  #   Windows %APPDATA%\Code\User\settings.json
+  #   macOS $HOME/Library/Application Support/Code/User/settings.json
+  #   Linux $HOME/.config/Code/User/settings.json
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User User
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		stow -v --dir=$HOME/dotfiles/Code --target=$HOME/Library/Application\ Support/Code/User User
+		# elif [[ "$OSTYPE" == "win32" ]]; then
+					# I'm not sure this can happen.
+	fi
 }
 
 function uninstall_vscode() {
-	stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User --delete User
+	if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+		stow -v --dir=$HOME/dotfiles/Code --target=$HOME/.config/Code/User --delete User
+	elif [[ "$OSTYPE" == "darwin"* ]]; then
+		stow -v --dir=$HOME/dotfiles/Code --target=$HOME/Library/Application\ Support/Code/User --delete User
+	fi
 }
 
 function uninstall_vim() {
@@ -97,6 +114,14 @@ for PRG in "${CONFIG_DIRS[@]}"; do
 		;;
 	vim!)
 		uninstall_vim
+		exit 0
+		;;
+	code)
+		install_vscode
+		exit 0
+		;;
+	code!)
+		uninstall_vscode
 		exit 0
 		;;
 	*)
