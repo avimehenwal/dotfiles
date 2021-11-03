@@ -1,0 +1,15 @@
+---
+syntax: markdown
+tags: [linux, inotifywait]
+---
+
+# using inotifywait command
+inotifywait --event CLOSE_WRITE --monitor myfile.py |
+while read -r filename event; do
+  dart analyze . && \
+  dart format . && \
+  dart run -v dartfile.dart
+done
+
+# using vim
+:au BufWritePost myfile.py :silent !./myfile.py

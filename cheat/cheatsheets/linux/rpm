@@ -1,0 +1,68 @@
+---
+tags: [linux, rpm]
+---
+
+## Toolchain to build linux rpms for fedora and read hat linux?
+rpmbuild, rpmdevtool
+
+## Which languages are supported by rpmbuild tool?
+Most of them
+could be dart, go, python, shell, clojure, java, rust
+
+## How to create RPM packages
+https://docs.fedoraproject.org/en-US/quick-docs/creating-rpm-packages/
+
+## RPM spec file 
+sample .spec file https://github.com/lkiesow/prometheus-rpm/blob/29de98d889a5a13d071dd1d363a56d4d58fa4bb6/prometheus.spec
+
+%pre
+# gets executed before installation of the files: 
+if [ -e /path/to/file]
+then
+    cp /path/to/file /path/to/backup
+fi
+
+%post
+# gets executed after installatin of the files
+if [ -e /path/to/file]
+then
+    cp /path/to/backup /path/to/file
+fi
+
+## How to create a custom rpm repository on Linux
+https://linuxconfig.org/how-to-create-a-custom-rpm-repository-on-linux
+
+## Local hosting
+/var/share/repo 	The location we’ll host the repository from.
+/var/share/isos 	The location we’ll store our ISO image files in.
+
+## localhosting tools
+yum install -y createrepo yum-utils find rsync lftp
+
+## How to create a new RPM spec file?
+rpmdev-newspec avi-new-rpm
+
+## How to publish RPM packages?
+https://copr.fedorainfracloud.org/
+
+## List package dependencies
+rpm -qi bat
+rpm --query --requires bat
+
+## How to publish Flutter RPM packages?
+
+## How to run a shell script from rpm.spec file?
+You don't run a bash script from a file in an rpm spec file.
+You put the commands to run in the appropriate scripts section, such as %post, %postun, %transpost, etc.
+You also don't use "sudo". Since an rpm package is already being either installed or uninstalled under root privileges,
+the commands in the scripts section are already run as root.
+
+# Cross-platform packaging a software? .deb, .rpm, .msi etc? Would it work with flutter?
+https://fpm.readthedocs.io/en/latest/
+https://github.com/go-flutter-desktop/hover
+
+## List of all package managers
+https://en.wikipedia.org/wiki/List_of_software_package_management_systems
+
+## Run Flutter apps on embedded system?
+yocto layer -> https://github.com/jwinarske/meta-flutter

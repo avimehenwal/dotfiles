@@ -1,0 +1,10 @@
+---
+syntax: markdown
+tags: [linux, dnf]
+---
+
+# Package Groups
+dnf group list
+
+## Install a group
+dnf group install "RPM Development Tools"
