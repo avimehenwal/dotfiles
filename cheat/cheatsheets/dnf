@@ -8,3 +8,36 @@ dnf group list
 
 ## Install a group
 dnf group install "RPM Development Tools"
+
+## Download source RPM
+dnf download --source coreutils
+yumdownloader --source redis
+
+## List dependencies of a RPM package
+dnf repoquery --requires redis    
+dnf repoquery --depends redis
+
+## how to install a source RPM?
+rpm -vv -Uvh package.src.rpm
+installed under $HOME/rpmbuild/SOURCES
+
+The interest of installing a src.rpm is to modify and rebuild it.
+But if the source you need already contains spec file to build the rpm
+it's better downloading the source and building the rpm from it when you so desire:
+
+
+## Difference b/w dnf and RPM?
+These tools work together. DNF handles dependency solving, finding files on the network
+repository management, and so on. RPM handles the lower-level part of actually putting the files on your system.
+In most cases as an end user, DNF is all you need to interact with. You might use RPM commands for
+lower-level troubleshooting, but in most cases DNF provides all the functionality in a more friendly manner.
+Note that you may also see "Yum". DNF is the successor to that tool, which essentially did the same thing.
+In recent versions of the Fedora OS, yum and dnf are exactly interchangeable.
+
+## How to package a software
+
+# list all installed kernels
+dnf list installed kernels
+
+# local install a rpm package, without going over to internet
+yum --nogpgcheck localinstall packagename.arch.rpm

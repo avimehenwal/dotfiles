@@ -1,0 +1,10 @@
+---
+syntax: markdown
+tags: [linux, kubernetes]
+---
+
+kubectl version
+kubectl config view
+
+# kubeadm to quickly create and join new clusters
+https://kubernetes.io/docs/reference/setup-tools/kubeadm/

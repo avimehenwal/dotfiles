@@ -1,0 +1,20 @@
+---
+syntax: markdown
+tags: [linux, fedora, firewall]
+---
+
+# Is firewall running on fedora?
+sudo firewall-cmd --state
+
+# Allowd services and ports?
+sudo firewall-cmd --permanent --list-services
+
+# Allow http and https ports?
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent –add-service=https
+
+# researt to update configuration
+sudo systemctl reload firewalld
+
+# Run and host your own on-premsis nextcloud system?
+https://fedoraproject.org/wiki/Nextcloud

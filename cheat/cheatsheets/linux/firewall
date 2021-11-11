@@ -1,0 +1,8 @@
+---
+syntax: markdown
+tags: [linux, firewall]
+---
+
+firewall-cmd --list-all  
+
+sudo ufw allow 80

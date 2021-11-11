@@ -1,0 +1,18 @@
+---
+syntax: markdown
+tags: [ui, design]
+---
+
+# Design Challenges
+https://dribbble.com/
+https://fidev.io/
+https://marcinusx.github.io/egipt/#/
+
+can implement some designs using Flutter
+
+## How to build Complex, beautiful User Designs?
+Triangle of UI in mobile development
+1. Transform, only before painting
+2. Stack, vStack and hStack
+3. Animation Controller
+

@@ -1,0 +1,58 @@
+---
+tags: [linux, man]
+---
+
+# how are man-pages searched?
+echo $MANPATH
+
+# where to install new man page as per FHS standard?
+/use/share/man/
+/usre/local/share/man/
+
+files are stored in compressed format .gz
+use zcat command to view these files
+
+# format to write man pages files?
+mdoc — semantic markup language for formatting manual pages
+supported macros
+
+.TH macro   man page title and section
+.SH         section headers, paragraphs breaks, lists and displays
+
+TIP: use pandoc to convert markdown -> mdoc format
+pandoc ms.1.md -s -t man -o ms.1
+
+# search among existing man-pages
+man -k "search term"
+man -K "search term"
+aprops "search term"
+
+# structure of a man page
+NAME
+    The name of the command or function, followed by a one-line description of what it does.
+SYNOPSIS
+    In the case of a command, you get a formal description of how to run it and what command line options it takes.
+DESCRIPTION
+    A textual description of the functioning of the command or function.
+EXAMPLES
+    Some examples of common usage.
+SEE ALSO
+    A list of related commands or functions.
+BUGS
+    List known bugs.
+AUTHOR
+   Specify your contact information.
+COPYRIGHT
+    Specify your copyright information.
+
+
+https://www.cyberciti.biz/faq/linux-unix-creating-a-manpage/
+
+# pandoc md --> mdoc format
+# Via https://eddieantonio.ca/blog/2015/12/18/authoring-manpages-in-markdown-with-pandoc/
+wget https://gist.githubusercontent.com/eddieantonio/55752dd76a003fefb562/raw/38f6eb9de250feef22ff80da124b0f439fba432d/hello.1.md
+pandoc --standalone --to man hello.1.md -o hello.1
+
+# update man pages system cache
+mandb
+uses /etc/man_db.conf

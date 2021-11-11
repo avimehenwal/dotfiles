@@ -1,0 +1,9 @@
+whois lookup
+
+# information
+1. when does the domain expire, set email trigger based on a shell script
+2. who is the domain Registrar
+3. when the domain was purchased and updated?
+
+# print only known information, filter clutter
+whois avimehenwal.in | rg --invert-match REDACTED

@@ -1,0 +1,2 @@
+# How to get pixel information about a image file? image meta-data
+indentify -verbose <file_name>

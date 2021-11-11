@@ -20,3 +20,20 @@ python -m json.tool foo.json
 # tox - test a python package in a python environment
 command runner to pick python interpretor version.
 tox -e py38 -- test -k fstring
+
+# list all avialable python interpretors
+pyenv install --list
+
+# install new version on interpretor
+pyenv install -v 3.8.12
+it will take sometime, as it builds the python from the source
+
+# how to use a specific python version
+pyenv versions
+pyenv global 3.8.12
+# set python for a local application
+pyenv local 3.8.12
+
+# use system version of python
+pyenv global system
+

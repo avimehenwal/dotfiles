@@ -12,3 +12,10 @@ echo "test" | gpg --clearsign
 
 # enable git commit signing | git commit -S -m "This is a signed commit"
 git config --global commit.gpgsign true
+
+# Encrypt a file using gpg
+gpg --recipient <your@email.com> filename
+now only you can open filename.gpg
+
+# decrypt
+gpg --decrypt filename.gpg

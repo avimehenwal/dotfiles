@@ -45,3 +45,5 @@ ffprobe <filename>
 # change frame per second FPS
 ffmpeg -i ./currency.webm -filter:v fps=5 -f gif currency.gif
 
+# convert mkv -> mp3 audio
+ffmpeg -i "file.mkv" -vn -ar 44100 -ac 2 -ab 128k -f mp3 "file.mp3"

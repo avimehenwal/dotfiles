@@ -1,0 +1,10 @@
+---
+syntax: markdown
+tags: [linux, openshift, kubernetes]
+---
+
+# what is openshift?
+its a facade on top of K8, red-hat has multiple flavours of openshift including free and commercial versions
+kubernetes based deployment system built by red-hat
+
+oc cluster up --skip-registry-check=true

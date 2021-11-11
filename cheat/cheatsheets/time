@@ -1,0 +1,2 @@
+# how to run a command 10 times and benchmark it?
+time (repeat 10 {python script.py} )

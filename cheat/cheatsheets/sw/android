@@ -1,0 +1,11 @@
+---
+syntax: markdown
+tags: [mobile, android, app]
+---
+
+# list all emulators from terminal
+cd /home/avi/Android/Sdk/tools
+./emulator -list-avds
+
+# cross mobile platform application?
+use flutter with dart

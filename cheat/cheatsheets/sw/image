@@ -1,0 +1,19 @@
+---
+syntax: markdown
+tags: [software, image, manipulation, application]
+---
+
+# Where can I store images, video files? DB vs FS
+Database (more expensive) << than *Filesystem
+RDBMS can save longbinaryblob
+you can super-accelerate file system access with standard off the shelf products
+  for example, many web servers use the operating system's sendfile() system call
+  to asynchronously send a file directly from the file system to the network interface.
+  Images stored in a database don't benefit from this optimization.
+static content serving from webserver like nginx requires no special coding. Store image paths in DB
+challenge: maintian data integrity b/w database metadata about image and actual image on FS
+- images on DB need no seperate backup policy, images on FS do
++ FS can stream images files asynchronously, RDBMS would need some code to implement it.
+
+# How facebook stores 1M images?
+https://perspectives.mvdirona.com/2008/06/facebook-needle-in-a-haystack-efficient-storage-of-billions-of-photos/

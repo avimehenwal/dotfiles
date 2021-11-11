@@ -1,0 +1,40 @@
+---
+syntax: markdown
+tags: [linux, bash, declare, typeset]
+---
+
+# declare | typeset
+It declares shell variables and functions, sets their attributes, and displays their values.
+
+declare -r  | read-only
+declare -a  | arrays
+declare -A  | associative arrays
+
+The typeset command is an alias for declare. The two can be used interchangeably in bash.
+
+# List all bash variable?
+declare -p
+
+# print the value of a variable/function?
+declare -- VAR_NAME
+
+# declare vs export vs attributes? diff?
+environment variables and shell variables are not the same thing. They all are different
+
+Then, you should know that shells have attributes which govern how it works. These attributes are not environment nor shell variables.
+Now, on to answering your question.
+
+    env: without any options, shows current environment variables with their values; However can be used to set environment variable for a single command with the -i flag
+    set: without options, the name and value of each shell variable are displayed* ~ from running man set in rhel; can also be used to set shell attribute. This command DOES NOT set environment nor shell variable.
+    declare: without any options, the same as env; can also be used to set shell variable
+    export: makes shell variables environment variables
+
+In short:
+
+    set doesn't set shell nor environment variables
+    env can set environment variables for a single command
+    declare sets shell variables
+    export makes shell variables environment variables
+
+NOTE declare -x VAR=VAL creates the shell variable and also exports it, making it environment variable.
+

@@ -103,7 +103,7 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "java.semanticHighlighting.enabled": true,
-  "python.languageServer": "Microsoft",
+  "python.languageServer": "Default",
   "editor.wordWrap": "on",
   "svg.preview.mode": "svg",
   "search.collapseResults": "auto",
@@ -1111,4 +1111,16 @@
   },
   "editor.tabSize": 2,
   "json.schemas": [],
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
 }

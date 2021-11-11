@@ -1,6 +1,12 @@
 ---
 tags: [ packaging, rpm ]
 ---
+
+fedpkg >> rpmbuild
+
+# source code for RPM build system
+https://github.com/rpm-software-management
+
 # To install a package:
 rpm -ivh <rpm>
 
@@ -36,3 +42,42 @@ rpm -V <package>
 # RPM-build
 wget https://github.com/opensourceway/how-to-rpm/raw/master/utils.tar
 cd ; tar -xvf utils.tar
+
+# How to build RPM packages?
+https://rpm-packaging-guide.github.io/#preparing-software-for-packaging
+
+# How to expand and print RPMdevtools paramters?
+rpm --eval %{_bindir}
+
+# list all installed kernels
+rpm --query kernel
+sudo dnf remove kernel-5.14.14-200.fc34.x86_64
+
+# list all files installed by a package
+rpm -ql package-name
+
+# How to host RPM package in self-hosted repository
+https://stackoverflow.com/a/42305511/1915935
+
+# Public RPM Repositories
+https://pagure.io/copr/copr
+CoPr => Community Project
+
+## RPM spec file
+the spec file contains eight different sections, most of which are required.
+
+# RPM packaging guide
+https://rpm-packaging-guide.github.io/
+
+# expand and print rpm macros
+rpm --eval %{_bindir}
+
+# List all GPG keys, cryptographic integrity checks
+gpg --gen-key
+gpg --list-keys
+gpg --export -a 'Fernando Aleman' > RPM-GPG-KEY-faleman
+
+rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\n'
+
+# list all macros
+bat ~/.rpmmacros

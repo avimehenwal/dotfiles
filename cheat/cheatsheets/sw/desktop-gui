@@ -1,0 +1,28 @@
+---
+syntax: markdown
+tags: [linux, desktop, gui]
+---
+
+# How can I build desktop applications? What tools can I use?
+UI toolkits available for the Linux desktop, we also have some others such as Electron and TK.
+
+GTK  - single threaded, respects ubuntu theme out of the box
+     + only good for linux based desktop application
+QT   - support multiple threads
+       doesnt respect ubuntu destro system theme out of the box
+       + better cross-platform support
+
+# Display Server
+lets you run GNOME, KDE, MATE on your OS
+
+1. XORG is even older than Linux
+2. Wayland is new code base from scratch
+
+Linux is 30 years old
+
+# Flutter for linux desktop?
+canonical ubuntu said it will build newer applications with flutter
+Google doesn’t have a particularly good track record when it comes to maintaining projects. Just take a look at Google Glass and Play Music
+Linux community is building a reliance on Google, which as we have seen in Chromium, can backfire very easily.
+google is locking down chromeum https://news.itsfoss.com/is-google-locking-down-chrome/
+

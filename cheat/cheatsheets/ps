@@ -1,0 +1,3 @@
+# what/who started a process?
+ps -f -p 2409     -> to get parent process information
+systemctl status 2409

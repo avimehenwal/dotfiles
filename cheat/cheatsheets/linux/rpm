@@ -66,3 +66,7 @@ https://en.wikipedia.org/wiki/List_of_software_package_management_systems
 
 ## Run Flutter apps on embedded system?
 yocto layer -> https://github.com/jwinarske/meta-flutter
+
+## Compile bash --> machine code?
+shc is not effective obfuscation -- it's trivial to read the script contents out at runtime. strace or sysdig,
+or even just an appropriate scan of /proc will do the job of extracting the original script.

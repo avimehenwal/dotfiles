@@ -1,0 +1,83 @@
+---
+syntax: markdown
+tags: [plang, dart]
+---
+
+# list all project dependencies
+fllutter/dart pub deps
+
+# dart features
+1. string multiplication : to test if long strings will fit or not
+2. promises are called Futures : wait till all Futures are resolved and return as a single DS concurrently
+3. iterating over maps, .entries >> .keys
+4. use named constructors to support Polymorphism
+5. use get and set in class signatures
+5. use underscore for unused variables
+6. Singleton Pattern
+
+```dart
+class FileSystem {
+    Filesystem._();
+    static final instance = FileSystem._();
+}
+
+void main() {
+    final fs = FileSystem.instance;
+}
+```
+
+7. use streams in dart with Futures
+8. mock API calls using Futures
+9. map vs HashMap ?
+
+## What is dart
+- look at the logo, it's the back part of a dart
+- type safe language -> SOUND TYPE SYSTEM, static + runtime type-checks/analysis
+- Type Inference, makes types optional in some cases
+- sound null safety, cannot be null unless you say so :)
+- dart uses multiple compilers toolchains, for multiple platforms and multiple environments
+  - JIT for development environment and AOT compilation for production builds
+- projects are called packages in dart ecosystem
+- AOT -> No speculative optimizations
+- OO Language, everything (including null) is an object
+
+# dynamic vs var difference?
+- dynamic is a TYPE, variable can change type (from int to string) during the @runtime of program
+- var is not a type, dart infers the type @runtime and form then on, type cannot change
+
+# useful dart packages from pub.dev
+
+pub | description
+-----|-----------------------------
+http | network calls, data-fetching
+hive | KV database
+json_serializer | normalize/prepare JSON to save in RDBMS
+pedantic | linter with cascading rules
+
+- dart automatically links everything together, and fetch the transitive dependencies
+
+# Questions
+- How can dart make applications for multiple platforms?
+- what will happen if you move the dart file from bin to some other location?
+- Debugging dart app from vscode debugger workflow >> DX >> dart devtools
+  dart run --observe --pause-isolates-on-start
+- how to expose a dart code? only via Libraries
+- what is dart IR? dart kernel binary files .dill, CFE->CommonFrontEnd packages does it
+- How to run dart programs from SNAPSHOT approach? -> dart VM Heap entities
+- How to include dart VM runtime along with app?
+  - dart compile exe ./bin/project.dart -> project.exe file (+runtime)
+  - snapshots DO NOT have runtimes included in binary
+
+# Features
+- Null assertion
+- Nullable type variables
+- late initialization of null values
+- explicitly annotating a type to variable is optional -> Type Inference
+
+# structure
+- what is dart? why it was built, which problems does it solve?
+- installation, version and API commands
+- some realworld projects?
+
+# Summary
+- everything is around null safety environment

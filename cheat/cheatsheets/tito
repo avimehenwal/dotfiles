@@ -1,0 +1,46 @@
+---
+tags: [linux, fedora, tito, bodhi, koji, copr]
+---
+
++---------+  copr   +----------------+
+| src.rpm | ------> | yum repository |
++---------+         +----------------+
+
+- use it when working with git repositories
+
+# rpm build tool
+tito init     -> creates .tito/ in cwd
+tito build --rpm --test
+
+# tag a commit point as a version
+tito tag --use-version 1.0.0
+
+# increment a patch version
+tito tag
+
+# integrate git tags to automatically build packages on copr
+
+# local testing 
+tito build --tgz --offline --install
+
+# upload to copr repository
+ ; Submit src.rpm from your computer directly to Copr
+ [copr-project]
+ releaser = tito.release.CoprReleaser
+ project_name = my-copr-project-name another-project
+
+# help
+ man 5 releasers.conf
+
+fedpkg >> rpmbuild
+
+# what is copr, koji, and bodhi?
+copr  - unofficial repository for experimental purposes outside fedora
+koji  - official packages for fedora
+Bodhi - Infrastructure for pushing updates to repositories and allows users to report back comments and karma for proposed package changes
+
+# packaging for python3 rpm
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/pdf/packaging_and_distributing_software/red_hat_enterprise_linux-8-packaging_and_distributing_software-en-us.pdf
+
+install commands under /usr/local/bin and softwares under /opt/
+https://unix.stackexchange.com/questions/11544/what-is-the-difference-between-opt-and-usr-local

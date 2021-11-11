@@ -1,0 +1,20 @@
+---
+tags: [zsh, bash, shell, terminal]
+---
+
+print a quote from database and an emoji in PROMPT when new shell session starts
+
+# zsh hooks, array of functions
+$chpwd_functions
+functions inside this array are called Hook Functions
+
+## zsh functionalities
+1. trap functions
+
+# Special functions in ZSH => Hook Functions
+add-zsh-hook
+[7] hook is one of chpwd, periodic, precmd, preexec, zshaddhistory, zshexit, or zsh_directory_name
+
+# autoloading functions
+functions can be marked as undefined, lazy-load using builtins like: autoload, functions -u, typeset -fu
+such functions has NO BODY, shell searches for its definition using fpath vairable

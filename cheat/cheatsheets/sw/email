@@ -1,0 +1,19 @@
+---
+syntax: markdown
+tags: [software, email, client, server]
+---
+
+# Email Server Software
+- dovecot
+- IBM Lotus notes (now owned by HCL)
+
+# survey
+  http://openemailsurvey.org/
+
+# MX record lookup
+nslookup -q=MX gmail.com
+dig +short mx gmail.com | column -t | sort -n
+host -t MX gmail.com
+
+# why use 2 mail servers postfix and devcot
+https://superuser.com/questions/962074/why-use-both-dovecot-and-postfix

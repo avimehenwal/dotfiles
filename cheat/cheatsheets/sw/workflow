@@ -1,0 +1,32 @@
+---
+syntax: markdown
+tags: [software, workflow, system]
+---
+
+# Workflow Engine systems?
+co-ordinated MULTI steps for resources and processes
+Eg: camunda, flowable, activiti
+
+# social proof of technology you are introducing?
+tweets etc, which companies are using it
+
+# Standard
+BPMN 2.0 maintianed by same company as UML, OMG
+
+# Workflow systems?
+- Execute tasks
+- reacts to external events
+- timers and timeouts and retries
+
+Workflow definition -> Workflow Step(s)
+Execute tasks from task queues
+
+## Questions
+- Who, what, when and why changed/created/deleted workflow step?
+- Retrieve a component details of the workflow process?
+- How to integrate it within an existing system?
+
+# Examples
+https://workflowengine.io/demo/designer/
+https://www.activiti.org/
+https://en.wikipedia.org/wiki/Camunda    could be usesd with clojure

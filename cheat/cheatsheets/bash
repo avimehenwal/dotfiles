@@ -33,3 +33,11 @@ while IFS= read -r line; do printf "%s\n" $line done < ./projectNames.data
 
 # Run a command only when a ENV-VAR is set. Use -z test flag to test the length of variable
 [ -z "$ENV_VAR_NAME" ] && echo "Length is non-zero" || echo  "length is zero"
+
+# Difference between bash and sh?
+so by itself Bash is not a valid POSIX shell. Rather, it is a dialect of the POSIX shell language.
+Bash supports a --posix switch, which makes it more POSIX-compliant. It also tries to mimic POSIX if invoked as sh.
+
+For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. As a result, it had almost become safe to
+ignore the difference between the two. But that started to change recently.
+https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash

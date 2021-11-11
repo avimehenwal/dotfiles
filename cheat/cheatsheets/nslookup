@@ -1,0 +1,26 @@
+A tool to query public DNS records from open internet
+
+# features
+1. reverse address lookup
+2. Mail Server records lookup
+3. Name Server lookup
+4. SOA record lookup, state of Authority zone information
+5. any lookup
+
+nslookup -query=hinfo kernel.org
+nslookup -query=ns google.com
+nslookup -query=MX gmail.com
+nslookup -query=SOA linux.com
+
+# use with debug
+nslookup -debug google.com
+
+# how to configure DNS on linux based systems?
+resolv.conf       https://en.wikipedia.org/wiki/Resolv.conf
+
+# system-resolv config
+sudo ln -s /run/systemd/resolve/resolv.conf /etc/resolv.conf
+bat /etc/resolv.conf
+
+
+

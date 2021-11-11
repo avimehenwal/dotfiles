@@ -1,0 +1,42 @@
+---
+syntax: markdown
+tags: [linux, flatpak, packaging]
+---
+
+# Why Flatpak?
+Application software need to support multiple TARGETS, multiple OS, and multiple versions of OS
+Hence a new, Linux Packaging format to decouple dependencies from Apps
+- RPM, DEB contains pre-compiled versions of apps for specific TARGETS and OS
+- various OS can have Dependency Packages with different names, Eg: perl
+
+# Pros and cons
++ does NOT depend on system libraries. They have their own version of dependency libraries.
+  Eg: GNOME runtime could be put as dependencies instead of shipping it along with app
++ self-contained, sandbox applications, system libs are seperate from app libraries
+- Security Vurnabilities
+- uses more disk space than RPM, DEB
++ snap have longer startup times than flatpak
+
+# Problems?
+1. compile source code for each TARGET, OS, and OS-Versions
+2. Host pre-compiled code so that its accessable via TARGET, OS and VERSION
+
+# list and search
+flatpak list
+flatpak search <package>
+flatpak install <pkg>
+
+## Linux Appimage
+- Ship the whole application as a single binary = {source code + dependencies + runtime }
+- They so NOT share dependencies, self contained
+- no need to install, copy somewhere, just click and it will start to run
+- No delta-updates
+- Apps are NOT theme aware
+
+## Packaging Formats
+- rpm, deb
+- flatpak, snap
+- linux appimage
+
+## Creating your own Flatpaks?
+https://docs.flatpak.org/en/latest/index.html

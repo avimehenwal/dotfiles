@@ -1,0 +1,45 @@
+---
+tags: [gcloud, cloud, google]
+---
+
+gcloud init
+
+# cloud storage
+gsutil ls
+gsutil stat gs://bucket-name/object-name
+
+# list config 
+gsutil version -l                                                                                                              
+
+## gsutil CLI features
+- create notifications on object change
+- generate signed URLs
+- stream videos
+
+gsutil signurl ~/path/to/key.json gs://bucket/file.png 
+
+# Service Accounts
+gcloud iam service-accounts list
+gcloud auth activate-service-account
+
+# list bucket objects byLabel
+from google.cloud import storage
+
+def list_buckets_by_label(label_key, label_value):
+    # List out buckets in your default project
+    client = storage.Client()
+    buckets = client.list_buckets() # Iterator
+
+    # Only return buckets where the label key/value match inputs
+    output = list()
+    for bucket in buckets:
+        if bucket.labels.get(label_key) == label_value:
+            output.append(bucket.name)
+    return output
+
+# Future
+use pre-trained models to extract information out from images.
+auto generate tags and recognize objects
+
+for an international bank, a non-minimized CSS document could add 1 gigabyte per day of bandwidth.
+However, when I'm building my portfolio site, I'm expecting a fraction of that traffic.

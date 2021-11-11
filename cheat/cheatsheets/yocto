@@ -8,3 +8,20 @@ that are independent of the underlying architecture of the embedded hardware.
 
 - Inception in 2010 and launched in 2011 in collaboration with 22 organizations, including OpenEmbedded
 - In October 2018, Arm Holdings partnered with Intel in order to share code for embedded systems through the Yocto Project.
+
+# How to build an embedded image for respberry pi?
+- building linux is CPU, RAM and DISK intensive process, can take upto 8 hrs for the first time, then caching algorithms
+  kick in.
+- image under -> tmp/deploy/images/repberrypi4
+- By default, the username is root with an empty password.
+
+# Recipies
+- https://layers.openembedded.org/layerindex/branch/dunfell/recipes/
+
+# what are meta layers?
+meta-layer: A meta-layer contains the meta data. meta-data means conf, classes, and recipes.
+e.g:
+    meta-fsl-arm is a meta-layer which contains the meta data(configuration and mechines classes and all recipes )
+    meta-phytec is a layer which contains the meta-data(like conf files, classes, and all recipes)
+
+# host RPM packages on your own local YUM repos

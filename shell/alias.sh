@@ -54,7 +54,7 @@ function venv() {
 
 # List directory contents
 alias la='ls -lAhG | fzf'
-alias ll='ls -lAhG'
+alias ll='ls -lAhG --color=auto'
 alias ls='ls -G'
 alias tree='tree -C'
 
