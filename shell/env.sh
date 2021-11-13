@@ -11,6 +11,8 @@
 # MANPAGES
 # use bat to color man pages
 export MANPATH="/usr/local/man:$MANPATH"
+# resolve issue with bold formatting https://github.com/sharkdp/bat/issues/652
+export MANROFFOPT="-c"
 export MANPAGER="sh -c 'sed -e s/.\\\\x08//g | bat --language man -p'"
 # export MANPAGER="/bin/sh -c \"col -b | vim -c 'set ft=man ts=8 nomod nolist nonu noma' -\""
 
