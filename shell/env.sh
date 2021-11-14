@@ -59,4 +59,8 @@ export CHEAT_USE_FZF=true
 # starship prompt
 export STARSHIP_CONFIG=$HOME/dotfiles/starship/starship.toml
 
+# google cloud SDk
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
 # END

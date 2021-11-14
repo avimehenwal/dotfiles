@@ -16,27 +16,27 @@ export ZPLUG_HOME=$HOME/.zplug
 source $ZPLUG_HOME/init.zsh
 
 BASE=$HOME/dotfiles/shell
-source ${BASE}/zplug.zsh
 source ${BASE}/alias.sh
+source ${BASE}/autoload.zsh
+source ${BASE}/env.sh
 source ${BASE}/keybindings.sh
 source ${BASE}/path.sh
-source ${BASE}/env.sh
 source ${BASE}/shared.sh
+source ${BASE}/zplug.zsh
 # Condtitional loading of zsh settings per platform
-if command apt > /dev/null; then
-    source ${BASE}/debian.zsh
-elif command systemctl > /dev/null; then
+if command apt >/dev/null; then
+  source ${BASE}/debian.zsh
+elif command systemctl >/dev/null; then
   # source ${BASE}/systemd.zsh
-elif command freebsd-version > /dev/null; then
-    source $ZSH_CUSTOM/os/freebsd.zsh
-elif [[ `uname` == "Darwin" ]]; then
-    source ${BASE}/macos.zsh
-elif command kubectl > /dev/null; then
-    source $ZSH_CUSTOM/os/kubernetes.zsh
+elif command freebsd-version >/dev/null; then
+  source $ZSH_CUSTOM/os/freebsd.zsh
+elif [[ $(uname) == "Darwin" ]]; then
+  source ${BASE}/macos.zsh
+elif command kubectl >/dev/null; then
+  source $ZSH_CUSTOM/os/kubernetes.zsh
 else
-    echo 'Unknown OS!'
+  echo 'Unknown OS!'
 fi
-
 
 # History - reverse-search
 HISTFILE=~/.zsh_history
@@ -57,7 +57,7 @@ source ${PLUGINS}/gitFzf.zsh
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
 # THEME
-( $(command -v starship > /dev/null )) || sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+($(command -v starship >/dev/null)) || sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 eval "$(starship init zsh)"
 
 # Line Editor Mode
@@ -136,11 +136,11 @@ if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-clou
 if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
 
 # PyENV
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
-echo 'eval "$(pyenv init --path)"' >> ~/.profile
-echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >> ~/.profile
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >>~/.profile
+echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >>~/.profile
+echo 'eval "$(pyenv init --path)"' >>~/.profile
+echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >>~/.profile
+echo 'eval "$(pyenv init -)"' >>~/.bashrc
 
 # enable case-insensitive tab completion
 autoload -Uz compinit && compinit

@@ -99,7 +99,7 @@ alias psa='ps aux | fzf'
 alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers'
 
 # ZSH Specific
-alias fpath='print -l $fpath'
+alias fpath='print -l ${(@kv)fpath}; echo -e "\nTotal fpath = ${#fpath}"'
 
 # System Management
 alias publicip='curl ifconfig.me'
