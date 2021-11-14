@@ -23,6 +23,7 @@ source ${BASE}/keybindings.sh
 source ${BASE}/path.sh
 source ${BASE}/shared.sh
 source ${BASE}/zplug.zsh
+
 # Condtitional loading of zsh settings per platform
 if command apt >/dev/null; then
   source ${BASE}/debian.zsh
@@ -54,7 +55,9 @@ source ${PLUGINS}/internals.zsh
 source ${PLUGINS}/myFunctions.zsh
 source ${PLUGINS}/gitFzf.zsh
 
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# Add custom autoloading functions to fpath
+fpath+=${BASE}/lazy_functions
+fpath+=${BASE}/lazy_functions/completions
 
 # THEME
 ($(command -v starship >/dev/null)) || sh -c "$(curl -fsSL https://starship.rs/install.sh)"

@@ -1,0 +1,2 @@
+# list the contents of a tar ball
+tar -ztvf git-insight-0.0.1.tar.gz

@@ -1,0 +1,59 @@
+Centralised logging is good, distributed logging is earth-shattering
+
+Nowadays, syslog has been supplemented by other logging facilities such as
+rsyslog, syslog-ng, and the systemd journal subsystem.
+
+# how to write application logs to linux syslog subsystem? using bash
+logger "some log message"
+
+# syslog using python
+python -c 'import syslog; syslog.syslog("Hello World")'
+
+# how to view syslogs?
+"tail -f /var/log/messages" will now become "journalctl --follow".
+
+# format syslog
+prefer modern journalctl format over ordinary syslog format
+
+for num in  {1..7}
+do
+
+  logger --journald <<end
+MESSAGE_ID=67feb6ffbaf24c5cbec13c008dd72309
+MESSAGE=The dogs bark, but the caravan goes on.
+SYSLOG_IDENTIFIER=APP-LABEL
+PRIORITY=${num}
+end
+
+done
+
+
+-i Log the process ID in each line
+-f Log the contents of a specified file
+-n Write to the specified remote syslog server
+-p Specify a priority
+-t Tag the line with a specified tag
+
+logger -p local0.notice -t ${0##*/}[$$] Hello world
+
+# manage logs
+logrotate
+
+# useful logs to monitor
+journalctl --list-boots
+
+# Why do we need logs at all
+so that we can see and observer what the application did at any point in time?
+to monitor it and analyze the behaviour later
+
+## What to log? interesting events like
+1. Installation and removal logs
+2. Events generated and processed by the application
+3. Monitoring and health related logs
+
+## New implementations rsyslog, advantages?
+1. it supports additional logging protocols
+2. and it can log to databases, such as MySQL or PostgreSQL, as well as files.
+3. You can filter any part of a syslog message and can fully configure the output format.
+
+

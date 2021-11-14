@@ -64,3 +64,5 @@ viewBox - controls whats inside the viewport area, zooming and panning
 
 preserveAttributes - if you want vector to use up all space in viewbox
 
+## when to use canvas (webGL) and when to use SVG?
+https://css-tricks.com/when-to-use-svg-vs-when-to-use-canvas/

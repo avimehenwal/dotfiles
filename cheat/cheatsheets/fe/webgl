@@ -1,0 +1,61 @@
+---
+syntax: markdown
+tags: [frontend, webgl, graphics, opengl]
+---
+
+- requires no installations and packages, using just browser tooling makes it attractive
+- webGL thinks in vertices
+- based on openGL, shaders in webGL are still written in openGL syntax (~ C)
+  https://www.shadertoy.com/
+- graphics rendering engines alternatives like to the types of directX, vulcan
+- webGL (3D) >>> Canvas (2D)
+- graphics rendering pipeline
+- webGL = { openGL in browser + hardware accleration }
+
+# what is openGL
+1980 s/w was developed with different interfaces for specifics graphics hardwares
+there was no standard/specification that time
+1992  openGL was born, low-level computer API for rendering 2D and 3D vector graphics
+allows graphics to be OS and windowing system independent
+mostly written in C, interacts with GPU for hardware acclerated rendering
+
+      core      speed
+CPU   less      high
+GPU   more      less
+
+## Hardware accleration
+use of GPU to MISD instructions, vector architectures
+- good for matrix arithmetic
+- multiplying floating point numbers
+
+## how it works?
+- raw-data is sent to GPU buffers for shader manipulation and transformations
+- mathematical functions: mathematical coordinate --> coloured pixel
+- display device to update all pixels that changed at the same time
+- Abstractions
+  - orthogonal camera
+  - perspective camera
+
+## A simplified webGl Recipe
+1. Make a window and context for rendering --> html.canvas
+2. supply data like vertices and shapes
+3. create a program for the GPU --> { vertex + fragment + gemetry } shader in GLSL openGL Shading Language
+
+## web context
+CSS3 transforms, animations implemented as openGL
+static --> dynamic === animations
+
+## operations
+1. shapes and meshes
+2. transforms on data, translate, rotate, scale
+3. extrusion
+
+- webGL is very verbose, 190 lines for just a square and triangle
+  - javscript is neither java nor scripting language, what the hell
+  - https://www.hanselman.com/blog/javascript-is-web-assembly-language-and-thats-ok
+  - when talking to GPU hardware, need to be very specific, talking to low-level hardware
+- domain knowledge == geometry in 3D paradime
+- webGL on android?, chrome-android
+
+## Examples
+https://acko.net/

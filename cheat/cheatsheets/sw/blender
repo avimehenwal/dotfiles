@@ -1,0 +1,40 @@
+automating motion graphics
+
+# python API scripting
+- ever operation in blender has a python command
+- bpy library provides python with the scene data
+- use other python libraries to manipulate scenes
+
+## Animation as a Servicce
+- make intros and outro animations
+- sometimes businnesses need to hire freelancers to use the template which they have already purchased
+
+https://viddyoze.com/
+https://www.pond5.com/
+
+# motion graphics
+Motion graphics are pieces of animation or digital footage which create the illusion of motion or
+rotation, and are usually combined with audio for use in multimedia projects. Motion graphics are
+usually displayed via electronic media technology, but may also be displayed via manual powered technology.
+
+Animation (*techniques) >>> Motion Graphics 
+
+    Explainer videos
+    Walkthroughs/Instructional videos
+    UI animation
+    Dynamic logos
+    Dynamic icons
+    Animated page titles
+    Animated infographics
+    Presentations
+    Broadcasting motion graphics
+    GIFs
+
+## text manipulation in blender is NOT that great
+- resizing and aligning based on perspective and #words
+
+## Techniques
+lettering animation
+3D objects (VC Element 3D)
+particle simulations (Trapcode Particular / Newton) or
+character animation (Duik or Traditional Animation).

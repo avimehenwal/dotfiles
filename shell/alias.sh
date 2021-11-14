@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 #  @avimehenwal - updated 2020-Dec
 #
 #    / \  | (_) __ _ ___  ___  ___
@@ -51,6 +51,14 @@ function venv() {
   python -V
   pip list
 }
+
+list_completions() {
+  for command completion in ${(kv)_comps:#-*(-|-,*)}
+  do
+    printf "%-32s %s\n" $command $completion
+  done | sort
+  echo -e "\n Total Completions = ${#_comps:#-*(-|-,*)}"
+} 
 
 # List directory contents
 alias la='ls -lAhG | fzf'

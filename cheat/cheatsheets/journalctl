@@ -1,0 +1,11 @@
+journalctl --since yesterday|today
+
+# list all command run with SUDO privilages today
+journalctl --since today _COMM=sudo
+
+# filter by syslog tags
+journalctl -t APP-LABEL
+logger -t "APP-LABEL" "some logr 1"                
+
+# print all fields set on current system
+journalctl --fields

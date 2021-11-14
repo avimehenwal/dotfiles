@@ -81,3 +81,6 @@ rpm -q gpg-pubkey --qf '%{name}-%{version}-%{release} --> %{summary}\n'
 
 # list all macros
 bat ~/.rpmmacros
+
+# what provides a package
+rpm -q --whatprovides /etc/skel/.bashrc

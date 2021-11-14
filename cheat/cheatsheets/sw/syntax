@@ -1,0 +1,30 @@
+---
+syntax: markdown
+tags: [software, syntax, highlighter]
+---
+
+# How to write your own syntax highlighting software?
+Building a syntax highlighter is all about finding specific keywords in the code and giving them a specific
+style (font, font style, colour etc.). In order to achieve this, you will need to define a list of keywords
+specific to the programming language in which the code is written, and then parse the text
+(e.g. using regular expressions), find the specific tokens and replace them with properly-styled HTML tags.
+
+A very basic highligher written in JavaScript would look like this:
+
+var keywords = [ "public", "class", "private", "static", "return", "void" ];
+for (var i = 0; i < keywords.length; i++)
+{
+        var regex = new RegExp("([^A-z0-9])(" + keywords[i] + ")([^A-z0-9])(?![^<]*>|[^<>]*</)", "g");
+        code = code.replace(regex, "$1<span class='rm-code-keyword'>$2</span>$3");
+}
+
+# feature description in text-editors
+https://en.wikipedia.org/wiki/Syntax_highlighting
+lexer vs parser difference    https://stackoverflow.com/questions/2842809/lexers-vs-parsers
+
+## Implementations
+1. using lexer + parser, single pass
+2. using other known tools and building a facade on top of it
+
+## Syntax highlighting Engines
+rust      syntext (bat)         https://github.com/trishume/syntect#projects-using-syntect

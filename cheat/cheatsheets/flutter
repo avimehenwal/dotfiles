@@ -1,0 +1,11 @@
+- works just like how UNITY works, draws pixel by pixel
+- has its own rendering engine written in C++
+
+# compared to native iOS app
+- miss out on text-editing, apple pencil
+
+instagram started with iOS and then moved to android once they grew big
+
+## webGl on flutter, mobile apps?
+- scene files are too big, like 200 MB
+- use more static content like pre-rendered GIFs

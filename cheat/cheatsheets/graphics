@@ -1,0 +1,31 @@
+projection mapped art, project on a sphere in a museum
+
+# problems in graphics
+- high resolution on a spehere. ffmpeg to decode
+- buffer management, quiet a lot and put it where it meant to be
+- writing appropriate shader in webGL or openGL
+- compiling openGL code, linking to a specific vendor driver
+- get the right packages and get them to talk to each other
+
+# total real visualization
+- audioGL
+- webGL + openGL
+
+# resources
+steve witten pixel factory  https://acko.net/files/gltalks/pixelfactory/
+webGL water                 http://madebyevan.com/webgl-water/
+
+- gemetry is the raw-data in a cs-ds
+- vortex shader, which runs on every single point, material is also a shader + general transforms
+- how match becomes pixel, abstractions like camera and lighting etc.
+- this works so we are going with it is the motto of the graphics
+
+- we love react data binding syntax so much
+
+## three.js
+rendere -> scene -> camera, light source -> data
+
+react is a confluence of 3 things
+1. syntax         -> JSX
+2. semantics      -> lifecycle hooks
+3. implementation -> reconciler

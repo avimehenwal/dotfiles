@@ -27,3 +27,6 @@ sed '/happily ever after/a\The end.'
 
 # Use variables for sed patterns
 sed -e "s/\": \"/$DELIMITER/g"
+
+# get the n:th line from a file
+sed "${NUM}q;d" file

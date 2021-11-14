@@ -1,0 +1,12 @@
+#!/usr/bib/zsh
+
+# AUTHOR      : avimehenwal
+# DATE        : 14-Nov-2021
+# PURPOSE     : entrypoint script
+# FILENAME    : avi.zsh
+#
+# Interface for custom commands provided by avi
+
+echo "from -> ${PWD} avi file"
+
+# END
