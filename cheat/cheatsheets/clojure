@@ -10,3 +10,11 @@ blocks the deref call (current thread) until future execution is completed
 predicates: future? future-done? future-cancelled?
 If a future is cancelled, all the side-effects in future block has to be rollbacked, handled manually
 promise can only be set ONCE
+
+# clojure for CLI tools?
+Nothing bad, but it’s quite useless to load a complex environment to process a 100k text file and then throw everything away.
+you might notice CPU spikes when launching clojure CLI
+
+GraalVM is an extension of the Java virtual machine to support more languages and execution modes.
+The Graal project includes a new high performance Java compiler which can be used in a just-in-time
+configuration on the HotSpot VM, or in an ahead-of-time configuration on the Substrate VM.

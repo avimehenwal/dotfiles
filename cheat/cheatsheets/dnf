@@ -41,3 +41,10 @@ dnf list installed kernels
 
 # local install a rpm package, without going over to internet
 yum --nogpgcheck localinstall packagename.arch.rpm
+
+# Add/remove enable/disable source repositories
+dnf config-manager --set-disabled repository
+
+# How to undo/rollback previous update?
+dnf history list | head -20
+dnf history undo <Number>

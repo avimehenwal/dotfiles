@@ -1,3 +1,5 @@
 # Run a command on each line of output
 cheat -l -t javascript | awk 'NR>1 {print $1}' | while read IN; do cheat "$IN"; done
 
+# get CWD
+echo ${0:A:h} === ${PWD}

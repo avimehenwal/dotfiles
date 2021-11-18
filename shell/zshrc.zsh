@@ -22,7 +22,6 @@ source ${BASE}/env.sh
 source ${BASE}/keybindings.sh
 source ${BASE}/path.sh
 source ${BASE}/shared.sh
-source ${BASE}/zplug.zsh
 
 # Condtitional loading of zsh settings per platform
 if command apt >/dev/null; then
@@ -138,13 +137,15 @@ if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-clou
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
 
+# TODO: causing shell to realod 3 times
+# source ${BASE}/zplug.zsh
 # PyENV
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >>~/.profile
-echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >>~/.profile
-echo 'eval "$(pyenv init --path)"' >>~/.profile
-echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >>~/.profile
-echo 'eval "$(pyenv init -)"' >>~/.bashrc
+# echo 'export PYENV_ROOT="$HOME/.pyenv"' >>~/.profile
+# echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >>~/.profile
+# echo 'eval "$(pyenv init --path)"' >>~/.profile
+# echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >>~/.profile
+# echo 'eval "$(pyenv init -)"' >>~/.bashrc
 
 # enable case-insensitive tab completion
-autoload -Uz compinit && compinit
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
+# autoload -Uz compinit && compinit
+# zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
