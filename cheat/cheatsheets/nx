@@ -1,0 +1,3 @@
+# use yarn
+npx create-nx-workspace new-app --preset=next --packageManager=yarn 
+

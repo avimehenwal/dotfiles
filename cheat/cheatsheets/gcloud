@@ -43,3 +43,21 @@ auto generate tags and recognize objects
 
 for an international bank, a non-minimized CSS document could add 1 gigabyte per day of bandwidth.
 However, when I'm building my portfolio site, I'm expecting a fraction of that traffic.
+
+# enable APIs
+gcloud services enable \
+  run.googleapis.com \
+  sql-component.googleapis.com \
+  sqladmin.googleapis.com \
+  compute.googleapis.com \
+  cloudbuild.googleapis.com \
+  secretmanager.googleapis.com
+
+# secret manager using 12 factor app principle. Allow cloud run service account to access secrets. Grant access
+export PROJECTNUM=$(gcloud projects describe ${PROJECT_ID} --format 'value(projectNumber)')
+export CLOUDRUN=${PROJECTNUM}-compute@developer.gserviceaccount.com
+
+gcloud secrets add-iam-policy-binding application_settings \
+  --member serviceAccount:${CLOUDRUN} --role roles/secretmanager.secretAccessor
+
+  then access secrets in your code from using python gcloud SDK. from google.cloud impoer secretmanager as sm

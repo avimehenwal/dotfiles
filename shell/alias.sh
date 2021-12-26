@@ -58,7 +58,7 @@ list_completions() {
     printf "%-32s %s\n" $command $completion
   done | sort
   echo -e "\n Total Completions = ${#_comps:#-*(-|-,*)}"
-} 
+}
 
 # List directory contents
 alias la='ls -lAhG | fzf'
@@ -146,3 +146,18 @@ alias list-installed-npm-packages="npm ls -g --depth=0."
 alias list-outdated-npm-packages="npm outdated -g --depth=0."
 # Update outdated globally installed npm packages
 alias update-npm-packages="npm update -g"
+
+function cna_with_mui5 () {
+  local name=${1:-frontend}
+  echo "creating webapplication under directory ${(U)name}"
+  yarn create next-app --typescript ${name} && \
+  cd ${name} && \
+  yarn add @mui/material @emotion/react @emotion/styled && \
+  yarn add @mui/icons-material
+}
+
+# NX monorepo build system
+# --package-manager=yarn  -->  Nx failed to create a workspace. Error: Command failed: yarn
+# --skip-git=true
+alias workspace='npx create-nx-workspace'
+

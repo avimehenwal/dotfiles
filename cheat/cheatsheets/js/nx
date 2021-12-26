@@ -1,0 +1,21 @@
+# scale frontend projects like google, facebook and apple
+UC1: share design-system between multiple frontend projects
+UC2: share types and interfaces b/w frontend and backend code
+
+nx application
+nx libraries
+generators      standardize scaffolding tasks
+presets         to bind with ts or nextjs framework
+
+## new NX workspace
+yarn create nx-workspace --package-manager=yarn
+
+## add next to an existing workspace
+yarn add @nrwl/next
+
+## add additional nextjs app to  monorepo
+npx nx g @nrwl/next:app2
+
+## add a new library, yarn publish ready
+npx nx g @nrwl/react:lib shared-ui-components
+npx nx g @nrwl/react:lib shared-ui-components --publishable --importPath=@happynrwl/ui-components

@@ -13,6 +13,7 @@ tags: [frontend, javascript, nextjs]
   - Which file will it choose? Depends on NODE_ENV
   - Next.js will NOT leak environment variables to client, only available on server
   - NEXT_PUBLIC_VAR_NAME to expose them to client
+  - various stages @requestime @buildtime
 
 ## Routing
 
@@ -26,7 +27,7 @@ At buildtime, next.js marks certain routes which have `getServerSideProps(contex
 1. getServerSideProps gets executed for every single request, most important method
 2. render the page
 3. Redirect the page
-4. Insert props to page Components
+4. Insert props to page Components from context object
 
 ### getStaticPaths()
 
@@ -47,6 +48,8 @@ At buildtime, next.js marks certain routes which have `getServerSideProps(contex
 Generate pages at Build Time
 
 ## Router
+
+browser webapi implements route pushing and popping
 
 ```javascript
 import { useRouter } from 'next/router'
@@ -76,12 +79,22 @@ user ? <AuthenticatedPanel /> : <NonAuthenticated />
 .Problems
 - CLS Cumulative Layout Shift
 - Are images put on S3 optimized?
+- inbuilt image loader
+- inbuilt caching behaviour
 
 .pros 
 - Automatically compresses the image, webp
 - Lazy loading for free
-- Automatically scales image
+- Automatically scales image and avoids CLS
 
+## Advanced
+
+- CMS Previews @requestime >> @buildtime, setPreviewData in preview API path then cookie to byPass pre-rendering
+- API Routes, mask URLs for external services, CORS middleware
+- next/server API
+
+npx create-next-app@latest --typescript --example [name|github-url] app-name
+with-jest with-cypress
 
 ## Resources
 https://youtu.be/EJVGzyWSCBE

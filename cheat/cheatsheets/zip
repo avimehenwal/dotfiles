@@ -1,0 +1,5 @@
+# zip files for python and next projects, exclude dependencies and include only source files
+zip -r overstory.zip . -x "**/node_modules/*" -x "**/.next/*" -x "**/venv/*" -x "**/__pycache__/*"
+
+# list all files in zip
+unzip -l overstory.zip | bat

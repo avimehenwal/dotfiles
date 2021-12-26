@@ -44,3 +44,15 @@ npm prune       remove extraneous packages, which are NOT in package.json
 
 # system information and node environment information and versions
 npx envinfo --system --binaries
+
+# yarn package manager for nodejs
+npm install --global yarn
+migrate from yarn1 --> yarnv2
+
+## yarn update itself
+yarn self-update
+yarn global upgrade --scope @angular         upgrade selected packages
+
+# How to publish a scoped package?
+1. create an organization from UI
+2. map organization to registry     npm config set @mehenwal:registry https://registry.npmjs.org/

@@ -23,3 +23,6 @@ dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
 
 # Bootable pendrive
 dd if=./source.iso of=/dev/sdb bs=2048 status=progress
+
+# dd | cp | rsync linux commands
+https://unix.stackexchange.com/questions/338834/what-is-the-difference-between-dd-cp-and-rsync

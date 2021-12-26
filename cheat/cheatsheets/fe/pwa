@@ -1,0 +1,34 @@
+# PWA - Progressive Web Application
+web-apps that can run like native app, or at least pretend to work like that.
+- fallback to offline pages, pages/_offline.tsx
+- offline pages are pre-cached at the first load
+- use/access camera features
+- look like native mobile applications
+
+# what it takes?
+- load a service worker.js file is browser supports PWA mode
+- manifest.json file to describe the app
+- devtools, Applications -> Service worker
+- build the SW files and the host it to make it available to HTML page
+
+# How to build them?
+- tooling like workbox, add/remove features 
+- angular has built-in tooling to build PWA
+- For CRA, built-in src/service-worker.js
+- For nextjs, using workbox wrapper https://github.com/shadowwalker/next-pwa
+
+# How to convert a webapp -> PWA?
+- It takes good lighthouse score
+- Accessable Markup
+- Optimized for mobile
+
+# How to use it?
+- Install the App
+
+# How to market PWA?
+- in google Play store
+- TWA
+- in Microsoft store
+
+# Fun Projects
+- https://hnpwa.com/

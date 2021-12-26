@@ -7,7 +7,10 @@ tags: [ cs, programming, design-patterns ]
 3. Design Patterns
 
 # Command Pattern
-If a Object has a method called execute()
+If a Object has a method called execute() and undo(). Each userAction is abstracted as a command.
+client co-rdinates { reciever(commandObject + invoker)}
++ Adds features to do/undo/redo the effect of a command
++ do/undo on databases operations
 
 # Singleton Pattern
 An app can have only 1 database connector to a table at a time

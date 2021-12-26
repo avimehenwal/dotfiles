@@ -1,2 +1,5 @@
 # bootstrap Next.js project
 npx create-next-app <appName>
+
+## __app vs __document ?
+extend nextjs Document class, which builds <html>, <head>, <body> tags

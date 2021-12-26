@@ -1,0 +1,16 @@
+
++------+  ip   +--------------------+  op   +---------------------------+
+| SRPM | ----> |        COPR        | ----> | architecture specific RPM |
++------+       +--------------------+       +---------------------------+
+                 |
+                 | op
+                 v
+               +--------------------+
+               | repository hosting |
+               +--------------------+
+
+echo "[SRPM] -- ip --> [COPR] -- op --> [architecture specific RPM], [repository hosting]" | graph-easy | c
+
+- fedora linux way to packaging apps on cloud and providing them as repositories
+- How to create SRPM? tito, rpmbuild, rpkg, fedpkg
+- How to submit a build job on copr?

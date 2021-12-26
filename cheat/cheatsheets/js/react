@@ -289,4 +289,6 @@ function LogButtonClicks() {
 2. Store mutable value like instance variable (in class)
 3. A render counter
 4. A value to be used in setTimeout / setInterval without a stale closure issue.
+5. useRef.current is useless in useEffect dependency array and is useless anti-pattern as it wont trigger re-render
+somtimes you can use useCallback() hook to get the most recent element ref value
 
