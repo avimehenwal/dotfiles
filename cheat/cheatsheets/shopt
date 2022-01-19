@@ -1,0 +1,6 @@
+only works on bash, zsh: shopt: command not found...
+
+- short for showing shell options
+
+shopt is not a command, but a shell built-in. You can find out this by running the following command in bash：
+type shopt

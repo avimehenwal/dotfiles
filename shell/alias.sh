@@ -157,7 +157,7 @@ function cna_with_mui5 () {
 }
 
 # NX monorepo build system
-# --package-manager=yarn  -->  Nx failed to create a workspace. Error: Command failed: yarn
-# --skip-git=true
-alias workspace='npx create-nx-workspace'
+alias workspace='npx create-nx-workspace --nx-cloud false'
+# --package-manager=yarn --> have issues : classical yarn v1 --> v2/3 breaking changes
+alias monorepo='yarn create nx-workspace --nx-cloud false'
 

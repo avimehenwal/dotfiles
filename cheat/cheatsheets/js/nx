@@ -17,5 +17,7 @@ yarn add @nrwl/next
 npx nx g @nrwl/next:app2
 
 ## add a new library, yarn publish ready
-npx nx g @nrwl/react:lib shared-ui-components
-npx nx g @nrwl/react:lib shared-ui-components --publishable --importPath=@happynrwl/ui-components
+nx g @nrwl/react:lib ui --directory=component-library
+nx g @nrwl/react:component todos --project=ui --export
+
+nx g @nrwl/react:lib shared-ui-components --publishable --importPath=@happynrwl/ui-components
