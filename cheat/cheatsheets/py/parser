@@ -1,0 +1,17 @@
+# How to build your own DSL in python?
+
+# How to parse horrible things known to mankind in python?
+- python grammer itself is described in EBNF, is a Type-2 contex free grammer
+
+# python libraries and tools for parsing?
+https://lark-parser.readthedocs.io/en/latest/index.html
+https://github.com/erikrose/mediawiki-parser/blob/master/parsers.rst
+
+# when to use RegEx and when to recah for parser?
+- when their is nesting in the contruction, regex cannot handle nesting
+- when you cannot stand a regex
+
+# How to convet a EBNF to a nice AST to work on?
+- to walk the tree
+- parsing is a gateway drug
+

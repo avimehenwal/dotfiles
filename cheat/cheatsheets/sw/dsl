@@ -1,11 +1,40 @@
 ---
 tags: [software, dsl, plang]
 ---
+How to let customer express their rules in software code. Make complex domain problem simpler
+Real world business domains has domains inside domains inside domains
+DSL grammer comes from the customer, NOUNS and VERBES, Idioms - user friendly
+with time, Domain Model with get more complex
+
 # DSL Domain Specific Languages
 Banking, Finance, Insurance and Policy, governance
 
 # Existing Examples
-SQL, CSS
+SQL, CSS, RegularExpressions, shell scripts, matlab/octave/R
+
+# JS flavour DSL
+jQuery, D3js, Gulp, Mocha/Chai
 
 # How to make your own DSL
 Jetbrains MPS   https://www.jetbrains.com/mps/
+
+# How to build a custom interactive DSL?
+- evolutionary history of DSL, punch-cards -> assembly lanf -> higher-level lang -> Domain modelling
+  - understand your domain with domain experts
+  - model your domain then implement your domain
+- How to define grammer for your DSL
+- implementing your DSL
+  - DSLBuilder pattern
+  - method chaining    https://stackoverflow.com/questions/53974187/how-to-do-typescript-function-chaining
+
+  in the end, we call build, and it calculates based on config and properties, computes domain and return
+
+# multimedia files in database
+- queryable data (multimedia file metadata) in DB, actual BIG file on FileSystem
+- Also, if you're going to have thousands of media files, don't store them all in one giant directory
+  that's a performance bottleneck on some file systems. Instead,break them up into multiple balanced sub-trees.
+- database storage is usually more expensive than file system storage
+- The government wants you to maintain 6 years of history
+
+https://stackoverflow.com/questions/3748/storing-images-in-db-yea-or-nay
+

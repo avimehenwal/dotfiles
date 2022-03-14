@@ -1,0 +1,52 @@
+- query data using graph schema
+- graph federation -> connecting graphs
+- No matter which of the above GraphQL tools/libraries you use, Prisma is used inside your GraphQL resolvers to connect to your database.
+- To track these changes over time, you should maintain your schema's definition in version control. => QueryDriven Schema Design
+
+GraphQL is data source-agnostic.
+This means that you can use whatever database technology you like to fetch and save data;
+for instance — SQL, ORMs, NoSQL, JSON, or in-memory data all work just fine.
+
+# data fetching
+there are three ways to fetch and render data:
+
+1. static
+2. server-side and
+3. client-side.
+
+There are benefits and tradeoffs to each strategy, but I’m happy to report that Apollo Client is compatible with all three!
+
+## Apollo Studio
+- connect and observe all your graphs that already exists in apollo graph registry
+- rover CLI
+- manage graph versions using apollo registry
+
+## spin up a graphQL server locally and inspect it from studio
+apollo server docs
+1. create graph Types and Schema
+2. add Query Resolver
+3. instantiated and run apollo-graphql-server on node
+
+## Apollo-Server vs Nexus Schema
+prisma SDL modelling != graphQL SDL schema modelling language, it's only inspired by it
+
+I thought Apollo Server could generate default resolvers, and I thought Prisma could generate type definitions ??
+
+How to construct graphQL schema? => Nexus
+
+graphQL Server = Schema + Resolvers + TypeDefinitions
+
+## Resolvers
+graphQL query Handler
+
+## Apollo Server
+- multiple production ready server implementations, choose based on usage, Eg: HTTPLayer, Middleware
+
+## DataSources
+graphQL can accept data from multiple sources, including databases, APIs, caching layers, and other graphQL endpoints
+
+## Subscriptions
+Because subscription updates are usually pushed by the server (instead of polled by the client), they usually use the WebSocket protocol instead of HTTP.
+
+## How to generate graphQl schema and types and resolverTypes automatically from prisma modal?
+Add new generator ==> https://typegraphql.com/docs/prisma.html

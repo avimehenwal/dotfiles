@@ -68,4 +68,27 @@ To distinguish these strings from normal strings, we also have to define the map
 
 ## Managed elastic search in AWS
 
+## Who uses ELK stack?
+- tinder, NASA-JPL
+- log analysis and log queries
+- metrics and analytics
+- documents are logical collection of index
 
+# what is ElasticSearch? Search Engine software
+- opensource analytics and full-text search engine (with caching))
+- it is NOT a RDBMS, it is a document store, is a search and analytics engine to fine-tune search results based on precision, ranking and recall
+- multiple shards on different nodes, on same node is an anti-pattern
+- ES does not support joins and transasctions
+- cannot I use RDBMS for searching? why handle the overhead of additional microservice?
+
+# Elastic Search vs Business Intelligence Softwares
+
+# User facing search engines
+- search engine database written in rust  https://www.meilisearch.com/
+
+## Meilisearch Engine
+- opensource, ultrafast search engine database with REST API interface to power client search features
+- 2010 ES and 2018, replacement for algolia and not ES, ES is very complex and highly scalable
+- search index is document database with NO scshema
+- sewarch even if there are mistakes in search text
+- customizable search attributes on/off

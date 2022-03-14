@@ -1,0 +1,92 @@
+# Prisma ORM
+- declerative schema and queries
+
+## evolve DB Migrations and version control them like git
+npx prisma migrate dev --create-only
+
+# generate and apply migrations to db
+npx prisma migrate dev
+
+## for prototyping only
+prisma db pull
+prisma db push vs db migrate
+
+prisma init --datasource-provider sqlite
+prisma init --url mysql://user:password@localhost:3306/mydb
+prisma generate --watch --schema=./alternative/schema.prisma
+prisma format
+prisma db seed
+
+prisma migrate status
+prisma migrate dev --name project_init
+prisma migrate deploy
+prisma migrate reset
+prisma migrate diff
+
+
+## Shadown Database
+The shadow database is created and deleted automatically* each time you run a
+development-focused command and is primarily used to detect problems such as schema drift.
+
+## Seed your DB in re-create
+Seeding allows you to consistently re-create the same data in your database
+https://www.youtube.com/watch?v=2LwTUIqjbPo
+
+# known challenges
+
+## db-client can drop connection(s) when number of users increase on serverless environment
+S:: use database proxy to manage connections, promotes existing established connection reuse
+- each new client request will create a brand NEW DB connection and there a limit to how many parallel connections a DB can handle
+- after that your requests will start to fail
+- scalable serverless application
+
+## preview database deployments
+seperate DB for each PR, we want total isolation
+- provision new DB
+- apply database migrations and seed data into DB
+- dealing with sensetive data in DB for compliance and regulations in most countries
+
+## Search database engines integration with existing model
+- sync searchDB index with existing data changes from prisma ORM?
+- prisma projectstions => automating back-filling
+- so that you do not loose revenue
+
+## Serverless world challenges
+- rock solid scale
+- massive traffic and massive growth
+- vitess origin, YT in 2010 was using MySQL, 16 shards
+- sharding might be the only was to scale infinitely, distribute your data on multiple machines. How to group data?
+- other DB scaling patterns? add caching layer > 95% HitRate, Panic moment when you loose cache, DB queries will fail
+- undo a DB schema?
+
+## DB KPIs
+- QPS: Queries per second, millions of QPS for YT 20 data-centres all around the world with 75 replicas run by 15 people
+
+## Next.JS and Prisma
+- Edge functions & middleware, A/B testing and feature flags
+- how to interact with a DB from our frontend application?
+
+## with graphQL
+- graphQL-server to server graphQL endpoint
+- graphQL-client to query
+- UC1: graphQL server connected with the DataBase system
+- UC2: graphQl as a integratio layer for legacy-services, microservices and 3rd-party APIs
+
+- No matter which of the above GraphQL tools/libraries you use, Prisma is used inside your GraphQL resolvers to connect to your database.
+
+## Why nexus is required with prisma?
+GraphQL has its own language to write GraphQL Schemas, graphQL SDL
+Prisma Client is an auto-generated database client that's tailored to your database schema.
+prisma can create type defination for model when we run generate command under node_modules/.prisms/index.d.ts
+
+https://medium.com/tomorrowapp/using-prisma-with-graphql-codegen-eed022c13749
+
+## TypeGraphQL
+tool which generates graphQL SDL Schema from TS class with type-decorators
+add additional generator to prisma typegraphql-prisma
+can also generate CRUD graphQl resolvers, typegraphql but it’s better than nexus-prisma currently, just because of the crud generators
+It generates the type classes and CRUD resolvers based on the Prisma schema, so we can execute complex queries or mutations that
+corresponds to the Prisma actions, without having to write any code for that.
+
+## Authentication
+prisma can do session based authentication (saving users in session DB) right from next.js using next.auth

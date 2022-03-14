@@ -1,0 +1,35 @@
+# How to model-data, how to save-it and how we retrieve-it?
+place for each kind of data management technology
+
+## history of data persistance
+1. punched cards
+2. into columns and rows in tables, discrete data-bases for each area?
+    data SILOS? How do we connect data different systems to make more meaningful analytics
+    ACID support + trust
+    Normalize data to reduce duplications
+3. NoSQL document databases
+4. KV database and datastores
+5. Graph-Database - relationship first approach
+
+## Querying Languages
+    neo4j cypher SQL but for graphs, for connected graphs and data, connectednes
+    let ML generate a model and ask grphaDB to look for that data?
+
+## use cases
+social networks
+real-time recommendation engines
+fraud detection, and money laundering ICPL
+
+# graph data-bases
+A graph database stores nodes and relationships instead of tables, or documents.
+friend of a friend query with 20 degrees? and quickly?
+relations are not computed at query-time rather stored in DB-HD which makes it faster
+for highly connected data
+representation of real-world using graphs and graphs theory model. Eg: internet is a graph
+
+## neo4j
+ACID compliant transactional DB, belongs to noSQL category
+relationships are first class citizens, meaning as important as the data in node itself
+data is stored as network on graphs and NOT as tables
+not having to index everytime we hop is main performance USP
+

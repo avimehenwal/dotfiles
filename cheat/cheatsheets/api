@@ -19,3 +19,18 @@ tags: [cs, plang, programming, api]
 
 # Resources
 - [History of the API](https://youtu.be/LzMp6uQbmns)
+
+## Standards for developing APIs
+1. REST-based APIs - How server should expose data to the client, for efficiency!
+2. GraphQL based APIs - declerative data fetching
+
+# Methods that APIs uses to talk to each other? Integration Patterns
+1. Orchestration microservices
+2. Choregraphed microservices
+
+## GraphQL concepts
+- SDL schema definition language
+- query
+- mutations, changind data POST on server
+- subscriptions
+- is only a specification

@@ -85,3 +85,11 @@ ON A.col = B.col;         # How the 2 tables are joined?
 
 # How to model multi-step workflows in DB?
 https://web.archive.org/web/20180729174436/http://www.tomjewett.com/dbdesign/dbdesign.php?page=recursive.php
+
+## ORM
+Instances of the model classes then provide an interface for CRUD queries to an application at runtime.
+
+## ORM Problems - bloated model instances
+- mixing business with storage logic
+- lack of type-safety
+- unpredictable queries caused e.g. by lazy loading.

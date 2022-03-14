@@ -1,0 +1,48 @@
+# graphQL
+- developed in 2012, specification published by facebook in 2015, NOT the implementation
+- stands for graph Query Language, just like SQL, excellent relational queries
+- for reading and mutating data in APIs
+- sits between client and backendAPI and defines what the client can query and what is available
+- data can come from same data-source or multiple data-sources
+
+## USP
+build APIs that are easy to evolve and change, easy to reason about
+backend for client Adapter
+stay away from trying to build a "One size Fits All" API
+
+## componnets
+
+### graphQL Server Libraries
+1. type Definitions
+2. define Resolvers
+3. generate graphQL Schema, SDL
+
+
+### graphQL Client Libraries and implementation
+
+#### How to make relational queries?
+enrich/enhance, shrink noise from the shape of data
+
+## Optimization
+
+it is not clear what will be returend if either one or both the arguments of query are empty/null
+
+```
+type Query {
+  user(id: ID, login:String): User
+}
+
+type Query {
+  userById(id: ID!): User
+  userByLogin(login: String!): User
+}
+```
+
+## Schema design practises for federated graphs
+start thinking in Entities
+demand oriented schema design
+
+## Apollo Federations
+declerative model for graph composition using query plans to resolve data
+graph can itself turn into a monolyth and suffer from same problems, slowe dev, difficult tooling etc.
+schema stiching - break big graphs into smaller graphs
