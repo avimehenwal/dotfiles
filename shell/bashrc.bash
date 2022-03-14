@@ -50,3 +50,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+source "/home/avimehenwal/.rover/env"

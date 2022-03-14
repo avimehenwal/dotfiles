@@ -232,5 +232,50 @@
     {
         "key": "ctrl+shift+t",
         "command": "workbench.action.toggleMaximizedPanel"
+    },
+    {
+        "key": "alt+,",
+        "command": "-gitlens.diffWithPreviousInDiffLeft",
+        "when": "editorTextFocus && isInDiffEditor && !isInDiffRightEditor && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
+    },
+    {
+        "key": "ctrl+alt+[",
+        "command": "-jupyter.gotoPrevCellInFile",
+        "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+alt+]",
+        "command": "-jupyter.gotoNextCellInFile",
+        "when": "editorTextFocus && jupyter.hascodecells && !notebookEditorFocused"
+    },
+    {
+        "key": "ctrl+alt+[",
+        "command": "gitlens.diffWithPreviousInDiffLeft",
+        "when": "editorTextFocus && isInDiffEditor && !isInDiffRightEditor && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /tracked/"
+    },
+    {
+        "key": "ctrl+shift+g ,",
+        "command": "-gitlens.diffWithPreviousInDiffLeft",
+        "when": "editorTextFocus && isInDiffEditor && !isInDiffRightEditor && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /tracked/"
+    },
+    {
+        "key": "alt+.",
+        "command": "-gitlens.diffWithNextInDiffLeft",
+        "when": "editorTextFocus && isInDiffEditor && !isInDiffRightEditor && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /revision/"
+    },
+    {
+        "key": "ctrl+alt+]",
+        "command": "gitlens.diffWithNextInDiffLeft",
+        "when": "editorTextFocus && isInDiffEditor && !isInDiffRightEditor && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /revision/"
+    },
+    {
+        "key": "ctrl+shift+g .",
+        "command": "-gitlens.diffWithNextInDiffLeft",
+        "when": "editorTextFocus && isInDiffEditor && !isInDiffRightEditor && config.gitlens.keymap == 'chorded' && gitlens:activeFileStatus =~ /revision/"
+    },
+    {
+        "key": "alt+,",
+        "command": "-gitlens.diffWithPrevious",
+        "when": "editorTextFocus && !isInDiffEditor && config.gitlens.keymap == 'alternate' && gitlens:activeFileStatus =~ /tracked/"
     }
 ]
