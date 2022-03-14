@@ -110,7 +110,7 @@ alias bindkey='bindkey | sed s/\"//g | column --table | bat --style=grid,numbers
 alias fpath='print -l ${(@kv)fpath}; echo -e "\nTotal fpath = ${#fpath}"'
 
 # System Management
-alias publicip='curl ifconfig.me'
+alias publicip='curl --silent --write-out "\nHTTP-CODE:%{http_code} | LOCAL_IP-%{local_ip} | TIME-%{time_total}" ipinfo.io | bat --plain --highlight-line=2 -l json | column --table --separator :'
 
 # FZF inspired
 # Package Manager
@@ -161,3 +161,5 @@ alias workspace='npx create-nx-workspace --nx-cloud false'
 # --package-manager=yarn --> have issues : classical yarn v1 --> v2/3 breaking changes
 alias monorepo='yarn create nx-workspace --nx-cloud false'
 
+# ECMAScript
+alias yarn='yarn --emoji true'
