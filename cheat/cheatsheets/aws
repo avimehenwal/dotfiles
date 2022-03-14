@@ -9,6 +9,10 @@ aws configure list
 
 # contents of a named bucket
 aws s3 ls s3://amplify-authcra-devo-151545-deployment --recursive --summarize --human-readable
+aws s3api list-objects-v2 --bucket "vca-dev-raw-emails-ses" --query 'sort_by(Contents, &LastModified)[-1].Key'
+
+# most recently addes contents of an S3 bucket
+aws s3 ls vca-dev-raw-emails-ses --recursive | sort -n | tail -10
 
 # make-bucket and remove-bucket
 aws s3 mb/rb s3://xyz/
@@ -28,3 +32,20 @@ https://stackoverflow.com/questions/13681213/what-is-the-difference-between-amaz
 aws sts get-session-token --duration-seconds 129600
 aws cognito-idp initiate-auth --auth-flow USER_PASSWORD_AUTH --client-id xxxxxx --auth-parameters USERNAME=xxxxxx,PASSWORD=xxxxxx
 
+# SES
+aws ses get-template --template-name=fromPDPToVendor__EN
+
+# view contents of an email stored in S3 bucket, pretty print contents from S3 bucket
+aws s3 cp s3://vca-lambda-staging/0a11371e5d0e197ec18816fee0328b65 -
+aws s3 cp s3://vca-dev-processed-emails-lambda/6ae85e32-7ad7-5781-98f5-97f78a8a1aed - | jq '.TemplateData | fromjson'
+
+
+# DynamoDB >> Kinesis for ebet sourcing
+read after write problem
+with dynamoDB can write and ready just after that consistently
+
+# send emails from templates using commandline
+aws ses send-templated-email --cli-input-json file://__fixtures__/sample_templated_Email.json
+
+# logs
+aws logs tail --follow /aws/lambda/vca-dev-VcaMiddlewareLambdaFunction-8BYBGEYCKQCN

@@ -18,3 +18,7 @@ you might notice CPU spikes when launching clojure CLI
 GraalVM is an extension of the Java virtual machine to support more languages and execution modes.
 The Graal project includes a new high performance Java compiler which can be used in a just-in-time
 configuration on the HotSpot VM, or in an ahead-of-time configuration on the Substrate VM.
+
+# How time is treated in programming language?
+single dispatch, stateful
+underneath the easyness, is there a incidental complexity hiding underneath it

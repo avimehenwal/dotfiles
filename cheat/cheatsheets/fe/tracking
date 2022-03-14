@@ -1,0 +1,46 @@
+# Meta/Facebook Pixel Tracking
+send-and-forget like postcard,
+  can queue up  multiple requests without affecting web-surfing experience
+
+## Why Web Beacon API?
+Typically, you’d use either the unload or beforeunload event to execute the logging.
+These are fired when the user does something like following a link on the page to navigate away.
+The trouble here is that code running on one of the unload events can block execution and delay
+the unloading of the page. If unloading of the page is delayed, then the loading next page is
+also delayed, and so the experience feels really sluggish.
+
+## How to use web Beacon API?
+// URL to send the data to
+let url = '/api/my-endpoint';
+
+// Create a new FormData and add a key/value pair
+let data = new FormData();
+data.append('hello', 'world');
+
+let result = navigator.sendBeacon(url, data);
+
+if (result) { 
+  console.log('Successfully queued!');
+} else {
+  console.log('Failure.');
+}
+
+
+The result is boolean, true if the browser accepted and queued the request, and false if there was a problem in doing so.
+https://www.smashingmagazine.com/2018/07/logging-activity-web-beacon-api/
+
+use formData Web API to prepare form-data to be sent with POST request
+https://developer.mozilla.org/en-US/docs/Web/API/FormData
+
+## Browser support, does client browser support web beacon API?
+if (navigator.sendBeacon) {
+  // Beacon code
+} else {
+  // No Beacon. Maybe fall back to XHR?
+}
+
+## Example: log time spent on page
+
+## DNT: Do-Not-Track
+handle at server, if beacon POST request has a HTTP header as follows
+DNT: 1

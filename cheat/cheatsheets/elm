@@ -1,0 +1,47 @@
+# elm vs cljs?
+Both force you to use a more declarative/functional programming style than pure JS.
+ClojureScript is more like a JS replacement, whereas Elm is more like a replacement
+for the entire web development stack (HTML/CSS/JS).
+
+https://stackoverflow.com/questions/18405158/how-does-elm-compare-to-clojurescript
+
+Elm compiles much more quickly.
+Elm produces much more performant code.
+Elm enables you to write software that works reliably much more quickly because type errors happen at compile time, rather than at runtime like in ClojureScript.
+ClojureScript’s error messages are at times incomprehensible. Elm’s error messages are best in class.
+Elm is far easier to learn than ClojureScript, and you’re right — you do need to know React if you’re writing a non-trivial ClojureScript application.
+Elm is criticised for not allowing a synchronous IO escape hatch. This is a pretty bad criticism I think.
+Being able to guarantee where effects won’t happen is a pretty great thing. Any effects work and/or JS interop can be done with ports. Ports work just fine.
+Elm is also criticised for denying the user a lot of “power features” like typeclasses.
+I find it mildly annoying sometimes that I don’t have everything I want, but I understand the trade-off.
+This is to make the language more accessible to your average JavaScript developer who has never tried anything from this family
+of languages. And I sure as hell don’t find it annoying enough to want to drop the type-checking compiler.
+
+# why Elm compiler?
+RFP: reactive functional programming
+haskell like -> javascript
+
+# elm vs cljs vs TS
+How many things can be falsy? (evaluate to `false`)
+
+    in Javascript? Seven.
+    How many in Typescript? Five.
+    How many in Clojurescript? Only two.
+
+How many items in the operator precedence table?
+
+    Javascript: 19
+    Typescript: (I couldn’t find exact number, probably same as in JS, if not more)
+    Clojurescript: Doesn’t even need op. precedence table.
+
+How many reserved words?
+
+    Javascript: 64
+    Typescript: 66. And like that wasn’t enough, Typescript also has strict mode reserved words and contextual keywords, making it even more confusing.
+    Clojurescript has zero reserved words. Yup, that’s right!
+
+How big is the specification?
+
+    ECMAscript’s specification is almost 800 pages long, bigger than Java’s. Unbelievable! It is only a few hundred pages shorter than “Lord of the Rings”. If Javascript spec. was a movie - it would take you over 8 hours to watch it.
+    Typescript’s specification is about 200 pages (which seems small, until you read next sentence)
+  Clojurescript doesn’t even need a specification, since the syntax can be explained on a back of a postcard

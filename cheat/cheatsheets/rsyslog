@@ -1,0 +1,7 @@
+send syslogs to remote server for analysis
+
+- linux/unix tool written in C
+- FOSS
+
+# validate rsyslog config
+rsyslogd -f /etc/rsyslog.conf -N1

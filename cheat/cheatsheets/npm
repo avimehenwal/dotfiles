@@ -56,3 +56,12 @@ yarn global upgrade --scope @angular         upgrade selected packages
 # How to publish a scoped package?
 1. create an organization from UI
 2. map organization to registry     npm config set @mehenwal:registry https://registry.npmjs.org/
+
+# npm install won't install dev dependencies
+npm config get production
+npm config set -g production false
+
+# Maximum call stack size exceeded on npm install
+npm cache clean --force
+npm rebuild
+https://stackoverflow.com/questions/40566348/maximum-call-stack-size-exceeded-on-npm-install

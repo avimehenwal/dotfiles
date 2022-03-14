@@ -1,0 +1,5 @@
+- INIT system for fedora, arch and debian based systems
+- make sure that services are up and running on a machine
+
+# which services failed to start at system startup
+systemctl --failed

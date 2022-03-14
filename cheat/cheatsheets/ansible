@@ -1,0 +1,35 @@
+Most Ansible modules provide this idempotency
+But some modules can be used in a way that breaks this pattern
+we tell ansible how to do it
+
+example of ansible module
+
+```
+- name: restart webserver
+  service:
+    name: httpd
+    state: restarted
+```
+
+Wondering how Ansible works at a brick level. Most sites say a module is pushed and Ansible does not need an agent on the remote host - just SSH and Python.
+It seems like Ansible would need to create a python script locally and copy it to the remote host. What is sent? Is it literally a .py file or a .pyc file - or other?
+How is it possible the remote host will not need any additional Python packages?
+
+https://serverfault.com/questions/931073/what-does-ansible-push-to-the-remote-host
+
+- ansible stores python files in `$HOME/.ansible/tmp` directory
+- `ANSIBLE_KEEP_REMOTE_FILES=1 ansible-playbook playbook.yml` to see what ansible sends over SSH
+
+module `unarchive` Requires gtar/unzip command on target host. => host needs to be already provisioned with this package
+so that ansible can configure it.
+
+## Puppet vs Ansible
+- puppet needs more componnets
+- puppet agent software
+  - puppet master software
+- Puppet is a devil’s tool because
+  - “It doesn’t allow me to make manual changes on the servers”, it will revert without asking
+
+# Puppet DSL
+  https://www.youtube.com/watch?v=xRju7qCr13I
+https://www.youtube.com/watch?v=vWqs-z9mCz4&list=PLV86BgbREluX9pohlEYJ9eZrbWSBp6gET

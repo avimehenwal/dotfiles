@@ -1,9 +1,11 @@
 ---
 tags: [python, django]
 ---
+
 - high level web framework with batteries included
 - instagram, pinterest
 - creating Django Data Models and then rendering them into Views
+- already have the concep of microservices and SOA, how? concept of projects and applications
 
 # startup commands
 python -m venv venv && source ./venv/bin/activate
@@ -18,3 +20,35 @@ python manage.py runserver
 # Django | node.js | ruby on rails
 # production web-server | database
 postgresSQL vs mySQL
+
+# list all models in a django project
+import django.apps
+django.apps.apps.get_models()
+
+# list all apps in a django project
+from django.conf import settings
+pprint(settings.INSTALLED_APPS)
+
+# simulate a web-request from REPL, print view in REPL
+>>> from django.urls import reverse
+>>> import requests
+>>> r = requests.get(reverse('app.views.your_view'))
+>>> r.text
+(prints output)
+>>> r.status_code
+200
+
+# print URL patterns for views, best would be print ALL recursively from all apps/modules?
+from django.urls import get_resolver
+print(get_resolver().url_patterns)
+
+# specific view
+django.urls.resolve('/product/4/another-awesome-listing')
+
+# django debug, simulate requests
+django.urls.reverse('product_detail', kwargs={'pk': '4', 'slug': 'another-awesome-listing'})
+django.test.Client().get(django.urls.reverse('product_detail', kwargs={'pk': '4', 'slug': 'another-awesome-listing'})).status_code
+
+# change django settings @runtime, add localhost in ALLOWED_HOSTS
+from django.conf import settings
+settings.configure(DEBUG=True)

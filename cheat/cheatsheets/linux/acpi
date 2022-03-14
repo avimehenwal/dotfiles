@@ -1,0 +1,7 @@
+Advanced Configuration and Power Interface
+
+# what problem does it solve?
+- Earlier desktops were always connected to power and always ON
+- with Laptops, things changed, we need more efficient Power Systems to increase laptop life
+
+ACPI does good things, but NOT in so nice way :)

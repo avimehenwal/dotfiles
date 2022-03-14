@@ -1,0 +1,9 @@
+# How to build Embedded Linux ?
+- Why? Linux is free and open source
+
+# Tooling
+1. Yocto
+2. GNU Guix
+3. Buildroot https://buildroot.org/
+
+

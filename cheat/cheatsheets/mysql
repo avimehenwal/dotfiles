@@ -1,0 +1,3 @@
+# How to prettify sql results
+pager less -SFX
+SELECT * FROM sometable\G

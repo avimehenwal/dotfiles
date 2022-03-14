@@ -1,0 +1,9 @@
+# code quality KPIs and metrics
+cloc --vcs=git --md .
+
+# node ECMAScript projects report on production dependencies
+yarn list --only-prod --depth=0 | awk '{print} END {print \"Number of prouction Dependencies = \"NR}'
+
+# report un-caught exceptions
+node --report-uncaught-exception
+

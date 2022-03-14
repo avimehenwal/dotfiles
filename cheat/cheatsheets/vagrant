@@ -35,3 +35,12 @@ vagrant plugin list
 
 # Share folders from host --> guest
 Vagrantfile sharedFolder property
+
+# SSH Tunnel login with root user
+  config.ssh.username = 'root'
+  config.ssh.password = 'jumper'
+  config.ssh.insert_key = 'true'
+
+# run if machine is already provisioned inside vagrantBox
+mkdir -m 700 /root/.ssh && cp ~vagrant/.ssh/authorized_keys /root/.ssh
+https://stackoverflow.com/questions/25758737/vagrant-login-as-root-by-default

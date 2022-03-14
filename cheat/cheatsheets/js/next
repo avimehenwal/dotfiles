@@ -4,6 +4,7 @@ tags: [frontend, javascript, nextjs]
 ---
 
 # NEXT.JS Framework
+write full-stack applications, using react client and node-backend
 
 - write lesser code, dont have to use react routes and router
 - Multiple build Modes: SSG (hydration) and SSR
@@ -98,3 +99,22 @@ with-jest with-cypress
 
 ## Resources
 https://youtu.be/EJVGzyWSCBE
+
+## NextJs SSR
+- run graphQL query on node-server (provided by next.js) and not in the browser
+  - P1: set this up as a page top-level, re-use is difficult, server fetches new data ONLY on client call
+  - P2: no live queries, no data updating on changes
+
+- page has to know in advance which graphQL query it is going to use
+- graphQL server on nextJS server API path https://github.com/ejscribner/nextjs-with-couchbase-and-graphql/blob/master/pages/api/graphql.js
+
+## use sqlite3 DB with prisma on vercel?
+The only writable directory on the filesystem is /tmp. Any temporary files you need to create in your Serverless Function must
+be in that directory (you can typically do os.tmp() to find the the temp directory on the current system.
+Since sqlite stores data locally, we recommend using a different database that can share state between instances of your functions.
+You can't reliably write to sqlite because storage is ephemeral in Serverless Functions. As your function receives more
+concurrent traffic, we will create new instances of your function that don't share the same storage.
+
+workaround, sqliteDB --> JSON
+Then you won't need a separate dependency at runtime since Node.js can parse JSON natively.
+https://stackoverflow.com/questions/913067/sqlite-as-a-production-database-for-a-low-traffic-site

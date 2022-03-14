@@ -1,0 +1,13 @@
+systemd is an init system ; while supervisord is a process control system.
+Though it seems that their function in similar, and they do share some goals; but supervisord is not meant as substitute of an init system.
+(Your system wouldn't be able boot without an init system, PID 1 is the init process, it's the starting point of user-space)
+
+init system is the standard interface, and I recommend using it rather than another process control applications like supervisor.
+
+# diff b/w services and targets
+man systemd.service
+man systemd.target
+
+# let systemd restart a process if it gets killed
+Restart=always
+Restart=on-failure
