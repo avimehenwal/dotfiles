@@ -23,6 +23,7 @@ prisma migrate deploy
 prisma migrate reset
 prisma migrate diff
 
+ability to log SQL executed by prisma in logs
 
 ## Shadown Database
 The shadow database is created and deleted automatically* each time you run a
@@ -33,6 +34,7 @@ Seeding allows you to consistently re-create the same data in your database
 https://www.youtube.com/watch?v=2LwTUIqjbPo
 
 # known challenges
+all prisma calls are delegated by prisma-engine which is a rust based SQL engine
 
 ## db-client can drop connection(s) when number of users increase on serverless environment
 S:: use database proxy to manage connections, promotes existing established connection reuse

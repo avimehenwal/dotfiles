@@ -50,3 +50,6 @@ Because subscription updates are usually pushed by the server (instead of polled
 
 ## How to generate graphQl schema and types and resolverTypes automatically from prisma modal?
 Add new generator ==> https://typegraphql.com/docs/prisma.html
+
+## difference between gql and buildSchema?
+https://stackoverflow.com/questions/67435529/what-is-the-difference-between-gql-and-buildschema

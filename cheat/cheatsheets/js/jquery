@@ -1,0 +1,8 @@
+# what is the difference between $(this.el) and this.$el
+
+```
+this.ele = document.getElementById('myViewElement');
+this.$ele = $('#myViewElement');
+
+$('#myViewElement') == $(this.ele);
+```

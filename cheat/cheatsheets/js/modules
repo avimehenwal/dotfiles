@@ -1,0 +1,27 @@
+# Modules system implementations
+1. AMD modules spec using requireJS implementation
+2. commonJS modules used by nodejs
+3. UMD Modules
+4. ESModules spec built into modern ES6 language itself
+
+# RequireJS
+- Configure call
+- Define calls - defines what js gets executed when you call it
+- Require calls
+
+# Require calls
+require(['common'], function(){
+    // load page/home only after common is loaded
+    require(['page/home'], function(Y) {
+        Y.doSomething();
+      })
+  })
+
+- common.js would be the first file that gets loaded as soon as the require.js is done loading
+- requirejs.config object has a property called paths, which is like shortcuts to load other libraries and provides free
+fallback
+- what define returns is captured by require
+- requirejs has its own optimizer
+
+# from browser console, how do I find out what all modules were loaded by requirejs on page?
+require.s.contexts._.defined

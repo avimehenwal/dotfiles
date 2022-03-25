@@ -1,0 +1,66 @@
+# what is THIS in js?
+In JavaScript, the this keyword refers to an object. Object executing the current function
+The this keyword refers to different objects depending on how it is used:
+Arow Functions always bind to global object
+
+When a function is used as a callback, this is lost.
+setTimeout(person.display, 3000);
+
+# what is bind() method in JS? when to use it?
+bind -> Borrows a function and creates a copy, "this" keyword is replaced with object passed as argument
+Bind creates a new function that will force the this inside the function to be the parameter passed to bind().
+bind behavious, actions to data
+
+.bind() is used when you need to pass a callback (e.g. some sort of function reference), but you want the caller
+to call your function with a specific this value. This is most common when your function is actually a method
+and you want the this value set to be the a specific object so the method will operate on that specific object.
+If you don't use .bind() in those cases, then the this value will be determined by the caller (not you) and if
+the caller doesn't set it specifically, it will end up being the global object or (in strict mode) undefined.
+If what you were passing was a method that relies on a specific value of this in order to do its job, it would
+not work properly with the wrong this value.
+
+# call() vs apply()
+call() method does not make copy of the function it is being called on
+call() and apply() serve the exact same purpose. The only difference between how they work is that call() expects
+all parameters to be passed in individually, whereas apply() expects an array of all of our parameters.
+
+# How classes work in JS? Original implementation of JS had no concept of classes
+Every JavaScript object has an internal "slot" called [[Prototype]] whose value is either null or an object
+The square brackets around [[Prototype]] are deliberate, and are an ECMAScript specification convention to denote internal slots.
+
+Modern JavaScript implementations allow read and/or write access to the [[Prototype]] in the following ways:
+
+1. The new operator (configures the prototype chain on the default object returned from a constructor function)
+2. The extends keyword (configures the prototype chain when using the class syntax)
+3. Object.create will set the supplied argument as the [[Prototype]] of the resulting object
+  4. Object.getPrototypeOf and Object.setPrototypeOf (get/set the [[Prototype]] after object creation), and
+5. The standardized accessor (ie. getter/setter) property named __proto__ (similar to 4.)
+
+# using prototype in javascript
+//Define a functional object to hold persons in JavaScript
+var Person = function(name) {
+  this.name = name;
+};
+
+//Add dynamically to the already defined object a new getter
+Person.prototype.getName = function() {
+  return this.name;
+};
+
+//Create a new object of type Person
+var john = new Person("John");
+
+//Try the getter
+alert(john.getName());
+
+//If now I modify person, also John gets the updates
+Person.prototype.sayMyName = function() {
+  alert('Hello, my name is ' + this.getName());
+};
+
+//Call the new method on john
+john.sayMyName();
+
+
+# Referenes
+https://stackoverflow.com/questions/572897/how-does-javascript-prototype-work

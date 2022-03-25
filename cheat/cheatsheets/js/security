@@ -1,0 +1,15 @@
+# most recurring attacks, OWASP project and community
+1. Injection attacks
+2. Broken authentication
+3. Sensitive data exposure
+4. XML entities
+5. Broken access control
+
+## JWT - securely deliver information from client and server
+1. header
+2. payload
+3. signature
+
+## Libraries
+1. bcrypt
+2. jsonwebtoken

@@ -1,0 +1,17 @@
+# dGraph | written in GO | started 2015
+opensource distributed graph database whith native support for graphQL and JSON
+search engine + graphDB + guarentees of transactions
+[ query language + query execution layer + storage layer + distribution layer ] all work together
+evolve data-model naturally in graphDB layer
+build graphsystems like twitter, dropbox, airbnb default goto
+schemas are built as we need them
+
+## Features
+- create nodes and traverse nodes
+- multilanguaeg capability, strings are stored as utf-8 encoding
+- hey db give me the data in particular langiage only => add @lang dicrective to schema, comment@en comment@fr comment@zh ISO codes for languages
+- low-latency high-throughput arbitrary connections
+- if you want to serve knowledge graph, data representing informaion in graph like data-structures
+
+
+

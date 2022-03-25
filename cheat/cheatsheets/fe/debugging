@@ -1,0 +1,11 @@
+# How to debug file uploads and inputs, extract specific element from a complex top-level structure?
+Add element to global state in console
+Arrays !== oollections
+Browser FormData API
+
+An HTML <form> element — when specified, the FormData object will be populated with the form's current keys/values
+using the name property of each element for the keys and their submitted value for the values. It will also encode file input content.
+
+# asset and media transformations
+before uploading them OR
+after uploading them

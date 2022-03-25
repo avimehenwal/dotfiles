@@ -4,6 +4,7 @@
 - for reading and mutating data in APIs
 - sits between client and backendAPI and defines what the client can query and what is available
 - data can come from same data-source or multiple data-sources
+- 2018, the GraphQL Schema Definition Language (SDL) became part of the specification.
 
 ## USP
 build APIs that are easy to evolve and change, easy to reason about
@@ -46,3 +47,47 @@ demand oriented schema design
 declerative model for graph composition using query plans to resolve data
 graph can itself turn into a monolyth and suffer from same problems, slowe dev, difficult tooling etc.
 schema stiching - break big graphs into smaller graphs
+
+## does graphQL replaces graphDB
+https://stackoverflow.com/questions/50134500/does-graphql-negate-the-need-for-graph-databases
+
+## graphQL Schema Types
+1. scalar
+2. Object
+3. Query Types
+4. The Mutation Type
+5. Input types - when you want to pass object as argument to Mutation/Query
+6. custom graphQL schema Directives
+
+change the behaviour of a resolver, what comes out of the resolver
+
+## graphQL schema Directives
+1. context authorizations get token from request and use the information in it to drive the decision as to weather or not user has a access
+what is required to get a resource?
+      - cookies and sessions
+      - Alternative way, JWT
+      - scope based authorization to get more fine-grained
+2. using REST api call as backend resolver
+
+graphQL directives is NOT the only way for authorization and access-control
+coupling logic to the schema!
+Alternatives, graphql-middleware, seperate out the logic from schema-definition
+
+## AAA Authentication and Authorization with graphQL
+authentication is not presecribed by graphQL specification
+
+## API Authorization | what are the considerations for API authentication?
+## How do we do it REST?
+Middleware pattern (using JWT) to determine with endpoints we want to protect and hide
+Adding middleware to graphql endpoint? All-or-nothing scenario
+Viewer Pattern - get information from JWT and get resources/articles for a particular user
+Authorization Rules - from HTTP headers and JWT Token validation
+authentication could also be handleded at API level rather than graphQL
+
+https://github.com/maticzav/graphql-middleware
+
+## JWT vs Session
+Handle status codes based on auth requestes from middleware
+JWT token stores all the data insead of redis
+
+
