@@ -46,12 +46,11 @@ EOF
 function remove_if_file_or_symlink_exists() {
 	local FILE_NAME=$1
 	if [[ -f $FILE_NAME || -L $FILE_NAME || -d $FILE_NAME ]]; then
-		rm -rvf $FILE_NAME
+		echo "DELETE: $(rm -rvf $FILE_NAME)"
 	fi
 }
 
 function install_homedir_config() {
-	# zsh
 	ZSHRC=$HOME/.zshrc
 	BASHRC=$HOME/.bashrc
 	GITCONFIG=$HOME/.gitconfig
@@ -60,9 +59,9 @@ function install_homedir_config() {
 	remove_if_file_or_symlink_exists $BASHRC
 	remove_if_file_or_symlink_exists $GITCONFIG
 
-	ln --symbolic --verbose $SOURCE/shell/zshrc.zsh $ZSHRC
-	ln --symbolic --verbose $SOURCE/shell/bashrc.bash $BASHRC
-	ln --symbolic --verbose $HOME/dotfiles/HOME/.gitconfig $GITCONFIG
+	ln -s -v $SOURCE/shell/zshrc.zsh $ZSHRC
+	ln -s -v $SOURCE/shell/bashrc.bash $BASHRC
+	ln -s -v $HOME/dotfiles/HOME/.gitconfig $GITCONFIG
 }
 
 function install_vim() {
