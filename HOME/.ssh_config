@@ -6,10 +6,25 @@ CanonicalizeHostname yes
 Host *
 #    ForwardX11 yes
 
+# Personal GitHub account
+Host github.com
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/github_personal_mac
+
+# Work GitHub account
+Host github.com-work
+    HostName github.com
+    User git
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/work_rsa
+
 # Personal GitLab.com
 Host gitlab.com
   Preferredauthentications publickey
-  IdentityFile ~/.ssh/gitlab_personal
+  IdentityFile ~/.ssh/github_personal
 
 # Work GitLab instance
 Host gitlab.company.com
@@ -28,20 +43,6 @@ Host gitlab.pb.avantys.de
 Host skysails
     HostName skysails
     User root
-
-# Personal GitHub account
-Host github.com
-    HostName github.com
-    User git
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/github_personal
-
-# Work GitHub account
-Host github.com-work
-    HostName github.com
-    User git
-    AddKeysToAgent yes
-    IdentityFile ~/.ssh/work_rsa
 
 # AWS Host
 Host aws

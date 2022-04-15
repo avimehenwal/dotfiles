@@ -54,14 +54,17 @@ function install_homedir_config() {
 	ZSHRC=$HOME/.zshrc
 	BASHRC=$HOME/.bashrc
 	GITCONFIG=$HOME/.gitconfig
+	SSH_CONFIG=$HOME/.ssh/config
 
 	remove_if_file_or_symlink_exists $ZSHRC
 	remove_if_file_or_symlink_exists $BASHRC
 	remove_if_file_or_symlink_exists $GITCONFIG
+	remove_if_file_or_symlink_exists $SSH_CONFIG
 
 	ln -s -v $SOURCE/shell/zshrc.zsh $ZSHRC
 	ln -s -v $SOURCE/shell/bashrc.bash $BASHRC
-	ln -s -v $HOME/dotfiles/HOME/.gitconfig $GITCONFIG
+	ln -s -v $SOURCE/HOME/.gitconfig $GITCONFIG
+	ln -s -v $SOURCE/HOME/.ssh_config $SSH_CONFIG
 }
 
 function install_vim() {
