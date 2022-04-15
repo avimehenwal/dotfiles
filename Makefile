@@ -5,6 +5,7 @@ DIST:=docs
 # ANTORA:=./node_modules/@antora/cli/bin/antora
 ANTORA:=yarn antora
 HTTP-SERVER:=./node_modules/http-server/bin/http-server
+MSG_FILE:=COMMIT_MSG.md
 
 
 clean:
@@ -20,4 +21,8 @@ build:
 
 web: build
 	${HTTP-SERVER} ${DIST}
+
+commit:
+	git commit --file=${MSG_FILE}
+
 

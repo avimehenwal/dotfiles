@@ -2,9 +2,9 @@
     name  = avimehenwal
     email = avi.mehanwal@gmail.com
     # https://github.com/search?l=&q=signingkey%20language%3A%22Git%20Config%22&type=Code
-    signingkey = 7628E1A8A0163493
+    signingkey = 1E9911CB78E1A1B3
 [gpg]
-	program = gpg2
+	program = gpg
 [color]
     ui = always
     blame = highlightRecent
