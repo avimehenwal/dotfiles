@@ -17,8 +17,8 @@
     "security",
     "git"
   ],
-  "editor.fontFamily": "Fira Code",
-  "editor.fontLigatures": true,
+  // "editor.fontFamily": "Fira Code",
+  // "editor.fontLigatures": true,
   "files.associations": {
     "**/.nvimrc": "viml",
     "**/vifmrc": "viml",
