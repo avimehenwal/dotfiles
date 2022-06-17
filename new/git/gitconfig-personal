@@ -1,0 +1,15 @@
+[user]
+	name  = avimehenwal
+    email = avi.mehanwal@gmail.com
+    signingkey = E13A190BB8FE9097
+[gpg]
+	program = gpg
+[color]
+    ui = always
+[log]
+    date = relative
+[commit]
+	gpgsign = true
+[alias]
+	last      = log -1 HEAD --compact-summary --patch
+    first     = log --reverse

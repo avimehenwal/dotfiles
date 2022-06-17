@@ -1,0 +1,17 @@
+[user]
+	name = Avi Mehenwal
+	email = avi.mehenwal@wilde-it.com
+
+[core]
+	editor = nvim
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+
+[alias]
+	fame = python3 -V -m gitfame

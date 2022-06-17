@@ -1,0 +1,10 @@
+# [includeIf "gitdir:~/WILDE-IT/github.com/"]
+# 	path = ~/.gitconfig-personal
+
+# [includeIf "gitdir:~/WILDE-IT/gitlab.wilde-it.com/"]
+# 	path = ~/.gitconfig-work
+
+[includeIf "gitdir:~/WILDE-IT/github.com/"]
+	path = ~/WILDE-IT/github.com/dotfiles/new/git/gitconfig-personal
+[includeIf "gitdir:~/WILDE-IT/gitlab.wilde-it.com/"]
+	path = ~/WILDE-IT/github.com/dotfiles/new/git/gitconfig-work
