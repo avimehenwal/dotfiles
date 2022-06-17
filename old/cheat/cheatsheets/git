@@ -167,3 +167,6 @@ git reflog show --date=local fix/vcard-vcf
 
 # rebase and squash second commit message into first
 git rebase -i --root main
+
+# troubleshoot GPG signing (with passphrase) with git commits
+GIT_TRACE=1 git commit
