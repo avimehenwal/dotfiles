@@ -3,6 +3,9 @@ syntax: markdown
 tags: [frontend, javascript, typescript]
 ---
 
+would you rather have "silly" error during development, or insanity-inducing error in production.
+by default, typescript will transpile to ES3 which does not have async await
+
 # Typescript
 
 - Programming Language by Microsoft Apachey 2 License in 2012

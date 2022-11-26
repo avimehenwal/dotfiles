@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-git dt
+# git dt
 
 # can use python or shells as well
 #!/usr/bin/fish

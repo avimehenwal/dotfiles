@@ -11,7 +11,7 @@ tags: [frontend, css]
 # Responsiveness vs Adaptiveness
 
 - Website should look good on any device
-- [Adaptive Web Design](https://en.wikipedia.org/wiki/Adaptive_web_design)
+- [Adaptive Web Design](https://en.wikipedia.org/wiki/Adaptive_web_design) only adapts at certain sizes
 
 # Mobile First development approach
 

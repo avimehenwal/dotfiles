@@ -1,0 +1,5 @@
+## async/await vs then/catch difference ?
+- less lines of code and redability, maintainability
+- compiler has more opportunities to optimize
+
+https://stackoverflow.com/questions/54495711/async-await-vs-then-which-is-the-best-for-performance

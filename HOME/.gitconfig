@@ -2,7 +2,7 @@
     name  = avimehenwal
     email = avi.mehanwal@gmail.com
     # https://github.com/search?l=&q=signingkey%20language%3A%22Git%20Config%22&type=Code
-    signingkey = 7628E1A8A0163493
+    signingkey = AB3468DBA24778E7
 [gpg]
 	program = gpg2
 [color]
@@ -13,7 +13,7 @@
 [core]
     editor = vim
     hooksPath = ~/.config/git
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    # pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = /Users/avi/dotfiles/HOME/.gitignore_global
 [help]
     autocorrect = 1
@@ -21,11 +21,13 @@
     status = true
     diff   = true
 [diff]
-    tool = meld
-[difftool "meld"]
-    cmd = meld "$LOCAL" "$REMOTE"
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff "$LOCAL" "$REMOTE"
 [merge]
-    tool = meld
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
 [difftool]
     prompt = false
 [log]

@@ -2,6 +2,9 @@
 syntax: markdown
 tags: [frontend, javascript]
 ---
+
+classes in JS = Functions + prototype Inheritance
+
 ## Concurrency in JS | vs Parallelism
 IO Driven                 ------- single event -----|-------- multiple events -------
 { Synchronous << Asynchronous (callbacks | Promises | async/await) << Streams/Observables }
