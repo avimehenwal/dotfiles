@@ -1,0 +1,6 @@
+auto import - how to avoid name collissions
+server engine Nitrol = deploy on the edge on cloudflar and be limited to nodejs
+composables and components
+nested routing like re-MIX -> change routes without re-rendering the entire page
+	good for dashboard like application
+strongly typed API routes with no efforts

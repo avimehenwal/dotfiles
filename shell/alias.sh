@@ -43,7 +43,7 @@ function d() {
     dirs -v | head -10
   fi
 }
-compdef _dirs d
+# compdef _dirs d
 
 function venv() {
   [ -d venv ] || python -m venv venv 1>&2

@@ -6,14 +6,14 @@
 [gpg]
 	program = gpg
 [color]
-    ui = always
-    blame = highlightRecent
+   # ui = always
+   # blame = highlightRecent
 # [color "blame"]
 # 	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
 [core]
     editor = vim
     hooksPath = ~/.config/git
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    # pager = diff-so-fancy | less --tabs=4 -RFX
 	excludesfile = /Users/avi/dotfiles/HOME/.gitignore_global
 [help]
     autocorrect = 1
@@ -96,18 +96,18 @@
 	# Multiple Commands
     b 	      = !fish -c git.branches && fish -c git.branches.graph && git branch --all --verbose
 
-[color "diff-highlight"]
-    oldNormal 	 = red bold
-    oldHighlight = red bold 52
-    newNormal 	 = green bold
-    newHighlight = green bold 22
-[color "diff"]
-    meta 	   = yellow
-    frag 	   = magenta bold
-    commit 	   = yellow bold
-    old 	   = red bold
-    new 	   = green bold
-    whitespace = red reverse
+# [color "diff-highlight"]
+#     oldNormal 	 = red bold
+#     oldHighlight = red bold 52
+#     newNormal 	 = green bold
+#     newHighlight = green bold 22
+# [color "diff"]
+#     meta 	   = yellow
+#     frag 	   = magenta bold
+#     commit 	   = yellow bold
+#     old 	   = red bold
+#     new 	   = green bold
+#     whitespace = red reverse
 [pull]
     rebase     = true
     default    = current

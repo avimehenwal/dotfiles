@@ -165,5 +165,8 @@ git merge upstream/main
 # When was branch created?
 git reflog show --date=local fix/vcard-vcf
 
+# pull changes from a template repo
+https://stackoverflow.com/questions/56577184/github-pull-changes-from-a-template-repository
+
 # rebase and squash second commit message into first
 git rebase -i --root main

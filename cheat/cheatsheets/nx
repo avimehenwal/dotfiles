@@ -1,3 +1,11 @@
 # use yarn
 npx create-nx-workspace new-app --preset=next --packageManager=yarn 
 
+# How to create a your own plugin
+npx create-nx-plugin org-name --pluginName my-plugin
+
+Plugin = Executors + Generators
+schema = Arguments accepted for a executor from commandline
+
+# Vocubulary
+Publishable - distributing it outside the monorepo

@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 #  @avimehenwal - updated 2020-Dec
 #
 #  _______| |__  _ __ ___
@@ -11,32 +13,32 @@
 # source $ZPLUG_HOME/init.zsh
 # export ZPLUG_HOME=/opt/homebrew/opt/zplug
 
-export ZPLUG_HOME=$HOME/.zplug
-[ -d $HOME/.zplug ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-source $ZPLUG_HOME/init.zsh
+# export ZPLUG_HOME=$HOME/.zplug
+# [ -d $HOME/.zplug ] || curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# source $ZPLUG_HOME/init.zsh
 
 BASE=$HOME/dotfiles/shell
 source ${BASE}/alias.sh
-source ${BASE}/autoload.zsh
+# source ${BASE}/autoload.zsh
 source ${BASE}/env.sh
-source ${BASE}/keybindings.sh
+# source ${BASE}/keybindings.sh
 source ${BASE}/path.sh
 source ${BASE}/shared.sh
 
 # Condtitional loading of zsh settings per platform
-if command apt >/dev/null; then
-  source ${BASE}/debian.zsh
-elif command systemctl >/dev/null; then
-  # source ${BASE}/systemd.zsh
-elif command freebsd-version >/dev/null; then
-  source $ZSH_CUSTOM/os/freebsd.zsh
-elif [[ $(uname) == "Darwin" ]]; then
-  source ${BASE}/macos.zsh
-elif command kubectl >/dev/null; then
-  source $ZSH_CUSTOM/os/kubernetes.zsh
-else
-  echo 'Unknown OS!'
-fi
+# if command apt >/dev/null; then
+#   source ${BASE}/debian.zsh
+# elif command systemctl >/dev/null; then
+#   # source ${BASE}/systemd.zsh
+# elif command freebsd-version >/dev/null; then
+#   source $ZSH_CUSTOM/os/freebsd.zsh
+# elif [[ $(uname) == "Darwin" ]]; then
+#   source ${BASE}/macos.zsh
+# elif command kubectl >/dev/null; then
+#   source $ZSH_CUSTOM/os/kubernetes.zsh
+# else
+#   echo 'Unknown OS!'
+# fi
 
 # History - reverse-search
 HISTFILE=~/.zsh_history
@@ -50,9 +52,9 @@ PLUGINS=${BASE}/plugins
 export ABBR_AUTOLOAD=1
 export ABBR_USER_ABBREVIATIONS_FILE=${BASE}/abbreviations.sh
 
-source ${PLUGINS}/internals.zsh
-source ${PLUGINS}/myFunctions.zsh
-source ${PLUGINS}/gitFzf.zsh
+# source ${PLUGINS}/internals.zsh
+# source ${PLUGINS}/myFunctions.zsh
+# source ${PLUGINS}/gitFzf.zsh
 
 # Add custom autoloading functions to fpath
 fpath+=${BASE}/lazy_functions
@@ -66,16 +68,16 @@ eval "$(starship init zsh)"
 # set -o vi
 
 # Perl - Larry Wall
-PATH="/home/avi/perl5/bin${PATH:+:${PATH}}"
-export PATH
-PERL5LIB="/home/avi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
-export PERL5LIB
-PERL_LOCAL_LIB_ROOT="/home/avi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
-export PERL_LOCAL_LIB_ROOT
-PERL_MB_OPT="--install_base \"/home/avi/perl5\""
-export PERL_MB_OPT
-PERL_MM_OPT="INSTALL_BASE=/home/avi/perl5"
-export PERL_MM_OPT
+# PATH="/home/avi/perl5/bin${PATH:+:${PATH}}"
+# export PATH
+# PERL5LIB="/home/avi/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
+# export PERL5LIB
+# PERL_LOCAL_LIB_ROOT="/home/avi/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
+# export PERL_LOCAL_LIB_ROOT
+# PERL_MB_OPT="--install_base \"/home/avi/perl5\""
+# export PERL_MB_OPT
+# PERL_MM_OPT="INSTALL_BASE=/home/avi/perl5"
+# export PERL_MM_OPT
 
 excludeFromTmux() {
 }
@@ -90,7 +92,7 @@ excludeFromTmux() {
 
 # STARTUP Programs
 # start KDE Konsole with byobu-tmux if len(KONSOLE_VERSION) is NOT zero
-[ -z "$KONSOLE_VERSION" ] || byobu-tmux
+# [ -z "$KONSOLE_VERSION" ] || byobu-tmux
 
 # ls on everytime cd is used to change directory
 # autoload -U run-ls-on-cd
@@ -108,34 +110,34 @@ excludeFromTmux() {
 # NVM automatically use the right node version
 # place this after nvm initialization!
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+# load-nvmrc() {
+#   local node_version="$(nvm version)"
+#   local nvmrc_path="$(nvm_find_nvmrc)"
 
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+#   if [ -n "$nvmrc_path" ]; then
+#     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
 
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
+#     if [ "$nvmrc_node_version" = "N/A" ]; then
+#       nvm install
+#     elif [ "$nvmrc_node_version" != "$node_version" ]; then
+#       nvm use
+#     fi
+#   elif [ "$node_version" != "$(nvm version default)" ]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
+# add-zsh-hook chpwd load-nvmrc
 # load-nvmrc
 
 # Issues
 # https://stackoverflow.com/questions/13762280/zsh-compinit-insecure-directories
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-cloud-sdk/completion.zsh.inc'; fi
 
 # TODO: causing shell to realod 3 times
 # source ${BASE}/zplug.zsh
@@ -144,14 +146,23 @@ if [ -f '/home/avi/mySoftwares/google-cloud-sdk-360.0.0-linux-x86_64/google-clou
 # echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >>~/.profile
 # echo 'eval "$(pyenv init --path)"' >>~/.profile
 # echo 'if [ -n "$PS1" -a -n "$BASH_VERSION" ]; then source ~/.bashrc; fi' >>~/.profile
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init --path)"
-fi
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init --path)"
+# fi
 
 # enable case-insensitive tab completion
 # autoload -Uz compinit && compinit
 # zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# zsh -o SOURCE_TRACE
+# pnpm
+export PNPM_HOME="/Users/avi/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
