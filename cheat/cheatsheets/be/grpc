@@ -1,0 +1,16 @@
+---
+syntax: markdown
+tags: ['be']
+---
+
+> What is gRPC ?
+
+Popular implementation of RPC Mechanism by Google
+
+- strongly typed schema definition
+- much faster than JSON using payload, 5X
+- uses HTTP2
+
+> Why is gRPC not used between frontend clients and backend apis directly ?
+
+- gRPC implementation uses lower-level HTTP-2 primitives currently not supported by many browsers

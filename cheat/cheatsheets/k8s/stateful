@@ -12,6 +12,8 @@ tags: [k8s]
 
 can run Pods that uses storage configuration. Each replica pod will have same access to storage
 
+- in stafeful sets Pods keeps the same Name and IP Address, when they get recreated
+
 > How to scale database application ?
 
 Horizontal scaling without creating conflicts
@@ -21,9 +23,15 @@ Horizontal scaling without creating conflicts
 - Ideally use a remote storage, as local volumes are tied to Cluster Node
 - Ever Pod as a unique Identifier, sticky Identity
 
-K8s is better suited for stateless applications rather than stateful application
-K8s uses a Control Loop Mechanism
 
 CRD - Custome Resource Definitions
 
+## History
+
+K8s is better suited for stateless applications rather than stateful application
+K8s uses a Control Loop Mechanism
+
+## How to run mongodb as a StafefulSet k8s Resource ?
+
+- https://github.com/peterj/k8s-shorts-files/blob/main/files/mongodb-statefulset.yaml
 

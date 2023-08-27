@@ -1,0 +1,19 @@
+---
+tags: ['be']
+---
+
+# API Technologies
+
+1. REST - Representational State Transfer
+2. GraphQL - Graph Query Language
+3. RPC - Remote Procedure Call
+
+- REST is easy to debug right from Networks in browser devtools
+- REST is prone to underfetching or overfetching
+
+- GQL caching is much more comple
+- GQL uses its own Schema Defenition Language SDL
+
+- gRPC uses Protocol Buffers binary format for communication, highly performant
+- Interfaces are defined as IDL
+- No browser support

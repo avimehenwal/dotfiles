@@ -1,0 +1,18 @@
+---
+tags: ['k8s']
+---
+
+# How to version control deploymens IaaC ?
+
+```sh
+helm create <dir_name>
+helm dependency update
+
+helm install <chart_name> .
+```
+
+> Create deployment manifest file
+
+```sh
+kubectl create deployment nestjs-deployment --image=nest-cloud-run --port 3000 --dry-run=client
+```

@@ -1,3 +1,8 @@
+---
+syntax: markdown
+tags: ['database']
+---
+
 install via dnd
 
 redis-server
@@ -16,3 +21,6 @@ redis-cli flushall
 
 # does redis persist data? Why do I still see data after server restart?
 https://stackoverflow.com/questions/25328317/does-redis-persist-data
+
+> List all databases
+CONFIG get databases
