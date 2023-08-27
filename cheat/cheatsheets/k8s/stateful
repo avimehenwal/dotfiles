@@ -1,0 +1,29 @@
+---
+syntax: markdown
+tags: [k8s]
+---
+
+# Stateful Application
+
+- like databases, SQL or noSQL
+- applications that stores data
+
+## StafefulSet
+
+can run Pods that uses storage configuration. Each replica pod will have same access to storage
+
+> How to scale database application ?
+
+Horizontal scaling without creating conflicts
+
+- Losing data is unacceptable
+- compute is seperated from persistance storage volume, DAL
+- Ideally use a remote storage, as local volumes are tied to Cluster Node
+- Ever Pod as a unique Identifier, sticky Identity
+
+K8s is better suited for stateless applications rather than stateful application
+K8s uses a Control Loop Mechanism
+
+CRD - Custome Resource Definitions
+
+

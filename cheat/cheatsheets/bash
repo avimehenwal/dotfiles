@@ -41,3 +41,6 @@ Bash supports a --posix switch, which makes it more POSIX-compliant. It also tri
 For a long time, /bin/sh used to point to /bin/bash on most GNU/Linux systems. As a result, it had almost become safe to
 ignore the difference between the two. But that started to change recently.
 https://stackoverflow.com/questions/5725296/difference-between-sh-and-bash
+
+# Move all files, folders and dotfiles one level up
+mv * .[^.]* ..

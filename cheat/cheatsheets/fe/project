@@ -1,0 +1,16 @@
+# building blocks of a webapp
+
+- Robust: things will not fall apart when put to real load test
+  - How? error handling, handing all possible paths to UI
+    - handle both @client and @server side errors
+  - use static types, always know the spapes of data
+  - if there are errors then recover from errors, route validations
+- route middlewares, AUTH middleware
+- login and Identities IAM system as 3rd party service
+
+## WebApp blocks
+
+1. frontend presentation
+2. backend api
+3. backend data persistance
+4. Security and AUTH

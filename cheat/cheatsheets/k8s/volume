@@ -1,0 +1,23 @@
+---
+syntax: markdown
+tags: [k8s]
+---
+
+# Volumes
+
+- Pod/container Virtual File System gets lost
+- we map/plug-in docker VFS to Host File system
+
+Named volumes
+
+```yaml
+volumes:
+- db-data:/var/lib/mysql/data
+```
+
+How to share same volume between multiple containers ?
+
+```yaml
+volumes:
+  db-data
+```
