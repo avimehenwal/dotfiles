@@ -160,3 +160,6 @@ export NVM_DIR="$HOME/.nvm"
 export PNPM_HOME="/home/avi/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# bootstrap
+[ -z "${TMUX_PANE}" ] && neofetch

@@ -51,3 +51,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 source "/home/avimehenwal/.rover/env"
+
+complete -C /usr/bin/terraform terraform
+source "/home/avi/.rover/env"

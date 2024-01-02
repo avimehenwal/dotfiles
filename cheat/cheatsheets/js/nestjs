@@ -1,0 +1,12 @@
+---
+syntax: markdown
+tags: [javascript, backend]
+---
+
+# Nestjs Response Manipulation
+
+1. Skip/hide/export properties on response that is sent out using class-transform serialization
+2. Run validations on Response using class-validator async validate() function
+3. Modify response direcctly using express Response Object. No need to return
+4. Modify response using nestjs Interceptor post-processing primitive
+5. Response validation using DTOs

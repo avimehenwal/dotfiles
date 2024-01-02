@@ -6,8 +6,8 @@
 [gpg]
 	program = gpg2
 [color]
-    ui = always
-    blame = highlightRecent
+    ; ui = always
+    ; blame = highlightRecent
 # [color "blame"]
 # 	highlightRecent = 10,6 month ago,normal,1 month ago,bold,1 day ago,yellow
 [core]
@@ -60,11 +60,11 @@
     rebase  = rebase -v -i
     blame   = blame --show-stats --progress
 
+    d    = diff --color=always
     dt 	 = difftool --dir-diff HEAD 	# show everything staged + unstaged
     ds 	 = diff --stat
     dc   = diff --cached
     dcs  = diff --compact-summary
-    diff = diff --color=always
     r 	 = remote --verbose
     ls 	 = ls-tree --full-tree --name-only -r HEAD
 

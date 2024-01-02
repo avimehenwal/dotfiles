@@ -3,3 +3,12 @@ tar -ztvf git-insight-0.0.1.tar.gz
 
 # unzip files
 tar -xvf
+
+# Exclude node_modules folder
+tar --exclude="./node_modules" --exclude="./.git" --exclude="./dist" -zvcf coding-challenge.tgz .
+
+# List TAR file Archive contents
+tar -tvf ./coding-challenge.tgz
+
+# Archive files using Git 
+git archive --format=zip HEAD -o zipfile.zip

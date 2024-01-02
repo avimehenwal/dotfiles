@@ -62,7 +62,8 @@ list_completions() {
 
 # List directory contents
 alias la='ls -lAhG | fzf'
-alias ll='ls -lAhG --color=auto'
+# alias ll='ls -lAhG --color=auto'
+alias ll='exa --long --header --all'
 alias ls='ls -G'
 alias tree='tree -C'
 
